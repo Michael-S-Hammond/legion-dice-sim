@@ -1,0 +1,75 @@
+.token-counter-aim {
+  background-image: url("../img/aim.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-counter-dodge {
+  background-image: url("../img/Dodge.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-counter-observation {
+  background-image: url("../img/Observation.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-counter-shield {
+  background-image: url("../img/Shield.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-counter-suppression {
+  background-image: url("../img/suppression.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-counter-surge {
+  background-image: url("../img/surge.png");
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 85%;
+  background-position-x: 2px;
+  background-position-y: 2px; }
+
+.token-parent {
+  position: relative; }
+
+.token-count {
+  font-weight: bold;
+  text-align: center;
+  font-size: small;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 1px;
+  right: 5px;
+  pointer-events: none; }

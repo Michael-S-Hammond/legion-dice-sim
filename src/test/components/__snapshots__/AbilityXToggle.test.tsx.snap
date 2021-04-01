@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AbilityXToggle matches the snapshot 1`] = `
+<div
+  className="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+>
+  <input
+    checked={true}
+    className="custom-control-input my-auto"
+    id="testAbility"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="custom-control-label drop-down-label mx-2 my-auto"
+    htmlFor="testAbility"
+  >
+    Test
+  </label>
+  <select
+    className="rounded-lg mr-4 px-2"
+    onChange={[Function]}
+    value={1}
+  >
+    <option
+      value={1}
+    >
+      1
+    </option>
+    <option
+      value={2}
+    >
+      2
+    </option>
+    <option
+      value={3}
+    >
+      3
+    </option>
+    <option
+      value={4}
+    >
+      4
+    </option>
+  </select>
+</div>
+`;
+
+exports[`AbilityXToggle matches the snapshot when hidden 1`] = `
+<div
+  className="collapse justify-content-center my-3 custom-control custom-switch"
+>
+  <input
+    checked={true}
+    className="custom-control-input my-auto"
+    id="testAbility"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="custom-control-label drop-down-label mx-2 my-auto"
+    htmlFor="testAbility"
+  >
+    Test
+  </label>
+  <select
+    className="rounded-lg mr-4 px-2"
+    onChange={[Function]}
+    value={1}
+  >
+    <option
+      value={1}
+    >
+      1
+    </option>
+    <option
+      value={2}
+    >
+      2
+    </option>
+    <option
+      value={3}
+    >
+      3
+    </option>
+    <option
+      value={4}
+    >
+      4
+    </option>
+  </select>
+</div>
+`;

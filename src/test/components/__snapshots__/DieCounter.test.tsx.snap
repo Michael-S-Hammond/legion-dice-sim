@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DieCounter matches the snapshot 1`] = `
+<button
+  className="btn border border-secondary rounded-lg die-counter mx-1 btn-dark"
+  onClick={[Function]}
+>
+  4
+</button>
+`;

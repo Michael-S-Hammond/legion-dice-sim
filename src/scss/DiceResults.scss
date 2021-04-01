@@ -1,0 +1,47 @@
+$attack-img-size: 30px;
+
+.single-result {
+    display: flex;
+}
+
+@mixin result-img {
+    height: $attack-img-size;
+    width: $attack-img-size;
+}
+.crit-result-img {
+    content: url('../img/CriticalHit.png');
+    @include result-img();
+}
+
+.hit-result-img {
+    content: url('../img/Hit.png');
+    @include result-img();
+}
+
+.attack-surge-result-img {
+    content: url('../img/AttackSurge.png');
+    @include result-img();
+}
+
+.block-result-img {
+    content: url('../img/Block.png');
+    @include result-img();
+}
+
+.defense-surge-result-img {
+    content: url('../img/DefenseSurge.png');
+    @include result-img();
+}
+
+.die-result {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.stats-label {
+    font-size: large;
+}
+
+.stats-header {
+    text-align: center;
+}

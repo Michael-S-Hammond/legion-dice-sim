@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefenseAbilities matches the snapshot 1`] = `
+<div>
+  <AbilityToggle
+    active={false}
+    id="armorToggle"
+    label="Armor"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityXToggle
+    active={false}
+    id="armorXToggle"
+    label="Armor"
+    maxValue={2}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="blockToggle"
+    label="Block"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityXToggle
+    active={false}
+    id="dangerSenseXToggle"
+    label="Danger Sense"
+    maxValue={4}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="deflectToggle"
+    label="Deflect"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="djemSoMasteryToggle"
+    label="Djem So Mastery"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="duelistDefenseToggle"
+    label="Duelist"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="hasForceUpgrades"
+    label="Force Upgrade(s)"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="imperviousToggle"
+    label="Impervious"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="immuneBlastToggle"
+    label="Immune: Blast"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="immunePierceToggle"
+    label="Immune: Pierce"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="lowProfileToggle"
+    label="Low Profile"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="outmaneuverToggle"
+    label="Outmaneuver"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="soresuMasteryToggle"
+    label="Soresu Mastery"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityXToggle
+    active={false}
+    id="uncannyLuckToggle"
+    label="Uncanny Luck"
+    maxValue={3}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={true}
+  />
+</div>
+`;
+
+exports[`DefenseAbilities matches the snapshot for simplified view 1`] = `
+<div>
+  <AbilityToggle
+    active={false}
+    id="armorToggle"
+    label="Armor"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityXToggle
+    active={false}
+    id="armorXToggle"
+    label="Armor"
+    maxValue={2}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="blockToggle"
+    label="Block"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityXToggle
+    active={false}
+    id="dangerSenseXToggle"
+    label="Danger Sense"
+    maxValue={4}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="deflectToggle"
+    label="Deflect"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="djemSoMasteryToggle"
+    label="Djem So Mastery"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="duelistDefenseToggle"
+    label="Duelist"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="hasForceUpgrades"
+    label="Force Upgrade(s)"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="imperviousToggle"
+    label="Impervious"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="immuneBlastToggle"
+    label="Immune: Blast"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="immunePierceToggle"
+    label="Immune: Pierce"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="lowProfileToggle"
+    label="Low Profile"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="outmaneuverToggle"
+    label="Outmaneuver"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="soresuMasteryToggle"
+    label="Soresu Mastery"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityXToggle
+    active={false}
+    id="uncannyLuckToggle"
+    label="Uncanny Luck"
+    maxValue={3}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={true}
+  />
+</div>
+`;

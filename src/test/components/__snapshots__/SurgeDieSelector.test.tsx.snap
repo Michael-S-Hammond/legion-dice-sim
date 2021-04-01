@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SurgeDieSelector matches the snapshot (red with surge) 1`] = `
+<button
+  className="btn border btn-danger border-secondary rounded-lg selection-die mx-1 surge-die-dark"
+  onClick={[Function]}
+/>
+`;
+
+exports[`SurgeDieSelector matches the snapshot (white with surge) 1`] = `
+<button
+  className="btn border btn-light border-secondary rounded-lg selection-die mx-1 surge-die-normal"
+  onClick={[Function]}
+/>
+`;

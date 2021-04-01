@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttackTokens matches the snapshot 1`] = `
+<div>
+  <div
+    className="single-result justify-content-center my-2"
+  >
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-aim"
+      tooltip="Aim"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-surge"
+      tooltip="Surge"
+      value={0}
+      visible={true}
+    />
+    <ClearButton
+      onClick={[MockFunction]}
+      tooltip="Clear attack tokens"
+    />
+  </div>
+</div>
+`;

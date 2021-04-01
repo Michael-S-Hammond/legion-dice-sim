@@ -1,0 +1,37 @@
+.single-result {
+  display: flex; }
+
+.crit-result-img {
+  content: url("../img/CriticalHit.png");
+  height: 30px;
+  width: 30px; }
+
+.hit-result-img {
+  content: url("../img/Hit.png");
+  height: 30px;
+  width: 30px; }
+
+.attack-surge-result-img {
+  content: url("../img/AttackSurge.png");
+  height: 30px;
+  width: 30px; }
+
+.block-result-img {
+  content: url("../img/Block.png");
+  height: 30px;
+  width: 30px; }
+
+.defense-surge-result-img {
+  content: url("../img/DefenseSurge.png");
+  height: 30px;
+  width: 30px; }
+
+.die-result {
+  font-weight: bold;
+  font-size: larger; }
+
+.stats-label {
+  font-size: large; }
+
+.stats-header {
+  text-align: center; }
