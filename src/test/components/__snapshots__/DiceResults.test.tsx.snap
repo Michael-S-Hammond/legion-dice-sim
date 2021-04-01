@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiceResults matches the snapshot when not visible 1`] = `
+<div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <img
+      className="crit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="hit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="attack-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <img
+      className="block-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="defense-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <span
+      className="die-result"
+    >
+      Wounds: 
+      0
+    </span>
+  </div>
+  <div
+    className="my-3 mx-auto collapse"
+    id="chartContainer"
+  >
+    <Highchart />
+  </div>
+  <div
+    className="row collapse"
+  >
+    <div
+      className="col-md-3 offset-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Required Blocks
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+    <div
+      className="col-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Wounds
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DiceResults matches the snapshot when showing graph result 1`] = `
+<div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <img
+      className="crit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="hit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="attack-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <img
+      className="block-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="defense-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse"
+  >
+    <span
+      className="die-result"
+    >
+      Wounds: 
+      0
+    </span>
+  </div>
+  <div
+    className="my-3 mx-auto collapse.show"
+    id="chartContainer"
+  >
+    <Highchart />
+  </div>
+  <div
+    className="row collapse.show"
+  >
+    <div
+      className="col-md-3 offset-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Required Blocks
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+    <div
+      className="col-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Wounds
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DiceResults matches the snapshot when showing single result 1`] = `
+<div>
+  <div
+    className="single-result justify-content-center my-3 collapse.show"
+  >
+    <img
+      className="crit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="hit-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="attack-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse.show"
+  >
+    <img
+      className="block-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+    <img
+      className="defense-surge-result-img mx-1"
+    />
+    <span
+      className="die-result"
+    >
+      0
+    </span>
+  </div>
+  <div
+    className="single-result justify-content-center my-3 collapse.show"
+  >
+    <span
+      className="die-result"
+    >
+      Wounds: 
+      0
+    </span>
+  </div>
+  <div
+    className="my-3 mx-auto collapse"
+    id="chartContainer"
+  >
+    <Highchart />
+  </div>
+  <div
+    className="row collapse"
+  >
+    <div
+      className="col-md-3 offset-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Required Blocks
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+    <div
+      className="col-md-3 my-3"
+    >
+      <h3
+        className="stats-header"
+      >
+        Wounds
+      </h3>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Median: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Mean: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+      <div>
+        <span
+          className="stats-label"
+        >
+          Standard Deviation: 
+        </span>
+        <span>
+          0
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

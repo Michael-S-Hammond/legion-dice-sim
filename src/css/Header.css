@@ -1,0 +1,8 @@
+.la-logo {
+  content: url("../img/LegionAcademyLogo.png");
+  height: 50px;
+  width: 50px;
+  display: inline-block; }
+
+.nav-header {
+  color: white; }

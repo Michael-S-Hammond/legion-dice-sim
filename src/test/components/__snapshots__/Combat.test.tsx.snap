@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combat matches the snapshot 1`] = `
+<div>
+  <h2
+    className="d-flex justify-content-center my-2"
+  >
+    Combat
+  </h2>
+  <AbilityXToggle
+    active={false}
+    id="guardianXToggle"
+    label="Guardian"
+    maxValue={12}
+    onActiveChanged={[MockFunction]}
+    onValueChanged={[MockFunction]}
+    value={1}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
+    id="meleeAttackToggle"
+    label="Melee Attack"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+</div>
+`;

@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Defense matches the snapshot 1`] = `
+<div>
+  <h2
+    className="d-flex justify-content-center my-2"
+  >
+    Defense
+  </h2>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <SurgeDieSelector
+      color={3}
+      onClick={[MockFunction]}
+      surge={true}
+    />
+  </div>
+  <DefenseTokens
+    eventHandlers={
+      Object {
+        "changeDie": [MockFunction],
+        "handleArmorChange": [MockFunction],
+        "handleArmorXChange": [MockFunction],
+        "handleArmorXValueChange": [MockFunction],
+        "handleBlockChange": [MockFunction],
+        "handleCoverChange": [MockFunction],
+        "handleDangerSenseXChange": [MockFunction],
+        "handleDangerSenseXValueChange": [MockFunction],
+        "handleDeflectChange": [MockFunction],
+        "handleDjemSoMasteryChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHasForceUpgradesChange": [MockFunction],
+        "handleImmuneBlastChange": [MockFunction],
+        "handleImmunePierceChange": [MockFunction],
+        "handleImperviousChange": [MockFunction],
+        "handleLowProfileChange": [MockFunction],
+        "handleOutmaneuverChange": [MockFunction],
+        "handleSoresuMasteryChange": [MockFunction],
+        "handleUncannyLuckXChange": [MockFunction],
+        "handleUncannyLuckXValueChange": [MockFunction],
+        "incrementDodgeTokenCount": [MockFunction],
+        "incrementObservationTokenCount": [MockFunction],
+        "incrementShieldTokenCount": [MockFunction],
+        "incrementSuppressionTokenCount": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "resetTokenCount": [MockFunction],
+      }
+    }
+    showSimplifiedView={false}
+    tokens={
+      Object {
+        "dodge": 0,
+        "observation": 0,
+        "shield": 0,
+        "suppression": 0,
+        "surge": 0,
+      }
+    }
+  />
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <span
+      className="mx-2 my-auto drop-down-label"
+    >
+      Cover:
+    </span>
+    <select
+      className="rounded-lg mr-4 px-2"
+      onChange={[Function]}
+      value={1}
+    >
+      <option
+        value="1"
+      >
+        None
+      </option>
+      <option
+        value="2"
+      >
+        Light
+      </option>
+      <option
+        value="3"
+      >
+        Heavy
+      </option>
+    </select>
+  </div>
+  <DefenseAbilities
+    eventHandlers={
+      Object {
+        "changeDie": [MockFunction],
+        "handleArmorChange": [MockFunction],
+        "handleArmorXChange": [MockFunction],
+        "handleArmorXValueChange": [MockFunction],
+        "handleBlockChange": [MockFunction],
+        "handleCoverChange": [MockFunction],
+        "handleDangerSenseXChange": [MockFunction],
+        "handleDangerSenseXValueChange": [MockFunction],
+        "handleDeflectChange": [MockFunction],
+        "handleDjemSoMasteryChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHasForceUpgradesChange": [MockFunction],
+        "handleImmuneBlastChange": [MockFunction],
+        "handleImmunePierceChange": [MockFunction],
+        "handleImperviousChange": [MockFunction],
+        "handleLowProfileChange": [MockFunction],
+        "handleOutmaneuverChange": [MockFunction],
+        "handleSoresuMasteryChange": [MockFunction],
+        "handleUncannyLuckXChange": [MockFunction],
+        "handleUncannyLuckXValueChange": [MockFunction],
+        "incrementDodgeTokenCount": [MockFunction],
+        "incrementObservationTokenCount": [MockFunction],
+        "incrementShieldTokenCount": [MockFunction],
+        "incrementSuppressionTokenCount": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "resetTokenCount": [MockFunction],
+      }
+    }
+    inputs={
+      Object {
+        "armor": false,
+        "armorX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "block": false,
+        "cover": 1,
+        "dangerSenseX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "deflect": false,
+        "dieColor": 3,
+        "djemSoMastery": false,
+        "duelist": false,
+        "hasForceUpgrades": false,
+        "immuneBlast": false,
+        "immunePierce": false,
+        "impervious": false,
+        "lowProfile": false,
+        "outmaneuver": false,
+        "soresuMastery": false,
+        "surge": true,
+        "tokens": Object {
+          "dodge": 0,
+          "observation": 0,
+          "shield": 0,
+          "suppression": 0,
+          "surge": 0,
+        },
+        "uncannyLuckX": Object {
+          "active": false,
+          "value": 1,
+        },
+      }
+    }
+    showSimpleView={false}
+  />
+</div>
+`;
+
+exports[`Defense matches the snapshot for simplified view 1`] = `
+<div>
+  <h2
+    className="d-flex justify-content-center my-2"
+  >
+    Defense
+  </h2>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <SurgeDieSelector
+      color={3}
+      onClick={[MockFunction]}
+      surge={true}
+    />
+  </div>
+  <DefenseTokens
+    eventHandlers={
+      Object {
+        "changeDie": [MockFunction],
+        "handleArmorChange": [MockFunction],
+        "handleArmorXChange": [MockFunction],
+        "handleArmorXValueChange": [MockFunction],
+        "handleBlockChange": [MockFunction],
+        "handleCoverChange": [MockFunction],
+        "handleDangerSenseXChange": [MockFunction],
+        "handleDangerSenseXValueChange": [MockFunction],
+        "handleDeflectChange": [MockFunction],
+        "handleDjemSoMasteryChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHasForceUpgradesChange": [MockFunction],
+        "handleImmuneBlastChange": [MockFunction],
+        "handleImmunePierceChange": [MockFunction],
+        "handleImperviousChange": [MockFunction],
+        "handleLowProfileChange": [MockFunction],
+        "handleOutmaneuverChange": [MockFunction],
+        "handleSoresuMasteryChange": [MockFunction],
+        "handleUncannyLuckXChange": [MockFunction],
+        "handleUncannyLuckXValueChange": [MockFunction],
+        "incrementDodgeTokenCount": [MockFunction],
+        "incrementObservationTokenCount": [MockFunction],
+        "incrementShieldTokenCount": [MockFunction],
+        "incrementSuppressionTokenCount": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "resetTokenCount": [MockFunction],
+      }
+    }
+    showSimplifiedView={true}
+    tokens={
+      Object {
+        "dodge": 0,
+        "observation": 0,
+        "shield": 0,
+        "suppression": 0,
+        "surge": 0,
+      }
+    }
+  />
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <span
+      className="mx-2 my-auto drop-down-label"
+    >
+      Cover:
+    </span>
+    <select
+      className="rounded-lg mr-4 px-2"
+      onChange={[Function]}
+      value={1}
+    >
+      <option
+        value="1"
+      >
+        None
+      </option>
+      <option
+        value="2"
+      >
+        Light
+      </option>
+      <option
+        value="3"
+      >
+        Heavy
+      </option>
+    </select>
+  </div>
+  <DefenseAbilities
+    eventHandlers={
+      Object {
+        "changeDie": [MockFunction],
+        "handleArmorChange": [MockFunction],
+        "handleArmorXChange": [MockFunction],
+        "handleArmorXValueChange": [MockFunction],
+        "handleBlockChange": [MockFunction],
+        "handleCoverChange": [MockFunction],
+        "handleDangerSenseXChange": [MockFunction],
+        "handleDangerSenseXValueChange": [MockFunction],
+        "handleDeflectChange": [MockFunction],
+        "handleDjemSoMasteryChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHasForceUpgradesChange": [MockFunction],
+        "handleImmuneBlastChange": [MockFunction],
+        "handleImmunePierceChange": [MockFunction],
+        "handleImperviousChange": [MockFunction],
+        "handleLowProfileChange": [MockFunction],
+        "handleOutmaneuverChange": [MockFunction],
+        "handleSoresuMasteryChange": [MockFunction],
+        "handleUncannyLuckXChange": [MockFunction],
+        "handleUncannyLuckXValueChange": [MockFunction],
+        "incrementDodgeTokenCount": [MockFunction],
+        "incrementObservationTokenCount": [MockFunction],
+        "incrementShieldTokenCount": [MockFunction],
+        "incrementSuppressionTokenCount": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "resetTokenCount": [MockFunction],
+      }
+    }
+    inputs={
+      Object {
+        "armor": false,
+        "armorX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "block": false,
+        "cover": 1,
+        "dangerSenseX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "deflect": false,
+        "dieColor": 3,
+        "djemSoMastery": false,
+        "duelist": false,
+        "hasForceUpgrades": false,
+        "immuneBlast": false,
+        "immunePierce": false,
+        "impervious": false,
+        "lowProfile": false,
+        "outmaneuver": false,
+        "soresuMastery": false,
+        "surge": true,
+        "tokens": Object {
+          "dodge": 0,
+          "observation": 0,
+          "shield": 0,
+          "suppression": 0,
+          "surge": 0,
+        },
+        "uncannyLuckX": Object {
+          "active": false,
+          "value": 1,
+        },
+      }
+    }
+    showSimpleView={true}
+  />
+</div>
+`;

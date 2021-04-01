@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches the snapshot 1`] = `
+<nav
+  className="navbar navbar-dark bg-dark"
+>
+  <a
+    className="navbar-brand"
+    href="https://www.legionacademy.net/"
+  >
+    <img
+      alt="The Legion Academy Podcast"
+      className="la-logo d-none d-sm-inline-block my-auto"
+    />
+  </a>
+  <h3
+    className="nav-header d-none d-sm-inline"
+  >
+    The Legion Academy
+  </h3>
+  <h4
+    className="nav-header d-inline d-sm-none"
+  >
+    The Legion Academy
+  </h4>
+  <button
+    aria-controls="navbarSupportedContent15"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler black"
+    data-target="#navbarSupportedContent15"
+    data-toggle="collapse"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="navbarSupportedContent15"
+  >
+    <ul
+      className="navbar-nav mr-auto"
+    >
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="https://www.legionacademy.net/"
+        >
+          Legion Academy - Home
+        </a>
+      </li>
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="https://www.legionacademy.net/unit-analysis-and-mechanics"
+        >
+          Legion Academy - Analysis
+        </a>
+      </li>
+      <li
+        className="nav-item active"
+      >
+        <a
+          className="nav-link"
+          href="https://www.legionacademy.net/terrain-studio"
+        >
+          Terrain Studio
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;

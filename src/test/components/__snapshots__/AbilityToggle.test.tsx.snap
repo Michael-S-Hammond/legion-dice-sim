@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AbilityToggle matches the snapshot 1`] = `
+<div
+  className="d-flex collapse.show justify-content-center my-3 custom-control custom-switch"
+>
+  <input
+    checked={true}
+    className="custom-control-input my-auto"
+    id="testAbility"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="custom-control-label drop-down-label mx-2 my-auto"
+    htmlFor="testAbility"
+  >
+    Test
+  </label>
+</div>
+`;
+
+exports[`AbilityToggle matches the snapshot when not visible 1`] = `
+<div
+  className="collapse justify-content-center my-3 custom-control custom-switch"
+>
+  <input
+    checked={true}
+    className="custom-control-input my-auto"
+    id="testAbility"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="custom-control-label drop-down-label mx-2 my-auto"
+    htmlFor="testAbility"
+  >
+    Test
+  </label>
+</div>
+`;

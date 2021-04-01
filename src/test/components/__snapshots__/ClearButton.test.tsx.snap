@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClearButton matches the snapshot 1`] = `
+<button
+  className="btn btn-secondary border rounded-lg clear-button mx-2 my-auto"
+  onClick={[Function]}
+  title="Clear..."
+/>
+`;

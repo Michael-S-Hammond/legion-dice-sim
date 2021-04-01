@@ -1,0 +1,379 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Attack matches the snapshot 1`] = `
+<div>
+  <h2
+    className="d-flex justify-content-center my-2"
+  >
+    Attack
+  </h2>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-danger"
+    />
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-dark"
+    />
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-light"
+    />
+    <ClearButton
+      onClick={[MockFunction]}
+      tooltip="Clear attack dice"
+    />
+  </div>
+  <AttackTokens
+    eventHandlers={
+      Object {
+        "handleBlastChange": [MockFunction],
+        "handleCriticalXChange": [MockFunction],
+        "handleCriticalXValueChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHighVelocityChange": [MockFunction],
+        "handleImpactXChange": [MockFunction],
+        "handleImpactXValueChange": [MockFunction],
+        "handleIonXChange": [MockFunction],
+        "handleIonXValueChange": [MockFunction],
+        "handleJediHunterChange": [MockFunction],
+        "handleLethalXChange": [MockFunction],
+        "handleLethalXValueChange": [MockFunction],
+        "handleMakashiMasteryChange": [MockFunction],
+        "handlePierceXChange": [MockFunction],
+        "handlePierceXValueChange": [MockFunction],
+        "handlePreciseXChange": [MockFunction],
+        "handlePreciseXValueChange": [MockFunction],
+        "handleRamXChange": [MockFunction],
+        "handleRamXValueChange": [MockFunction],
+        "handleSharpshooterXChange": [MockFunction],
+        "handleSharpshooterXValueChange": [MockFunction],
+        "handleSurgeConversionChange": [MockFunction],
+        "incrementAimTokenCount": [MockFunction],
+        "incrementBlackDice": [MockFunction],
+        "incrementRedDice": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "incrementWhiteDice": [MockFunction],
+        "resetDiceCount": [MockFunction],
+        "resetTokenCounts": [MockFunction],
+      }
+    }
+    tokens={
+      Object {
+        "aim": 0,
+        "surge": 0,
+      }
+    }
+  />
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <span
+      className="mx-2 my-auto drop-down-label"
+    >
+      Surge:
+    </span>
+    <select
+      className="rounded-lg mr-4 px-2"
+      onChange={[Function]}
+      value={1}
+    >
+      <option
+        value="1"
+      >
+        Blank
+      </option>
+      <option
+        value="2"
+      >
+        Hit
+      </option>
+      <option
+        value="3"
+      >
+        Critical
+      </option>
+    </select>
+  </div>
+  <AttackAbilities
+    eventHandlers={
+      Object {
+        "handleBlastChange": [MockFunction],
+        "handleCriticalXChange": [MockFunction],
+        "handleCriticalXValueChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHighVelocityChange": [MockFunction],
+        "handleImpactXChange": [MockFunction],
+        "handleImpactXValueChange": [MockFunction],
+        "handleIonXChange": [MockFunction],
+        "handleIonXValueChange": [MockFunction],
+        "handleJediHunterChange": [MockFunction],
+        "handleLethalXChange": [MockFunction],
+        "handleLethalXValueChange": [MockFunction],
+        "handleMakashiMasteryChange": [MockFunction],
+        "handlePierceXChange": [MockFunction],
+        "handlePierceXValueChange": [MockFunction],
+        "handlePreciseXChange": [MockFunction],
+        "handlePreciseXValueChange": [MockFunction],
+        "handleRamXChange": [MockFunction],
+        "handleRamXValueChange": [MockFunction],
+        "handleSharpshooterXChange": [MockFunction],
+        "handleSharpshooterXValueChange": [MockFunction],
+        "handleSurgeConversionChange": [MockFunction],
+        "incrementAimTokenCount": [MockFunction],
+        "incrementBlackDice": [MockFunction],
+        "incrementRedDice": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "incrementWhiteDice": [MockFunction],
+        "resetDiceCount": [MockFunction],
+        "resetTokenCounts": [MockFunction],
+      }
+    }
+    input={
+      Object {
+        "blackDice": 0,
+        "blast": false,
+        "criticalX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "duelist": false,
+        "highVelocity": false,
+        "impactX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "ionX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "jediHunter": false,
+        "lethalX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "makashiMastery": false,
+        "pierceX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "preciseX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "ramX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "redDice": 0,
+        "sharpshooterX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "surge": 1,
+        "tokens": Object {
+          "aim": 0,
+          "surge": 0,
+        },
+        "whiteDice": 0,
+      }
+    }
+    showSimpleView={false}
+  />
+</div>
+`;
+
+exports[`Attack matches the snapshot for simplified view 1`] = `
+<div>
+  <h2
+    className="d-flex justify-content-center my-2"
+  >
+    Attack
+  </h2>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-danger"
+    />
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-dark"
+    />
+    <DieCounter
+      count={0}
+      onClick={[MockFunction]}
+      styleName="btn-light"
+    />
+    <ClearButton
+      onClick={[MockFunction]}
+      tooltip="Clear attack dice"
+    />
+  </div>
+  <AttackTokens
+    eventHandlers={
+      Object {
+        "handleBlastChange": [MockFunction],
+        "handleCriticalXChange": [MockFunction],
+        "handleCriticalXValueChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHighVelocityChange": [MockFunction],
+        "handleImpactXChange": [MockFunction],
+        "handleImpactXValueChange": [MockFunction],
+        "handleIonXChange": [MockFunction],
+        "handleIonXValueChange": [MockFunction],
+        "handleJediHunterChange": [MockFunction],
+        "handleLethalXChange": [MockFunction],
+        "handleLethalXValueChange": [MockFunction],
+        "handleMakashiMasteryChange": [MockFunction],
+        "handlePierceXChange": [MockFunction],
+        "handlePierceXValueChange": [MockFunction],
+        "handlePreciseXChange": [MockFunction],
+        "handlePreciseXValueChange": [MockFunction],
+        "handleRamXChange": [MockFunction],
+        "handleRamXValueChange": [MockFunction],
+        "handleSharpshooterXChange": [MockFunction],
+        "handleSharpshooterXValueChange": [MockFunction],
+        "handleSurgeConversionChange": [MockFunction],
+        "incrementAimTokenCount": [MockFunction],
+        "incrementBlackDice": [MockFunction],
+        "incrementRedDice": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "incrementWhiteDice": [MockFunction],
+        "resetDiceCount": [MockFunction],
+        "resetTokenCounts": [MockFunction],
+      }
+    }
+    tokens={
+      Object {
+        "aim": 0,
+        "surge": 0,
+      }
+    }
+  />
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <span
+      className="mx-2 my-auto drop-down-label"
+    >
+      Surge:
+    </span>
+    <select
+      className="rounded-lg mr-4 px-2"
+      onChange={[Function]}
+      value={1}
+    >
+      <option
+        value="1"
+      >
+        Blank
+      </option>
+      <option
+        value="2"
+      >
+        Hit
+      </option>
+      <option
+        value="3"
+      >
+        Critical
+      </option>
+    </select>
+  </div>
+  <AttackAbilities
+    eventHandlers={
+      Object {
+        "handleBlastChange": [MockFunction],
+        "handleCriticalXChange": [MockFunction],
+        "handleCriticalXValueChange": [MockFunction],
+        "handleDuelistChange": [MockFunction],
+        "handleHighVelocityChange": [MockFunction],
+        "handleImpactXChange": [MockFunction],
+        "handleImpactXValueChange": [MockFunction],
+        "handleIonXChange": [MockFunction],
+        "handleIonXValueChange": [MockFunction],
+        "handleJediHunterChange": [MockFunction],
+        "handleLethalXChange": [MockFunction],
+        "handleLethalXValueChange": [MockFunction],
+        "handleMakashiMasteryChange": [MockFunction],
+        "handlePierceXChange": [MockFunction],
+        "handlePierceXValueChange": [MockFunction],
+        "handlePreciseXChange": [MockFunction],
+        "handlePreciseXValueChange": [MockFunction],
+        "handleRamXChange": [MockFunction],
+        "handleRamXValueChange": [MockFunction],
+        "handleSharpshooterXChange": [MockFunction],
+        "handleSharpshooterXValueChange": [MockFunction],
+        "handleSurgeConversionChange": [MockFunction],
+        "incrementAimTokenCount": [MockFunction],
+        "incrementBlackDice": [MockFunction],
+        "incrementRedDice": [MockFunction],
+        "incrementSurgeTokenCount": [MockFunction],
+        "incrementWhiteDice": [MockFunction],
+        "resetDiceCount": [MockFunction],
+        "resetTokenCounts": [MockFunction],
+      }
+    }
+    input={
+      Object {
+        "blackDice": 0,
+        "blast": false,
+        "criticalX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "duelist": false,
+        "highVelocity": false,
+        "impactX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "ionX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "jediHunter": false,
+        "lethalX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "makashiMastery": false,
+        "pierceX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "preciseX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "ramX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "redDice": 0,
+        "sharpshooterX": Object {
+          "active": false,
+          "value": 1,
+        },
+        "surge": 1,
+        "tokens": Object {
+          "aim": 0,
+          "surge": 0,
+        },
+        "whiteDice": 0,
+      }
+    }
+    showSimpleView={true}
+  />
+</div>
+`;

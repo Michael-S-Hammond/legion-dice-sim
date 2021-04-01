@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefenseTokens matches the snapshot 1`] = `
+<div>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-dodge"
+      tooltip="Dodge"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-surge"
+      tooltip="Surge"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-shield"
+      tooltip="Shield"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-observation"
+      tooltip="Observation"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-suppression"
+      tooltip="Suppression"
+      value={0}
+      visible={true}
+    />
+    <ClearButton
+      onClick={[MockFunction]}
+      tooltip="Clear defense tokens"
+    />
+  </div>
+</div>
+`;
+
+exports[`DefenseTokens matches the snapshot for simplified view 1`] = `
+<div>
+  <div
+    className="d-flex justify-content-center my-2"
+  >
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-dodge"
+      tooltip="Dodge"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-surge"
+      tooltip="Surge"
+      value={0}
+      visible={true}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-shield"
+      tooltip="Shield"
+      value={0}
+      visible={false}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-observation"
+      tooltip="Observation"
+      value={0}
+      visible={false}
+    />
+    <Token
+      onClick={[MockFunction]}
+      tokenCssClass="token-counter-suppression"
+      tooltip="Suppression"
+      value={0}
+      visible={true}
+    />
+    <ClearButton
+      onClick={[MockFunction]}
+      tooltip="Clear defense tokens"
+    />
+  </div>
+</div>
+`;
