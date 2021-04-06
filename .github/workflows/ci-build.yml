@@ -1,0 +1,45 @@
+# This builds the main branch on push, PR or on-demand.
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm install typescript
+          npm run build
+
+      - name: Run tests
+        run: |
+          npm run test
+          
+      - name: Publish code coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: coverage/lcov-report
+          
+      - name: Publish build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: build/
