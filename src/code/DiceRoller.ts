@@ -94,7 +94,7 @@ function incrementArrayValue(ar: number[], index: number) {
   }
 }
 
-export class DiceRoller {
+export clas DiceRoller {
   private rollAttackDieFunction: RollAttackDieFunction;
   private rollDefenseDieFunction: RollDefenseDieFunction;
 
