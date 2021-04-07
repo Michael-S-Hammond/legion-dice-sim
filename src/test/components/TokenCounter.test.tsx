@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -5,8 +7,7 @@ import TokenCounter from '../../components/TokenCounter';
 
 describe('TokenCounter', () => {
     it('matches the snapshot', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const counter = shallow(<TokenCounter
             visible={true}
@@ -20,8 +21,7 @@ describe('TokenCounter', () => {
     });
 
     it('matches the snapshot when not visible', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const counter = shallow(<TokenCounter
             visible={false}
@@ -35,17 +35,17 @@ describe('TokenCounter', () => {
     });
 
     it('handles being clicked', () => {
-        const onButtonClickMock = jest.fn();
+        const onClick = jest.fn();
 
-        let wrapper = shallow(<TokenCounter
+        const wrapper = shallow(<TokenCounter
             visible={true}
             value={2}
-            onClick={onButtonClickMock}
+            onClick={onClick}
             tokenCssClass='token-counter-dodge'
             tooltip='Dodging...'
             ></TokenCounter>);
         wrapper.find('.btn').simulate('click');
 
-        expect(onButtonClickMock).toHaveBeenCalledTimes(1);
+        expect(onClick).toHaveBeenCalledTimes(1);
     })
 });

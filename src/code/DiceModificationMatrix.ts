@@ -35,8 +35,8 @@ class DiceModificationMatrix {
     constructor(rolls: T.AttackRoll[]) {
         this._rolls = rolls;
         for(let i = 0; i < rolls.length; i++) {
-            let matrix = this.mtx4c(rolls[i].color);
-            let index = this.idx4ar(rolls[i].result);
+            const matrix = this.mtx4c(rolls[i].color);
+            const index = this.idx4ar(rolls[i].result);
             matrix[index][index]++;
         }
     }
@@ -48,7 +48,7 @@ class DiceModificationMatrix {
         let remainingHits = hits;
 
         // TODO: improve this to take natural misses of the same color over converted misses
-        let matchList = this.getConversions().filter((element: DieConversion, idx: number) : boolean => {
+        const matchList = this.getConversions().filter((element: DieConversion, idx: number) : boolean => {
             if(element.conversion === T.AttackDieResult.Miss && remainingMiss > 0) {
                 remainingMiss--;
                 return true;

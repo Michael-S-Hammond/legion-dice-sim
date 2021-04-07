@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 
@@ -6,8 +8,7 @@ import SurgeDieSelector from '../../components/SurgeDieSelector';
 
 describe('SurgeDieSelector', () => {
     it('matches the snapshot (white with surge)', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const selector = <SurgeDieSelector
                 color={T.DieColor.White}
@@ -19,8 +20,7 @@ describe('SurgeDieSelector', () => {
     });
 
     it('matches the snapshot (red with surge)', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const selector = <SurgeDieSelector
                 color={T.DieColor.Red}
@@ -32,15 +32,15 @@ describe('SurgeDieSelector', () => {
     });
 
     it('handles being clicked', () => {
-        const onButtonClickMock = jest.fn();
+        const onClick = jest.fn();
 
-        let wrapper = shallow(<SurgeDieSelector
+        const wrapper = shallow(<SurgeDieSelector
                 color={T.DieColor.Red}
                 surge={false}
-                onClick={onButtonClickMock}
+                onClick={onClick}
             ></SurgeDieSelector>);
         wrapper.find('.btn').simulate('click');
 
-        expect(onButtonClickMock).toHaveBeenCalledTimes(1);
+        expect(onClick).toHaveBeenCalledTimes(1);
     })
 });

@@ -8,9 +8,6 @@ describe('DiceRoller', () => {
         diceRoller = new DU.DiceRoller();
     });
 
-    afterEach(() => {
-    });
-
     test('Roll correct number of red attack dice', () => {
         let atkcount = 0;
         diceRoller.rollAttackDie = (color) => {

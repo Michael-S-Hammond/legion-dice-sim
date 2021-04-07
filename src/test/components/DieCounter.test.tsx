@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 
@@ -5,8 +7,7 @@ import DieCounter from '../../components/DieCounter';
 
 describe('DieCounter', () => {
     it('matches the snapshot', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const counter = <DieCounter
                 count={4}
@@ -20,7 +21,7 @@ describe('DieCounter', () => {
     it('handles being clicked', () => {
         const onButtonClickMock = jest.fn();
 
-        let wrapper = shallow(<DieCounter
+        const wrapper = shallow(<DieCounter
             count={4}
             styleName='btn-dark'
             onClick={onButtonClickMock}

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 
@@ -5,7 +7,7 @@ import AbilityToggle from '../../components/AbilityToggle';
 
 describe('AbilityToggle', () => {
     it('matches the snapshot', () => {
-        function onActiveChanged() { }
+        const onActiveChanged = jest.fn();
 
         const counter = <AbilityToggle
                 id='testAbility'
@@ -19,7 +21,7 @@ describe('AbilityToggle', () => {
     });
 
     it('matches the snapshot when not visible', () => {
-        function onActiveChanged() { }
+        const onActiveChanged = jest.fn();
 
         const counter = <AbilityToggle
                 id='testAbility'

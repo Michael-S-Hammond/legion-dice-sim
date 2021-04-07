@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { create } from 'react-test-renderer';
 
@@ -5,8 +7,7 @@ import ClearButton from '../../components/ClearButton';
 
 describe('ClearButton', () => {
     it('matches the snapshot', () => {
-        function onClick() {
-        }
+        const onClick = jest.fn();
 
         const counter = <ClearButton
                 onClick={onClick}
@@ -17,14 +18,14 @@ describe('ClearButton', () => {
     });
 
     it('handles being clicked', () => {
-        const onButtonClickMock = jest.fn();
+        const onClick = jest.fn();
 
-        let wrapper = shallow(<ClearButton
-            onClick={onButtonClickMock}
+        const wrapper = shallow(<ClearButton
+            onClick={onClick}
             tooltip='Clear...'
         ></ClearButton>);
         wrapper.find('.btn').simulate('click');
 
-        expect(onButtonClickMock).toHaveBeenCalledTimes(1);
+        expect(onClick).toHaveBeenCalledTimes(1);
     })
 });

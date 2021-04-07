@@ -1,3 +1,5 @@
+import React from 'react';
+
 jest.mock('highcharts');
 
 import { shallow } from 'enzyme';
@@ -62,7 +64,7 @@ function createEmptyOutput() : T.CombinedAttackOutput {
             },
         },
     };
-};
+}
 
 describe('DiceResults', () => {
     it('matches the snapshot when not visible', () => {

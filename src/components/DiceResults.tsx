@@ -36,8 +36,8 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
     private woundsFillColor = 'rgba(192, 45, 45, 0.4)';
     private transparentColor = 'rgba(255, 255, 255, 0)';
 
-    private refreshChart: boolean = true;
-    private scrollUIIntoView: boolean = false;
+    private refreshChart = true;
+    private scrollUIIntoView = false;
 
     constructor(props: DiceResultsProps) {
         super(props);

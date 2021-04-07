@@ -5,7 +5,7 @@ type AbilityProps = {
     label: string,
     visible: boolean,
     active: boolean,
-    onActiveChanged: Function,
+    onActiveChanged: (active: boolean) => void,
 }
 
 class AbilityToggle extends React.Component<AbilityProps> {
