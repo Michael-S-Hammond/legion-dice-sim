@@ -119,7 +119,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                 data: chartData[2]
             }, {
                 type: 'areaspline',
-                name: 'Required Blocks',
+                name: 'Required Saves',
                 color: this.forcedSavesColor,
                 fillColor: this.forcedSavesFillColor,
                 zoneAxis: 'x',
