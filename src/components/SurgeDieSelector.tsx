@@ -7,7 +7,7 @@ import * as T from '../code/Types'
 type SurgeDieSelectorProps = {
     color: T.DieColor,
     surge: boolean,
-    onClick: Function,
+    onClick: () => void,
 }
 
 class SurgeDieSelector extends React.Component<SurgeDieSelectorProps> {

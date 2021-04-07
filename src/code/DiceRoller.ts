@@ -43,7 +43,7 @@ function createDefaultStatus(input: T.AttackInput) : AttackResultStatus {
       blanks: 0,
     },
   };
-};
+}
 
 function createDefaultOutput() : T.AttackOutput {
   return {
@@ -84,7 +84,7 @@ function createDefaultAttackSummary() : T.AttackSummary {
       stddev: 1,
     },
   };
-};
+}
 
 function incrementArrayValue(ar: number[], index: number) {
   if(ar[index] === undefined) {
@@ -101,7 +101,7 @@ export class DiceRoller {
   constructor() {
     this.rollAttackDieFunction = this.defaultRollAttackDie;
     this.rollDefenseDieFunction = this.defaultRollDefenseDie;
-  };
+  }
 
   public get rollAttackDie() : RollAttackDieFunction {
     return this.rollAttackDieFunction;
@@ -510,7 +510,7 @@ export class DiceRoller {
 
     // roll the dice
     for(let i = 0; i < defenseDiceCount; i++) {
-      let roll = this.rollDefenseDie(modifiedInput.defense.dieColor);
+      const roll = this.rollDefenseDie(modifiedInput.defense.dieColor);
       if(roll === T.DefenseDieResult.Block) {
         status.defenseResult.blocks++;
       } else if(roll === T.DefenseDieResult.Surge) {
@@ -543,7 +543,7 @@ export class DiceRoller {
 
       // re-roll the dice
       for(let i = 0; i < rerolls; i++) {
-        let roll = this.rollDefenseDie(modifiedInput.defense.dieColor);
+        const roll = this.rollDefenseDie(modifiedInput.defense.dieColor);
         if(roll === T.DefenseDieResult.Block) {
           status.defenseResult.blocks++;
           status.defenseResult.blanks--;

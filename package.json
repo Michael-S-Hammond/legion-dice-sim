@@ -23,9 +23,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --maxWorkers=3 --colors --coverage --watchAll=false",
     "test-us": "react-scripts test -u --maxWorkers=3 --colors --coverage --watchAll=false",
-    "eject": "react-scripts eject",
+    "testWatch": "react-scripts test",
     "scss": "node-sass --watch src/scss -o src/css",
-    "testWatch": "react-scripts test"
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": [

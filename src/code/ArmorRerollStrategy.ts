@@ -15,7 +15,6 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
         const effectiveCover = EC.getEffectiveCover(input);
         const coverModifier = EC.getCoverModification(effectiveCover);
         let rerollMiss = 0;
-        let rerollHit = 0;
 
         // convert surges
         if(input.offense.surge === T.AttackSurgeConversion.Critical) {
@@ -28,7 +27,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
             dmm.tryConvertResultCount(T.AttackDieResult.Surge, T.AttackDieResult.Hit, rolls.length);
         }
         dmm.tryConvertResultCount(T.AttackDieResult.Surge, T.AttackDieResult.Miss, rolls.length);
-        
+
         // ram
         if(input.offense.ramX.active && input.combat.meleeAttack) {
             let ramRemaining = input.offense.ramX.value;
@@ -37,7 +36,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
         }
 
         // any hits to be rerolled should be converted to misses in this block
-        // therefore, rerollHit should always be 0 when this completes
+        // therefore, hits should always be 0 when this completes
 
         const totalHits = dmm.getResultCount(T.AttackDieResult.Hit);
         let totalCrits = dmm.getResultCount(T.AttackDieResult.Critical);
@@ -67,7 +66,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
         }
 
         // return the result
-        const indexes = dmm.getRerollIndexes(rerollHit, rerollMiss);
+        const indexes = dmm.getRerollIndexes(0, rerollMiss);
         return indexes.length == 0 ? undefined : indexes;
     }
 

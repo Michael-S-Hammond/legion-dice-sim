@@ -5,9 +5,9 @@ type AbilityXProps = {
     label: string,
     visible: boolean,
     active: boolean,
-    onActiveChanged: Function,
+    onActiveChanged: (active: boolean) => void,
     value: number,
-    onValueChanged: Function,
+    onValueChanged: (value: number) => void,
     maxValue: number,
 }
 
@@ -15,7 +15,7 @@ class AbilityXToggle extends React.Component<AbilityXProps> {
     constructor(props : AbilityXProps) {
         super(props);
     }
-    
+
     handleValueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newValue = Number(e.target.value);
         this.props.onValueChanged(newValue);

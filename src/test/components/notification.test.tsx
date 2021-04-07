@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { create } from 'react-test-renderer';
 
 import Notification from '../../components/Notification';

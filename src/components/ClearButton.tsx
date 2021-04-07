@@ -3,7 +3,7 @@ import '../css/ClearButton.css';
 import React from 'react';
 
 type ClearButtonProps = {
-    onClick: Function,
+    onClick: () => void,
     tooltip: string,
 };
 

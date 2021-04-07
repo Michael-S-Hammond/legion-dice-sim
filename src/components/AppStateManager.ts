@@ -396,7 +396,7 @@ export class AppStateManager {
         const newState = this.cloneState();
         newState.inputs.offense.makashiMastery = hasMakashiMastery;
         this.setState(newState);
-    };
+    }
 
     private handlePierceXChange(hasPierceX: boolean) {
         const newState = this.cloneState();
@@ -414,25 +414,25 @@ export class AppStateManager {
         const newState = this.cloneState();
         newState.inputs.offense.preciseX.active = hasPreciseX;
         this.setState(newState);
-    };
+    }
 
     private handlePreciseXValueChange(preciseXValue: number) {
         const newState = this.cloneState();
         newState.inputs.offense.preciseX.value = preciseXValue;
         this.setState(newState);
-    };
+    }
 
     private handleRamXChange(hasRamX: boolean) {
         const newState = this.cloneState();
         newState.inputs.offense.ramX.active = hasRamX;
         this.setState(newState);
-    };
+    }
 
     private handleRamXValueChange(ramXValue: number) {
         const newState = this.cloneState();
         newState.inputs.offense.ramX.value = ramXValue;
         this.setState(newState);
-    };
+    }
 
     private handleSharpshooterXChange(hasSharpshooterX: boolean) {
         const newState = this.cloneState();
@@ -605,7 +605,7 @@ export class AppStateManager {
             newState.inputs.defense.soresuMastery = false;
         }
         this.setState(newState);
-    };
+    }
 
     private handleDuelistDefenseChange(hasDuelist: boolean) {
         const newState = this.cloneState();
@@ -664,7 +664,7 @@ export class AppStateManager {
             newState.inputs.defense.djemSoMastery = false;
         }
         this.setState(newState);
-    };
+    }
 
     private handleUncannyLuckXChange(hasUncannyLuckX: boolean) {
         const newState = this.cloneState();

@@ -5,7 +5,7 @@ import React from 'react';
 type DieCounterProps = {
     count: number,
     styleName: string,
-    onClick: Function,
+    onClick: () => void,
 };
 
 class DieCounter extends React.Component<DieCounterProps> {
