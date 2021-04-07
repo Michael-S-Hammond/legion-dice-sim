@@ -1,12 +1,10 @@
-# This builds the main branch on push, PR or on-demand.
+# This builds the main branch on pull request or on-demand.
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
+  # Triggers the workflow on pull request events but only for the main branch
   pull_request:
     branches: [ main ]
 
@@ -31,13 +29,13 @@ jobs:
       - name: Run tests
         run: |
           npm run test
-          
+
       - name: Publish code coverage
         uses: actions/upload-artifact@v2
         with:
           name: code-coverage
           path: coverage/lcov-report
-          
+
       - name: Publish build output
         uses: actions/upload-artifact@v2
         with:

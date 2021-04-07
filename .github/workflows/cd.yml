@@ -1,0 +1,124 @@
+# This builds the main branch and deploys to the environments on push or on-demand.
+
+name: CD
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm install typescript
+          npm run build
+
+      - name: Run tests
+        run: |
+          npm run test
+
+      - name: Publish build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: build/
+
+  deploy-dev:
+    name: Deploy to Azure development environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - build
+
+    environment:
+      name: "Development"
+      url: "http://dev.legiondice.com"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.1.1
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
+
+  deploy-beta:
+    name: Deploy to Azure beta environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - deploy-dev
+
+    environment:
+      name: "Beta"
+      url: "http://beta.legiondice.com"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.1.1
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
+
+  deploy-production:
+    name: Deploy to Azure production environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - deploy-dev
+
+    environment:
+      name: "Production"
+      url: "http://www.legiondice.com"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.1.1
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
