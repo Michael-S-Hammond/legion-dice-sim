@@ -4,6 +4,11 @@
 
 This is a web application to simulate attack rolls for Star Wars Legion.
 
+## Status
+![CI](https://github.com/Michael-S-Hammond/legion-dice-sim/actions/workflows/ci.yml/badge.svg) ![CD](https://github.com/Michael-S-Hammond/legion-dice-sim/actions/workflows/cd.yml/badge.svg)
+
+![CodeQL Analysis](https://github.com/Michael-S-Hammond/legion-dice-sim/actions/workflows/codeql-analysis.yml/badge.svg)
+
 ## Available Scripts
 
 In the project directory, you can run:
