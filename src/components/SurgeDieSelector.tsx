@@ -23,7 +23,7 @@ class SurgeDieSelector extends React.Component<SurgeDieSelectorProps> {
         }
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <button
                 className={`btn border ${this.props.color == T.DieColor.Red ? 'btn-danger' : 'btn-light'} border-secondary rounded-lg selection-die mx-1 ${this.props.surge ? this.getSurgeStyle() : ''}`}

@@ -16,7 +16,7 @@ class DefenseTokens extends React.Component<DefenseTokensProperties> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <div className="d-flex justify-content-center my-2">

@@ -21,7 +21,7 @@ type AttackResultStatus = {
   modifiedDefenseResult: ModifiedDefenseResult,
 };
 
-function createDefaultStatus(input: T.AttackInput) : AttackResultStatus {
+function createDefaultStatus() : AttackResultStatus {
   return  {
     attackResult: {
       criticals: 0,
@@ -129,7 +129,7 @@ export class DiceRoller {
     for(let i = 0; i < count; i++) {
       // tracking values
       const modifiedInput = T.cloneAttackInput(input);
-      const status = createDefaultStatus(input);
+      const status = createDefaultStatus();
 
       // these functions match the steps under 'Attack' in the RRG
       this.rollAttackDice(input, modifiedInput, status);

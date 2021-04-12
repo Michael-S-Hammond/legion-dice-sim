@@ -2,7 +2,7 @@ import * as T from "./Types";
 import * as RS from "./RerollStrategy";
 import * as RSH from "./RerollStrategyHelpers";
 
-import DiceModificationMatrix, * as DMM from "./DiceModificationMatrix";
+import DiceModificationMatrix from "./DiceModificationMatrix";
 import * as EC from './EffectiveCover';
 
 class ArmorRerollStrategy implements RS.RerollStrategy {
@@ -59,7 +59,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
 
             // lethal
             totalCrits = dmm.getResultCount(T.AttackDieResult.Critical);
-            const effectiveLethal = RSH.getEffectiveLethal(input, 0, totalCrits, 0);
+            const effectiveLethal = RSH.getEffectiveLethal(input, 0, totalCrits);
             if(effectiveLethal > 0 && remaining.aimTokens <= effectiveLethal) {
                 rerollMiss = 0;
             }
@@ -70,7 +70,7 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
         return indexes.length == 0 ? undefined : indexes;
     }
 
-    shouldHandle(input: T.AttackInput, reason: RS.RerollReason) : boolean {
+    public shouldHandle(input: T.AttackInput/*, reason: RS.RerollReason*/) : boolean {
         return input.defense.armor;
     }
 }

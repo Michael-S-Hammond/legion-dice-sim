@@ -13,7 +13,7 @@ class DieCounter extends React.Component<DieCounterProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <button
                 className={`btn border border-secondary rounded-lg die-counter mx-1 ${ this.props.styleName }`}
