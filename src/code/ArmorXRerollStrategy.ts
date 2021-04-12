@@ -38,11 +38,9 @@ class ArmorXRerollStrategy implements RS.RerollStrategy {
 
         // convert for impact
         let effectiveImpact = 0;
-        let remainingImpact = 0;
         let hitsAfterImpact = hitsAfterCover;
         if(input.offense.impactX.active) {
             effectiveImpact = Math.min(hitsAfterCover, input.offense.impactX.value);
-            remainingImpact = input.offense.impactX.value - effectiveImpact;
             hitsAfterImpact = hitsAfterCover - effectiveImpact;
         }
 
@@ -68,7 +66,7 @@ class ArmorXRerollStrategy implements RS.RerollStrategy {
         // determine effect of lethal
         let lethalOverride = false;
         if(reason === RS.RerollReason.AimToken) {
-            const effectiveLethal = RSH.getEffectiveLethal(input, hitsAfterArmor, totalCrits + effectiveImpact, 0);
+            const effectiveLethal = RSH.getEffectiveLethal(input, hitsAfterArmor, totalCrits + effectiveImpact);
             if(effectiveLethal > 0 && remaining.aimTokens <= effectiveLethal) {
                 lethalOverride = true;
             }
@@ -105,7 +103,7 @@ class ArmorXRerollStrategy implements RS.RerollStrategy {
         return indexes.length == 0 ? undefined : indexes;
     }
 
-    shouldHandle(input: T.AttackInput, reason: RS.RerollReason) : boolean {
+    public shouldHandle(input: T.AttackInput/*, reason: RS.RerollReason*/) : boolean {
         return input.defense.armorX.active;
     }
 }

@@ -1,7 +1,7 @@
 import * as T from "./Types";
 import * as RS from "./RerollStrategy";
 
-export function getEffectiveLethal(input: T.AttackInput, effectiveHits: number, criticals: number, coverModifier: number) : number {
+export function getEffectiveLethal(input: T.AttackInput, effectiveHits: number, criticals: number) : number {
     const immunePierce = input.defense.immunePierce ||
         (input.defense.duelist && input.combat.meleeAttack);
     if(input.offense.lethalX.active && !immunePierce) {

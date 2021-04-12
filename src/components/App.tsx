@@ -16,12 +16,12 @@ import Header from './Header';
 
 import { Telemetry } from '../tools/Telemetry';
 
-class App extends React.Component<any, AS.AppState> {
+class App extends React.Component<any, AS.AppState> { // eslint-disable-line @typescript-eslint/no-explicit-any
   private _stateManager: AS.AppStateManager;
   private _diceResultsRef: React.RefObject<DiceResults>;
   private _telemetry: Telemetry;
 
-  constructor(props: any) {
+  constructor(props: any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
     super(props);
 
     this._stateManager = new AS.AppStateManager((newState: AS.AppState) => this.setState(newState));

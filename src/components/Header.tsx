@@ -2,8 +2,8 @@ import '../css/Header.css';
 
 import React from 'react';
 
-class Header extends React.Component<any> {
-    constructor(props : any) {
+class Header extends React.Component<any> { // eslint-disable-line @typescript-eslint/no-explicit-any
+    constructor(props : any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
         super(props);
     }
 

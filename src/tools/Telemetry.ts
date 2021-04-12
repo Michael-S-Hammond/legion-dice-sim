@@ -13,7 +13,8 @@ export class Telemetry {
     this._appInsights.trackPageView();
   }
 
-  public trackEvent(eventName: string, data: any) : void {
+  // TODO: Fix this once negated types are in Typescript. (i.e. no functions, etc.) https://github.com/Microsoft/TypeScript/pull/29317
+  public trackEvent(eventName: string, data: any) : void {  // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
     if (data) {
       this._appInsights.trackEvent({ name: eventName }, data);
     }
