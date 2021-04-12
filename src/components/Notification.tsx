@@ -11,7 +11,7 @@ class Notification extends React.Component<NotificationProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div className="alert alert-secondary alert-dismissible fade show mb-0" role="alert">
                 {this.props.message}

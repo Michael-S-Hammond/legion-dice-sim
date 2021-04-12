@@ -15,7 +15,7 @@ class Token extends React.Component<TokenProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div className={`${ this.props.visible ? 'collapse.show' : 'collapse'} token-parent`}>
                 <button

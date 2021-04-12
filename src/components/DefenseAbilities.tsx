@@ -17,7 +17,7 @@ class DefenseAbilities extends React.Component<DefenseAbilitiesProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <AbilityToggle

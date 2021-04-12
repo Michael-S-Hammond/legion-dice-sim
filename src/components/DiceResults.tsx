@@ -161,7 +161,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
         };
     }
 
-    componentDidUpdate() {
+    componentDidUpdate() : void{
         if (this.props.visibility === T.ResultOutput.Graph) {
             this.updateChart();
         }
@@ -206,11 +206,11 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
         this.performScrollIntoView();
     }
 
-    public forceChartUpdate() {
+    public forceChartUpdate() : void {
         this.refreshChart = true;
     }
 
-    public scrollIntoView() {
+    public scrollIntoView() : void {
         this.scrollUIIntoView = true;
     }
 
@@ -221,7 +221,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
         this.scrollUIIntoView = false;
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div ref={this.rootElementRef}>
                 <div className={`single-result justify-content-center my-3 ${this.props.visibility === T.ResultOutput.Single ? 'collapse.show' : 'collapse'}`}>

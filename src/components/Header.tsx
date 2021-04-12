@@ -7,7 +7,7 @@ class Header extends React.Component<any> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand" href="https://www.legionacademy.net/">

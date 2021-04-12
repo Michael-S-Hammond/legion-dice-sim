@@ -84,7 +84,7 @@ export type AppStateBehaviorEventHandlers = {
     handleShowSimplifiedViewChange: (show: boolean) => void,
 };
 
-export type UpdateStateFunction = (newState: AppState) => any;
+export type UpdateStateFunction = (newState: AppState) => void;
 
 export class AppStateManager {
     private _setState: UpdateStateFunction;
@@ -94,15 +94,15 @@ export class AppStateManager {
     private _combatEventHandlers: AppStateCombatEventHandlers;
     private _behaviorEventHandlers: AppStateBehaviorEventHandlers;
 
-    public get state() { return this._state; }
+    public get state() : AppState { return this._state; }
 
-    public get attackEventHandlers() { return this._attackEventHandlers; }
+    public get attackEventHandlers() : AppStateAttackEventHandlers { return this._attackEventHandlers; }
 
-    public get defenseEventHandlers() { return this._defenseEventHandlers; }
+    public get defenseEventHandlers() : AppStateDefenseEventHandlers { return this._defenseEventHandlers; }
 
-    public get combatEventHandlers() { return this._combatEventHandlers; }
+    public get combatEventHandlers() : AppStateCombatEventHandlers { return this._combatEventHandlers; }
 
-    public get behaviorEventHandlers() { return this._behaviorEventHandlers; }
+    public get behaviorEventHandlers() : AppStateBehaviorEventHandlers { return this._behaviorEventHandlers; }
 
     constructor(updateStateFunction: UpdateStateFunction) {
         this._setState = updateStateFunction;
@@ -478,7 +478,7 @@ export class AppStateManager {
         };
     }
 
-    changeDefenseDie() {
+    private changeDefenseDie() {
         const newState = this.cloneState();
         const isSurging = newState.inputs.defense.surge;
         newState.inputs.defense.surge = !isSurging;

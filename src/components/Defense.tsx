@@ -18,12 +18,12 @@ class Defense extends React.Component<DefenseProps> {
         super(props);
     }
 
-    handleCoverChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    private handleCoverChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newCover = Number(e.target.value);
         this.props.eventHandlers.handleCoverChange(newCover);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <h2 className="d-flex justify-content-center my-2">Defense</h2>

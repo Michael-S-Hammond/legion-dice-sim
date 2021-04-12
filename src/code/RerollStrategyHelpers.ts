@@ -19,7 +19,7 @@ export function getEffectiveLethal(input: T.AttackInput, effectiveHits: number, 
     return 0;
 }
 
-export function getMaximumRerolledDice(input: T.AttackInput, rerolls: RS.RemainingRerolls) {
+export function getMaximumRerolledDice(input: T.AttackInput, rerolls: RS.RemainingRerolls) : number {
     return rerolls.observationTokens +
             (rerolls.aimTokens * (2 + (input.offense.preciseX.active ? input.offense.preciseX.value : 0)));
 }

@@ -13,7 +13,7 @@ export class Telemetry {
     this._appInsights.trackPageView();
   }
 
-  public trackEvent(eventName: string, data: any) {
+  public trackEvent(eventName: string, data: any) : void {
     if (data) {
       this._appInsights.trackEvent({ name: eventName }, data);
     }

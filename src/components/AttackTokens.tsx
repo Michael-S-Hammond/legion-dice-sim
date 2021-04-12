@@ -15,7 +15,7 @@ class AttackTokens extends React.Component<AttackTokensProperties> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <div className="single-result justify-content-center my-2">
