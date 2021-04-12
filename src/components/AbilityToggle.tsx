@@ -13,12 +13,12 @@ class AbilityToggle extends React.Component<AbilityProps> {
         super(props);
     }
 
-    handleActiveChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+    private handleActiveChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newActive = e.target.checked;
         this.props.onActiveChanged(newActive);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div key={`${this.props.id}-abilitytoggle`} className={`${ this.props.visible ? 'd-flex collapse.show' : 'collapse'} justify-content-center my-3 custom-control custom-switch`}>
                 <input key={`${this.props.id}-abilitytoggle-input`} type="checkbox" className="custom-control-input my-auto"

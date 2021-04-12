@@ -15,7 +15,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -26,6 +26,7 @@
     "testWatch": "react-scripts test",
     "scss": "node-sass --watch src/scss -o src/css",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
+    "lint-all": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {

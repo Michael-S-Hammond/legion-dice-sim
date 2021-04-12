@@ -16,7 +16,7 @@ class Combat extends React.Component<CombatProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <h2 className="d-flex justify-content-center my-2">Combat</h2>

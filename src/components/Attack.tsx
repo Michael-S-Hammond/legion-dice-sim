@@ -19,12 +19,12 @@ class Attack extends React.Component<AttackProps> {
         super(props);
     }
 
-    handleAttackSurgeConversionChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
+    private handleAttackSurgeConversionChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
         const newConversion = Number(e.target.value);
         this.props.eventHandlers.handleSurgeConversionChange(newConversion);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <h2 className="d-flex justify-content-center my-2">Attack</h2>

@@ -17,7 +17,7 @@ class AttackAbilities extends React.Component<AttackAbilitiesProps> {
         super(props);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div>
                 <AbilityToggle
