@@ -48,7 +48,7 @@ class DiceModificationMatrix {
         let remainingHits = hits;
 
         // TODO: improve this to take natural misses of the same color over converted misses
-        const matchList = this.getConversions().filter((element: DieConversion, idx: number) : boolean => {
+        const matchList = this.getConversions().filter((element: DieConversion) : boolean => {
             if(element.conversion === T.AttackDieResult.Miss && remainingMiss > 0) {
                 remainingMiss--;
                 return true;

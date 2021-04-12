@@ -16,17 +16,17 @@ class AbilityXToggle extends React.Component<AbilityXProps> {
         super(props);
     }
 
-    handleValueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    private handleValueChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newValue = Number(e.target.value);
         this.props.onValueChanged(newValue);
     }
 
-    handleActiveChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
+    private handleActiveChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newActive = e.target.checked;
         this.props.onActiveChanged(newActive);
     }
 
-    render() {
+    render(): JSX.Element  {
         const options = [];
         for(let i = 1; i <= this.props.maxValue; i++) {
             options.push(<option key={`${this.props.id}-abilityxtoggle-option-${i}`} value={i}>{i}</option>)

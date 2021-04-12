@@ -2,7 +2,7 @@ import * as T from "./Types";
 import * as RS from "./RerollStrategy";
 import * as RSH from "./RerollStrategyHelpers";
 
-import DiceModificationMatrix, * as DMM from "./DiceModificationMatrix";
+import DiceModificationMatrix from "./DiceModificationMatrix";
 import * as EC from './EffectiveCover';
 
 class SimpleRerollStrategy implements RS.RerollStrategy {
@@ -54,7 +54,7 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
         if(reason === RS.RerollReason.AimToken) {
             // lethal
             const effectiveHits = Math.max(0, totalHits - coverModifier);
-            const effectiveLethal = RSH.getEffectiveLethal(input, effectiveHits, totalCrits, effectiveCover);
+            const effectiveLethal = RSH.getEffectiveLethal(input, effectiveHits, totalCrits);
             if(effectiveLethal > 0 && remaining.aimTokens <= effectiveLethal) {
                 rerollMiss = 0;
                 rerollHit = 0;
@@ -66,7 +66,7 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
         return indexes.length == 0 ? undefined : indexes;
     }
 
-    shouldHandle(input: T.AttackInput, reason: RS.RerollReason) : boolean {
+    shouldHandle(/*input: T.AttackInput, reason: RS.RerollReason*/) : boolean {
         return true;
     }
 }
