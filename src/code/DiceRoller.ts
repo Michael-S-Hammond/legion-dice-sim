@@ -172,15 +172,14 @@ export class DiceRoller {
     maxCount = Math.max(maxCount, attackSummary.defenseSurge.length);
     maxCount = Math.max(maxCount, attackSummary.wounds.length);
 
-    // TODO: update so we can leave the ends trimmed, but fill in the middles
-    for(let i = 0; i < maxCount; i++) {
-      if(!(i in attackSummary.critical)) { attackSummary.critical[i] = 0; }
-      if(!(i in attackSummary.hit)) { attackSummary.hit[i] = 0; }
-      if(!(i in attackSummary.attackSurge)) { attackSummary.attackSurge[i] = 0; }
-      if(!(i in attackSummary.forcedSaves)) { attackSummary.forcedSaves[i] = 0; }
-      if(!(i in attackSummary.blocks)) { attackSummary.blocks[i] = 0; }
-      if(!(i in attackSummary.defenseSurge)) { attackSummary.defenseSurge[i] = 0; }
-      if(!(i in attackSummary.wounds)) { attackSummary.wounds[i] = 0; }
+    for(let i = maxCount-1; i >= 0; i--) {
+      if(attackSummary.critical[i] === undefined && attackSummary.critical[i+1] !== undefined) { attackSummary.critical[i] = 0; }
+      if(attackSummary.hit[i] === undefined && attackSummary.hit[i+1] !== undefined) { attackSummary.hit[i] = 0; }
+      if(attackSummary.attackSurge[i] === undefined && attackSummary.attackSurge[i+1] !== undefined) { attackSummary.attackSurge[i] = 0; }
+      if(attackSummary.forcedSaves[i] === undefined && attackSummary.forcedSaves[i+1] !== undefined) { attackSummary.forcedSaves[i] = 0; }
+      if(attackSummary.blocks[i] === undefined && attackSummary.blocks[i+1] !== undefined) { attackSummary.blocks[i] = 0; }
+      if(attackSummary.defenseSurge[i] === undefined && attackSummary.defenseSurge[i+1] !== undefined) { attackSummary.defenseSurge[i] = 0; }
+      if(attackSummary.wounds[i] === undefined && attackSummary.wounds[i+1] !== undefined) { attackSummary.wounds[i] = 0; }
     }
 
     return {
