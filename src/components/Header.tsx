@@ -3,11 +3,11 @@ import '../css/Header.css';
 import React from 'react';
 
 class Header extends React.Component<any> { // eslint-disable-line @typescript-eslint/no-explicit-any
-    constructor(props : any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+    constructor(props: any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
         super(props);
     }
 
-    render() : JSX.Element {
+    render(): JSX.Element {
         return (
             <nav className="navbar navbar-dark bg-dark">
                 <a className="navbar-brand" href="https://www.legionacademy.net/">
@@ -17,13 +17,16 @@ class Header extends React.Component<any> { // eslint-disable-line @typescript-e
                 <h4 className="nav-header d-inline d-sm-none">The Legion Academy</h4>
 
                 <button className="navbar-toggler black" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    data-target="#navbarSupportedContent15" aria-controls="navbarSupportedContent15"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent15">
                     <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="https://github.com/Michael-S-Hammond/legion-dice-sim">GitHub (source code)</a>
+                        </li>
                         <li className="nav-item active">
                             <a className="nav-link" href="https://www.legionacademy.net/">Legion Academy - Home</a>
                         </li>
