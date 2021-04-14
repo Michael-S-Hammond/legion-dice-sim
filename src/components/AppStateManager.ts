@@ -2,13 +2,18 @@ import Cookies from 'js-cookie';
 
 import * as T from '../code/Types';
 
+export type ViewState = {
+    showExpectedRange: boolean,
+    showSimpleView: boolean,
+    darkMode: boolean,
+};
+
 export type AppState = {
     inputs: T.AttackInput,
     outputs: T.CombinedAttackOutput,
     diceRolls: number,
     resultsVisibility: T.ResultOutput,
-    showExpectedRange: boolean,
-    showSimpleView: boolean,
+    view: ViewState,
 };
 
 export type AppStateAttackEventHandlers = {
@@ -82,6 +87,7 @@ export type AppStateBehaviorEventHandlers = {
     handleDiceCountChange: (count: number) => void,
     handleShowExpectedRangeChanged: (show: boolean) => void,
     handleShowSimplifiedViewChange: (show: boolean) => void,
+    handleDarkModeChange: (show: boolean) => void,
 };
 
 export type UpdateStateFunction = (newState: AppState) => void;
@@ -113,6 +119,9 @@ export class AppStateManager {
 
         const showSimpleViewCookie = Cookies.get('showSimpleView');
         const showSimpleView = showSimpleViewCookie === undefined ? false : showSimpleViewCookie === 'true';
+
+        const darkModeCookie = Cookies.get('darkMode');
+        const darkMode = darkModeCookie === undefined ? false : darkModeCookie === 'true';
 
         // create default state
         this._state = {
@@ -156,8 +165,11 @@ export class AppStateManager {
             },
             diceRolls: 10000,
             resultsVisibility: T.ResultOutput.None,
-            showExpectedRange: showExpectedRange,
-            showSimpleView: showSimpleView,
+            view: {
+                showExpectedRange: showExpectedRange,
+                showSimpleView: showSimpleView,
+                darkMode: darkMode,
+            }
         }
 
         // create event handler objects
@@ -229,8 +241,11 @@ export class AppStateManager {
             },
             diceRolls: this.state.diceRolls,
             resultsVisibility: this.state.resultsVisibility,
-            showExpectedRange: this.state.showExpectedRange,
-            showSimpleView: this.state.showSimpleView,
+            view: {
+                showExpectedRange: this.state.view.showExpectedRange,
+                showSimpleView: this.state.view.showSimpleView,
+                darkMode: this.state.view.darkMode,
+            }
         }
     }
 
@@ -711,6 +726,7 @@ export class AppStateManager {
             handleDiceCountChange: (count: number) => this.handleDiceCountChange(count),
             handleShowExpectedRangeChanged: (show: boolean) => this.handleShowExpectedRangeChanged(show),
             handleShowSimplifiedViewChange: (show: boolean) => this.handleShowSimplifiedViewChange(show),
+            handleDarkModeChange: (active: boolean) => this.handleDarkModeChange(active),
         }
     }
 
@@ -722,15 +738,22 @@ export class AppStateManager {
 
     private handleShowExpectedRangeChanged(show: boolean) {
         const newState = this.cloneState();
-        newState.showExpectedRange = show;
-        Cookies.set('showExpectedRange', String(newState.showExpectedRange), { expires: 30 })
+        newState.view.showExpectedRange = show;
+        Cookies.set('showExpectedRange', String(newState.view.showExpectedRange), { expires: 30 })
         this.setState(newState);
     }
 
     private handleShowSimplifiedViewChange(show: boolean) {
         const newState = this.cloneState();
-        newState.showSimpleView = show;
-        Cookies.set('showSimpleView', String(newState.showSimpleView), { expires: 30 })
+        newState.view.showSimpleView = show;
+        Cookies.set('showSimpleView', String(newState.view.showSimpleView), { expires: 30 })
+        this.setState(newState);
+    }
+
+    private handleDarkModeChange(active: boolean) {
+        const newState = this.cloneState();
+        newState.view.darkMode = active;
+        Cookies.set('darkMode', String(newState.view.darkMode), { expires: 30 })
         this.setState(newState);
     }
 }

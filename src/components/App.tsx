@@ -62,7 +62,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
     this._telemetry.trackEvent("RollDice", {
       Rolls: this.state.diceRolls,
       Duration: rollDuration,
-      SimpleView: this.state.showSimpleView,
+      SimpleView: this.state.view.showSimpleView,
     });
 
     this._diceResultsRef.current?.scrollIntoView();
@@ -83,7 +83,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
                 <input key='showSimplifiedViewToggle-toggle-input' type="checkbox"
                   className='custom-control-input my-auto'
                   id="showSimplifiedViewToggle"
-                  checked={this.state.showSimpleView}
+                  checked={this.state.view.showSimpleView}
                   onChange={this.handleSimplifiedViewChange}></input>
                 <label key='showSimplifiedViewToggle-toggle-label'
                   className='custom-control-label drop-down-label mx-2 my-auto'
@@ -93,21 +93,21 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
             </div>
           </div>
           <div className="row">
-            <div className={`col-md-5 offset-md-1 col-lg-4 ${this.state.showSimpleView ? 'offset-lg-2' : 'offset-lg-0'}`}>
+            <div className={`col-md-5 offset-md-1 col-lg-4 ${this.state.view.showSimpleView ? 'offset-lg-2' : 'offset-lg-0'}`}>
               <Attack
-                showSimpleView={this.state.showSimpleView}
+                showSimpleView={this.state.view.showSimpleView}
                 input={this.state.inputs.offense}
                 eventHandlers={this._stateManager.attackEventHandlers}
               ></Attack>
             </div>
             <div className="col-md-5 col-lg-4">
               <Defense
-                showSimpleView={this.state.showSimpleView}
+                showSimpleView={this.state.view.showSimpleView}
                 input={this.state.inputs.defense}
                 eventHandlers={this._stateManager.defenseEventHandlers}
               ></Defense>
             </div>
-            <div className={`col-md-6 offset-md-3 col-lg-4 offset-lg-0 ${this.state.showSimpleView ? 'collapse' : 'collapse.show'}`}>
+            <div className={`col-md-6 offset-md-3 col-lg-4 offset-lg-0 ${this.state.view.showSimpleView ? 'collapse' : 'collapse.show'}`}>
               <Combat
                 input={this.state.inputs.combat}
                 eventHandlers={this._stateManager.combatEventHandlers}
@@ -127,7 +127,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
               <input key={`showExpectedRangeToggle-toggle-input`} type="checkbox"
                 className={`custom-control-input my-auto ${this.state.resultsVisibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}
                 id="showExpectedRangeToggle"
-                checked={this.state.showExpectedRange}
+                checked={this.state.view.showExpectedRange}
                 onChange={this.handleShowExpectedRangeChanged}></input>
               <label key={`showExpectedRangeToggle-toggle-label`}
                 className={`custom-control-label drop-down-label mx-2 my-auto ${this.state.resultsVisibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}
@@ -139,7 +139,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
             ref={this._diceResultsRef}
             results={this.state.outputs}
             visibility={this.state.resultsVisibility}
-            showExpectedRange={this.state.showExpectedRange}
+            showExpectedRange={this.state.view.showExpectedRange}
           ></DiceResults>
         </div>
       </main>
