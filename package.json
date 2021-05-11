@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@microsoft/applicationinsights-web": "^2.6.1",
+    "@microsoft/applicationinsights-web": "^2.6.2",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.2",
@@ -54,7 +54,7 @@
     "@types/js-cookie": "^2.2.6",
     "@types/mathjs": "^6.0.11",
     "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
+    "@types/react-dom": "^17.0.4",
     "@types/react-test-renderer": "^17.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
