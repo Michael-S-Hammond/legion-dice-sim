@@ -86,6 +86,11 @@ export type AppStateBehaviorEventHandlers = {
 
 export type UpdateStateFunction = (newState: AppState) => void;
 
+type AppSettings = {
+    showExpectedRange: boolean,
+    showSimpleView: boolean,
+};
+
 export class AppStateManager {
     private _setState: UpdateStateFunction;
     private _state: AppState;
@@ -107,12 +112,8 @@ export class AppStateManager {
     constructor(updateStateFunction: UpdateStateFunction) {
         this._setState = updateStateFunction;
 
-        // read cookies
-        const showExpectedRangeCookie = Cookies.get('showExpectedRange');
-        const showExpectedRange = showExpectedRangeCookie === undefined ? true : showExpectedRangeCookie === 'true';
-
-        const showSimpleViewCookie = Cookies.get('showSimpleView');
-        const showSimpleView = showSimpleViewCookie === undefined ? false : showSimpleViewCookie === 'true';
+        // read settings
+        const settings = this.loadSettings();
 
         // create default state
         this._state = {
@@ -156,8 +157,8 @@ export class AppStateManager {
             },
             diceRolls: 10000,
             resultsVisibility: T.ResultOutput.None,
-            showExpectedRange: showExpectedRange,
-            showSimpleView: showSimpleView,
+            showExpectedRange: settings.showExpectedRange,
+            showSimpleView: settings.showSimpleView,
         }
 
         // create event handler objects
@@ -723,14 +724,61 @@ export class AppStateManager {
     private handleShowExpectedRangeChanged(show: boolean) {
         const newState = this.cloneState();
         newState.showExpectedRange = show;
-        Cookies.set('showExpectedRange', String(newState.showExpectedRange), { expires: 30 })
+        const newSettings = this.getActiveSettings();
+        newSettings.showExpectedRange = show;
+        this.saveSettings(newSettings);
         this.setState(newState);
     }
 
     private handleShowSimplifiedViewChange(show: boolean) {
         const newState = this.cloneState();
         newState.showSimpleView = show;
-        Cookies.set('showSimpleView', String(newState.showSimpleView), { expires: 30 })
+        const newSettings = this.getActiveSettings();
+        newSettings.showSimpleView = show;
+        this.saveSettings(newSettings);
         this.setState(newState);
+    }
+
+    private getActiveSettings() : AppSettings {
+        return {
+            showExpectedRange: this._state.showExpectedRange,
+            showSimpleView: this._state.showSimpleView,
+        };
+    }
+
+    private loadSettings() : AppSettings {
+        const settingsString = window.localStorage.getItem('settings');
+        const settingsObject = {
+            showExpectedRange: true,
+            showSimpleView: false,
+        };
+
+        if(settingsString === null) {
+            const showExpectedRangeCookie = Cookies.get('showExpectedRange');
+            if(showExpectedRangeCookie !== undefined) {
+                settingsObject.showExpectedRange = showExpectedRangeCookie === 'true';
+            }
+    
+            const showSimpleViewCookie = Cookies.get('showSimpleView');
+            if(showSimpleViewCookie !== undefined) {
+                settingsObject.showSimpleView = showSimpleViewCookie === 'true';
+            }
+        } else {
+            try {
+                const rawObject = JSON.parse(settingsString);
+                if(rawObject.hasOwnProperty('showExpectedRange')) {
+                    settingsObject.showExpectedRange = Boolean(rawObject['showExpectedRange']).valueOf();
+                }
+                if(rawObject.hasOwnProperty('showSimpleView')) {
+                    settingsObject.showSimpleView = Boolean(rawObject['showSimpleView']).valueOf();
+                }
+            } catch { }
+        }
+
+        return settingsObject;
+    }
+
+    private saveSettings(settings: AppSettings) {
+        window.localStorage.setItem('settings', JSON.stringify(settings));
     }
 }
