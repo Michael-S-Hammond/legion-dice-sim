@@ -1,41 +1,96 @@
 {
-    "units": [
-        {
-            "id": 1,
-            "faction": "rebel",
-            "name": "Luke Skywalker",
-            "subtitle": "Hero of the Empire",
-            "unique": true,
-            "rank": "commander",
-            "miniCount": 1,
-            "points": 160,
-            "weapons": [{
-                "name": "Anakin's Lightsaber",
-                "minimumRange": 0,
-                "maximumRange": 0,
-                "dice": {
-                    "red": 0,
-                    "black": 6,
-                    "white": 0
-                },
-                "keywords": {
-                    "impact": 2,
-                    "pierce": 2
-                }
+    "units": [{
+        "faction": "rebel",
+        "name": "Luke Skywalker",
+        "subtitle": "Hero of the Empire",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Anakin's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 6,
+                "white": 0
             },
-            {
-                "name": "Luke's DL-44 Blaster Pistol",
-                "minimumRange": 1,
-                "maximumRange": 2,
-                "dice": {
-                    "red": 2,
-                    "black": 0,
-                    "white": 0
-                },
-                "keywords": {
-                    "pierce": 2
-                }
-            }]
-        }
-    ]
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },
+        {
+            "name": "Luke's DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "gear"],
+        "unitKeywords": [
+            { "jump": 1 },
+            { "charge": true },
+            { "deflect": true },
+            { "immunePierce": true }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Leia Organa",
+        "subtitle": "Fearless and Inventive",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Leia's Defender Sporting Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": [ "command", "command", "gear" ],
+        "unitKeywords": [
+            { "takeCover": 2 },
+            { "inspire": 2 },
+            { "nimble": true },
+            { "sharpshooter": 2 }
+        ]
+    }]
 }
