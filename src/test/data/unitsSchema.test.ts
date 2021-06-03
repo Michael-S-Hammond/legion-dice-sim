@@ -17,6 +17,7 @@ describe('units.json schema', () => {
             "id": "/completeSchema",
             "type": "object",
             "properties": {
+                "notreally": { "type": "number" },
                 "units": {
                     "type": "array",
                     "items": {
