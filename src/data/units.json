@@ -1,0 +1,41 @@
+{
+    "units": [
+        {
+            "id": 1,
+            "faction": "rebel",
+            "name": "Luke Skywalker",
+            "subtitle": "Hero of the Empire",
+            "unique": true,
+            "rank": "commander",
+            "miniCount": 1,
+            "points": 160,
+            "weapons": [{
+                "name": "Anakin's Lightsaber",
+                "minimumRange": 0,
+                "maximumRange": 0,
+                "dice": {
+                    "red": 0,
+                    "black": 6,
+                    "white": 0
+                },
+                "keywords": {
+                    "impact": 2,
+                    "pierce": 2
+                }
+            },
+            {
+                "name": "Luke's DL-44 Blaster Pistol",
+                "minimumRange": 1,
+                "maximumRange": 2,
+                "dice": {
+                    "red": 2,
+                    "black": 0,
+                    "white": 0
+                },
+                "keywords": {
+                    "pierce": 2
+                }
+            }]
+        }
+    ]
+}
