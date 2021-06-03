@@ -92,5 +92,88 @@
             { "nimble": true },
             { "sharpshooter": 2 }
         ]
+    },{
+        "faction": "rebel",
+        "name": "Han Solo",
+        "subtitle": "Unorthodox General",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Brawl",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            }
+        },{
+            "name": "Han's DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "unitKeywords": [
+            { "lowProfile": true },
+            { "gunslinger": true },
+            { "sharpshooter": 1 },
+            { "uncannyLuck": 3 }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Rebel Officer",
+        "subtitle": "Resolute Commander",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Officer's A-180 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "gear"],
+        "unitKeywords": [
+            { "takeCover": 1 },
+            { "inspire": 1 },
+            { "sharpshooter": 1 }
+        ]
     }]
 }

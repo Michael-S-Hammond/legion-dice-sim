@@ -77,12 +77,15 @@ describe('units.json schema', () => {
                                 properties: {
                                     charge: { type: "boolean"},
                                     deflect: { type: "boolean" },
+                                    gunslinger: { type: "boolean" },
                                     immunePierce: { type: "boolean" },
                                     inspire: { type: "number", minimum: 1, maximum: 2 },
                                     jump: { type: "number", minimum: 1, maximum: 2 },
+                                    lowProfile: { type: "boolean" },
                                     nimble: { type: "boolean" },
                                     sharpshooter: { type: "number", minimum: 1, maximum: 2 },
-                                    takeCover: { type: "number", minimum: 1, maximum: 2 }
+                                    takeCover: { type: "number", minimum: 1, maximum: 2 },
+                                    uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
                                 },
                                 additionalProperties: false
                             }]
