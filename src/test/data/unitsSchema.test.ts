@@ -1,5 +1,5 @@
 import Ajv  from 'ajv';
-import { number } from 'mathjs';
+import { number, string } from 'mathjs';
 import units from '../../data/units.json';
 
 describe('units.json schema', () => {
@@ -26,7 +26,9 @@ describe('units.json schema', () => {
                             type: "object",
                             properties: {
                                 impact: { type: "number", minimum: 1, maximum: 3 },
-                                pierce: { type: "number", minimum: 1, maximum: 3 }
+                                lethal: { type: "number", minimum: 1, maximum: 1 },
+                                pierce: { type: "number", minimum: 1, maximum: 3 },
+                                suppressive: { type: "boolean" }
                             },
                             additionalProperties: false
                         }
@@ -50,7 +52,7 @@ describe('units.json schema', () => {
                         rank: { enum: [ "commander", "operative", "corps", "specialist", "support", "heavy" ] },
                         miniCount: { type: "number", minimum: 1, maximum: 6 },
                         points: { type: "number", minimum: 1, maximum: 250 },
-                        unitType: { enum: ["trooper", "vehicle"] },
+                        unitType: { enum: ["trooper", "wookieTrooper", "vehicle"] },
                         defenseDie: { enum: ["red", "white"] },
                         wounds: { type: "number", minimum: 1, maximum: 11 },
                         courage: { type: "number", minimum: 1, maximum: 4 },
@@ -75,16 +77,44 @@ describe('units.json schema', () => {
                             items: [{
                                 type: "object",
                                 properties: {
-                                    charge: { type: "boolean"},
+                                    charge: { type: "boolean" },
+                                    contingencies: { type: "number", minimum: 1, maximum: 3 },
+                                    covertOps: { type: "boolean" },
+                                    dangerSense: { type: "number", minimum: 1, maximum: 4 },
                                     deflect: { type: "boolean" },
+                                    disengage: { type: "boolean" },
+                                    enrage: { type: "number", minimum: 1, maximum: 4 },
+                                    flawed: { type: "boolean" },
+                                    grounded: { type: "boolean" },
+                                    guardian: { type: "number", minimum: 1, maximum: 3 },
                                     gunslinger: { type: "boolean" },
                                     immunePierce: { type: "boolean" },
+                                    impervious: { type: "boolean" },
+                                    inconspicuous: { type: "boolean" },
+                                    infiltrate: { type: "boolean" },
                                     inspire: { type: "number", minimum: 1, maximum: 2 },
                                     jump: { type: "number", minimum: 1, maximum: 2 },
+                                    loadout: { type: "boolean" },
                                     lowProfile: { type: "boolean" },
+                                    marksman: { type: "boolean" },
+                                    masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
                                     nimble: { type: "boolean" },
+                                    quickThinking: { type: "boolean" },
+                                    repair: {
+                                        type: "object",
+                                        properties: {
+                                            value: { type: "number", minimum: 1, maximum: 2 },
+                                            capacity: { type: "number", minimum: 1, maximum: 2 }
+                                        },
+                                        required: ["value", "capacity"],
+                                        additionalProperties: false
+                                    },
+                                    scale: { type: "boolean" },
+                                    secretMission: { type: "boolean" },
                                     sharpshooter: { type: "number", minimum: 1, maximum: 2 },
+                                    tactical: { type: "number", minimum: 1, maximum: 1 },
                                     takeCover: { type: "number", minimum: 1, maximum: 2 },
+                                    teamwork: { type: "string", minLength: 1 },
                                     uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
                                 },
                                 additionalProperties: false

@@ -175,5 +175,296 @@
             { "inspire": 1 },
             { "sharpshooter": 1 }
         ]
+    },{
+        "faction": "rebel",
+        "name": "Jyn Erso",
+        "subtitle": "Stardust",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Collapsible Tonfa",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "unitKeywords": [
+            { "quickThinking": true },
+            { "dangerSense": 4 },
+            { "infiltrate": true },
+            { "nimble": true },
+            { "sharpshooter": 1 }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Cassian Andor",
+        "subtitle": "Capable Intelligence Agent",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Cassian's Covert Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "armament"],
+        "unitKeywords": [
+            { "covertOps": true },
+            { "dangerSense": 3},
+            { "loadout": true },
+            { "marksman": true },
+            { "tactical": 1 }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Lando Calrissian",
+        "subtitle": "Smooth Operator",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 105,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "Lando's X-8 Night Sniper Pistol",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "unitKeywords": [
+            { "contingencies": 3 },
+            { "covertOps": true },
+            { "flawed": true },
+            { "sharpshooter": 2 },
+            { "uncannyLuck": 2 }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Chewbacca",
+        "subtitle": "Walking Carpet",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "wookieTrooper",
+        "defenseDie": "white",
+        "wounds": 9,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overwhelm",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        },{
+            "name": "Chewbacca's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "unitKeywords": [
+            { "enrage": 4 },
+            { "guardian": 3 },
+            { "scale": true },
+            { "teamwork": "Han Solo" }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Sabine Wren",
+        "subtitle": "Explosive Artist",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Dual Westar-35 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "gear", "gear", "armament"],
+        "unitKeywords": [
+            { "jump": 2 },
+            { "gunslinger": true },
+            { "impervious": true },
+            { "nimble": true }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "Luke Skywalker",
+        "subtitle": "Jedi Knight",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 195,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 7,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Luke's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 7,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "force", "training"],
+        "unitKeywords": [
+            { "jump": 1 },
+            { "charge": true },
+            { "deflect": true },
+            { "disengage": true },
+            { "immunePierce": true },
+            { "masterOfTheForce": 1 }
+        ]
+    },{
+        "faction": "rebel",
+        "name": "R2-D2",
+        "subtitle": "Hero of a Thousand Devices",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Electro-Shock",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms", "counterpart"],
+        "unitKeywords": [
+            { "repair": { "value": 2, "capacity": 2 }},
+            { "secretMission": true },
+            { "grounded": true },
+            { "inconspicuous": true }
+        ]
     }]
 }
