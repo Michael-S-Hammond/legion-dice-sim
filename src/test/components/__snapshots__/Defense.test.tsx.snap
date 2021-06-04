@@ -6,6 +6,9 @@ exports[`Defense matches the snapshot 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Defense
+    <LoadProfileButton
+      tooltip="Load defense profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
@@ -168,6 +171,9 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Defense
+    <LoadProfileButton
+      tooltip="Load defense profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
