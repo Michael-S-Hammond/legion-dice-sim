@@ -8,6 +8,7 @@ import * as T from '../code/Types';
 import * as AS from './AppStateManager';
 
 import Attack from './Attack';
+import AttackProfileDialog from './AttackProfileDialog';
 import Combat from './Combat';
 import Defense from './Defense';
 import DiceResults from './DiceResults';
@@ -15,6 +16,7 @@ import DiceResults from './DiceResults';
 import Header from './Header';
 
 import { Telemetry } from '../tools/Telemetry';
+import DefenseProfileDialog from './DefenseProfileDialog';
 
 class App extends React.Component<any, AS.AppState> { // eslint-disable-line @typescript-eslint/no-explicit-any
   private _stateManager: AS.AppStateManager;
@@ -76,6 +78,14 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
       <main role="main">
         <Header></Header>
         {/* <Notification message='Rerolls received a substantial update. More coming soon.'></Notification> */}
+
+        <AttackProfileDialog
+          id='attackProfileDialog'
+        ></AttackProfileDialog>
+        <DefenseProfileDialog
+          id='defenseProfileDialog'
+        ></DefenseProfileDialog>
+
         <div className="container">
           <div className="row">
             <div className="col-md-8 offset-md-2 mt-3">
@@ -95,6 +105,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
           <div className="row">
             <div className={`col-md-5 offset-md-1 col-lg-4 ${this.state.showSimpleView ? 'offset-lg-2' : 'offset-lg-0'}`}>
               <Attack
+                profileDialogId="attackProfileDialog"
                 showSimpleView={this.state.showSimpleView}
                 input={this.state.inputs.offense}
                 eventHandlers={this._stateManager.attackEventHandlers}
@@ -102,6 +113,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
             </div>
             <div className="col-md-5 col-lg-4">
               <Defense
+                profileDialogId="defenseProfileDialog"
                 showSimpleView={this.state.showSimpleView}
                 input={this.state.inputs.defense}
                 eventHandlers={this._stateManager.defenseEventHandlers}

@@ -5,9 +5,11 @@ import * as AS from './AppStateManager';
 
 import DefenseAbilities from './DefenseAbilities';
 import DefenseTokens from './DefenseTokens';
+import LoadProfileButton from './LoadProfileButton';
 import SurgeDieSelector from './SurgeDieSelector';
 
 type DefenseProps = {
+    profileDialogId: string,
     showSimpleView: boolean,
     input: T.DefenseInput,
     eventHandlers: AS.AppStateDefenseEventHandlers,
@@ -26,7 +28,11 @@ class Defense extends React.Component<DefenseProps> {
     render() : JSX.Element {
         return (
             <div>
-                <h2 className="d-flex justify-content-center my-2">Defense</h2>
+                <h2 className="d-flex justify-content-center my-2">Defense
+                    <LoadProfileButton
+                        dialogId={this.props.profileDialogId}
+                        tooltip='Load defense profile'></LoadProfileButton>
+                </h2>
                 <div className="d-flex justify-content-center my-2">
                     <SurgeDieSelector
                         color={this.props.input.dieColor}

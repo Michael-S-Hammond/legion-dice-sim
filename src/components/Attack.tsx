@@ -7,8 +7,10 @@ import AttackAbilities from './AttackAbilities';
 import AttackTokens from './AttackTokens';
 import ClearButton from './ClearButton';
 import DieCounter from './DieCounter';
+import LoadProfileButton from './LoadProfileButton';
 
 type AttackProps = {
+    profileDialogId: string,
     showSimpleView: boolean,
     input: T.OffenseInput,
     eventHandlers: AS.AppStateAttackEventHandlers,
@@ -27,7 +29,12 @@ class Attack extends React.Component<AttackProps> {
     render() : JSX.Element {
         return (
             <div>
-                <h2 className="d-flex justify-content-center my-2">Attack</h2>
+                <h2 className="d-flex justify-content-center my-2">Attack
+                    <LoadProfileButton
+                        dialogId={this.props.profileDialogId}
+                        tooltip='Load attack profile'></LoadProfileButton>
+                </h2>
+
                 <div className="d-flex justify-content-center my-2">
                     <DieCounter count={this.props.input.redDice} styleName="btn-danger" onClick={this.props.eventHandlers.incrementRedDice}></DieCounter>
                     <DieCounter count={this.props.input.blackDice} styleName="btn-dark" onClick={this.props.eventHandlers.incrementBlackDice}></DieCounter>
