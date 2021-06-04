@@ -49,7 +49,7 @@ describe('units.json schema', () => {
                         name: { type: "string", minLength: 1 },
                         subtitle: { type: "string", minLength: 1 },
                         unique: { type: "boolean" },
-                        rank: { enum: [ "commander", "operative", "corps", "specialist", "support", "heavy" ] },
+                        rank: { enum: [ "commander", "operative", "corps", "specialForces", "support", "heavy" ] },
                         miniCount: { type: "number", minimum: 1, maximum: 6 },
                         points: { type: "number", minimum: 1, maximum: 250 },
                         unitType: { enum: ["trooper", "wookieTrooper", "vehicle"] },
