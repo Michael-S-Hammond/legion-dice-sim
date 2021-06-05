@@ -1,0 +1,55 @@
+.rebel-faction-img {
+  content: url("../img/faction/Rebel.png");
+  height: 30px;
+  width: 30px; }
+
+.empire-faction-img {
+  content: url("../img/faction/Empire.png");
+  height: 30px;
+  width: 30px; }
+
+.republic-faction-img {
+  content: url("../img/faction/Republic.png");
+  height: 30px;
+  width: 30px; }
+
+.separatist-faction-img {
+  content: url("../img/faction/Separatist.png");
+  height: 30px;
+  width: 30px; }
+
+.faction-label {
+  padding: 2px; }
+
+.commander-rank-img {
+  content: url("../img/rank/commander.png");
+  height: 30px;
+  width: 30px; }
+
+.operative-rank-img {
+  content: url("../img/rank/operative.png");
+  height: 30px;
+  width: 30px; }
+
+.corps-rank-img {
+  content: url("../img/rank/corps.png");
+  height: 30px;
+  width: 30px; }
+
+.specialforces-rank-img {
+  content: url("../img/rank/specialforces.png");
+  height: 30px;
+  width: 30px; }
+
+.support-rank-img {
+  content: url("../img/rank/support.png");
+  height: 30px;
+  width: 30px; }
+
+.heavy-rank-img {
+  content: url("../img/rank/heavy.png");
+  height: 30px;
+  width: 30px; }
+
+.rank-label {
+  padding: 2px; }
