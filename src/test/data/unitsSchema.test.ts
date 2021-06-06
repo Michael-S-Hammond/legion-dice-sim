@@ -72,53 +72,50 @@ describe('units.json schema', () => {
                                     "training", "generator", "armament", "crew", "ordinance"]
                             }]
                         },
-                        unitKeywords: {
-                            type: "array",
-                            items: [{
-                                type: "object",
-                                properties: {
-                                    charge: { type: "boolean" },
-                                    contingencies: { type: "number", minimum: 1, maximum: 3 },
-                                    covertOps: { type: "boolean" },
-                                    dangerSense: { type: "number", minimum: 1, maximum: 4 },
-                                    deflect: { type: "boolean" },
-                                    disengage: { type: "boolean" },
-                                    enrage: { type: "number", minimum: 1, maximum: 4 },
-                                    flawed: { type: "boolean" },
-                                    grounded: { type: "boolean" },
-                                    guardian: { type: "number", minimum: 1, maximum: 3 },
-                                    gunslinger: { type: "boolean" },
-                                    immunePierce: { type: "boolean" },
-                                    impervious: { type: "boolean" },
-                                    inconspicuous: { type: "boolean" },
-                                    infiltrate: { type: "boolean" },
-                                    inspire: { type: "number", minimum: 1, maximum: 2 },
-                                    jump: { type: "number", minimum: 1, maximum: 2 },
-                                    loadout: { type: "boolean" },
-                                    lowProfile: { type: "boolean" },
-                                    marksman: { type: "boolean" },
-                                    masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
-                                    nimble: { type: "boolean" },
-                                    quickThinking: { type: "boolean" },
-                                    repair: {
-                                        type: "object",
-                                        properties: {
-                                            value: { type: "number", minimum: 1, maximum: 2 },
-                                            capacity: { type: "number", minimum: 1, maximum: 2 }
-                                        },
-                                        required: ["value", "capacity"],
-                                        additionalProperties: false
+                        keywords: {
+                            type: "object",
+                            properties: {
+                                charge: { type: "boolean" },
+                                contingencies: { type: "number", minimum: 1, maximum: 3 },
+                                covertOps: { type: "boolean" },
+                                dangerSense: { type: "number", minimum: 1, maximum: 4 },
+                                deflect: { type: "boolean" },
+                                disengage: { type: "boolean" },
+                                enrage: { type: "number", minimum: 1, maximum: 4 },
+                                flawed: { type: "boolean" },
+                                grounded: { type: "boolean" },
+                                guardian: { type: "number", minimum: 1, maximum: 3 },
+                                gunslinger: { type: "boolean" },
+                                immunePierce: { type: "boolean" },
+                                impervious: { type: "boolean" },
+                                inconspicuous: { type: "boolean" },
+                                infiltrate: { type: "boolean" },
+                                inspire: { type: "number", minimum: 1, maximum: 2 },
+                                jump: { type: "number", minimum: 1, maximum: 2 },
+                                loadout: { type: "boolean" },
+                                lowProfile: { type: "boolean" },
+                                marksman: { type: "boolean" },
+                                masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
+                                nimble: { type: "boolean" },
+                                quickThinking: { type: "boolean" },
+                                repair: {
+                                    type: "object",
+                                    properties: {
+                                        value: { type: "number", minimum: 1, maximum: 2 },
+                                        capacity: { type: "number", minimum: 1, maximum: 2 }
                                     },
-                                    scale: { type: "boolean" },
-                                    secretMission: { type: "boolean" },
-                                    sharpshooter: { type: "number", minimum: 1, maximum: 2 },
-                                    tactical: { type: "number", minimum: 1, maximum: 1 },
-                                    takeCover: { type: "number", minimum: 1, maximum: 2 },
-                                    teamwork: { type: "string", minLength: 1 },
-                                    uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
+                                    required: ["value", "capacity"],
+                                    additionalProperties: false
                                 },
-                                additionalProperties: false
-                            }]
+                                scale: { type: "boolean" },
+                                secretMission: { type: "boolean" },
+                                sharpshooter: { type: "number", minimum: 1, maximum: 2 },
+                                tactical: { type: "number", minimum: 1, maximum: 1 },
+                                takeCover: { type: "number", minimum: 1, maximum: 2 },
+                                teamwork: { type: "string", minLength: 1 },
+                                uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
+                            },
+                            additionalProperties: false
                         }
                     },
                     required: ["faction", "name", "rank", "miniCount", "points",

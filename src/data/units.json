@@ -42,12 +42,12 @@
             }
         }],
         "upgrades": ["force", "force", "gear"],
-        "unitKeywords": [
-            { "jump": 1 },
-            { "charge": true },
-            { "deflect": true },
-            { "immunePierce": true }
-        ]
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "deflect": true,
+            "immunePierce": true
+        }
     },{
         "faction": "rebel",
         "name": "Leia Organa",
@@ -86,12 +86,12 @@
             }
         }],
         "upgrades": [ "command", "command", "gear" ],
-        "unitKeywords": [
-            { "takeCover": 2 },
-            { "inspire": 2 },
-            { "nimble": true },
-            { "sharpshooter": 2 }
-        ]
+        "keywords": {
+            "takeCover": 2,
+            "inspire": 2,
+            "nimble": true,
+            "sharpshooter": 2
+        }
     },{
         "faction": "rebel",
         "name": "Han Solo",
@@ -130,12 +130,12 @@
             }
         }],
         "upgrades": ["command", "training", "gear"],
-        "unitKeywords": [
-            { "lowProfile": true },
-            { "gunslinger": true },
-            { "sharpshooter": 1 },
-            { "uncannyLuck": 3 }
-        ]
+        "keywords": {
+            "lowProfile": true,
+            "gunslinger": true,
+            "sharpshooter": 1,
+            "uncannyLuck": 3
+        }
     },{
         "faction": "rebel",
         "name": "Rebel Officer",
@@ -170,11 +170,11 @@
             }
         }],
         "upgrades": ["command", "gear"],
-        "unitKeywords": [
-            { "takeCover": 1 },
-            { "inspire": 1 },
-            { "sharpshooter": 1 }
-        ]
+        "keywords": {
+            "takeCover": 1,
+            "inspire": 1,
+            "sharpshooter": 1
+        }
     },{
         "faction": "rebel",
         "name": "Jyn Erso",
@@ -204,13 +204,13 @@
             }
         }],
         "upgrades": ["command", "training", "gear", "armament"],
-        "unitKeywords": [
-            { "quickThinking": true },
-            { "dangerSense": 4 },
-            { "infiltrate": true },
-            { "nimble": true },
-            { "sharpshooter": 1 }
-        ]
+        "keywords": {
+            "quickThinking": true,
+            "dangerSense": 4,
+            "infiltrate": true,
+            "nimble": true,
+            "sharpshooter": 1
+        }
     },{
         "faction": "rebel",
         "name": "Cassian Andor",
@@ -249,13 +249,13 @@
             }
         }],
         "upgrades": ["training", "training", "gear", "armament"],
-        "unitKeywords": [
-            { "covertOps": true },
-            { "dangerSense": 3},
-            { "loadout": true },
-            { "marksman": true },
-            { "tactical": 1 }
-        ]
+        "keywords": {
+            "covertOps": true,
+            "dangerSense": 3,
+            "loadout": true,
+            "marksman": true,
+            "tactical": 1
+        }
     },{
         "faction": "rebel",
         "name": "Lando Calrissian",
@@ -294,13 +294,13 @@
             }
         }],
         "upgrades": ["command", "training", "gear"],
-        "unitKeywords": [
-            { "contingencies": 3 },
-            { "covertOps": true },
-            { "flawed": true },
-            { "sharpshooter": 2 },
-            { "uncannyLuck": 2 }
-        ]
+        "keywords": {
+            "contingencies": 3,
+            "covertOps": true,
+            "flawed": true,
+            "sharpshooter": 2,
+            "uncannyLuck": 2
+        }
     },{
         "faction": "rebel",
         "name": "Chewbacca",
@@ -343,12 +343,12 @@
             }
         }],
         "upgrades": ["training", "training", "gear"],
-        "unitKeywords": [
-            { "enrage": 4 },
-            { "guardian": 3 },
-            { "scale": true },
-            { "teamwork": "Han Solo" }
-        ]
+        "keywords": {
+            "enrage": 4,
+            "guardian": 3,
+            "scale": true,
+            "teamwork": "Han Solo"
+        }
     },{
         "faction": "rebel",
         "name": "Sabine Wren",
@@ -387,12 +387,12 @@
             }
         }],
         "upgrades": ["training", "gear", "gear", "armament"],
-        "unitKeywords": [
-            { "jump": 2 },
-            { "gunslinger": true },
-            { "impervious": true },
-            { "nimble": true }
-        ]
+        "keywords": {
+            "jump": 2,
+            "gunslinger": true,
+            "impervious": true,
+            "nimble": true
+        }
     },{
         "faction": "rebel",
         "name": "Luke Skywalker",
@@ -423,14 +423,14 @@
             }
         }],
         "upgrades": ["force", "force", "force", "training"],
-        "unitKeywords": [
-            { "jump": 1 },
-            { "charge": true },
-            { "deflect": true },
-            { "disengage": true },
-            { "immunePierce": true },
-            { "masterOfTheForce": 1 }
-        ]
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "deflect": true,
+            "disengage": true,
+            "immunePierce": true,
+            "masterOfTheForce": 1
+        }
     },{
         "faction": "rebel",
         "name": "R2-D2",
@@ -460,11 +460,11 @@
             }
         }],
         "upgrades": ["comms", "counterpart"],
-        "unitKeywords": [
-            { "repair": { "value": 2, "capacity": 2 }},
-            { "secretMission": true },
-            { "grounded": true },
-            { "inconspicuous": true }
-        ]
+        "keywords": {
+            "repair": { "value": 2, "capacity": 2 },
+            "secretMission": true,
+            "grounded": true,
+            "inconspicuous": true
+        }
     }]
 }

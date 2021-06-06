@@ -51,9 +51,11 @@
     ]
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.0.15",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.23",
+    "@types/jquery": "^3.5.5",
     "@types/js-cookie": "^2.2.6",
     "@types/mathjs": "^9.4.2",
     "@types/react": "^17.0.9",

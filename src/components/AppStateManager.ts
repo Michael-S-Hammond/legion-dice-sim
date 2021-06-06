@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 
 import * as T from '../code/Types';
+import * as UP from '../code/profiles/UnitProfile'
 
 export type AppState = {
     inputs: T.AttackInput,
@@ -172,6 +173,35 @@ export class AppStateManager {
         const newState = this.cloneState();
         newState.outputs = outputs;
         newState.resultsVisibility = this.state.diceRolls === 1 ? T.ResultOutput.Single : T.ResultOutput.Graph;
+        this.setState(newState);
+    }
+
+    public applyAttackStateProfile(profile: UP.UnitProfile, weapon: UP.Weapon) : void {
+        const newState = this.cloneState();
+        function getValueX(value: number | null | undefined) : T.AbilityX {
+            return value ? { active: true, value: value } : { active: false, value: 1 };
+        }
+        newState.inputs.offense = {
+            redDice: weapon.dice.red,
+            blackDice: weapon.dice.black,
+            whiteDice: weapon.dice.white,
+            surge: UP.convertUnitProfileSurgeToAttackSurge(profile.attackSurge),
+            tokens: newState.inputs.offense.tokens,
+            blast: false,   // TODO: ...
+            criticalX: { active: false, value: 1 }, // TODO: ...
+            duelist: false, // TODO: ...
+            highVelocity: false,    // TODO: ...
+            impactX: getValueX(weapon.keywords?.impact),
+            ionX: { active: false, value: 1 },  // TODO: ...
+            jediHunter: false,  // TODO: ...
+            lethalX: getValueX(weapon.keywords?.lethal),
+            makashiMastery: false,  // TODO: ...
+            pierceX: getValueX(weapon.keywords?.pierce),
+            preciseX: { active: false, value: 1 },  // TODO: ...
+            ramX: { active: false, value: 1 },  // TODO: ...
+            sharpshooterX: getValueX(profile.keywords?.sharpshooter)
+        };
+        newState.inputs.combat.meleeAttack = weapon.maximumRange !== null ? weapon.maximumRange === 0 : false;
         this.setState(newState);
     }
 
