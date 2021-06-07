@@ -61,7 +61,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             rank: newRank,
             name: unit ? unit.name : '',
             weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : ''
+            weapon: unit && unit.weapons && unit.weapons.length > 0 ? unit.weapons[0].name : ''
         });
     }
 
@@ -78,7 +78,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             rank: this.state.rank,
             name: newName,
             weapons: weapons,
-            weapon: weapons.length > 0 ? weapons[0].name : ''
+            weapon: weapons && weapons.length > 0 ? weapons[0].name : ''
         });
     }
 
@@ -267,7 +267,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                     value={this.state.weapon}
                                     className="rounded-lg px-2"
                                     onChange={this.onWeaponChange}>
-                                    { this.state.weapons.map(w => <option key={w.name} value={w.name}>{w.name}</option>)}
+                                    { this.state.weapons?.map(w => <option key={w.name} value={w.name}>{w.name}</option>)}
                                 </select>
                             </div>
                         </div>

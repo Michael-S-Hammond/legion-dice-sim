@@ -19,9 +19,12 @@ export enum Rank {
 }
 
 export enum UnitType {
+    creatureTrooper = "creatureTrooper",
+    emplacementTrooper = "emplacementTrooper",
     trooper = "trooper",
     wookieTrooper = "wookieTrooper",
-    vehicle = "vehicle"
+    groundVehicle = "groundVehicle",
+    repulsorVehicle = "repulsorVehicle"
 }
 
 export enum DefenseDie {
@@ -35,10 +38,19 @@ export enum AttackSurge {
     critical = "critical"
 }
 
+export enum FixedPosition {
+    front = "front",
+    rear = "rear"
+}
+
 export type WeaponKeywords = {
+    critical?: number,
+    cumbersome: boolean,
+    fixed?: Array<FixedPosition>,
     impact?: number,
     lethal?: number,
     pierce?: number,
+    ram?: number,
     suppressive?: boolean
 }
 
@@ -78,38 +90,94 @@ export type RepairUnitKeyword = {
     capacity: number
 }
 
+export enum HoverType {
+    ground = "ground"
+}
+
+export enum Immune {
+    blast = "blast",
+    melee = "melee",
+    pierce = "pierce",
+    range1Weapons = "range1Weapons"
+}
+
+export enum TransportType {
+    closed = "closed",
+    open = "open"
+}
+
+export type Transport = {
+    closed?: number,
+    open?: number
+}
+
+export type WeakPoint = {
+    rear?: number
+}
+
 export type UnitKeyword = {
+    agile?: number,
+    armor?: boolean,
+    armorX?: number,
+    arsenal?: number,
     charge?: boolean,
+    climbingVehicle?: boolean,
     contingencies?: number,
+    coordinate?: string,
+    cover?: number,
     covertOps?: boolean,
     dangerSense?: number,
+    dauntless?: boolean,
+    defend?: number,
     deflect?: boolean,
+    detachment?: string
     disengage?: boolean,
+    duelist?: boolean,
     enrage?: number,
+    equip?: Array<string>,
+    expertClimber?: boolean,
+    fireSupport?: boolean,
     flawed?: boolean,
+    fullPivot?: boolean,
     grounded?: boolean,
     guardian?: number,
     gunslinger?: boolean,
+    heavyWeaponTeam?: boolean,
+    hover?: HoverType,
+    immune?: Array<Immune>,
     immunePierce?: boolean,
     impervious?: boolean,
     inconspicuous?: boolean,
+    indomitable?: boolean,
     infiltrate?: boolean,
     inspire?: number,
     jump?: number,
+    lightTransport?: Transport,
     loadout?: boolean,
     lowProfile?: boolean,
     marksman?: boolean,
     masterOfTheForce?: number,
     nimble?: boolean,
     quickThinking?: boolean,
+    ready?: number,
+    relentless?: boolean,
     repair?: RepairUnitKeyword,
+    reposition?: boolean
+    retinue?: string,
     scale?: boolean,
+    scout?: number,
     secretMission?: boolean,
+    sentinel?: boolean,
     sharpshooter?: number,
+    speeder?: number,
+    stationary?: boolean,
     tactical?: number,
     takeCover?: number,
     teamwork?: string,
-    uncannyLuck?: number
+    transport?: Transport,
+    uncannyLuck?: number,
+    unhindered?: boolean,
+    weakPoint?: WeakPoint
 }
 
 export type UnitProfile = {

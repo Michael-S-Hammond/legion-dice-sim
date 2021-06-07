@@ -46,7 +46,7 @@
             "jump": 1,
             "charge": true,
             "deflect": true,
-            "immunePierce": true
+            "immune": ["pierce"]
         }
     },{
         "faction": "rebel",
@@ -428,7 +428,7 @@
             "charge": true,
             "deflect": true,
             "disengage": true,
-            "immunePierce": true,
+            "immune": ["pierce"],
             "masterOfTheForce": 1
         }
     },{
@@ -465,6 +465,625 @@
             "secretMission": true,
             "grounded": true,
             "inconspicuous": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 40,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "nimble": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Fleet Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 40,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DH-17 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "ready": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Veterans",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 48,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "training", "gear", "grenades"],
+        "keywords": {
+            "coordinate": "emplacement trooper",
+            "defend": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mark II Medium Blaster Trooper",
+        "rank": "corps",
+        "miniCount": 1,
+        "points": 38,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Mark II Medium Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 2,
+                "cumbersome": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "detachment": "Rebel Veterans",
+            "fireSupport": true,
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Commandos",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 50,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "lowProfile": true,
+            "scout": 2,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Commandos *",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "lowProfile": true,
+            "scout": 2,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Wookie Warriors",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 69,
+        "unitType": "wookieTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ryyk Blade",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Kashyyyk Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+        "keywords": {
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Pathfinders",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 58,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-300 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "dangerSense": 3,
+            "dauntless": true,
+            "infiltrate": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mandalorian Resistance",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "Westar 35 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 2,
+            "impervious": true,
+            "nimble": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mandalorian Resistance *",
+        "subtitle": "Clan Wren",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 34,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Westar 35 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 2,
+            "equip": ["Tristan Wren", "Ursa Wren"],
+            "impervious": true,
+            "nimble": true,
+            "retinue": "Sabine Wren"
+        }
+    },{
+        "faction": "rebel",
+        "name": "AT-RT",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Grappling Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "A-300 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "climbingVehicle": true,
+            "expertClimber": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "1.4 FD Laser Cannon Team",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 70,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 0,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "DH-17 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            }
+        },{
+            "name": "1.4 FD Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms", "generator"],
+        "keywords": {
+            "fullPivot": true,
+            "sentinel": true,
+            "stationary": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Tauntaun Riders",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 95,
+        "unitType": "creatureTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "Horns & Hind Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "ram": 1
+            }
+        },{
+            "name": "DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["training", "comms"],
+        "keywords": {
+            "agile": 1,
+            "relentless": true,
+            "reposition": true,
+            "sharpshooter": 1,
+            "unhindered": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "T-47 Airspeeder",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 130,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 7,
+        "resilience": 5,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "AP/11 Double Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 3,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "cover": 1,
+            "immune": ["blast", "melee", "range1Weapons"],
+            "speeder": 2
+        }
+    },{
+        "faction": "rebel",
+        "name": "X-34 Landspeeder",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 60,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Driver's DH-17 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["crew", "crew", "pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armorX": 2,
+            "arsenal": 3,
+            "cover": 1,
+            "lightTransport": { "open": 1 },
+            "speeder": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "A-A5 Speeder Truck",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 75,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 1,
+        "upgrades": ["crew", "crew", "pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "hover": "ground",
+            "reposition": true,
+            "transport": { "closed": 1 },
+            "weakPoint": { "rear": 2 }
         }
     }]
 }

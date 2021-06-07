@@ -1,5 +1,4 @@
 import Ajv  from 'ajv';
-import { number, string } from 'mathjs';
 import units from '../../data/units.json';
 
 describe('units.json schema', () => {
@@ -25,9 +24,13 @@ describe('units.json schema', () => {
                         keywords: {
                             type: "object",
                             properties: {
+                                critical: { type: "number", minimum: 1, maximum: 2 },
+                                cumbersome: { type: "boolean" },
+                                fixed: { type: "array", items: { enum: ["front", "rear"] } },
                                 impact: { type: "number", minimum: 1, maximum: 3 },
                                 lethal: { type: "number", minimum: 1, maximum: 1 },
                                 pierce: { type: "number", minimum: 1, maximum: 3 },
+                                ram: { type: "number", minimum: 1, maximum: 1 },
                                 suppressive: { type: "boolean" }
                             },
                             additionalProperties: false
@@ -52,7 +55,7 @@ describe('units.json schema', () => {
                         rank: { enum: [ "commander", "operative", "corps", "specialForces", "support", "heavy" ] },
                         miniCount: { type: "number", minimum: 1, maximum: 6 },
                         points: { type: "number", minimum: 1, maximum: 250 },
-                        unitType: { enum: ["trooper", "wookieTrooper", "vehicle"] },
+                        unitType: { enum: ["creatureTrooper", "emplacementTrooper", "trooper", "wookieTrooper", "groundVehicle", "repulsorVehicle"] },
                         defenseDie: { enum: ["red", "white"] },
                         wounds: { type: "number", minimum: 1, maximum: 11 },
                         courage: { type: "number", minimum: 1, maximum: 4 },
@@ -75,29 +78,62 @@ describe('units.json schema', () => {
                         keywords: {
                             type: "object",
                             properties: {
+                                agile: { type: "number", minimum: 1, maximum: 1 },
+                                armor: { type: "boolean" },
+                                armorX: { type: "number", minimum: 1, maximum: 2 },
+                                arsenal: { type: "number", minimum: 2, maximum: 3 },
                                 charge: { type: "boolean" },
+                                climbingVehicle: { type: "boolean" },
                                 contingencies: { type: "number", minimum: 1, maximum: 3 },
+                                coordinate: { type: "string", minLength: 1 },
+                                cover: { type: "number", minimum: 1, maximum: 2 },
                                 covertOps: { type: "boolean" },
                                 dangerSense: { type: "number", minimum: 1, maximum: 4 },
+                                dauntless: { type: "boolean" },
+                                defend: { type: "number", minimum: 1, maximum: 1 },
                                 deflect: { type: "boolean" },
+                                detachment: { type: "string", minLength: 1 },
                                 disengage: { type: "boolean" },
+                                duelist: { type: "boolean" },
                                 enrage: { type: "number", minimum: 1, maximum: 4 },
+                                equip: { type: "array", items: { type: "string" } },
+                                expertClimber: { type: "boolean" },
+                                fireSupport: { type: "boolean" },
                                 flawed: { type: "boolean" },
+                                fullPivot: { type: "boolean" },
                                 grounded: { type: "boolean" },
                                 guardian: { type: "number", minimum: 1, maximum: 3 },
                                 gunslinger: { type: "boolean" },
-                                immunePierce: { type: "boolean" },
+                                heavyWeaponTeam: { type: "boolean" },
+                                hover: { enum: ["ground"] },
+                                immune: {
+                                    type: "array",
+                                    items: [{
+                                        enum: ["blast", "melee", "pierce", "range1Weapons"]
+                                    }]
+                                },
                                 impervious: { type: "boolean" },
                                 inconspicuous: { type: "boolean" },
+                                indomitable: { type: "boolean" },
                                 infiltrate: { type: "boolean" },
                                 inspire: { type: "number", minimum: 1, maximum: 2 },
                                 jump: { type: "number", minimum: 1, maximum: 2 },
+                                lightTransport: {
+                                    type: "object",
+                                    properties: {
+                                        closed: { type: "number", minimum: 1, maximum: 1 },
+                                        open: { type: "number", minimum: 1, maximum: 1 }
+                                    },
+                                    additionalProperties: false
+                                },
                                 loadout: { type: "boolean" },
                                 lowProfile: { type: "boolean" },
                                 marksman: { type: "boolean" },
                                 masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
                                 nimble: { type: "boolean" },
                                 quickThinking: { type: "boolean" },
+                                ready: { type: "number", minimum: 1, maximum: 1 },
+                                relentless: { type: "boolean" },
                                 repair: {
                                     type: "object",
                                     properties: {
@@ -107,20 +143,42 @@ describe('units.json schema', () => {
                                     required: ["value", "capacity"],
                                     additionalProperties: false
                                 },
+                                reposition: { type: "boolean" },
+                                retinue: { type: "string", minLength: 1 },
                                 scale: { type: "boolean" },
+                                scout: { type: "number", minimum: 1, maximum: 3 },
                                 secretMission: { type: "boolean" },
+                                sentinel: { type: "boolean" },
                                 sharpshooter: { type: "number", minimum: 1, maximum: 2 },
+                                speeder: { type: "number", minimum: 1, maximum: 2 },
+                                stationary: { type: "boolean" },
                                 tactical: { type: "number", minimum: 1, maximum: 1 },
                                 takeCover: { type: "number", minimum: 1, maximum: 2 },
                                 teamwork: { type: "string", minLength: 1 },
+                                transport: {
+                                    type: "object",
+                                    properties: {
+                                        closed: { type: "number", minimum: 1, maximum: 1 },
+                                        open: { type: "number", minimum: 1, maximum: 1 }
+                                    },
+                                    additionalProperties: false
+                                },
                                 uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
+                                unhindered: { type: "boolean" },
+                                weakPoint: {
+                                    type: "object",
+                                    properties: {
+                                        rear: { type: "number", minimum: 1, maximum: 2 }
+                                    },
+                                    additionalProperties: false
+                                }
                             },
                             additionalProperties: false
                         }
                     },
                     required: ["faction", "name", "rank", "miniCount", "points",
                         "unitType", "defenseDie", "wounds", "attackSurge", "defenseSurge",
-                        "speed", "weapons"],
+                        "speed"],
                     additionalProperties: false
                 }
             }
