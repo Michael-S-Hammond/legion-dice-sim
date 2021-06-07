@@ -2,7 +2,6 @@ import Cookies from 'js-cookie';
 
 import * as T from '../code/Types';
 import * as UP from '../code/profiles/UnitProfile'
-import { boolean, number } from 'mathjs';
 
 export type AppState = {
     inputs: T.AttackInput,
