@@ -24,6 +24,7 @@ describe('units.json schema', () => {
                         keywords: {
                             type: "object",
                             properties: {
+                                blast: { type: "boolean" },
                                 critical: { type: "number", minimum: 1, maximum: 2 },
                                 cumbersome: { type: "boolean" },
                                 fixed: { type: "array", items: { enum: ["front", "rear"] } },
@@ -31,6 +32,7 @@ describe('units.json schema', () => {
                                 lethal: { type: "number", minimum: 1, maximum: 1 },
                                 pierce: { type: "number", minimum: 1, maximum: 3 },
                                 ram: { type: "number", minimum: 1, maximum: 1 },
+                                scatter: { type: "boolean" },
                                 suppressive: { type: "boolean" }
                             },
                             additionalProperties: false
@@ -82,12 +84,15 @@ describe('units.json schema', () => {
                                 armor: { type: "boolean" },
                                 armorX: { type: "number", minimum: 1, maximum: 2 },
                                 arsenal: { type: "number", minimum: 2, maximum: 3 },
+                                bounty: { type: "boolean" },
                                 charge: { type: "boolean" },
                                 climbingVehicle: { type: "boolean" },
+                                compel: { type: "boolean" },
                                 contingencies: { type: "number", minimum: 1, maximum: 3 },
                                 coordinate: { type: "string", minLength: 1 },
                                 cover: { type: "number", minimum: 1, maximum: 2 },
                                 covertOps: { type: "boolean" },
+                                cunning: { type: "boolean" },
                                 dangerSense: { type: "number", minimum: 1, maximum: 4 },
                                 dauntless: { type: "boolean" },
                                 defend: { type: "number", minimum: 1, maximum: 1 },
@@ -96,6 +101,7 @@ describe('units.json schema', () => {
                                 disengage: { type: "boolean" },
                                 duelist: { type: "boolean" },
                                 enrage: { type: "number", minimum: 1, maximum: 4 },
+                                entourage: { type: "string", minLength: 1 },
                                 equip: { type: "array", items: { type: "string" } },
                                 expertClimber: { type: "boolean" },
                                 fireSupport: { type: "boolean" },
@@ -117,6 +123,7 @@ describe('units.json schema', () => {
                                 indomitable: { type: "boolean" },
                                 infiltrate: { type: "boolean" },
                                 inspire: { type: "number", minimum: 1, maximum: 2 },
+                                jediHunter: { type: "boolean" },
                                 jump: { type: "number", minimum: 1, maximum: 2 },
                                 lightTransport: {
                                     type: "object",
@@ -131,8 +138,11 @@ describe('units.json schema', () => {
                                 marksman: { type: "boolean" },
                                 masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
                                 nimble: { type: "boolean" },
+                                precise: { type: "number", minimum: 1, maximum: 2 },
+                                pullingTheStrings: { type: "boolean" },
                                 quickThinking: { type: "boolean" },
                                 ready: { type: "number", minimum: 1, maximum: 1 },
+                                regenerate: { type: "number", minimum: 3, maximum: 3 },
                                 relentless: { type: "boolean" },
                                 repair: {
                                     type: "object",
@@ -151,6 +161,8 @@ describe('units.json schema', () => {
                                 sentinel: { type: "boolean" },
                                 sharpshooter: { type: "number", minimum: 1, maximum: 2 },
                                 speeder: { type: "number", minimum: 1, maximum: 2 },
+                                spotter: { type: "number", minimum: 1, maximum: 2 },
+                                spur: { type: "boolean" },
                                 stationary: { type: "boolean" },
                                 tactical: { type: "number", minimum: 1, maximum: 1 },
                                 takeCover: { type: "number", minimum: 1, maximum: 2 },

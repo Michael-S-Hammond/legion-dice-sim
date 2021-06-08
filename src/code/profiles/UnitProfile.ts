@@ -44,6 +44,7 @@ export enum FixedPosition {
 }
 
 export type WeaponKeywords = {
+    blast?: boolean,
     critical?: number,
     cumbersome: boolean,
     fixed?: Array<FixedPosition>,
@@ -51,6 +52,7 @@ export type WeaponKeywords = {
     lethal?: number,
     pierce?: number,
     ram?: number,
+    scatter?: boolean,
     suppressive?: boolean
 }
 
@@ -120,12 +122,15 @@ export type UnitKeyword = {
     armor?: boolean,
     armorX?: number,
     arsenal?: number,
+    bounty?: boolean,
     charge?: boolean,
     climbingVehicle?: boolean,
+    compel?: boolean,
     contingencies?: number,
     coordinate?: string,
     cover?: number,
     covertOps?: boolean,
+    cunning?: boolean,
     dangerSense?: number,
     dauntless?: boolean,
     defend?: number,
@@ -134,6 +139,7 @@ export type UnitKeyword = {
     disengage?: boolean,
     duelist?: boolean,
     enrage?: number,
+    entourage?: string,
     equip?: Array<string>,
     expertClimber?: boolean,
     fireSupport?: boolean,
@@ -151,6 +157,7 @@ export type UnitKeyword = {
     indomitable?: boolean,
     infiltrate?: boolean,
     inspire?: number,
+    jediHunter?: boolean,
     jump?: number,
     lightTransport?: Transport,
     loadout?: boolean,
@@ -158,8 +165,11 @@ export type UnitKeyword = {
     marksman?: boolean,
     masterOfTheForce?: number,
     nimble?: boolean,
+    precise?: number,
+    pullingTheStrings?: boolean,
     quickThinking?: boolean,
     ready?: number,
+    regenerate?: number,
     relentless?: boolean,
     repair?: RepairUnitKeyword,
     reposition?: boolean
@@ -170,6 +180,8 @@ export type UnitKeyword = {
     sentinel?: boolean,
     sharpshooter?: number,
     speeder?: number,
+    spotter?: number,
+    spur?: boolean,
     stationary?: boolean,
     tactical?: number,
     takeCover?: number,

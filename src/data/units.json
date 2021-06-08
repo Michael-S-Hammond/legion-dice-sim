@@ -445,7 +445,7 @@
         "courage": 2,
         "attackSurge": "hit",
         "defenseSurge": true,
-        "speed": 2,
+        "speed": 1,
         "weapons": [{
             "name": "Electro-Shock",
             "minimumRange": 0,
@@ -1084,6 +1084,487 @@
             "reposition": true,
             "transport": { "closed": 1 },
             "weakPoint": { "rear": 2 }
+        }
+    },{
+        "faction": "empire",
+        "name": "Darth Vader",
+        "subtitle": "Dark Lord of the Sith",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 175,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 8,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Vader's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 6,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        }],
+        "upgrades": ["force", "force", "force"],
+        "keywords": {
+            "deflect": true,
+            "immune": [ "pierce" ],
+            "masterOfTheForce": 1,
+            "relentless": true
+        }
+    },{
+        "faction": "empire",
+        "name": "General Veers",
+        "subtitle": "Master Tactician",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 80,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Veer's E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "gear"],
+        "keywords": {
+            "spotter": 2,
+            "inspire": 1,
+            "precise": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Emperor Palpatine",
+        "subtitle": "Ruler of the Galactic Empire",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Force Lightning",
+            "minimumRange": 0,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "pierce": 2,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "pullingTheStrings": true,
+            "entourage": "Imperial Royal Guard",
+            "immune": ["pierce"],
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Officer",
+        "subtitle": "Ruthless Commander",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Officer's RK-3 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "gear"],
+        "keywords": {
+            "spotter": 1,
+            "inspire": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Director Orson Krennic",
+        "subtitle": "Architect of Terror",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Krennic's DT-29 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "gear"],
+        "keywords": {
+            "compel": true,
+            "cunning": true,
+            "entourage": "Imperial Death Troopers",
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Iden Versio",
+        "subtitle": "Inferno Squad Leader",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Iden's E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "armament", "counterpart"],
+        "keywords": {
+            "quickThinking": true,
+            "covertOps": true,
+            "loadout": true,
+            "marksman": true,
+            "nimble": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Agent Kallus",
+        "subtitle": "Hunter of Spectres",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Kallus's RK-3 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "keywords": {
+            "contingencies": 2,
+            "cunning": true,
+            "flawed": true,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Boba Fett",
+        "subtitle": "Infamous Bounty Hunter",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Boot Spikes",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Wrist Rocket",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "Fett's EE-3 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "gear"],
+        "keywords": {
+            "jump": 2,
+            "arsenal": 2,
+            "bounty": true,
+            "impervious": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "empire",
+        "name": "Bossk",
+        "subtitle": "Trandosian Terror",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 115,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 7,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Frenzy",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        },{
+            "name": "Relby-v10 Mortar Rifle",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "pierce": 1,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "keywords": {
+            "bounty": true,
+            "enrage": 3,
+            "expertClimber": true,
+            "regenerate": 3,
+            "unhindered": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Darth Vader",
+        "subtitle": "The Emperor's Apprentice",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 155,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Vader's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        },{
+            "name": "Force Throw",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "scatter": true
+            }
+        }],
+        "upgrades": ["force", "force", "training"],
+        "keywords": {
+            "deflect": true,
+            "immune": ["pierce"],
+            "jediHunter": true,
+            "masterOfTheForce": 1,
+            "relentless": true,
+            "spur": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Stormtroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 44,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "precise": 1
         }
     }]
 }
