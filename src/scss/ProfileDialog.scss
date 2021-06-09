@@ -69,3 +69,85 @@ $rank-img-size: 30px;
 .rank-label {
     padding: 2px;
 }
+
+$upgrade-img-size: 30px;
+
+@mixin upgrade-img {
+    height: $upgrade-img-size;
+    width: $upgrade-img-size;
+}
+
+.armament-upgrade-img {
+    content: url("../img/upgrade/armament.png");
+    @include upgrade-img();
+}
+
+.command-upgrade-img {
+    content: url("../img/upgrade/command.png");
+    @include upgrade-img();
+}
+
+.comms-upgrade-img {
+    content: url("../img/upgrade/comms.png");
+    @include upgrade-img();
+}
+
+.counterpart-upgrade-img {
+    content: url("../img/upgrade/personnel.png");
+    @include upgrade-img();
+}
+
+.crew-upgrade-img {
+    content: url("../img/upgrade/crew.png");
+    @include upgrade-img();
+}
+
+.force-upgrade-img {
+    content: url("../img/upgrade/force.png");
+    @include upgrade-img();
+}
+
+.gear-upgrade-img {
+    content: url("../img/upgrade/gear.png");
+    @include upgrade-img();
+}
+
+.generatory-upgrade-img {
+    content: url("../img/upgrade/generator.png");
+    @include upgrade-img();
+}
+
+.grenades-upgrade-img {
+    content: url("../img/upgrade/grenades.png");
+    @include upgrade-img();
+}
+
+.hardpoint-upgrade-img {
+    content: url("../img/upgrade/hardpoint.png");
+    @include upgrade-img();
+}
+
+.heavyWeapon-upgrade-img {
+    content: url("../img/upgrade/heavyweapon.png");
+    @include upgrade-img();
+}
+
+.ordinance-upgrade-img {
+    content: url("../img/upgrade/ordinance.png");
+    @include upgrade-img();
+}
+
+.personnel-upgrade-img {
+    content: url("../img/upgrade/personnel.png");
+    @include upgrade-img();
+}
+
+.pilot-upgrade-img {
+    content: url("../img/upgrade/pilot.png");
+    @include upgrade-img();
+}
+
+.training-upgrade-img {
+    content: url("../img/upgrade/training.png");
+    @include upgrade-img();
+}

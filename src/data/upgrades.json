@@ -1,0 +1,39 @@
+{
+    "upgrades": [{
+        "type": "force",
+        "name": "Force Reflexes",
+        "points": 5
+    },{
+        "type": "force",
+        "name": "Saber Throw",
+        "points": 5
+    },{
+        "type": "heavyWeapon",
+        "name": "Z-6 Trooper",
+        "points": 22,
+        "restrictions": {
+            "unit": ["Rebel Troopers"]
+        },
+        "weapon": {
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 6
+            }
+        }
+    },{
+        "type": "pilot",
+        "name": "General Weiss",
+        "unique": true,
+        "points": 1,
+        "restrictions": {
+            "faction": ["imperial"],
+            "unitType": ["groundVehicle"]
+        },
+        "keywords": {
+            "arsenal": 2
+        }
+    }]
+}
