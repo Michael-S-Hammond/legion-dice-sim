@@ -1,5 +1,26 @@
 {
     "upgrades": [{
+        "type": "armament",
+        "name": "Jyn's SE-14 Blaster",
+        "points": 10,
+        "restrictions": {
+            "unit": ["Jyn Erso", "K-2SO"]
+        },
+        "weapon": {
+            "name": "Jyn's SE-14 Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 5
+            },
+            "keywords": {
+                "pierce": 1,
+                "suppressive": true
+            }
+        }
+    },{
         "type": "force",
         "name": "Force Reflexes",
         "points": 5
@@ -15,6 +36,7 @@
             "unit": ["Rebel Troopers"]
         },
         "weapon": {
+            "name":"Z-6 Trooper",
             "minimumRange": 1,
             "maximumRange": 3,
             "dice": {

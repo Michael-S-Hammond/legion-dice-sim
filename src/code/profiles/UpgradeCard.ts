@@ -16,18 +16,18 @@ export interface Upgrade {
     restrictions?: Restrictions
 }
 
+export interface ArmamentUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.armament,
+    weapon: UP.Weapon
+}
+
 export interface ForceUpgrade extends Upgrade {
     type: UP.UnitUpgrade.force
 }
 
 export interface HeavyWeaponUpgrade extends Upgrade {
     type: UP.UnitUpgrade.heavyWeapon,
-    weapon: {
-        minimumRange: number,
-        maximumRange?: number,
-        dice: UP.AttackDice,
-        keywords: UP.WeaponKeywords
-    }
+    weapon: UP.Weapon
 }
 
 export interface PilotUpgradeCard extends Upgrade {

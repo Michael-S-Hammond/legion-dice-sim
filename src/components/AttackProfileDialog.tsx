@@ -133,14 +133,34 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return null;
     }
 
+    private isAvailable(upgrade: UC.Upgrade) : boolean {
+        if(upgrade.restrictions) {
+            if(upgrade.restrictions.faction &&
+                !upgrade.restrictions.faction.includes(this.state.faction)) {
+                    return false;
+            }
+
+            if(upgrade.restrictions.unit &&
+                !upgrade.restrictions.unit.includes(this.state.name)) {
+                    return false;
+            }
+
+            if(upgrade.restrictions.unitType &&
+                (!this.state.unit || !upgrade.restrictions.unitType.includes(this.state.unit.unitType))) {
+                    return false;
+            }
+        }
+        return true;
+    }
+
     private renderUpgradeSelect(upgrade: UP.UnitUpgrade, index: number) : JSX.Element {
         return (
             <select
                 key={index + "-" + upgrade + "-upgrade-select"}
-                className="rounded-lg px-2">
+                className="rounded-lg px-2 ml-2">
             <option key="empty"></option>
             {
-                UC.getUpgrades().filter(u => u.type === upgrade).map((u, i) =>
+                UC.getUpgrades().filter(u => u.type === upgrade && this.isAvailable(u)).map((u, i) =>
                     <option
                         key={"option-" + index + "-" + i}
                         >{u.name}</option>
@@ -148,7 +168,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             }
         </select>);
     }
-    
+
     render() : JSX.Element {
         return (
             <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
