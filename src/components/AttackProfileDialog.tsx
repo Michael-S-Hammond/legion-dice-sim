@@ -4,7 +4,6 @@ import React from 'react';
 
 import * as UP from '../code/profiles/UnitProfile';
 import * as UC from '../code/profiles/UpgradeCard'
-import { number } from 'mathjs';
 
 type AttackProfileDialogProps = {
     id: string,
@@ -134,20 +133,16 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return null;
     }
 
-    private setUpgrade(name: string, index: number) : void {
-        alert("[" + index + "] " + name);
-    }
-
     private renderUpgradeSelect(upgrade: UP.UnitUpgrade, index: number) : JSX.Element {
         return (
             <select
-                key={number + "-" + upgrade + "-upgrade-select"}
+                key={index + "-" + upgrade + "-upgrade-select"}
                 className="rounded-lg px-2">
             <option key="empty"></option>
             {
                 UC.getUpgrades().filter(u => u.type === upgrade).map((u, i) =>
                     <option
-                        key={"option-" + number + "-" + i}
+                        key={"option-" + index + "-" + i}
                         >{u.name}</option>
                 )
             }
