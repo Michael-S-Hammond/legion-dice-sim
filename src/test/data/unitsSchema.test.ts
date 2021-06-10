@@ -42,7 +42,55 @@ describe('units.json schema', () => {
                     additionalProperties: false
                 }
             }
-        }
+        };
+
+        const unitRankSchema = {
+            $id: "http://www.legiondice.com/schemas/unitrank",
+            definitions: {
+                unitRank: {
+                    enum: [
+                        "commander",
+                        "operative",
+                        "corps",
+                        "specialForces",
+                        "support",
+                        "heavy"
+                    ]
+                },
+            }
+        };
+
+        const unitTypeSchema = {
+            $id: "http://www.legiondice.com/schemas/unittype",
+            definitions: {
+                unitType: {
+                    enum: [
+                        "cloneTrooper",
+                        "creatureTrooper",
+                        "droidTrooper",
+                        "emplacementTrooper",
+                        "trooper",
+                        "wookieTrooper",
+                        "groundVehicle",
+                        "repulsorVehicle"
+                    ]
+                },
+            }
+        };
+
+        const unitCriteriaSchema = {
+            $id: "http://www.legiondice.com/schemas/unitcriteria",
+            definitions: {
+                unitCriteria: {
+                    type: "object",
+                    properties: {
+                        rank: { $ref: "unitrank#/definitions/unitRank" },
+                        type: { $ref: "unittype#/definitions/unitType" }
+                    },
+                    additionalProperties: false
+                }
+            }
+        };
 
         const unitSchema = {
             $id: "http://www.legiondice.com/schemas/unit",
@@ -54,10 +102,10 @@ describe('units.json schema', () => {
                         name: { type: "string", minLength: 1 },
                         subtitle: { type: "string", minLength: 1 },
                         unique: { type: "boolean" },
-                        rank: { enum: [ "commander", "operative", "corps", "specialForces", "support", "heavy" ] },
+                        rank: { $ref: "unitrank#/definitions/unitRank" },
                         miniCount: { type: "number", minimum: 1, maximum: 6 },
                         points: { type: "number", minimum: 1, maximum: 250 },
-                        unitType: { enum: ["creatureTrooper", "droidTrooper", "emplacementTrooper", "trooper", "wookieTrooper", "groundVehicle", "repulsorVehicle"] },
+                        unitType: { $ref: "unittype#/definitions/unitType" },
                         defenseDie: { enum: ["red", "white"] },
                         wounds: { type: "number", minimum: 1, maximum: 11 },
                         courage: { type: "number", minimum: 1, maximum: 4 },
@@ -84,6 +132,9 @@ describe('units.json schema', () => {
                                 armor: { type: "boolean" },
                                 armorX: { type: "number", minimum: 1, maximum: 2 },
                                 arsenal: { type: "number", minimum: 2, maximum: 3 },
+                                ataruMastery: { type: "boolean" },
+                                authoritative: { type: "boolean" },
+                                bolster: { type: "number", minimum: 1, maximum: 2 },
                                 bounty: { type: "boolean" },
                                 calculateOdds: { type: "boolean" },
                                 charge: { type: "boolean" },
@@ -99,18 +150,22 @@ describe('units.json schema', () => {
                                 defend: { type: "number", minimum: 1, maximum: 1 },
                                 deflect: { type: "boolean" },
                                 detachment: { type: "string", minLength: 1 },
+                                direct: { $ref: "unitcriteria#/definitions/unitCriteria" },
                                 disengage: { type: "boolean" },
                                 disciplined: { type: "number", minimum: 1, maximum: 2 },
+                                djemSoMastery: { type: "boolean" },
                                 duelist: { type: "boolean" },
                                 enrage: { type: "number", minimum: 1, maximum: 4 },
                                 entourage: { type: "string", minLength: 1 },
                                 equip: { type: "array", items: { type: "string" } },
+                                exemplar: { type: "boolean" },
                                 expertClimber: { type: "boolean" },
                                 fireSupport: { type: "boolean" },
                                 flawed: { type: "boolean" },
                                 fullPivot: { type: "boolean" },
                                 grounded: { type: "boolean" },
                                 guardian: { type: "number", minimum: 1, maximum: 3 },
+                                guidance: { type: "boolean" },
                                 gunslinger: { type: "boolean" },
                                 heavyWeaponTeam: { type: "boolean" },
                                 hover: {
@@ -164,6 +219,7 @@ describe('units.json schema', () => {
                                 marksman: { type: "boolean" },
                                 masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
                                 nimble: { type: "boolean" },
+                                outmaneuver: { type: "boolean" },
                                 precise: { type: "number", minimum: 1, maximum: 2 },
                                 pullingTheStrings: { type: "boolean" },
                                 quickThinking: { type: "boolean" },
@@ -184,9 +240,11 @@ describe('units.json schema', () => {
                                 retinue: { type: "string", minLength: 1 },
                                 scale: { type: "boolean" },
                                 scout: { type: "number", minimum: 1, maximum: 3 },
+                                scoutingParty: { type: "number", minimum: 1, maximum: 2 },
                                 secretMission: { type: "boolean" },
                                 sentinel: { type: "boolean" },
                                 sharpshooter: { type: "number", minimum: 1, maximum: 2 },
+                                soresuMastery: { type: "boolean" },
                                 speeder: { type: "number", minimum: 1, maximum: 2 },
                                 spotter: { type: "number", minimum: 1, maximum: 2 },
                                 spur: { type: "boolean" },
@@ -196,6 +254,7 @@ describe('units.json schema', () => {
                                 takeCover: { type: "number", minimum: 1, maximum: 2 },
                                 target: { type: "number", minimum: 1, maximum: 1 },
                                 teamwork: { type: "string", minLength: 1 },
+                                tempted: { type: "boolean" },
                                 transport: {
                                     type: "object",
                                     oneOf: [{
@@ -253,6 +312,9 @@ describe('units.json schema', () => {
         ajv.addSchema(schema);
         ajv.addSchema(unitSchema);
         ajv.addSchema(weaponSchema);
+        ajv.addSchema(unitRankSchema);
+        ajv.addSchema(unitTypeSchema);
+        ajv.addSchema(unitCriteriaSchema);
         const validator = ajv.getSchema("http://www.legiondice.com/schemas/unitcollection");
         const validationResult = validator ? validator(units) : false;
         if(!validationResult) {

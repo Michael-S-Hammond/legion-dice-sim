@@ -2222,5 +2222,621 @@
             "immune": ["blast", "melee", "range1Weapons"],
             "transport": { "closed": 1 }
         }
+    },{
+        "faction": "republic",
+        "name": "Obi-Wan Kenobi",
+        "subtitle": "Civilized Warrior",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Obi-Wan's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 2,
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "command", "training"],
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "guardian": 3,
+            "immune": ["pierce"],
+            "masterOfTheForce": 1,
+            "soresuMastery": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Clone Captain Rex",
+        "subtitle": "Honorable Soldier",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Dual DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "gear", "grenades"],
+        "keywords": {
+            "gunslinger": true,
+            "scout": 1,
+            "scoutingParty": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Clone Commander",
+        "subtitle": "Trained for Leadership",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Commander's DC-15 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "keywords": {
+            "bolster": 2,
+            "direct": {
+                "rank": "corps",
+                "type": "cloneTrooper"
+            },
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Anakin Skywalker",
+        "subtitle": "The Chosen One",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Anakin's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        }],
+        "upgrades": ["force", "force", "training", "training"],
+        "keywords": {
+            "jump": 1,
+            "djemSoMastery": true,
+            "flawed": true,
+            "immune": ["pierce"],
+            "tempted": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Yoda",
+        "subtitle": "Grand Master of the Jedi Order",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Yoda's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },{
+            "name": "Force Wave",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "guidance": true,
+            "ataruMastery": true,
+            "immune": ["pierce"],
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "republic",
+        "name": "R2-D2",
+        "subtitle": "Hero of a Thousand Devices",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Electro-Shock",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms", "counterpart"],
+        "keywords": {
+            "repair": { "value": 2, "capacity": 2 },
+            "secretMission": true,
+            "grounded": true,
+            "inconspicuous": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Padmé Amidala",
+        "subtitle": "Spirited Senator",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Padmé's ELG-3A Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "keywords": {
+            "quickThinking": true,
+            "authoritative": true,
+            "exemplar": true,
+            "nimble": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "republic",
+        "name": "Phase I Clone Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 52,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "fireSupport": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Phase II Clone Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 62,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "training", "grenades"],
+        "keywords": {
+            "fireSupport": true,
+            "reliable": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Arc Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 72,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "gear", "grenades"],
+        "keywords": {
+            "impervious": true,
+            "scout": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Arc Troopers *",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 27,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "impervious": true,
+            "scout": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "BARC Speeder",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 60,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 5,
+        "resilience": 3,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Twin Light Blaster Connons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["crew", "comms"],
+        "keywords": {
+            "arsenal": 2,
+            "cover": 1,
+            "speeder": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "AT-RT",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 65,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Grappling Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "Merr-Sonn RPC-2 Rocket Launcher",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 1
+            }
+        }]
+    },{
+        "faction": "republic",
+        "name": "TX-130 Saber-class Fighter Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 9,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Lateral GA-6n Laser Cannons",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms", "ordinance"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "hover": { "ground": true },
+            "outmaneuver": true,
+            "weakPoint": {
+                "rear": 1,
+                "sides": 1
+            }
+        }
+    },{
+        "faction": "republic",
+        "name": "LAAT/le Patrol Transport",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 120,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance"],
+        "keywords": {
+            "armor": false,
+            "arsenal": 2,
+            "cover": 1,
+            "hover": {
+                "air": 2
+            },
+            "immune": ["blast", "melee", "range1Weapons"],
+            "transport": { "closed": 1 }
+        }
     }]
 }

@@ -19,6 +19,7 @@ export enum Rank {
 }
 
 export enum UnitType {
+    cloneTrooper = "cloneTrooper",
     creatureTrooper = "creatureTrooper",
     droidTrooper = "droidTrooper",
     emplacementTrooper = "emplacementTrooper",
@@ -115,6 +116,11 @@ export type Transport = {
     open?: number
 }
 
+export type UnitCriteria = {
+    rank?: Rank,
+    type?: UnitType
+}
+
 export type WeakPoint = {
     rear?: number,
     sides?: number
@@ -125,6 +131,9 @@ export type UnitKeyword = {
     armor?: boolean,
     armorX?: number,
     arsenal?: number,
+    ataruMastery?: boolean,
+    authoritative?: boolean,
+    bolster?: number,
     bounty?: boolean,
     calculateOdds?: boolean,
     charge?: boolean,
@@ -139,19 +148,23 @@ export type UnitKeyword = {
     dauntless?: boolean,
     defend?: number,
     deflect?: boolean,
-    detachment?: string
+    detachment?: string,
+    direct?: UnitCriteria,
     disengage?: boolean,
     disciplined?: boolean,
+    djemSoMastery?: boolean,
     duelist?: boolean,
     enrage?: number,
     entourage?: string,
     equip?: Array<string>,
+    exemplar?: boolean,
     expertClimber?: boolean,
     fireSupport?: boolean,
     flawed?: boolean,
     fullPivot?: boolean,
     grounded?: boolean,
     guardian?: number,
+    guidance?: boolean,
     gunslinger?: boolean,
     heavyWeaponTeam?: boolean,
     hover?: Hover,
@@ -171,6 +184,7 @@ export type UnitKeyword = {
     marksman?: boolean,
     masterOfTheForce?: number,
     nimble?: boolean,
+    outmaneuver?: boolean,
     precise?: number,
     pullingTheStrings?: boolean,
     quickThinking?: boolean,
@@ -183,9 +197,11 @@ export type UnitKeyword = {
     retinue?: string,
     scale?: boolean,
     scout?: number,
+    scoutingParty?: number,
     secretMission?: boolean,
     sentinel?: boolean,
     sharpshooter?: number,
+    soresuMastery?: boolean,
     speeder?: number,
     spotter?: number,
     spur?: boolean,
@@ -195,6 +211,7 @@ export type UnitKeyword = {
     takeCover?: number,
     target?: number,
     teamwork?: string,
+    tempted?: boolean,
     transport?: Transport,
     uncannyLuck?: number,
     unhindered?: boolean,
