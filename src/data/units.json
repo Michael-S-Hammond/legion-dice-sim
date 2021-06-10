@@ -1727,5 +1727,247 @@
             "reposition": true,
             "sentinel": true
         }
+    },{
+        "faction": "empire",
+        "name": "Scout Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 48,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+           "name": "EC-17 Hold-out Blaster",
+           "minimumRange": 1,
+           "maximumRange": 2,
+           "dice": {
+               "red": 0,
+               "black": 2,
+               "white": 0
+           }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "lowProfile": true,
+            "scout": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Scout Troopers *",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+           "name": "EC-17 Hold-out Blaster",
+           "minimumRange": 1,
+           "maximumRange": 2,
+           "dice": {
+               "red": 0,
+               "black": 2,
+               "white": 0
+           }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "lowProfile": true,
+            "scout": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Royal Guards",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 75,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Force Pike",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "EC-17 Hold-out Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+         }],
+         "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+         "keywords": {
+             "charge": false,
+             "disciplined": 2,
+             "guardian": 2
+         }
+    },{
+        "faction": "empire",
+        "name": "Imperial Death Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 76,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Close Quarters Combat",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "SE-14r Light Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        },{
+            "name": "E-11D Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "disciplined": 1,
+            "precise": 2,
+            "ready": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Special Forces",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 68,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Special Forces E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "infiltrate": true,
+            "marksman": true,
+            "reliable": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Special Forces *",
+        "subtitle": "Inferno Squad",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 34,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Close Quarters Combat",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Inferno Squad E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "heavyWeapon", "training", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "equip": ["Del Meeko", "Gideon Hask"],
+            "infiltrate": true,
+            "marksman": true,
+            "reliable": 1,
+            "retinue": "Iden Versio"
+        }
     }]
 }

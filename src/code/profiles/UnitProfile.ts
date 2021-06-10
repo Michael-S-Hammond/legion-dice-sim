@@ -139,6 +139,7 @@ export type UnitKeyword = {
     deflect?: boolean,
     detachment?: string
     disengage?: boolean,
+    disciplined?: boolean,
     duelist?: boolean,
     enrage?: number,
     entourage?: string,
@@ -174,6 +175,7 @@ export type UnitKeyword = {
     ready?: number,
     regenerate?: number,
     relentless?: boolean,
+    reliable?: number,
     repair?: RepairUnitKeyword,
     reposition?: boolean
     retinue?: string,

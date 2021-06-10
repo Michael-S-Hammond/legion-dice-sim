@@ -100,6 +100,7 @@ describe('units.json schema', () => {
                                 deflect: { type: "boolean" },
                                 detachment: { type: "string", minLength: 1 },
                                 disengage: { type: "boolean" },
+                                disciplined: { type: "number", minimum: 1, maximum: 2 },
                                 duelist: { type: "boolean" },
                                 enrage: { type: "number", minimum: 1, maximum: 4 },
                                 entourage: { type: "string", minLength: 1 },
@@ -144,8 +145,9 @@ describe('units.json schema', () => {
                                 pullingTheStrings: { type: "boolean" },
                                 quickThinking: { type: "boolean" },
                                 ready: { type: "number", minimum: 1, maximum: 1 },
-                                regenerate: { type: "number", minimum: 3, maximum: 3 },
+                                regenerate: { type: "number", minimum: 1, maximum: 3 },
                                 relentless: { type: "boolean" },
+                                reliable: { type: "number", minimum: 1, maximum: 1 },
                                 repair: {
                                     type: "object",
                                     properties: {
