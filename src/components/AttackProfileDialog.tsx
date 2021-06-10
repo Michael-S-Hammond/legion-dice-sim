@@ -3,11 +3,11 @@ import '../css/ProfileDialog.css';
 import React from 'react';
 
 import * as UP from '../code/profiles/UnitProfile';
-import * as UC from '../code/profiles/UpgradeCard'
+import * as UC from '../code/profiles/UpgradeCard';
 
 type AttackProfileDialogProps = {
     id: string,
-    applyAttackProfile: (profile: UP.UnitProfile, weapon: UP.Weapon) => void
+    applyAttackProfile: (profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>) => void
 };
 
 type AttackProfileDialogState = {
@@ -17,7 +17,8 @@ type AttackProfileDialogState = {
     name: string,
     unit: UP.UnitProfile | null,
     weapons: Array<UP.Weapon>,
-    weapon: string
+    weapon: string,
+    upgrades: Array<UC.Upgrade>
 };
 
 class AttackProfileDialog extends React.Component<AttackProfileDialogProps, AttackProfileDialogState> {
@@ -34,7 +35,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             name: unit ? unit.name : '',
             unit: unit,
             weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : ''
+            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : '',
+            upgrades: []
         }
     }
 
@@ -52,7 +54,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             name: unit ? unit.name : '',
             unit: unit,
             weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : ''
+            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : '',
+            upgrades: []
         });
     }
 
@@ -66,7 +69,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             name: unit ? unit.name : '',
             unit: unit,
             weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons && unit.weapons.length > 0 ? unit.weapons[0].name : ''
+            weapon: unit && unit.weapons && unit.weapons.length > 0 ? unit.weapons[0].name : '',
+            upgrades: []
         });
     }
 
@@ -84,7 +88,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             name: newName,
             unit: unit,
             weapons: weapons,
-            weapon: weapons && weapons.length > 0 ? weapons[0].name : ''
+            weapon: weapons && weapons.length > 0 ? weapons[0].name : '',
+            upgrades: []
         });
     }
 
@@ -97,7 +102,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             name: this.state.name,
             unit: this.state.unit,
             weapons: this.state.weapons,
-            weapon: newWeapon
+            weapon: newWeapon,
+            upgrades: this.state.upgrades
         });
     }
 
@@ -106,7 +112,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         if(unit !== null) {
             const weapon = unit.weapons.filter(w => w.name === this.state.weapon);
             if(weapon !== null && weapon.length === 1) {
-                this.props.applyAttackProfile(unit, weapon[0]);
+                this.props.applyAttackProfile(unit, weapon[0], this.state.upgrades);
                 $('#' + this.props.id + '-closeButton').trigger('click');
             }
         }
@@ -133,6 +139,13 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return null;
     }
 
+    private getUpgrade(type: UP.UnitUpgrade, name: string) : UC.Upgrade | null {
+        const upgrades = UC.getUpgrades().filter(u =>
+            u.type === type &&
+            u.name === name);
+        return upgrades.length === 1 ? upgrades[0] : null;
+    }
+
     private isAvailable(upgrade: UC.Upgrade) : boolean {
         if(upgrade.restrictions) {
             if(upgrade.restrictions.faction &&
@@ -153,10 +166,40 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return true;
     }
 
+    private onUpgradeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const index = Number(e.target.name);
+        const newUpgrades: Array<UC.Upgrade> = [];
+
+        this.state.upgrades.forEach((u, i) => {
+            newUpgrades[i] = u;
+        });
+        const upgradeType = this.state.unit?.upgrades ? this.state.unit.upgrades[index] : null;
+        if(upgradeType) {
+            const newUpgrade = this.getUpgrade(upgradeType, e.target.value);
+            if(newUpgrade) {
+                newUpgrades[index] = newUpgrade;
+            }
+        }
+
+        this.setState({
+            units: this.state.units,
+            faction: this.state.faction,
+            rank: this.state.rank,
+            name: this.state.name,
+            unit: this.state.unit,
+            weapons: this.state.weapons,
+            weapon: this.state.weapon,
+            upgrades: newUpgrades
+        });
+    }
+
     private renderUpgradeSelect(upgrade: UP.UnitUpgrade, index: number) : JSX.Element {
         return (
             <select
                 key={index + "-" + upgrade + "-upgrade-select"}
+                name={String(index)}
+                value={this.state.upgrades[index]?.name}
+                onChange={this.onUpgradeChange}
                 className="rounded-lg px-2 ml-2">
             <option key="empty"></option>
             {

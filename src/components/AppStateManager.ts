@@ -1,7 +1,8 @@
 import Cookies from 'js-cookie';
 
 import * as T from '../code/Types';
-import * as UP from '../code/profiles/UnitProfile'
+import * as UP from '../code/profiles/UnitProfile';
+import * as UC from '../code/profiles/UpgradeCard';
 
 export type AppState = {
     inputs: T.AttackInput,
@@ -176,7 +177,33 @@ export class AppStateManager {
         this.setState(newState);
     }
 
-    public applyAttackStateProfile(profile: UP.UnitProfile, weapon: UP.Weapon) : void {
+    private isRangeCompatible(weapon1: UP.Weapon, weapon2: UP.Weapon) : boolean {
+        if(weapon1.minimumRange === 0 && weapon2.minimumRange === 0) {
+            return true;
+        }
+
+        if((weapon1.minimumRange > 0 || (weapon1.maximumRange && weapon1.maximumRange > 0)) &&
+            (weapon2.minimumRange > 0 || (weapon2.maximumRange && weapon2.maximumRange > 0))) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    private applyHeavyWeaponUpgrade(weapon: UP.Weapon, upgrade: UC.Upgrade, dice: UP.AttackDice) : void {
+        const hwUpgrade = upgrade as UC.HeavyWeaponUpgrade;
+        if(this.isRangeCompatible(weapon, hwUpgrade.weapon)) {
+            dice.red += hwUpgrade.weapon.dice.red;
+            dice.black += hwUpgrade.weapon.dice.black;
+            dice.white += hwUpgrade.weapon.dice.white;
+        } else {
+            dice.red += weapon.dice.red;
+            dice.black += weapon.dice.black;
+            dice.white += weapon.dice.white;
+        }
+    }
+
+    public applyAttackStateProfile(profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>) : void {
         const newState = this.cloneState();
         function getValueX(value: number | null | undefined, count: number) : T.AbilityX {
             return value ? { active: true, value: value * count } : { active: false, value: 1 };
@@ -184,10 +211,25 @@ export class AppStateManager {
         function getBoolean(value: boolean | null | undefined) : boolean {
             return value ? true : false;
         }
+
+        const dice = {
+            red: weapon.dice.red * profile.miniCount,
+            black: weapon.dice.black * profile.miniCount,
+            white: weapon.dice.white * profile.miniCount
+        };
+
+        upgrades.forEach(u => {
+            // TODO: ...
+
+            if(u.type === UP.UnitUpgrade.heavyWeapon) {
+                this.applyHeavyWeaponUpgrade(weapon, u, dice);
+            }
+        });
+
         newState.inputs.offense = {
-            redDice: weapon.dice.red * profile.miniCount,
-            blackDice: weapon.dice.black * profile.miniCount,
-            whiteDice: weapon.dice.white * profile.miniCount,
+            redDice: dice.red,
+            blackDice: dice.black,
+            whiteDice: dice.white,
             surge: UP.convertUnitProfileSurgeToAttackSurge(profile.attackSurge),
             tokens: newState.inputs.offense.tokens,
             blast: false,   // TODO: ...
@@ -205,6 +247,7 @@ export class AppStateManager {
             sharpshooterX: getValueX(profile.keywords?.sharpshooter, 1)
         };
         newState.inputs.combat.meleeAttack = weapon.maximumRange !== null ? weapon.maximumRange === 0 : false;
+
         this.setState(newState);
     }
 

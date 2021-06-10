@@ -439,7 +439,7 @@
         "rank": "operative",
         "miniCount": 1,
         "points": 45,
-        "unitType": "trooper",
+        "unitType": "droidTrooper",
         "defenseDie": "white",
         "wounds": 4,
         "courage": 2,
@@ -465,6 +465,39 @@
             "secretMission": true,
             "grounded": true,
             "inconspicuous": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "K-2SO",
+        "subtitle": "Sardonic Security Droid",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 70,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overpower",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["comms", "armament"],
+        "keywords": {
+            "calculateOdds": true,
+            "armorX": 1,
+            "detachment": "Cassian Andor",
+            "incognito": true,
+            "teamwork": "Cassian Andor"
         }
     },{
         "faction": "rebel",
@@ -1565,6 +1598,134 @@
         "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
         "keywords": {
             "precise": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Snowtroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 44,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "steady": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Shoretroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 52,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-22 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "personnel", "gear", "grenades"],
+        "keywords": {
+            "coordinate": "emplacement trooper",
+            "target": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "DF-90 Mortar Trooper",
+        "rank": "corps",
+        "miniCount": 1,
+        "points": 38,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "red",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-22 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DF-90 Mortar",
+            "minimumRange": 3,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "critical": 1,
+                "cumbersome": true,
+                "suppressive": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "detachment": "Shoretroopers",
+            "fireSupport": true,
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
         }
     }]
 }

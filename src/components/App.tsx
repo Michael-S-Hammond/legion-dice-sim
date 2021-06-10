@@ -6,6 +6,7 @@ import React from 'react';
 import * as DU from '../code/DiceRoller';
 import * as T from '../code/Types';
 import * as UP from '../code/profiles/UnitProfile';
+import * as UC from '../code/profiles/UpgradeCard';
 import * as AS from './AppStateManager';
 
 import Attack from './Attack';
@@ -82,7 +83,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
 
         <AttackProfileDialog
           id='attackProfileDialog'
-          applyAttackProfile={(profile: UP.UnitProfile, weapon: UP.Weapon) => this._stateManager.applyAttackStateProfile(profile, weapon)}
+          applyAttackProfile={(profile: UP.UnitProfile, weapon: UP.Weapon, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
         ></AttackProfileDialog>
         <DefenseProfileDialog
           id='defenseProfileDialog'
