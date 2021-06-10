@@ -113,7 +113,22 @@ describe('units.json schema', () => {
                                 guardian: { type: "number", minimum: 1, maximum: 3 },
                                 gunslinger: { type: "boolean" },
                                 heavyWeaponTeam: { type: "boolean" },
-                                hover: { enum: ["ground"] },
+                                hover: {
+                                    type: "object",
+                                    oneOf: [{
+                                        properties: {
+                                            ground: { type: "boolean" }
+                                        },
+                                        required: ["ground"],
+                                        additionalProperties: false
+                                    },{
+                                        properties: {
+                                            air: { type: "number", minimum: 1, maximum: 2 }
+                                        },
+                                        required: ["air"],
+                                        additionalProperties: false
+                                    }]
+                                  },
                                 immune: {
                                     type: "array",
                                     items: [{
@@ -130,11 +145,19 @@ describe('units.json schema', () => {
                                 jump: { type: "number", minimum: 1, maximum: 2 },
                                 lightTransport: {
                                     type: "object",
-                                    properties: {
-                                        closed: { type: "number", minimum: 1, maximum: 1 },
-                                        open: { type: "number", minimum: 1, maximum: 1 }
-                                    },
-                                    additionalProperties: false
+                                    oneOf: [{
+                                        properties: {
+                                            closed: { type: "number", minimum: 1, maximum: 1 },
+                                        },
+                                        required: ["closed"],
+                                        additionalProperties: false
+                                    },{
+                                        properties: {
+                                            open: { type: "number", minimum: 1, maximum: 1 }
+                                        },
+                                        required: ["open"],
+                                        additionalProperties: false
+                                    }]
                                 },
                                 loadout: { type: "boolean" },
                                 lowProfile: { type: "boolean" },
@@ -175,18 +198,27 @@ describe('units.json schema', () => {
                                 teamwork: { type: "string", minLength: 1 },
                                 transport: {
                                     type: "object",
-                                    properties: {
-                                        closed: { type: "number", minimum: 1, maximum: 1 },
-                                        open: { type: "number", minimum: 1, maximum: 1 }
-                                    },
-                                    additionalProperties: false
+                                    oneOf: [{
+                                        properties: {
+                                            closed: { type: "number", minimum: 1, maximum: 1 },
+                                        },
+                                        required: ["closed"],
+                                        additionalProperties: false
+                                    },{
+                                        properties: {
+                                            open: { type: "number", minimum: 1, maximum: 1 }
+                                        },
+                                        required: ["open"],
+                                        additionalProperties: false
+                                    }]
                                 },
                                 uncannyLuck: { type: "number", minimum: 1, maximum: 3 },
                                 unhindered: { type: "boolean" },
                                 weakPoint: {
                                     type: "object",
                                     properties: {
-                                        rear: { type: "number", minimum: 1, maximum: 2 }
+                                        rear: { type: "number", minimum: 1, maximum: 2 },
+                                        sides: { type: "number", minimum: 1, maximum: 1 }
                                     },
                                     additionalProperties: false
                                 }

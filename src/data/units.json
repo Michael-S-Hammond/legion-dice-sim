@@ -1113,7 +1113,7 @@
         "upgrades": ["crew", "crew", "pilot", "hardpoint", "comms"],
         "keywords": {
             "armor": true,
-            "hover": "ground",
+            "hover": { "ground": true },
             "reposition": true,
             "transport": { "closed": 1 },
             "weakPoint": { "rear": 2 }
@@ -1968,6 +1968,259 @@
             "marksman": true,
             "reliable": 1,
             "retinue": "Iden Versio"
+        }
+    },{
+        "faction": "empire",
+        "name": "74-Z Speeder Bikes",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 75,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "EC-17 Hold-out Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+         },{
+             "name": "Ax-20 Blaster Cannon",
+             "minimumRange": 1,
+             "maximumRange": 3,
+             "dice": {
+                 "red": 1,
+                 "black": 1,
+                 "white": 1
+             },
+             "keywords": {
+                 "fixed": ["front"],
+                 "impact": 1
+             }
+         }],
+         "upgrades": ["comms"],
+         "keywords": {
+             "cover": 1,
+             "speeder": 1
+         }
+    },{
+        "faction": "empire",
+        "name": "E-Web Heavy Blaster Team",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "red",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifles",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        },{
+            "name": "E-Web Heavy Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "cumbersome": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms", "generator"],
+        "keywords": {
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Dewback Rider",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 75,
+        "unitType": "creatureTrooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Razor Claws & Shock Prod",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "critical": 2,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["training", "comms", "armament"],
+        "keywords": {
+            "armorX": 1,
+            "relentless": true,
+            "reposition": true,
+            "spur": true,
+            "unhindered": true
+        }
+    },{
+        "faction": "empire",
+        "name": "AT-ST",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 11,
+        "resilience": 8,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Fence-cutting Blades",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "MS-4 Twin Blaster Cannon",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "fixed": ["front"],
+                "impact": 3
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "hardpoint", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "weakPoint": { "rear": 1 }
+        }
+    },{
+        "faction": "empire",
+        "name": "TX-225 GAVw Occupier Combat Assault Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 145,
+        "unitType": "groundVehicle",
+        "defenseDie": "red",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Forward Twin Mk 2e/w Cannons",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true,
+                "fixed": ["front"]
+            }
+        },{
+            "name": "Lateral Quad MK 2e/w Cannons",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "reposition": true,
+            "transport": { "open": 1 },
+            "weakPoint": { "sides": 1 }
+        }
+    },{
+        "faction": "empire",
+        "name": "LAAT/le Patrol Transport",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 120,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance"],
+        "keywords": {
+            "armor": false,
+            "arsenal": 2,
+            "cover": 1,
+            "hover": {
+                "air": 2
+            },
+            "immune": ["blast", "melee", "range1Weapons"],
+            "transport": { "closed": 1 }
         }
     }]
 }

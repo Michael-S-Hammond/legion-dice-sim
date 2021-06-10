@@ -93,8 +93,9 @@ export type RepairUnitKeyword = {
     capacity: number
 }
 
-export enum HoverType {
-    ground = "ground"
+export type Hover = {
+    ground?: boolean,
+    air?: number
 }
 
 export enum Immune {
@@ -115,7 +116,8 @@ export type Transport = {
 }
 
 export type WeakPoint = {
-    rear?: number
+    rear?: number,
+    sides?: number
 }
 
 export type UnitKeyword = {
@@ -152,7 +154,7 @@ export type UnitKeyword = {
     guardian?: number,
     gunslinger?: boolean,
     heavyWeaponTeam?: boolean,
-    hover?: HoverType,
+    hover?: Hover,
     immune?: Array<Immune>,
     immunePierce?: boolean,
     impervious?: boolean,
