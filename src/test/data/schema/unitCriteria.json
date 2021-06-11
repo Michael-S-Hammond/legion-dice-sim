@@ -4,8 +4,10 @@
         "unitCriteria": {
             "type": "object",
             "properties": {
+                "faction": { "$ref": "faction#/definitions/faction" },
                 "rank": { "$ref": "unitrank#/definitions/unitRank" },
-                "type": { "$ref": "unittype#/definitions/unitType" }
+                "type": { "$ref": "unittype#/definitions/unitType" },
+                "unit": { "type": "string", "minLength": 1 }
             },
             "additionalProperties": false
         }

@@ -1,0 +1,75 @@
+{
+    "$id": "http://www.legiondice.com/schemas/upgrade",
+    "definitions": {
+        "baseUpgrade": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string", "minLength": 1 },
+                "name": { "type": "string", "minLength": 1 },
+                "unique": { "type": "boolean" },
+                "points": { "type": "number", "minimum": 0, "maximum": 40 },
+                "keywords": { "$ref": "unitkeywords#/definitions/keywords" },
+                "restrictions": {
+                    "type": "array",
+                    "items": { "$ref": "unitcriteria#/definitions/unitCriteria" }
+                }
+            },
+            "required": ["name", "points"]
+        },
+        "armamentUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "armament" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "forceUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "force" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "heavyWeaponUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "heavyWeapon" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "pilotUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "pilot" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "upgrade": {
+            "type": "object",
+            "oneOf": [
+                { "$ref": "#/definitions/armamentUpgrade" },
+                { "$ref": "#/definitions/forceUpgrade" },
+                { "$ref": "#/definitions/heavyWeaponUpgrade" },
+                { "$ref": "#/definitions/pilotUpgrade" }
+            ]
+        }
+    }
+}

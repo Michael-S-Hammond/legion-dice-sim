@@ -24,7 +24,7 @@ export enum UnitType {
     droidTrooper = "droidTrooper",
     emplacementTrooper = "emplacementTrooper",
     trooper = "trooper",
-    wookieTrooper = "wookieTrooper",
+    wookieeTrooper = "wookieeTrooper",
     groundVehicle = "groundVehicle",
     repulsorVehicle = "repulsorVehicle"
 }
@@ -57,10 +57,14 @@ export type WeaponKeywords = {
     highVelocity?: boolean,
     immune?: Array<WeaponImmune>,
     impact?: number,
+    ion?: number,
     lethal?: number,
+    longShot?: number,
     pierce?: number,
+    poison?: number,
     ram?: number,
     scatter?: boolean,
+    spray?: boolean,
     suppressive?: boolean
 }
 
@@ -155,7 +159,7 @@ export type UnitKeyword = {
     climbingVehicle?: boolean,
     compel?: boolean,
     contingencies?: number,
-    coordinate?: Array<string>,
+    coordinate?: Array<UnitCriteria>,
     cover?: number,
     covertOps?: boolean,
     cunning?: boolean,
@@ -195,6 +199,7 @@ export type UnitKeyword = {
     jediHunter?: boolean,
     jump?: number,
     juyoMastery?: boolean,
+    leader?: boolean,
     lightTransport?: Transport,
     loadout?: boolean,
     lowProfile?: boolean,

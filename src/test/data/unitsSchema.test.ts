@@ -2,7 +2,9 @@ import Ajv  from 'ajv';
 
 import units from '../../data/units.json';
 
+import factionSchema from './schema/faction.json';
 import unitCriteriaSchema from './schema/unitCriteria.json';
+import unitKeywordSchema from './schema/unitKeywords.json';
 import unitRankSchema from './schema/unitRank.json';
 import unitSchema from './schema/unit.json';
 import unitTypeSchema from './schema/unitType.json';
@@ -27,7 +29,9 @@ describe('units.json schema', () => {
 
         const ajv = new Ajv();
         ajv.addSchema(schema);
+        ajv.addSchema(factionSchema);
         ajv.addSchema(unitCriteriaSchema);
+        ajv.addSchema(unitKeywordSchema);
         ajv.addSchema(unitRankSchema);
         ajv.addSchema(unitSchema);
         ajv.addSchema(unitTypeSchema);

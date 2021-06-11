@@ -3,9 +3,11 @@
         "type": "armament",
         "name": "Jyn's SE-14 Blaster",
         "points": 10,
-        "restrictions": {
-            "unit": ["Jyn Erso", "K-2SO"]
-        },
+        "restrictions": [{
+            "unit": "Jyn Erso"
+        },{
+            "unit": "K-2SO"
+        }],
         "weapon": {
             "name": "Jyn's SE-14 Blaster",
             "minimumRange": 1,
@@ -30,11 +32,949 @@
         "points": 5
     },{
         "type": "heavyWeapon",
+        "name": "B2-ACM Trooper",
+        "points": 24,
+        "restrictions": [{
+            "unit": "B2 Super Battle Droids"
+        }],
+        "weapon": {
+            "name": "B2-ACM Trooper",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "B2-HA Trooper",
+        "points": 30,
+        "restrictions": [{
+            "unit": "B2 Super Battle Droids"
+        }],
+        "weapon": {
+            "name": "B2-HA Trooper",
+            "minimumRange": 2,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "blast": true,
+                "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Battle Shield Wookiee (Defensive)",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Wookiee Warriors"
+        }],
+        "weapon": {
+            "name": "Battle Shield Wookiee (Defensive)",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },
+        "keywords": {
+            "armorX": 1
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Battle Shield Wookiee (Offensive)",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Wookiee Warriors"
+        }],
+        "weapon": {
+            "name": "Battle Shield Wookiee (Offensive)",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Beskad Duelist",
+        "points": 28,
+        "restrictions": [{
+            "unit": "Mandalorian Resistance"
+        }],
+        "weapon": {
+            "name": "Beskad Duelist",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },
+        "keywords": {
+            "duelist": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Bistan",
+        "points": 28,
+        "restrictions": [{
+            "unit": "Rebel Pathfinders"
+        }],
+        "weapon": {
+            "name": "Bistan",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 4
+            },
+            "keywords": {
+                "impact": 1,
+                "ion": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Bowcaster Wookiee",
+        "points": 31,
+        "restrictions": [{
+            "unit": "Wookiee Warriors"
+        }],
+        "weapon": {
+            "name": "Bowcaster Wookiee",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "BX-series Droid Sniper",
+        "points": 30,
+        "restrictions": [{
+            "unit": "BX-series Droid Commandos"
+        }],
+        "weapon": {
+            "name": "BX-series Droid Sniper",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1,
+                "immune": ["deflect"]
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "CM-0/93 Trooper",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Rebel Veterans"
+        }],
+        "weapon": {
+            "name": "CM-0/93 Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "critical": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DC-15 Phase I Trooper",
+        "points": 27,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }],
+        "weapon": {
+            "name": "DC-15 Phase I Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DC-15x ARC Trooper",
+        "points": 31,
+        "restrictions": [{
+            "unit": "ARC Troopers"
+        }],
+        "weapon": {
+            "name": "DC-15x ARC Trooper",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1,
+                "immune": ["deflect"],
+                "lethal": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DH-447 Sniper",
+        "points": 28,
+        "restrictions": [{
+            "unit": "Rebel Commandos"
+        }],
+        "weapon": {
+            "name": "DH-447 Sniper",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "highVelocity": true,
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DLT-19 Stormtrooper",
+        "points": 22,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }],
+        "weapon": {
+            "name": "DLT-19 Stormtrooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DLT-19D Trooper",
+        "points": 34,
+        "restrictions": [{
+            "unit": "Imperial Death Troopers"
+        }],
+        "weapon": {
+            "name": "DLT-19D Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DLT-19x Sniper",
+        "points": 28,
+        "restrictions": [{
+            "unit": "Scout Troopers"
+        }],
+        "weapon": {
+            "name": "DLT-19x Sniper",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "highVelocity": true,
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DLT-20A Trooper",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }],
+        "weapon": {
+            "name": "DLT-20A Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DP-23 Phase I Trooper",
+        "points": 23,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }],
+        "weapon": {
+            "name": "DP-23 Phase I Trooper",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "DT-F16",
+        "unique": true,
+        "points": 22,
+        "restrictions": [{
+            "unit": "Imperial Death Troopers"
+        }],
+        "weapon": {
+            "name": "DT-F16",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },
+        "keywords": {
+            "compel": true,
+            "leader": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Del Meeko",
+        "unique": true,
+        "points": 38,
+        "restrictions": [{
+            "unit": "Imperial Special Forces"
+        },{
+            "faction": "empire",
+            "rank": "corps"
+        }],
+        "weapon": {
+            "name": "Del Meeko",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "highVelocity": true,
+                "lethal": 1
+            }
+        },
+        "keywords": {
+            "repair": {
+                "value": 2,
+                "capacity": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Dioxis Mine Saboteur",
+        "points": 28,
+        "restrictions": [{
+            "unit": "BX-series Droid Commandos"
+        }]
+    },{
+        "type": "heavyWeapon",
+        "name": "E-5C B1 Trooper",
+        "points": 18,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }],
+        "weapon": {
+            "name": "E-5C B1 Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "E-5S B1 Trooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }],
+        "weapon": {
+            "name": "E-5S B1 Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "E-60R B1 Trooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }],
+        "weapon": {
+            "name": "E-60R B1 Trooper",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Echo",
+        "points": 40,
+        "restrictions": [{
+            "unit": "ARC Troopers"
+        },{
+            "rank": "corps",
+            "type": "cloneTrooper"
+        }],
+        "weapon": {
+            "name": "Echo",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1,
+                "lethal": 1,
+                "immune": ["deflect"]
+            }
+        },
+        "keywords": {
+            "leader": true,
+            "reliable": 1
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Electrostaff Guard",
+        "points": 25,
+        "restrictions": [{
+            "unit": "Imperial Royal Guard"
+        }],
+        "weapon": {
+            "name": "Electrostaff Guard",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "sidearm": "melee"
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Fives",
+        "points": 36,
+        "restrictions": [{
+            "unit": "ARC Troopers"
+        },{
+            "rank": "corps",
+            "type": "cloneTrooper"
+        }],
+        "weapon": {
+            "name": "Fives",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },
+        "keywords": {
+            "coordinate": [{
+                "type": "cloneTrooper"
+            }],
+            "leader": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Flametrooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "Snowtroopers"
+        }],
+        "weapon": {
+            "name": "Flametrooper",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "spray": true
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Gideon Hask",
+        "unique": true,
+        "points": 38,
+        "restrictions": [{
+            "unit": "Imperial Special Forces"
+        },{
+            "faction": "empire",
+            "rank": "corps"
+        }],
+        "weapon": {
+            "name": "Gideon Hask",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },
+        "keywords": {
+            "coordinate": [{
+                "rank": "corps",
+                "type": "trooper"
+            }],
+            "leader": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "HH-12 Stormtrooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }],
+        "weapon": {
+            "name": "HH-12 Stormtrooper",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "cumbersome": true,
+                "impact": 3
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "MPL-57 Barrage Trooper",
+        "points": 22,
+        "restrictions": [{
+            "unit": "Fleet Troopers"
+        }],
+        "weapon": {
+            "name": "MPL-57 Barrage Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 2
+            },
+            "keywords": {
+                "blast": true,
+                "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Pao",
+        "points": 22,
+        "restrictions": [{
+            "unit": "Rebel Pathfinders"
+        }],
+        "weapon": {
+            "name": "Pao",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            }
+        },
+        "keywords": {
+            "inspire": 1,
+            "leader": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Phase II Mortar Trooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "Phase II Clone Troopers"
+        }],
+        "weapon": {
+            "name": "Phase II Mortar Trooper",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1,
+                "suppressive": true
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Proton Charge Saboteur",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Rebel Commandos"
+        }]
+    },{
+        "type": "heavyWeapon",
+        "name": "RPS-6 Phase I Trooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }],
+        "weapon": {
+            "name": "RPS-6 Phase I Trooper",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "cumbersome": true,
+                "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "RTC-97C Stormtrooper",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }],
+        "weapon": {
+            "name": "RTC-97C Stormtrooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 3
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Radiation Cannon B1 Trooper",
+        "points": 22,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }],
+        "weapon": {
+            "name": "Radiation Cannon B1 Trooper",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "poison": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "SX-21 Trooper",
+        "points": 17,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }],
+        "weapon": {
+            "name": "SX-21 Trooper",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Scatter Gun Trooper",
+        "points": 23,
+        "restrictions": [{
+            "unit": "Fleet Troopers"
+        }],
+        "weapon": {
+            "name": "Scatter Gun Trooper",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Sonic Charge Saboteur",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Scout Troopers"
+        }]
+    },{
+        "type": "heavyWeapon",
+        "name": "T-21 Special Forces Trooper",
+        "points": 29,
+        "restrictions": [{
+            "unit": "Imperial Special Forces"
+        }],
+        "weapon": {
+            "name": "T-21 Special Forces Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "critical": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "T-21 Stormtrooper",
+        "points": 24,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }],
+        "weapon": {
+            "name": "T-21 Stormtrooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "critical": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "T-21B Trooper",
+        "points": 29,
+        "restrictions": [{
+            "unit": "Shoretroopers"
+        }],
+        "weapon": {
+            "name": "T-21B Trooper",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "T-7 Ion Snowtrooper",
+        "points": 20,
+        "restrictions": [{
+            "unit": "Snowtroopers"
+        }],
+        "weapon": {
+            "name": "T-7 Ion Snowtrooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 2
+            },
+            "keywords": {
+                "impact": 1,
+                "ion": 1
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Tristan Wren",
+        "points": 38,
+        "restrictions": [{
+            "unit": "Mandalorian Resistance"
+        }],
+        "weapon": {
+            "name": "Tristan Wren",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1,
+                "suppressive": true
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Ursa Wren",
+        "points": 38,
+        "restrictions": [{
+            "unit": "Mandalorian Resistance"
+        }],
+        "weapon": {
+            "name": "Ursa Wren",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "longShot": 1
+            }
+        },
+        "keywords": {
+            "leader": true
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Z-6 Phase I Trooper",
+        "points": 23,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }],
+        "weapon": {
+            "name":"Z-6 Phase I Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 6
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "Z-6 Phase II Trooper",
+        "points": 27,
+        "restrictions": [{
+            "unit": "Phase II Clone Troopers"
+        }],
+        "weapon": {
+            "name":"Z-6 Phase II Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 6
+            }
+        }
+    },{
+        "type": "heavyWeapon",
         "name": "Z-6 Trooper",
         "points": 22,
-        "restrictions": {
-            "unit": ["Rebel Troopers"]
-        },
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }],
         "weapon": {
             "name":"Z-6 Trooper",
             "minimumRange": 1,
@@ -50,10 +990,10 @@
         "name": "General Weiss",
         "unique": true,
         "points": 1,
-        "restrictions": {
-            "faction": ["imperial"],
-            "unitType": ["groundVehicle"]
-        },
+        "restrictions": [{
+            "faction": "empire",
+            "type": "groundVehicle"
+        }],
         "keywords": {
             "arsenal": 2
         }

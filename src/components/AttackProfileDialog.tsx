@@ -147,23 +147,35 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private isAvailable(upgrade: UC.Upgrade) : boolean {
-        if(upgrade.restrictions) {
-            if(upgrade.restrictions.faction &&
-                !upgrade.restrictions.faction.includes(this.state.faction)) {
-                    return false;
-            }
-
-            if(upgrade.restrictions.unit &&
-                !upgrade.restrictions.unit.includes(this.state.name)) {
-                    return false;
-            }
-
-            if(upgrade.restrictions.unitType &&
-                (!this.state.unit || !upgrade.restrictions.unitType.includes(this.state.unit.unitType))) {
-                    return false;
-            }
+        if(!upgrade.restrictions || upgrade.restrictions.length === 0) {
+            return true;
         }
-        return true;
+
+        let foundMatch = false;
+        upgrade.restrictions.forEach(r => {
+            let match = true;
+
+            if(r.faction && r.faction !== this.state.faction) {
+                match = false;
+            }
+
+            if(r.unit && (r.unit !== this.state.name) && ((r.unit + " *") !== this.state.name)) {
+                match = false;
+            }
+
+            if(r.type && (!this.state.unit || r.type !== this.state.unit.unitType)) {
+                match = false;
+            }
+
+            if(r.rank && (!this.state.unit || r.rank !== this.state.unit.rank)) {
+                match = false;
+            }
+
+            if(match) {
+                foundMatch = true;
+            }
+        });
+        return foundMatch;
     }
 
     private onUpgradeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -215,7 +227,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     render() : JSX.Element {
         return (
             <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-sm">
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Attack profile</h5>

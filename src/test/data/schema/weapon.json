@@ -31,10 +31,15 @@
                                 "enum": ["deflect"]
                             }]
                         },
+                        "ion": { "type": "number", "minimum": 1, "maximum": 2 },
                         "lethal": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "longShot": { "type": "number", "minimum": 1, "maximum": 1 },
                         "pierce": { "type": "number", "minimum": 1, "maximum": 3 },
+                        "poison": { "type": "number", "minimum": 1, "maximum": 3 },
                         "ram": { "type": "number", "minimum": 1, "maximum": 1 },
                         "scatter": { "type": "boolean" },
+                        "sidearm": { "enum": ["melee", "range"] },
+                        "spray": { "type": "boolean" },
                         "suppressive": { "type": "boolean" }
                     },
                     "additionalProperties": false

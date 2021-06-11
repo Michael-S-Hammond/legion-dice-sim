@@ -309,7 +309,7 @@
         "rank": "operative",
         "miniCount": 1,
         "points": 90,
-        "unitType": "wookieTrooper",
+        "unitType": "wookieeTrooper",
         "defenseDie": "white",
         "wounds": 9,
         "courage": 2,
@@ -605,7 +605,9 @@
         }],
         "upgrades": ["heavyWeapon", "personnel", "training", "gear", "grenades"],
         "keywords": {
-            "coordinate": ["emplacementTrooper"],
+            "coordinate": [{
+                "type": "emplacementTrooper"
+            }],
             "defend": 1
         }
     },{
@@ -742,11 +744,11 @@
         }
     },{
         "faction": "rebel",
-        "name": "Wookie Warriors",
+        "name": "Wookiee Warriors",
         "rank": "specialForces",
         "miniCount": 3,
         "points": 69,
-        "unitType": "wookieTrooper",
+        "unitType": "wookieeTrooper",
         "defenseDie": "white",
         "wounds": 3,
         "courage": 2,
@@ -1669,7 +1671,9 @@
         }],
         "upgrades": ["heavyWeapon", "training", "personnel", "gear", "grenades"],
         "keywords": {
-            "coordinate": ["emplacementTrooper"],
+            "coordinate": [{
+                "type": "emplacementTrooper"
+            }],
             "target": 1
         }
     },{
@@ -2586,7 +2590,7 @@
         }
     },{
         "faction": "republic",
-        "name": "Arc Troopers",
+        "name": "ARC Troopers",
         "rank": "specialForces",
         "miniCount": 4,
         "points": 72,
@@ -2634,7 +2638,7 @@
         }
     },{
         "faction": "republic",
-        "name": "Arc Troopers *",
+        "name": "ARC Troopers *",
         "subtitle": "Strike Team",
         "rank": "specialForces",
         "miniCount": 1,
@@ -3098,7 +3102,9 @@
         "upgrades": ["heavyWeapon", "personnel", "comms"],
         "keywords": {
             "ai": ["attack"],
-            "coordinate": ["droidTrooper"]
+            "coordinate": [{
+                "type": "droidTrooper"
+            }]
         }
     },{
         "faction": "separatist",
@@ -3316,7 +3322,13 @@
         "keywords": {
             "agile": 1,
             "ai": ["move"],
-            "coordinate": ["droidTrooper", "vehicle"],
+            "coordinate": [{
+                "type": "droidTrooper"
+            },{
+                "type": "groundVehicle"
+            },{
+                "type": "repulsorVehicle"
+            }],
             "cover": 1,
             "speeder": 1
         }

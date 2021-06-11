@@ -2,10 +2,11 @@ import upgradesFile from '../../data/upgrades.json';
 
 import * as UP from './UnitProfile';
 
-export type Restrictions = {
-    unit?: Array<string>,
-    faction?: Array<UP.Faction>,
-    unitType?: Array<UP.UnitType>
+export type Restriction = {
+    unit?: string,
+    faction?: UP.Faction,
+    rank?: UP.Rank,
+    type?: UP.UnitType
 }
 
 export interface Upgrade {
@@ -13,7 +14,8 @@ export interface Upgrade {
     name: string,
     unique?: boolean,
     points: number,
-    restrictions?: Restrictions
+    keywords?: UP.UnitKeyword,
+    restrictions?: Array<Restriction>
 }
 
 export interface ArmamentUpgrade extends Upgrade {
@@ -27,12 +29,11 @@ export interface ForceUpgrade extends Upgrade {
 
 export interface HeavyWeaponUpgrade extends Upgrade {
     type: UP.UnitUpgrade.heavyWeapon,
-    weapon: UP.Weapon
+    weapon?: UP.Weapon
 }
 
 export interface PilotUpgradeCard extends Upgrade {
-    type: UP.UnitUpgrade.pilot,
-    keywords?: UP.UnitKeyword
+    type: UP.UnitUpgrade.pilot
 }
 
 export interface UpgradeCardRegistry {

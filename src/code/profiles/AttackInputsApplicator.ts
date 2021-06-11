@@ -22,11 +22,58 @@ function isRangeCompatible(weapon1: UP.Weapon, weapon2: UP.Weapon) : boolean {
     return false;
 }
 
+function applyValueXKeyword(value: number | undefined, keyword: T.AbilityX) {
+    if(value !== undefined) {
+        if(keyword.active) {
+            keyword.value += value;
+        } else {
+            keyword.active = true;
+            keyword.value = value;
+        }
+    }
+}
+
+function applyUpgradeKeywords(offense: T.OffenseInput, keywords: UP.UnitKeyword) {
+    if(keywords.duelist) {
+        offense.duelist = true;
+    }
+    if(keywords.jediHunter) {
+        offense.jediHunter = true;
+    }
+    if(keywords.makashiMastery) {
+        offense.makashiMastery = true;
+    }
+    applyValueXKeyword(keywords.precise, offense.preciseX);
+    applyValueXKeyword(keywords.sharpshooter, offense.sharpshooterX);
+}
+
+function applyWeaponKeywords(offense: T.OffenseInput, keywords: UP.WeaponKeywords) {
+    if(keywords.blast) {
+        offense.blast = true;
+    }
+    applyValueXKeyword(keywords.critical, offense.criticalX);
+    if(!keywords.highVelocity) {
+        offense.highVelocity = false;
+    }
+    applyValueXKeyword(keywords.impact, offense.impactX);
+    applyValueXKeyword(keywords.ion, offense.ionX);
+    applyValueXKeyword(keywords.lethal, offense.lethalX);
+    applyValueXKeyword(keywords.pierce, offense.pierceX);
+    applyValueXKeyword(keywords.ram, offense.ramX);
+}
+
 function applyHeavyWeaponUpgrade(offense: T.OffenseInput, profile: UP.UnitProfile, weapon: UP.Weapon, upgrade: UC.HeavyWeaponUpgrade) : void {
-    if(isRangeCompatible(weapon, upgrade.weapon)) {
+    if(upgrade.weapon !== undefined && isRangeCompatible(weapon, upgrade.weapon)) {
         offense.redDice += upgrade.weapon.dice.red;
         offense.blackDice += upgrade.weapon.dice.black;
         offense.whiteDice += upgrade.weapon.dice.white;
+
+        if(upgrade.keywords) {
+            applyUpgradeKeywords(offense, upgrade.keywords);
+        }
+        if(upgrade.weapon.keywords) {
+            applyWeaponKeywords(offense, upgrade.weapon.keywords);
+        }
     } else {
         offense.redDice += weapon.dice.red;
         offense.blackDice += weapon.dice.black;
@@ -51,12 +98,12 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
         blast: getBoolean(weapon.keywords?.blast),
         criticalX: getValueX(weapon.keywords?.critical, profile.miniCount),
         duelist: getBoolean(profile.keywords?.duelist),
-        highVelocity: false,    // TODO: ...
+        highVelocity: getBoolean(weapon.keywords?.highVelocity),
         impactX: getValueX(weapon.keywords?.impact, profile.miniCount),
-        ionX: { active: false, value: 1 },  // TODO: ...
+        ionX: getValueX(weapon.keywords?.ion, profile.miniCount),
         jediHunter: getBoolean(profile.keywords?.jediHunter),
         lethalX: getValueX(weapon.keywords?.lethal, profile.miniCount),
-        makashiMastery: false,  // TODO: ...
+        makashiMastery: getBoolean(profile.keywords?.makashiMastery),
         pierceX: getValueX(weapon.keywords?.pierce, profile.miniCount),
         preciseX: getValueX(profile.keywords?.precise, 1),
         ramX: getValueX(weapon.keywords?.ram, profile.miniCount),
