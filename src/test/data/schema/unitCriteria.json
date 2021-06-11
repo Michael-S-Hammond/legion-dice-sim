@@ -1,0 +1,13 @@
+{
+    "$id": "http://www.legiondice.com/schemas/unitcriteria",
+    "definitions": {
+        "unitCriteria": {
+            "type": "object",
+            "properties": {
+                "rank": { "$ref": "unitrank#/definitions/unitRank" },
+                "type": { "$ref": "unittype#/definitions/unitType" }
+            },
+            "additionalProperties": false
+        }
+    }
+}

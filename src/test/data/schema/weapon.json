@@ -1,0 +1,47 @@
+{
+    "$id": "http://www.legiondice.com/schemas/weapon",
+    "definitions": {
+        "weapon": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "minimumRange": { "type": "number", "minimum": 0, "maximum": 3 },
+                "maximumRange": { "type": "number", "minimum": 0, "maximum": 5 },
+                "dice": {
+                    "type": "object",
+                    "properties": {
+                        "red": { "type": "number", "minimum": 0, "maximum": 10 },
+                        "black": { "type": "number", "minimum": 0, "maximum": 10 },
+                        "white": { "type": "number", "minimum": 0, "maximum": 10 }
+                    },
+                    "required": ["red", "black", "white"]
+                },
+                "keywords": {
+                    "type": "object",
+                    "properties": {
+                        "blast": { "type": "boolean" },
+                        "critical": { "type": "number", "minimum": 1, "maximum": 2 },
+                        "cumbersome": { "type": "boolean" },
+                        "fixed": { "type": "array", "items": { "enum": ["front", "rear"] } },
+                        "highVelocity": { "type": "boolean" },
+                        "impact": { "type": "number", "minimum": 1, "maximum": 3 },
+                        "immune": {
+                            "type": "array",
+                            "items": [{
+                                "enum": ["deflect"]
+                            }]
+                        },
+                        "lethal": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "pierce": { "type": "number", "minimum": 1, "maximum": 3 },
+                        "ram": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "scatter": { "type": "boolean" },
+                        "suppressive": { "type": "boolean" }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "required": ["name", "minimumRange", "dice"],
+            "additionalProperties": false
+        }
+    }
+}

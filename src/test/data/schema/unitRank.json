@@ -1,0 +1,15 @@
+{
+    "$id": "http://www.legiondice.com/schemas/unitrank",
+    "definitions": {
+        "unitRank": {
+            "enum": [
+                "commander",
+                "operative",
+                "corps",
+                "specialForces",
+                "support",
+                "heavy"
+            ]
+        }
+    }
+}

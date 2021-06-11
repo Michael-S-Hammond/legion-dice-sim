@@ -1,0 +1,17 @@
+{
+    "$id": "http://www.legiondice.com/schemas/unittype",
+    "definitions": {
+        "unitType": {
+            "enum": [
+                "cloneTrooper",
+                "creatureTrooper",
+                "droidTrooper",
+                "emplacementTrooper",
+                "trooper",
+                "wookieTrooper",
+                "groundVehicle",
+                "repulsorVehicle"
+            ]
+        }
+    }
+}
