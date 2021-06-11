@@ -45,11 +45,17 @@ export enum FixedPosition {
     rear = "rear"
 }
 
+export enum WeaponImmune {
+    deflect = "deflect",
+}
+
 export type WeaponKeywords = {
     blast?: boolean,
     critical?: number,
     cumbersome: boolean,
     fixed?: Array<FixedPosition>,
+    highVelocity?: boolean,
+    immune?: Array<WeaponImmune>,
     impact?: number,
     lethal?: number,
     pierce?: number,
@@ -89,6 +95,12 @@ export enum UnitUpgrade {
     ordinance = 'ordinance'
 }
 
+export enum AiActions {
+    attack = "attack",
+    dodge = "dodge",
+    move = "move"
+}
+
 export type RepairUnitKeyword = {
     value: number,
     capacity: number
@@ -99,7 +111,7 @@ export type Hover = {
     air?: number
 }
 
-export enum Immune {
+export enum UnitImmune {
     blast = "blast",
     melee = "melee",
     pierce = "pierce",
@@ -128,11 +140,14 @@ export type WeakPoint = {
 
 export type UnitKeyword = {
     agile?: number,
+    ai?: Array<AiActions>,
     armor?: boolean,
     armorX?: number,
     arsenal?: number,
     ataruMastery?: boolean,
     authoritative?: boolean,
+    barrage?: boolean,
+    block?: boolean,
     bolster?: number,
     bounty?: boolean,
     calculateOdds?: boolean,
@@ -140,7 +155,7 @@ export type UnitKeyword = {
     climbingVehicle?: boolean,
     compel?: boolean,
     contingencies?: number,
-    coordinate?: string,
+    coordinate?: Array<string>,
     cover?: number,
     covertOps?: boolean,
     cunning?: boolean,
@@ -162,13 +177,14 @@ export type UnitKeyword = {
     fireSupport?: boolean,
     flawed?: boolean,
     fullPivot?: boolean,
+    generator?: boolean,
     grounded?: boolean,
     guardian?: number,
     guidance?: boolean,
     gunslinger?: boolean,
     heavyWeaponTeam?: boolean,
     hover?: Hover,
-    immune?: Array<Immune>,
+    immune?: Array<UnitImmune>,
     immunePierce?: boolean,
     impervious?: boolean,
     incognito?: boolean,
@@ -178,12 +194,15 @@ export type UnitKeyword = {
     inspire?: number,
     jediHunter?: boolean,
     jump?: number,
+    juyoMastery?: boolean,
     lightTransport?: Transport,
     loadout?: boolean,
     lowProfile?: boolean,
+    makashiMastery?: boolean,
     marksman?: boolean,
     masterOfTheForce?: number,
     nimble?: boolean,
+    observe?: number,
     outmaneuver?: boolean,
     precise?: number,
     pullingTheStrings?: boolean,
@@ -201,6 +220,7 @@ export type UnitKeyword = {
     secretMission?: boolean,
     sentinel?: boolean,
     sharpshooter?: number,
+    shielded?: number,
     soresuMastery?: boolean,
     speeder?: number,
     spotter?: number,
@@ -215,7 +235,8 @@ export type UnitKeyword = {
     transport?: Transport,
     uncannyLuck?: number,
     unhindered?: boolean,
-    weakPoint?: WeakPoint
+    weakPoint?: WeakPoint,
+    wheelMode?: boolean
 }
 
 export type UnitProfile = {

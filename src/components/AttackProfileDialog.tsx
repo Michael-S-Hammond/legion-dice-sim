@@ -347,9 +347,9 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                     <select
                                         id={this.props.id + "-unitSelect"}
                                         value={this.state.name}
-                                        className="rounded-lg px-2"
+                                        className="profile-select rounded-lg px-2"
                                         onChange={this.onNameChange}>
-                                        { this.state.units.map(p => <option key={p.name} value={p.name}>{p.name}</option>) }
+                                        { this.state.units.map(p => <option className="profile-option" key={p.name} value={p.name}>{p.name}</option>) }
                                     </select>
                                 </div>
                                 <div className="row justify-content-center my-2">

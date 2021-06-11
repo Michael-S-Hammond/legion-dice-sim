@@ -605,7 +605,7 @@
         }],
         "upgrades": ["heavyWeapon", "personnel", "training", "gear", "grenades"],
         "keywords": {
-            "coordinate": "emplacement trooper",
+            "coordinate": ["emplacementTrooper"],
             "defend": 1
         }
     },{
@@ -1669,7 +1669,7 @@
         }],
         "upgrades": ["heavyWeapon", "training", "personnel", "gear", "grenades"],
         "keywords": {
-            "coordinate": "emplacement trooper",
+            "coordinate": ["emplacementTrooper"],
             "target": 1
         }
     },{
@@ -2837,6 +2837,537 @@
             },
             "immune": ["blast", "melee", "range1Weapons"],
             "transport": { "closed": 1 }
+        }
+    },{
+        "faction": "separatist",
+        "name": "General Grievous",
+        "subtitle": "Sinister Cyborg",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 8,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Trophy Lightsabers",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        },{
+            "name": "Trophy Lightsabers *",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "training", "armament"],
+        "keywords": {
+            "arsenal": 2,
+            "block": true,
+            "impervious": true,
+            "jediHunter": true,
+            "relentless": true,
+            "scale": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Count Dooku",
+        "subtitle": "Darth Tyranus",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Dooku's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },{
+            "name": "Dooku's Lightning",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1,
+                "scatter": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "cunning": true,
+            "deflect": true,
+            "immune": ["pierce"],
+            "makashiMastery": true,
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "separatist",
+        "name": "T-series Tactical Droid",
+        "subtitle": "Programmed for Strategy",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Bludgeon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        },{
+            "name": "Commander's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "comms", "gear"],
+        "keywords": {
+            "bolster": 2,
+            "direct": {
+                "rank": "corps",
+                "type": "droidTrooper"
+            },
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "Cad Bane",
+        "subtitle": "Needs No Introduction",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Dual LL-30 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 1,
+            "bounty": true,
+            "dangerSense": 2,
+            "sharpshooter": 1,
+            "steady": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Maul",
+        "subtitle": "Impatient Apprentice",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Maul's Double Bladed Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "training", "training"],
+        "keywords": {
+            "jump": 1,
+            "deflect": true,
+            "immune": ["pierce"],
+            "juyoMastery": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "B1 Battle Droids",
+        "rank": "corps",
+        "miniCount": 6,
+        "points": 36,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Bludgeon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        },{
+            "name": "E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "comms"],
+        "keywords": {
+            "ai": ["attack"],
+            "coordinate": ["droidTrooper"]
+        }
+    },{
+        "faction": "separatist",
+        "name": "B2 Super Battle Droids",
+        "rank": "corps",
+        "miniCount": 3,
+        "points": 45,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Arm Cannons",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "comms"],
+        "keywords": {
+            "ai": ["attack"],
+            "armorX": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "BX-series Droid Commandos",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 68,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Commando's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "armament", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "impervious": true,
+            "scale": true,
+            "scout": 3,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "BX-series Droid Commandos *",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Commando's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "armament", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "heavyWeaponTeam": true,
+            "impervious": true,
+            "scale": true,
+            "scout": 3,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "DRK-1 Sith Probe Droids",
+        "rank": "operative",
+        "miniCount": 3,
+        "points": 35,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Electro-stun Micro Blaster",
+            "minimumRange": 0,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "observe": 3,
+            "detachment": "Maul",
+            "hover": { "air": 1 },
+            "incognito": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Droidekas",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 80,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Dual Twin Blaster Cannons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true,
+                "fixed": ["front"],
+                "immune": ["deflect"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "ai": ["attack", "move"],
+            "generator": 1,
+            "shielded": 4,
+            "wheelMode": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "STAP Riders",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 73,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "Repeating Dual Blaster Cannons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "agile": 1,
+            "ai": ["move"],
+            "coordinate": ["droidTrooper", "vehicle"],
+            "cover": 1,
+            "speeder": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "AAT Trade Federation Battle Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 9,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Lateral Anti-Personnel Lasers",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        },{
+            "name": "MX-8 Artillery Laser Cannon",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 2,
+                "highVelocity": true,
+                "impact": 1
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance", "ordinance"],
+        "keywords": {
+            "ai": ["attack"],
+            "armor": true,
+            "arsenal": 2,
+            "barrage": true,
+            "hover": { "ground": true },
+            "weakPoint": { "rear": 2 }
         }
     }]
 }

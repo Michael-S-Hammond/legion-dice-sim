@@ -128,3 +128,14 @@
   content: url("../img/upgrade/training.png");
   height: 30px;
   width: 30px; }
+
+.profile-select {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.profile-option {
+  max-width: 95% !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }

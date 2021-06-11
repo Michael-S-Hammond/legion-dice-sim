@@ -151,3 +151,16 @@ $upgrade-img-size: 30px;
     content: url("../img/upgrade/training.png");
     @include upgrade-img();
 }
+
+.profile-select {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-option {
+    max-width: 95% !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

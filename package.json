@@ -30,7 +30,8 @@
     "scss": "node-sass --watch src/scss -o src/css",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "lint-all": "eslint 'src/**/*.{js,ts,tsx}'",
-    "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "cloc": "cloc ./src --include-lang='TypeScript,JSON,CSS'"
   },
   "eslintConfig": {
     "extends": [

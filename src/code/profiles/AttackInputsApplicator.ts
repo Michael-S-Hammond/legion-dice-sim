@@ -43,9 +43,9 @@ function applyUpgrades(offense: T.OffenseInput, profile: UP.UnitProfile, weapon:
 
 export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
     const offense = {
-        redDice: weapon.dice.red,
-        blackDice: weapon.dice.black,
-        whiteDice: weapon.dice.white,
+        redDice: weapon.dice.red * profile.miniCount,
+        blackDice: weapon.dice.black * profile.miniCount,
+        whiteDice: weapon.dice.white * profile.miniCount,
         surge: UP.convertUnitProfileSurgeToAttackSurge(profile.attackSurge),
         tokens: tokens,
         blast: getBoolean(weapon.keywords?.blast),

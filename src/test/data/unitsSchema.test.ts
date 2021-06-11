@@ -28,7 +28,14 @@ describe('units.json schema', () => {
                                 critical: { type: "number", minimum: 1, maximum: 2 },
                                 cumbersome: { type: "boolean" },
                                 fixed: { type: "array", items: { enum: ["front", "rear"] } },
+                                highVelocity: { type: "boolean" },
                                 impact: { type: "number", minimum: 1, maximum: 3 },
+                                immune: {
+                                    type: "array",
+                                    items: [{
+                                        enum: ["deflect"]
+                                    }]
+                                },
                                 lethal: { type: "number", minimum: 1, maximum: 1 },
                                 pierce: { type: "number", minimum: 1, maximum: 3 },
                                 ram: { type: "number", minimum: 1, maximum: 1 },
@@ -129,11 +136,17 @@ describe('units.json schema', () => {
                             type: "object",
                             properties: {
                                 agile: { type: "number", minimum: 1, maximum: 1 },
+                                ai: {
+                                    type: "array",
+                                    items: { enum: ["attack", "dodge", "move"] }
+                                },
                                 armor: { type: "boolean" },
                                 armorX: { type: "number", minimum: 1, maximum: 2 },
                                 arsenal: { type: "number", minimum: 2, maximum: 3 },
                                 ataruMastery: { type: "boolean" },
                                 authoritative: { type: "boolean" },
+                                barrage: { type: "boolean" },
+                                block: { type: "boolean" },
                                 bolster: { type: "number", minimum: 1, maximum: 2 },
                                 bounty: { type: "boolean" },
                                 calculateOdds: { type: "boolean" },
@@ -141,7 +154,12 @@ describe('units.json schema', () => {
                                 climbingVehicle: { type: "boolean" },
                                 compel: { type: "boolean" },
                                 contingencies: { type: "number", minimum: 1, maximum: 3 },
-                                coordinate: { type: "string", minLength: 1 },
+                                coordinate: {
+                                    type: "array",
+                                    items: {
+                                        type: "string", minLength: 1
+                                    }
+                                },
                                 cover: { type: "number", minimum: 1, maximum: 2 },
                                 covertOps: { type: "boolean" },
                                 cunning: { type: "boolean" },
@@ -163,6 +181,7 @@ describe('units.json schema', () => {
                                 fireSupport: { type: "boolean" },
                                 flawed: { type: "boolean" },
                                 fullPivot: { type: "boolean" },
+                                generator: { type: "number", minimum: 1, maximum: 4 },
                                 grounded: { type: "boolean" },
                                 guardian: { type: "number", minimum: 1, maximum: 3 },
                                 guidance: { type: "boolean" },
@@ -198,6 +217,7 @@ describe('units.json schema', () => {
                                 inspire: { type: "number", minimum: 1, maximum: 2 },
                                 jediHunter: { type: "boolean" },
                                 jump: { type: "number", minimum: 1, maximum: 2 },
+                                juyoMastery: { type: "boolean" },
                                 lightTransport: {
                                     type: "object",
                                     oneOf: [{
@@ -216,9 +236,11 @@ describe('units.json schema', () => {
                                 },
                                 loadout: { type: "boolean" },
                                 lowProfile: { type: "boolean" },
+                                makashiMastery: { type: "boolean" },
                                 marksman: { type: "boolean" },
                                 masterOfTheForce: { type: "number", minimum: 1, maximum: 2 },
                                 nimble: { type: "boolean" },
+                                observe: { type: "number", minimum: 1, maximum: 3 },
                                 outmaneuver: { type: "boolean" },
                                 precise: { type: "number", minimum: 1, maximum: 2 },
                                 pullingTheStrings: { type: "boolean" },
@@ -244,6 +266,7 @@ describe('units.json schema', () => {
                                 secretMission: { type: "boolean" },
                                 sentinel: { type: "boolean" },
                                 sharpshooter: { type: "number", minimum: 1, maximum: 2 },
+                                shielded: { type: "number", minimum: 1, maximum: 4 },
                                 soresuMastery: { type: "boolean" },
                                 speeder: { type: "number", minimum: 1, maximum: 2 },
                                 spotter: { type: "number", minimum: 1, maximum: 2 },
@@ -280,7 +303,8 @@ describe('units.json schema', () => {
                                         sides: { type: "number", minimum: 1, maximum: 1 }
                                     },
                                     additionalProperties: false
-                                }
+                                },
+                                wheelMode: { type: "boolean" }
                             },
                             additionalProperties: false
                         }
