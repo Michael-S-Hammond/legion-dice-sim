@@ -52,7 +52,7 @@ export enum WeaponImmune {
 export type WeaponKeywords = {
     blast?: boolean,
     critical?: number,
-    cumbersome: boolean,
+    cumbersome?: boolean,
     fixed?: Array<FixedPosition>,
     highVelocity?: boolean,
     immune?: Array<WeaponImmune>,

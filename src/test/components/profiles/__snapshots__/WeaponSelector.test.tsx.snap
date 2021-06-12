@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeaponSelector matches the snapshot 1`] = `
+<select
+  className="rounded-lg px-2"
+  id="ws-5-weaponSelect"
+  onChange={[Function]}
+  value="Lightsaber"
+>
+  <option
+    key=""
+    value=""
+  />
+  <option
+    key="Lightsaber"
+    value="Lightsaber"
+  >
+    Lightsaber
+  </option>
+  <option
+    key="Blaster"
+    value="Blaster"
+  >
+    Blaster
+  </option>
+</select>
+`;

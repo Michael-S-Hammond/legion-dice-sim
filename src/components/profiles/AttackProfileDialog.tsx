@@ -7,6 +7,7 @@ import * as UC from '../../code/profiles/UpgradeCard';
 
 import FactionButtonGroup from './FactionButtonGroup';
 import RankButtonGroup from './RankButtonGroup';
+import WeaponSelector from './WeaponSelector';
 
 import { Telemetry } from '../../tools/Telemetry';
 
@@ -78,16 +79,8 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         this.setState(newState);
     }
 
-    private onWeaponChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newWeaponName = e.target.value;
-        let newWeapon: UP.Weapon | null = null;
-        if(newWeaponName.length > 0) {
-            const possibleWeapons = this.state.unit.weapons.filter(w => w.name === newWeaponName);
-            if(possibleWeapons.length > 0) {
-                newWeapon = possibleWeapons[0];
-            }
-        }
-        const newState = this.getNewStateObject(undefined, undefined, undefined, newWeapon);
+    private onWeaponChange = (weapon: UP.Weapon | null) => {
+        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon);
         this.setState(newState);
     }
 
@@ -236,13 +229,13 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                     </select>
                                 </div>
                                 <div className="row justify-content-center my-2">
-                                    <select
-                                        id={this.props.id + "-weaponSelect"}
-                                        value={this.state.weapon?.name}
-                                        className="rounded-lg px-2"
-                                        onChange={this.onWeaponChange}>
-                                        { this.state.unit.weapons?.map(w => <option key={w.name} value={w.name}>{w.name}</option>)}
-                                    </select>
+                                    <WeaponSelector
+                                        id={this.props.id + "-" + 0 + "-weaponSelect"}
+                                        dataWeaponIndex={0}
+                                        weapons={this.state.unit.weapons}
+                                        selectedWeapon={this.state.weapon}
+                                        onWeaponChange={this.onWeaponChange}
+                                    ></WeaponSelector>
                                 </div>
                                 {
                                     this.state.unit?.upgrades?.map((u, i) =>
