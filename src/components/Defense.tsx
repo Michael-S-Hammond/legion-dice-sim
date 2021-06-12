@@ -5,7 +5,7 @@ import * as AS from './AppStateManager';
 
 import DefenseAbilities from './DefenseAbilities';
 import DefenseTokens from './DefenseTokens';
-import LoadProfileButton from './LoadProfileButton';
+import LoadProfileButton from './profiles/LoadProfileButton';
 import SurgeDieSelector from './SurgeDieSelector';
 
 type DefenseProps = {

@@ -9,7 +9,11 @@ function getBoolean(value: boolean | null | undefined) : boolean {
     return value ? true : false;
 }
 
-function isRangeCompatible(weapon1: UP.Weapon, weapon2: UP.Weapon) : boolean {
+function isRangeCompatible(weapon1: UP.Weapon, weapon2: UP.Weapon | null) : boolean {
+    if(weapon2 === null) {
+        return true;
+    }
+
     if(weapon1.minimumRange === 0 && weapon2.minimumRange === 0) {
         return true;
     }
@@ -62,8 +66,8 @@ function applyWeaponKeywords(offense: T.OffenseInput, keywords: UP.WeaponKeyword
     applyValueXKeyword(keywords.ram, offense.ramX);
 }
 
-function applyHeavyWeaponUpgrade(offense: T.OffenseInput, profile: UP.UnitProfile, weapon: UP.Weapon, upgrade: UC.HeavyWeaponUpgrade) : void {
-    if(upgrade.weapon !== undefined && isRangeCompatible(weapon, upgrade.weapon)) {
+function applyHeavyWeaponUpgrade(offense: T.OffenseInput, profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: UC.HeavyWeaponUpgrade) : void {
+    if(upgrade.weapon !== undefined && isRangeCompatible(upgrade.weapon, weapon)) {
         offense.redDice += upgrade.weapon.dice.red;
         offense.blackDice += upgrade.weapon.dice.black;
         offense.whiteDice += upgrade.weapon.dice.white;
@@ -74,39 +78,39 @@ function applyHeavyWeaponUpgrade(offense: T.OffenseInput, profile: UP.UnitProfil
         if(upgrade.weapon.keywords) {
             applyWeaponKeywords(offense, upgrade.weapon.keywords);
         }
-    } else {
+    } else if (weapon !== null) {
         offense.redDice += weapon.dice.red;
         offense.blackDice += weapon.dice.black;
         offense.whiteDice += weapon.dice.white;
     }
 }
 
-function applyUpgrades(offense: T.OffenseInput, profile: UP.UnitProfile, weapon: UP.Weapon, upgrade: UC.Upgrade) : void {
+function applyUpgrades(offense: T.OffenseInput, profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: UC.Upgrade) : void {
     switch(upgrade.type) {
         case UP.UnitUpgrade.heavyWeapon:
             applyHeavyWeaponUpgrade(offense, profile, weapon, upgrade as UC.HeavyWeaponUpgrade);
     }
 }
 
-export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
+export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
     const offense = {
-        redDice: weapon.dice.red * profile.miniCount,
-        blackDice: weapon.dice.black * profile.miniCount,
-        whiteDice: weapon.dice.white * profile.miniCount,
+        redDice: weapon === null ? 0 : weapon.dice.red * profile.miniCount,
+        blackDice: weapon === null ? 0 : weapon.dice.black * profile.miniCount,
+        whiteDice: weapon === null ? 0 : weapon.dice.white * profile.miniCount,
         surge: UP.convertUnitProfileSurgeToAttackSurge(profile.attackSurge),
         tokens: tokens,
-        blast: getBoolean(weapon.keywords?.blast),
-        criticalX: getValueX(weapon.keywords?.critical, profile.miniCount),
+        blast: getBoolean(weapon?.keywords?.blast),
+        criticalX: getValueX(weapon?.keywords?.critical, profile.miniCount),
         duelist: getBoolean(profile.keywords?.duelist),
-        highVelocity: getBoolean(weapon.keywords?.highVelocity),
-        impactX: getValueX(weapon.keywords?.impact, profile.miniCount),
-        ionX: getValueX(weapon.keywords?.ion, profile.miniCount),
+        highVelocity: getBoolean(weapon?.keywords?.highVelocity),
+        impactX: getValueX(weapon?.keywords?.impact, profile.miniCount),
+        ionX: getValueX(weapon?.keywords?.ion, profile.miniCount),
         jediHunter: getBoolean(profile.keywords?.jediHunter),
-        lethalX: getValueX(weapon.keywords?.lethal, profile.miniCount),
+        lethalX: getValueX(weapon?.keywords?.lethal, profile.miniCount),
         makashiMastery: getBoolean(profile.keywords?.makashiMastery),
-        pierceX: getValueX(weapon.keywords?.pierce, profile.miniCount),
+        pierceX: getValueX(weapon?.keywords?.pierce, profile.miniCount),
         preciseX: getValueX(profile.keywords?.precise, 1),
-        ramX: getValueX(weapon.keywords?.ram, profile.miniCount),
+        ramX: getValueX(weapon?.keywords?.ram, profile.miniCount),
         sharpshooterX: getValueX(profile.keywords?.sharpshooter, 1)
     };
 
@@ -116,7 +120,7 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
 
     const input = T.createDefaultAttackInput();
     input.offense = offense;
-    input.combat.meleeAttack = weapon.maximumRange !== null ? weapon.maximumRange === 0 : false;
+    input.combat.meleeAttack = weapon?.maximumRange !== null ? weapon?.maximumRange === 0 : false;
 
     return input;
 }

@@ -1,23 +1,23 @@
-import '../css/ProfileDialog.css';
+import '../../css/ProfileDialog.css';
 
 import React from 'react';
 
-import * as UP from '../code/profiles/UnitProfile';
-import * as UC from '../code/profiles/UpgradeCard';
+import * as UP from '../../code/profiles/UnitProfile';
+import * as UC from '../../code/profiles/UpgradeCard';
+
+import { Telemetry } from '../../tools/Telemetry';
 
 type AttackProfileDialogProps = {
     id: string,
-    applyAttackProfile: (profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>) => void
+    applyAttackProfile: (profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>) => void
 };
 
 type AttackProfileDialogState = {
     units: Array<UP.UnitProfile>,
     faction: UP.Faction,
     rank: UP.Rank,
-    name: string,
-    unit: UP.UnitProfile | null,
-    weapons: Array<UP.Weapon>,
-    weapon: string,
+    unit: UP.UnitProfile,
+    weapon: UP.Weapon | null,
     upgrades: Array<UC.Upgrade>
 };
 
@@ -27,17 +27,31 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     constructor(props : AttackProfileDialogProps) {
         super(props);
         this.#units = UP.getUnits();
-        const unit = this.getFirstUnit(UP.Faction.rebel, UP.Rank.commander);
-        this.state = {
-            units: this.getFilteredUnits(UP.Faction.rebel, UP.Rank.commander),
-            faction: UP.Faction.rebel,
-            rank: UP.Rank.commander,
-            name: unit ? unit.name : '',
-            unit: unit,
-            weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : '',
-            upgrades: []
-        }
+        this.state = this.getNewStateObject();
+    }
+
+    private getNewStateObject(
+        faction: UP.Faction | null = null,
+        rank: UP.Rank | null = null,
+        unit: UP.UnitProfile | null = null,
+        weapon: UP.Weapon | null = null,
+        upgrades: Array<UC.Upgrade> = []
+            ) : AttackProfileDialogState {
+        const newFaction = faction === null ? (this.state ? this.state.faction : UP.Faction.rebel) : faction;
+        const newRank = rank === null ? (this.state ? this.state.rank : UP.Rank.commander) : rank;
+        const newUnit = (unit !== null && unit.faction === newFaction && unit.rank === newRank) ? unit :
+            (unit === null && newFaction == this.state?.faction && newRank == this.state?.rank ? this.state?.unit : this.getFirstUnit(newFaction, newRank));
+        const newWeapon = weapon !== null && newUnit.weapons.includes(weapon) ? weapon : null;
+        const newUpgrades = newUnit !== unit ? [] : upgrades;
+
+        return {
+            units: this.getFilteredUnits(newFaction, newRank),
+            faction: newFaction,
+            rank: newRank,
+            unit: newUnit,
+            weapon: newWeapon,
+            upgrades: newUpgrades
+        };
     }
 
     private getFilteredUnits(faction: UP.Faction, rank: UP.Rank) : Array<UP.UnitProfile> {
@@ -46,97 +60,64 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
 
     private onFactionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newFaction = e.target.value as UP.Faction;
-        const unit = this.getFirstUnit(newFaction, this.state.rank);
-        this.setState({
-            units: this.getFilteredUnits(newFaction, this.state.rank),
-            faction: newFaction,
-            rank: this.state.rank,
-            name: unit ? unit.name : '',
-            unit: unit,
-            weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons.length > 0 ? unit.weapons[0].name : '',
-            upgrades: []
-        });
+        const newState = this.getNewStateObject(newFaction);
+        this.setState(newState);
     }
 
     private onRankChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newRank = e.target.value as UP.Rank;
-        const unit = this.getFirstUnit(this.state.faction, newRank);
-        this.setState({
-            units: this.getFilteredUnits(this.state.faction, newRank),
-            faction: this.state.faction,
-            rank: newRank,
-            name: unit ? unit.name : '',
-            unit: unit,
-            weapons: unit ? unit.weapons: [],
-            weapon: unit && unit.weapons && unit.weapons.length > 0 ? unit.weapons[0].name : '',
-            upgrades: []
-        });
+        const newState = this.getNewStateObject(undefined, newRank);
+        this.setState(newState);
     }
 
     private onNameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newName = e.target.value;
-        const unit = this.getUnit(this.state.faction, this.state.rank, newName);
-        let weapons : Array<UP.Weapon> = [];
-        if(unit !== null) {
-            weapons = unit.weapons;
-        }
-        this.setState({
-            units: this.state.units,
-            faction: this.state.faction,
-            rank: this.state.rank,
-            name: newName,
-            unit: unit,
-            weapons: weapons,
-            weapon: weapons && weapons.length > 0 ? weapons[0].name : '',
-            upgrades: []
-        });
+        const unit = this.getUnit(newName);
+        const newState = this.getNewStateObject(this.state.faction, this.state.rank, unit);
+        this.setState(newState);
     }
 
     private onWeaponChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newWeapon = e.target.value;
-        this.setState({
-            units: this.state.units,
-            faction: this.state.faction,
-            rank: this.state.rank,
-            name: this.state.name,
-            unit: this.state.unit,
-            weapons: this.state.weapons,
-            weapon: newWeapon,
-            upgrades: this.state.upgrades
-        });
+        const newWeaponName = e.target.value;
+        let newWeapon: UP.Weapon | null = null;
+        if(newWeaponName.length > 0) {
+            const possibleWeapons = this.state.unit.weapons.filter(w => w.name === newWeaponName);
+            if(possibleWeapons.length > 0) {
+                newWeapon = possibleWeapons[0];
+            }
+        }
+        const newState = this.getNewStateObject(undefined, undefined, undefined, newWeapon);
+        this.setState(newState);
     }
 
     private onApplyChanges = () => {
-        const unit = this.getUnit(this.state.faction, this.state.rank, this.state.name);
-        if(unit !== null) {
-            const weapon = unit.weapons.filter(w => w.name === this.state.weapon);
-            if(weapon !== null && weapon.length === 1) {
-                this.props.applyAttackProfile(unit, weapon[0], this.state.upgrades);
-                $('#' + this.props.id + '-closeButton').trigger('click');
-            }
-        }
+        this.props.applyAttackProfile(this.state.unit, this.state.weapon, this.state.upgrades);
+        $('#' + this.props.id + '-closeButton').trigger('click');
     }
 
-    private getFirstUnit(faction: UP.Faction, rank: UP.Rank) : UP.UnitProfile | null {
+    private getFirstUnit(faction: UP.Faction, rank: UP.Rank) : UP.UnitProfile {
         const units = this.#units.filter(profile =>
             profile.faction === faction &&
             profile.rank === rank);
-        if(units.length > 0){
-            return units[0];
+
+        // if the result is undefined, we have a data problem
+        if(units[0] === undefined) {
+            Telemetry.logError("AttackProfileDialog.tsx", "getFirstUnit", "Unit not found");
         }
-        return null;
+        return units[0];
     }
 
-    private getUnit(faction: UP.Faction, rank: UP.Rank, name: string) : UP.UnitProfile | null {
+    private getUnit(name: string) : UP.UnitProfile {
         const units = this.#units.filter(profile =>
-            profile.faction === faction &&
-            profile.rank === rank &&
+            profile.faction === this.state.faction &&
+            profile.rank === this.state.rank &&
             profile.name === name);
-        if(units.length === 1) {
-            return units[0];
+
+        // callers are getting the name from the list of units, so it should always exist
+        if(units[0] === undefined) {
+            Telemetry.logError("AttackProfileDialog.tsx", "getUnit", "Unit not found");
         }
-        return null;
+        return units[0];
     }
 
     private getUpgrade(type: UP.UnitUpgrade, name: string) : UC.Upgrade | null {
@@ -159,7 +140,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                 match = false;
             }
 
-            if(r.unit && (r.unit !== this.state.name) && ((r.unit + " *") !== this.state.name)) {
+            if(r.unit && (r.unit !== this.state.unit.name) && ((r.unit + " *") !== this.state.unit.name)) {
                 match = false;
             }
 
@@ -179,13 +160,16 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private onUpgradeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const index = Number(e.target.name);
+        const index = Number(e.target.dataset.upgradeIndex);
         const newUpgrades: Array<UC.Upgrade> = [];
 
         this.state.upgrades.forEach((u, i) => {
-            newUpgrades[i] = u;
+            // not copying the element at index so that it can be removed if desired
+            if(i !== index) {
+                newUpgrades[i] = u;
+            }
         });
-        const upgradeType = this.state.unit?.upgrades ? this.state.unit.upgrades[index] : null;
+        const upgradeType = this.state.unit.upgrades ? this.state.unit.upgrades[index] : null;
         if(upgradeType) {
             const newUpgrade = this.getUpgrade(upgradeType, e.target.value);
             if(newUpgrade) {
@@ -193,23 +177,15 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             }
         }
 
-        this.setState({
-            units: this.state.units,
-            faction: this.state.faction,
-            rank: this.state.rank,
-            name: this.state.name,
-            unit: this.state.unit,
-            weapons: this.state.weapons,
-            weapon: this.state.weapon,
-            upgrades: newUpgrades
-        });
+        const newState = this.getNewStateObject(undefined, undefined, undefined, undefined, newUpgrades);
+        this.setState(newState);
     }
 
     private renderUpgradeSelect(upgrade: UP.UnitUpgrade, index: number) : JSX.Element {
         return (
             <select
                 key={index + "-" + upgrade + "-upgrade-select"}
-                name={String(index)}
+                data-upgrade-index={String(index)}
                 value={this.state.upgrades[index]?.name}
                 onChange={this.onUpgradeChange}
                 className="rounded-lg px-2 ml-2">
@@ -358,7 +334,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                 <div className="row justify-content-center my-2">
                                     <select
                                         id={this.props.id + "-unitSelect"}
-                                        value={this.state.name}
+                                        value={this.state.unit.name}
                                         className="profile-select rounded-lg px-2"
                                         onChange={this.onNameChange}>
                                         { this.state.units.map(p => <option className="profile-option" key={p.name} value={p.name}>{p.name}</option>) }
@@ -367,10 +343,10 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                 <div className="row justify-content-center my-2">
                                     <select
                                         id={this.props.id + "-weaponSelect"}
-                                        value={this.state.weapon}
+                                        value={this.state.weapon?.name}
                                         className="rounded-lg px-2"
                                         onChange={this.onWeaponChange}>
-                                        { this.state.weapons?.map(w => <option key={w.name} value={w.name}>{w.name}</option>)}
+                                        { this.state.unit.weapons?.map(w => <option key={w.name} value={w.name}>{w.name}</option>)}
                                     </select>
                                 </div>
                                 {

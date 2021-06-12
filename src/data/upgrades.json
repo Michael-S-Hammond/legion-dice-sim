@@ -523,7 +523,7 @@
         "name": "Electrostaff Guard",
         "points": 25,
         "restrictions": [{
-            "unit": "Imperial Royal Guard"
+            "unit": "Imperial Royal Guards"
         }],
         "weapon": {
             "name": "Electrostaff Guard",
@@ -653,6 +653,27 @@
             "keywords": {
                 "blast": true,
                 "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "MPL-57 Ion Trooper",
+        "points": 18,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }],
+        "weapon": {
+            "name": "MPL-57 Ion Trooper",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1,
+                "ion": 1
             }
         }
     },{

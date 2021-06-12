@@ -178,7 +178,7 @@ export class AppStateManager {
         this.setState(newState);
     }
 
-    public applyAttackStateProfile(profile: UP.UnitProfile, weapon: UP.Weapon, upgrades: Array<UC.Upgrade>) : void {
+    public applyAttackStateProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>) : void {
         const newState = this.cloneState();
         const input = AIA.createAttackInputsFromProfile(profile, weapon, upgrades, newState.inputs.offense.tokens);
         newState.inputs.offense = input.offense;

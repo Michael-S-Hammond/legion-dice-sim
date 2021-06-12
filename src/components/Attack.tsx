@@ -7,7 +7,7 @@ import AttackAbilities from './AttackAbilities';
 import AttackTokens from './AttackTokens';
 import ClearButton from './ClearButton';
 import DieCounter from './DieCounter';
-import LoadProfileButton from './LoadProfileButton';
+import LoadProfileButton from './profiles/LoadProfileButton';
 
 type AttackProps = {
     profileDialogId: string,

@@ -10,20 +10,19 @@ import * as UC from '../code/profiles/UpgradeCard';
 import * as AS from './AppStateManager';
 
 import Attack from './Attack';
-import AttackProfileDialog from './AttackProfileDialog';
+import AttackProfileDialog from './profiles/AttackProfileDialog';
 import Combat from './Combat';
 import Defense from './Defense';
+import DefenseProfileDialog from './profiles/DefenseProfileDialog';
 import DiceResults from './DiceResults';
 // import Notification from './Notification';
 import Header from './Header';
 
 import { Telemetry } from '../tools/Telemetry';
-import DefenseProfileDialog from './DefenseProfileDialog';
 
 class App extends React.Component<any, AS.AppState> { // eslint-disable-line @typescript-eslint/no-explicit-any
   private _stateManager: AS.AppStateManager;
   private _diceResultsRef: React.RefObject<DiceResults>;
-  private _telemetry: Telemetry;
 
   constructor(props: any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
     super(props);
@@ -32,7 +31,6 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
     this.state = this._stateManager.state;
 
     this._diceResultsRef = React.createRef();
-    this._telemetry = new Telemetry();
   }
 
   private handleShowExpectedRangeChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +61,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
 
     performance.measure('roll duration', 'start roll', 'end roll');
     const rollDuration = MJS.round(performance.getEntriesByName('roll duration', 'measure')[0].duration, 3);
-    this._telemetry.trackEvent("RollDice", {
+    Telemetry.trackEvent("RollDice", {
       Rolls: this.state.diceRolls,
       Duration: rollDuration,
       SimpleView: this.state.showSimpleView,
@@ -83,7 +81,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
 
         <AttackProfileDialog
           id='attackProfileDialog'
-          applyAttackProfile={(profile: UP.UnitProfile, weapon: UP.Weapon, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
+          applyAttackProfile={(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
         ></AttackProfileDialog>
         <DefenseProfileDialog
           id='defenseProfileDialog'
