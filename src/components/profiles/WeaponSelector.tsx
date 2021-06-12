@@ -23,7 +23,7 @@ class WeaponSelector extends React.Component<WeaponSelectorProps> {
         this.props.onWeaponChange(newWeapon);
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <select
                 id={this.props.id + "-weaponSelect"}
