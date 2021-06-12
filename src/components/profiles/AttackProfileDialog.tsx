@@ -5,6 +5,9 @@ import React from 'react';
 import * as UP from '../../code/profiles/UnitProfile';
 import * as UC from '../../code/profiles/UpgradeCard';
 
+import FactionButtonGroup from './FactionButtonGroup';
+import RankButtonGroup from './RankButtonGroup';
+
 import { Telemetry } from '../../tools/Telemetry';
 
 type AttackProfileDialogProps = {
@@ -58,14 +61,12 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return this.#units.filter(profile => profile.faction == faction && profile.rank == rank);
     }
 
-    private onFactionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newFaction = e.target.value as UP.Faction;
+    private onFactionChange = (newFaction: UP.Faction) => {
         const newState = this.getNewStateObject(newFaction);
         this.setState(newState);
     }
 
-    private onRankChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newRank = e.target.value as UP.Rank;
+    private onRankChange = (newRank: UP.Rank) => {
         const newState = this.getNewStateObject(undefined, newRank);
         this.setState(newState);
     }
@@ -214,122 +215,16 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                         <div className="modal-body">
                             <div className="container">
                                 <div className="row justify-content-center my-2">
-                                    <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label className="btn btn-light faction-label active" title="Rebel">
-                                            <input
-                                                type="radio"
-                                                name="faction"
-                                                id={UP.Faction.rebel}
-                                                value={UP.Faction.rebel}
-                                                autoComplete="off"
-                                                onChange={this.onFactionChange}
-                                                checked={this.state.faction === UP.Faction.rebel}/>
-                                            <img className='rebel-faction-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light faction-label" title="Empire">
-                                            <input
-                                                type="radio"
-                                                name="faction"
-                                                id={UP.Faction.empire}
-                                                value={UP.Faction.empire}
-                                                autoComplete="off"
-                                                onChange={this.onFactionChange}
-                                                checked={this.state.faction === UP.Faction.empire}/>
-                                            <img className='empire-faction-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light faction-label" title="Republic">
-                                            <input
-                                                type="radio"
-                                                name="faction"
-                                                id={UP.Faction.republic}
-                                                value={UP.Faction.republic}
-                                                autoComplete="off"
-                                                onChange={this.onFactionChange}
-                                                checked={this.state.faction === UP.Faction.republic}/>
-                                            <img className='republic-faction-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light faction-label" title="Separatist">
-                                            <input
-                                                type="radio"
-                                                name="faction"
-                                                id={UP.Faction.separatist}
-                                                value={UP.Faction.separatist}
-                                                autoComplete="off"
-                                                onChange={this.onFactionChange}
-                                                checked={this.state.faction === UP.Faction.separatist}/>
-                                            <img className='separatist-faction-img mx-1'></img>
-                                        </label>
-                                    </div>
+                                    <FactionButtonGroup
+                                        faction={this.state.faction}
+                                        onFactionChange={this.onFactionChange}
+                                    ></FactionButtonGroup>
                                 </div>
                                 <div className="row justify-content-center my-2">
-                                    <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label className="btn btn-light rank-label active" title="Commander">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.commander}
-                                                value={UP.Rank.commander}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.commander}/>
-                                            <img className='commander-rank-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light rank-label" title="Operative">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.operative}
-                                                value={UP.Rank.operative}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.operative}/>
-                                            <img className='operative-rank-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light rank-label" title="Corps">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.corps}
-                                                value={UP.Rank.corps}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.corps}/>
-                                            <img className='corps-rank-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light rank-label" title="Special Forces">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.specialForces}
-                                                value={UP.Rank.specialForces}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.specialForces}/>
-                                            <img className='specialforces-rank-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light rank-label" title="Support">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.support}
-                                                value={UP.Rank.support}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.support}/>
-                                            <img className='support-rank-img mx-1'></img>
-                                        </label>
-                                        <label className="btn btn-light rank-label" title="Heavy">
-                                            <input
-                                                type="radio"
-                                                name="rank"
-                                                id={UP.Rank.heavy}
-                                                value={UP.Rank.heavy}
-                                                autoComplete="off"
-                                                onChange={this.onRankChange}
-                                                checked={this.state.rank === UP.Rank.heavy}/>
-                                            <img className='heavy-rank-img mx-1'></img>
-                                        </label>
-                                    </div>
+                                    <RankButtonGroup
+                                        rank={this.state.rank}
+                                        onRankChange={this.onRankChange}
+                                    ></RankButtonGroup>
                                 </div>
                                 <div className="row justify-content-center my-2">
                                     <select
