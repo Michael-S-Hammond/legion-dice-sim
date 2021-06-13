@@ -2765,7 +2765,14 @@
                 "critical": 1,
                 "impact": 1
             }
-        }]
+        }],
+        "upgrades": ["hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "climbingVehicle": true,
+            "expertClimber": true,
+            "scout": 1
+        }
     },{
         "faction": "republic",
         "name": "TX-130 Saber-class Fighter Tank",

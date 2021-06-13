@@ -6,6 +6,7 @@ type ItemSelectorProps<T extends UP.NamedItem> = {
     id: string,
     dataIndex: number,
     items: Array<T>,
+    includeBlankItem: boolean,
     selectedItem: T | null,
     onItemChange: (index: number, item: T | null) => void,
 }
@@ -30,7 +31,9 @@ class ItemSelector<T extends UP.NamedItem> extends React.Component<ItemSelectorP
                 value={this.props.selectedItem?.name}
                 className="rounded-lg px-2"
                 onChange={this.onChange}>
-                <option key="" value=""></option>
+                { this.props.includeBlankItem &&
+                    <option key="" value=""></option>
+                }
                 { this.props.items?.map(i => <option key={i.name} value={i.name}>{i.name}</option>)}
             </select>
         );

@@ -45,6 +45,7 @@ describe('ItemSelector', () => {
                 id={id}
                 dataIndex={index}
                 items={weapons}
+                includeBlankItem={true}
                 selectedItem={selectedWeapon}
                 onItemChange={onWeaponChange}
             />);
@@ -93,6 +94,7 @@ describe('ItemSelector', () => {
             id={id}
             dataIndex={index}
             items={weapons}
+            includeBlankItem={true}
             selectedItem={selectedWeapon}
             onItemChange={onWeaponChange}
         />);
@@ -143,6 +145,7 @@ describe('ItemSelector', () => {
             id={id}
             dataIndex={index}
             items={weapons}
+            includeBlankItem={true}
             selectedItem={selectedWeapon}
             onItemChange={onWeaponChange}
         />);

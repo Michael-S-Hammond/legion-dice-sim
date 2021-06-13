@@ -73,14 +73,12 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         this.setState(newState);
     }
 
-    private onNameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newName = e.target.value;
-        const unit = this.getUnit(newName);
-        const newState = this.getNewStateObject(this.state.faction, this.state.rank, unit);
+    private onUnitChange = (_: number, unit: UP.UnitProfile | null) => {
+        const newState = this.getNewStateObject(undefined, undefined, unit, undefined, undefined);
         this.setState(newState);
     }
 
-    private onWeaponChange = (index: number, weapon: UP.Weapon | null) => {
+    private onWeaponChange = (_: number, weapon: UP.Weapon | null) => {
         const newState = this.getNewStateObject(undefined, undefined, undefined, weapon);
         this.setState(newState);
     }
@@ -197,19 +195,21 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                     ></RankButtonGroup>
                                 </div>
                                 <div className="row justify-content-center my-2">
-                                    <select
-                                        id={this.props.id + "-unitSelect"}
-                                        value={this.state.unit.name}
-                                        className="profile-select rounded-lg px-2"
-                                        onChange={this.onNameChange}>
-                                        { this.state.units.map(p => <option className="profile-option" key={p.name} value={p.name}>{p.name}</option>) }
-                                    </select>
+                                    <ItemSelector<UP.UnitProfile>
+                                        id={this.props.id + "-unit"}
+                                        dataIndex={0}
+                                        items={this.state.units}
+                                        includeBlankItem={false}
+                                        selectedItem={this.state.unit}
+                                        onItemChange={this.onUnitChange}
+                                    />
                                 </div>
                                 <div className="row justify-content-center my-2">
                                     <ItemSelector<UP.Weapon>
                                         id={this.props.id + "-" + 0 + "-weapon"}
                                         dataIndex={0}
                                         items={this.state.unit.weapons}
+                                        includeBlankItem={true}
                                         selectedItem={this.state.weapon}
                                         onItemChange={this.onWeaponChange}
                                     />
@@ -221,6 +221,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                             <ItemSelector<UC.Upgrade>
                                                 id={this.props.id + "-" + i + "-upgrade"}
                                                 dataIndex={i}
+                                                includeBlankItem={true}
                                                 items={UC.getUpgrades().filter(ufilter => ufilter.type === utype && this.isAvailable(ufilter))}
                                                 selectedItem={this.state.upgrades[i]}
                                                 onItemChange={this.onUpgradeChange}
