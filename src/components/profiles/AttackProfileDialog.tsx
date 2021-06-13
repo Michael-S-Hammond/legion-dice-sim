@@ -6,8 +6,8 @@ import * as UP from '../../code/profiles/UnitProfile';
 import * as UC from '../../code/profiles/UpgradeCard';
 
 import FactionButtonGroup from './FactionButtonGroup';
+import ItemSelector from './ItemSelector';
 import RankButtonGroup from './RankButtonGroup';
-import WeaponSelector from './WeaponSelector';
 
 import { Telemetry } from '../../tools/Telemetry';
 
@@ -41,12 +41,13 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         weapon: UP.Weapon | null = null,
         upgrades: Array<UC.Upgrade> = []
             ) : AttackProfileDialogState {
-        const newFaction = faction === null ? (this.state ? this.state.faction : UP.Faction.rebel) : faction;
-        const newRank = rank === null ? (this.state ? this.state.rank : UP.Rank.commander) : rank;
+        const newFaction = faction !== null ? faction : (this.state?.faction ? this.state.faction : UP.Faction.rebel);
+        const newRank = rank !== null ? rank : (this.state?.rank ? this.state.rank : UP.Rank.commander);
         const newUnit = (unit !== null && unit.faction === newFaction && unit.rank === newRank) ? unit :
-            (unit === null && newFaction == this.state?.faction && newRank == this.state?.rank ? this.state?.unit : this.getFirstUnit(newFaction, newRank));
-        const newWeapon = weapon !== null && newUnit.weapons.includes(weapon) ? weapon : null;
-        const newUpgrades = newUnit !== unit ? [] : upgrades;
+            (unit === null && newFaction == this.state?.faction && newRank == this.state?.rank && this.state?.unit ? this.state.unit : this.getFirstUnit(newFaction, newRank));
+        const newWeapon = weapon !== null && newUnit.weapons.includes(weapon) ? weapon :
+            (weapon === null && this.state?.weapon && newUnit.weapons.includes(this.state.weapon) ? this.state.weapon : null);
+        const newUpgrades = upgrades !== null ? upgrades : (newUnit === this.state?.unit ? this.state.upgrades : []);
 
         return {
             units: this.getFilteredUnits(newFaction, newRank),
@@ -79,8 +80,25 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         this.setState(newState);
     }
 
-    private onWeaponChange = (weapon: UP.Weapon | null) => {
+    private onWeaponChange = (index: number, weapon: UP.Weapon | null) => {
         const newState = this.getNewStateObject(undefined, undefined, undefined, weapon);
+        this.setState(newState);
+    }
+
+    private onUpgradeChange = (index: number, upgrade: UC.Upgrade | null) => {
+        const newUpgrades: Array<UC.Upgrade> = [];
+
+        this.state.upgrades.forEach((u, i) => {
+            // not copying the element at index so that it can be removed if desired
+            if(i !== index) {
+                newUpgrades[i] = u;
+            }
+        });
+        if(upgrade) {
+            newUpgrades[index] = upgrade;
+        }
+
+        const newState = this.getNewStateObject(undefined, undefined, undefined, undefined, newUpgrades);
         this.setState(newState);
     }
 
@@ -153,47 +171,6 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return foundMatch;
     }
 
-    private onUpgradeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const index = Number(e.target.dataset.upgradeIndex);
-        const newUpgrades: Array<UC.Upgrade> = [];
-
-        this.state.upgrades.forEach((u, i) => {
-            // not copying the element at index so that it can be removed if desired
-            if(i !== index) {
-                newUpgrades[i] = u;
-            }
-        });
-        const upgradeType = this.state.unit.upgrades ? this.state.unit.upgrades[index] : null;
-        if(upgradeType) {
-            const newUpgrade = this.getUpgrade(upgradeType, e.target.value);
-            if(newUpgrade) {
-                newUpgrades[index] = newUpgrade;
-            }
-        }
-
-        const newState = this.getNewStateObject(undefined, undefined, undefined, undefined, newUpgrades);
-        this.setState(newState);
-    }
-
-    private renderUpgradeSelect(upgrade: UP.UnitUpgrade, index: number) : JSX.Element {
-        return (
-            <select
-                key={index + "-" + upgrade + "-upgrade-select"}
-                data-upgrade-index={String(index)}
-                value={this.state.upgrades[index]?.name}
-                onChange={this.onUpgradeChange}
-                className="rounded-lg px-2 ml-2">
-            <option key="empty"></option>
-            {
-                UC.getUpgrades().filter(u => u.type === upgrade && this.isAvailable(u)).map((u, i) =>
-                    <option
-                        key={"option-" + index + "-" + i}
-                        >{u.name}</option>
-                )
-            }
-        </select>);
-    }
-
     render() : JSX.Element {
         return (
             <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -229,19 +206,27 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                     </select>
                                 </div>
                                 <div className="row justify-content-center my-2">
-                                    <WeaponSelector
-                                        id={this.props.id + "-" + 0 + "-weaponSelect"}
-                                        dataWeaponIndex={0}
-                                        weapons={this.state.unit.weapons}
-                                        selectedWeapon={this.state.weapon}
-                                        onWeaponChange={this.onWeaponChange}
-                                    ></WeaponSelector>
+                                    <ItemSelector<UP.Weapon>
+                                        id={this.props.id + "-" + 0 + "-weapon"}
+                                        dataIndex={0}
+                                        items={this.state.unit.weapons}
+                                        selectedItem={this.state.weapon}
+                                        onItemChange={this.onWeaponChange}
+                                    />
                                 </div>
                                 {
-                                    this.state.unit?.upgrades?.map((u, i) =>
+                                    this.state.unit?.upgrades?.map((utype, i) =>
                                         <div key={i} className="row justify-content-center my-2">
-                                            <img className={u + "-upgrade-img"}></img>{ this.renderUpgradeSelect(u, i) }
-                                        </div>)
+                                            <img className={utype + "-upgrade-img"}></img>
+                                            <ItemSelector<UC.Upgrade>
+                                                id={this.props.id + "-" + i + "-upgrade"}
+                                                dataIndex={i}
+                                                items={UC.getUpgrades().filter(ufilter => ufilter.type === utype && this.isAvailable(ufilter))}
+                                                selectedItem={this.state.upgrades[i]}
+                                                onItemChange={this.onUpgradeChange}
+                                            />
+                                        </div>
+                                    )
                                 }
                             </div>
                         </div>

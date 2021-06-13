@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeaponSelector matches the snapshot 1`] = `
+exports[`ItemSelector matches the snapshot 1`] = `
 <select
   className="rounded-lg px-2"
-  id="ws-5-weaponSelect"
+  id="ws-5-itemSelect"
   onChange={[Function]}
   value="Lightsaber"
 >

@@ -1,10 +1,12 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 import * as UP from '../../../code/profiles/UnitProfile';
-import WeaponSelector from '../../../components/profiles/WeaponSelector';
+import ItemSelector from '../../../components/profiles/ItemSelector';
 
-describe('WeaponSelector', () => {
+describe('ItemSelector', () => {
     it('matches the snapshot', () => {
         const onWeaponChange = jest.fn();
         const id = "ws-5";
@@ -39,20 +41,20 @@ describe('WeaponSelector', () => {
             }
         ];
 
-        const selector = shallow(<WeaponSelector
+        const selector = shallow(<ItemSelector<UP.Weapon>
                 id={id}
-                dataWeaponIndex={index}
-                weapons={weapons}
-                selectedWeapon={selectedWeapon}
-                onWeaponChange={onWeaponChange}
-            ></WeaponSelector>);
+                dataIndex={index}
+                items={weapons}
+                selectedItem={selectedWeapon}
+                onItemChange={onWeaponChange}
+            />);
         const snapshot = shallowToJson(selector);
         expect(snapshot).toMatchSnapshot();
     });
 
     it('handles value change', () => {
         let weapon: UP.Weapon | null = null;
-        const onWeaponChange = jest.fn((newWeapon) => {
+        const onWeaponChange = jest.fn((_, newWeapon) => {
             weapon = newWeapon;
         });
         const id = "ws-5";
@@ -87,14 +89,14 @@ describe('WeaponSelector', () => {
             }
         ];
 
-        const wrapper = shallow(<WeaponSelector
+        const wrapper = shallow(<ItemSelector<UP.Weapon>
             id={id}
-            dataWeaponIndex={index}
-            weapons={weapons}
-            selectedWeapon={selectedWeapon}
-            onWeaponChange={onWeaponChange}
-        ></WeaponSelector>);
-        wrapper.find("#" + id + "-weaponSelect").simulate('change', { target: { value: weapons[1].name }});
+            dataIndex={index}
+            items={weapons}
+            selectedItem={selectedWeapon}
+            onItemChange={onWeaponChange}
+        />);
+        wrapper.find("#" + id + "-itemSelect").simulate('change', { target: { value: weapons[1].name }});
 
         expect(onWeaponChange).toHaveBeenCalledTimes(1);
         expect(weapon).toEqual(weapons[1]);
@@ -102,7 +104,7 @@ describe('WeaponSelector', () => {
 
     it('handles clearing value', () => {
         let weapon: UP.Weapon | null = null;
-        const onWeaponChange = jest.fn((newWeapon) => {
+        const onWeaponChange = jest.fn((_, newWeapon) => {
             weapon = newWeapon;
         });
         const id = "ws-5";
@@ -137,14 +139,14 @@ describe('WeaponSelector', () => {
             }
         ];
 
-        const wrapper = shallow(<WeaponSelector
+        const wrapper = shallow(<ItemSelector<UP.Weapon>
             id={id}
-            dataWeaponIndex={index}
-            weapons={weapons}
-            selectedWeapon={selectedWeapon}
-            onWeaponChange={onWeaponChange}
-        ></WeaponSelector>);
-        wrapper.find("#" + id + "-weaponSelect").simulate('change', { target: { value: "" }});
+            dataIndex={index}
+            items={weapons}
+            selectedItem={selectedWeapon}
+            onItemChange={onWeaponChange}
+        />);
+        wrapper.find("#" + id + "-itemSelect").simulate('change', { target: { value: "" }});
 
         expect(onWeaponChange).toHaveBeenCalledTimes(1);
         expect(weapon).toBeNull();

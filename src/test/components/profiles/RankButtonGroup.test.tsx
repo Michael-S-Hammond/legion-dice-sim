@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -7,7 +9,7 @@ import RankButtonGroup from '../../../components/profiles/RankButtonGroup';
 describe('FactionButtonGroup', () => {
     it('matches the snapshot', () => {
         const onRankChange = jest.fn();
-        let rank = UP.Rank.commander;
+        const rank = UP.Rank.commander;
 
         const group = shallow(<RankButtonGroup
                 rank={rank}

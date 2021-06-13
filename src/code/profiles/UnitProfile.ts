@@ -2,6 +2,10 @@ import unitsFile from '../../data/units.json';
 
 import * as T from '../Types';
 
+export interface NamedItem {
+    name: string;
+}
+
 export enum Faction {
     rebel = "rebel",
     empire = "empire",
@@ -74,8 +78,7 @@ export type AttackDice = {
     white: number
 }
 
-export type Weapon = {
-    name: string,
+export interface Weapon extends NamedItem {
     minimumRange: number,
     maximumRange?: number,
     dice: AttackDice,
@@ -244,9 +247,8 @@ export type UnitKeyword = {
     wheelMode?: boolean
 }
 
-export type UnitProfile = {
+export interface UnitProfile extends NamedItem {
     faction: Faction,
-    name: string,
     subtitle?: string,
     unique?: boolean,
     rank: Rank,

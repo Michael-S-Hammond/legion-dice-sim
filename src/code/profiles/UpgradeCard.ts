@@ -9,9 +9,8 @@ export type Restriction = {
     type?: UP.UnitType
 }
 
-export interface Upgrade {
+export interface Upgrade extends UP.NamedItem {
     type: string,
-    name: string,
     unique?: boolean,
     points: number,
     keywords?: UP.UnitKeyword,

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -8,7 +10,7 @@ import FactionButtonGroup from '../../../components/profiles/FactionButtonGroup'
 describe('FactionButtonGroup', () => {
     it('matches the snapshot', () => {
         const onFactionChange = jest.fn();
-        let faction = UP.Faction.rebel;
+        const faction = UP.Faction.rebel;
 
         const group = shallow(<FactionButtonGroup
                 faction={faction}
