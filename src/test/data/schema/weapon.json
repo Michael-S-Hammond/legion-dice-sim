@@ -40,7 +40,8 @@
                         "scatter": { "type": "boolean" },
                         "sidearm": { "enum": ["melee", "range"] },
                         "spray": { "type": "boolean" },
-                        "suppressive": { "type": "boolean" }
+                        "suppressive": { "type": "boolean" },
+                        "surgeCrit": { "type": "boolean" }
                     },
                     "additionalProperties": false
                 }

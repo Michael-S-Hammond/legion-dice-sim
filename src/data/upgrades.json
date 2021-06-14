@@ -31,6 +31,82 @@
         "name": "Saber Throw",
         "points": 5
     },{
+        "type": "grenades",
+        "name": "Concussion Grenades",
+        "points": 3,
+        "weapon": {
+            "name": "Concussion Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "EMP \"Droid Poppers\"",
+        "points": 3,
+        "weapon": {
+            "name": "EMP \"Droid Poppers\"",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "ion": 1
+            }
+        },
+        "applyWeaponKeywordsOnce": true
+    },{
+        "type": "grenades",
+        "name": "Fragmentation Grenades",
+        "points": 5,
+        "weapon": {
+            "name": "Fragmentation Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "surgeCrit": true
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "Impact Grenades",
+        "points": 3,
+        "weapon": {
+            "name": "Impact Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "Smoke Grenades",
+        "points": 2,
+        "keywords": {
+            "smoke": 1
+        }
+    },{
         "type": "heavyWeapon",
         "name": "B2-ACM Trooper",
         "points": 24,

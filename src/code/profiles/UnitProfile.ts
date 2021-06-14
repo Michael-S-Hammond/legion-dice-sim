@@ -69,7 +69,8 @@ export type WeaponKeywords = {
     ram?: number,
     scatter?: boolean,
     spray?: boolean,
-    suppressive?: boolean
+    suppressive?: boolean,
+    surgeCrit?: boolean
 }
 
 export type AttackDice = {
@@ -229,6 +230,7 @@ export type UnitKeyword = {
     sentinel?: boolean,
     sharpshooter?: number,
     shielded?: number,
+    smoke?: number,
     soresuMastery?: boolean,
     speeder?: number,
     spotter?: number,

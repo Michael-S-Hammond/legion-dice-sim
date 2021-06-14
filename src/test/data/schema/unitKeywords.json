@@ -135,6 +135,7 @@
                 "sentinel": { "type": "boolean" },
                 "sharpshooter": { "type": "number", "minimum": 1, "maximum": 2 },
                 "shielded": { "type": "number", "minimum": 1, "maximum": 4 },
+                "smoke": { "type": "number", "minimum": 1, "maximum": 1 },
                 "soresuMastery": { "type": "boolean" },
                 "speeder": { "type": "number", "minimum": 1, "maximum": 2 },
                 "spotter": { "type": "number", "minimum": 1, "maximum": 2 },

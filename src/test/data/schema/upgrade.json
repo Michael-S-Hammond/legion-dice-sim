@@ -39,6 +39,19 @@
             ],
             "required": ["type"]
         },
+        "grenadesUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "grenades" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" },
+                        "applyWeaponKeywordsOnce": { "type": "boolean" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "heavyWeaponUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -67,6 +80,7 @@
             "oneOf": [
                 { "$ref": "#/definitions/armamentUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
+                { "$ref": "#/definitions/grenadesUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
                 { "$ref": "#/definitions/pilotUpgrade" }
             ]
