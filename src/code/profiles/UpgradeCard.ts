@@ -32,6 +32,11 @@ export interface GrenadeUpgrade extends Upgrade {
     applyWeaponKeywordsOnce?: boolean
 }
 
+export interface HardpointUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.hardpoint,
+    weapon: UP.Weapon
+}
+
 export interface HeavyWeaponUpgrade extends Upgrade {
     type: UP.UnitUpgrade.heavyWeapon,
     weapon?: UP.Weapon

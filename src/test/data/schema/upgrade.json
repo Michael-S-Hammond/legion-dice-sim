@@ -52,6 +52,18 @@
             ],
             "required": ["type"]
         },
+        "hardpointUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "hardpoint" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type", "weapon"]
+        },
         "heavyWeaponUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -81,6 +93,7 @@
                 { "$ref": "#/definitions/armamentUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
                 { "$ref": "#/definitions/grenadesUpgrade" },
+                { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
                 { "$ref": "#/definitions/pilotUpgrade" }
             ]

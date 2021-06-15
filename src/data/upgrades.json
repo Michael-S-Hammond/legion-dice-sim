@@ -559,6 +559,129 @@
             "smoke": 1
         }
     },{
+        "type": "hardpoint",
+        "name": "AG-2G Quad Laser",
+        "points": 36,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        }],
+        "weapon": {
+            "name": "AG-2G Quad Laser",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 6,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "AT-RT Flamethrower",
+        "points": 20,
+        "restrictions": [{
+            "unit": "AT-RT"
+        }],
+        "weapon": {
+            "name": "AT-RT Flamethrower",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "fixed": ["front"],
+                "spray": true
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "Ax-108 \"Ground Buzzer\"",
+        "points": 10,
+        "restrictions": [{
+            "unit": "T-47 Airspeeder"
+        }],
+        "weapon": {
+        "name": "Ax-108 \"Ground Buzzer\"",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["rear"]
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "DLT-19 Rifle Pintle",
+        "points": 18,
+        "restrictions": [{
+            "unit": "TX-225 GAVw Occupier Combat Assault Tank"
+        }],
+        "weapon": {
+            "name": "DLT-19 Rifle Pintle",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "DW-3 Concussion Grenade Launcher",
+        "points": 15,
+        "restrictions": [{
+            "unit": "AT-ST"
+        }],
+        "weapon": {
+            "name": "DW-3 Concussion Grenade Launcher",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"],
+                "blast": true
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "Heavy Laser Retrofit",
+        "points": 18,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        }],
+        "weapon": {
+            "name": "Heavy Laser Retrofit",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
         "type": "heavyWeapon",
         "name": "B2-ACM Trooper",
         "points": 24,
