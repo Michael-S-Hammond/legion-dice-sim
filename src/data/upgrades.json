@@ -263,6 +263,94 @@
         }
     },{
         "type": "armament",
+        "name": "Iden's TL-50 Repeater",
+        "points": 15,
+        "restrictions": [{
+            "unit": "Iden Versio"
+        }],
+        "weapon": {
+            "name": "Iden's TL-50 Repeater",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 1,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 1
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "J-19 Bo-rifle Blaster",
+        "points": 25,
+        "restrictions": [{
+            "unit": "Agent Kallus"
+        }],
+        "weapon": {
+            "name": "J-19 Bo-rifle Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "lethal": 1,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "J-19 Bo-rifle Staff",
+        "points": 25,
+        "restrictions": [{
+            "unit": "Agent Kallus"
+        }],
+        "weapon": {
+            "name": "J-19 Bo-rifle Staff",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "lethal": 1,
+                "reconfigure": true
+            }
+        },
+        "keywords": {
+            "charge": true,
+            "immune": ["pierce"]
+        }
+    },{
+        "type": "armament",
+        "name": "Jetpack Rockets",
+        "points": 8,
+        "restrictions": [{
+            "unit": "Mandalorian Resistance"
+        }],
+        "weapon": {
+            "name": "Jetpack Rockets",
+            "minimumRange": 3,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "impact": 1
+            }
+        }
+    },{
+        "type": "armament",
         "name": "Jyn's SE-14 Blaster",
         "points": 10,
         "restrictions": [{
@@ -285,6 +373,108 @@
             }
         }
     },{
+        "type": "armament",
+        "name": "Looted E-5 Blaster",
+        "points": 5,
+        "restrictions": [{
+            "unit": "Padmé Amidala"
+        }],
+        "weapon": {
+            "name": "Looted E-5 Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "RT-97C Blaster Rifle",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Dewback Rider"
+        }],
+        "weapon": {
+            "name": "RT-97C Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 3
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "T-21 Blaster Rifle",
+        "points": 5,
+        "restrictions": [{
+            "unit": "Dewback Rider"
+        }],
+        "weapon": {
+            "name": "T-21 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "critical": 2
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "The Darksaber",
+        "points": 15,
+        "restrictions": [{
+            "unit": "Sabine Wren"
+        }],
+        "weapon": {
+            "name": "The Darksaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        },
+        "keywords": {
+            "dauntless": true,
+            "immune": ["meleePierce"]
+        }
+    },{
+        "type": "armament",
+        "name": "Vibroswords",
+        "points": 6,
+        "restrictions": [{
+            "unit": "BX-series Droid Commandos"
+        }],
+        "weapon": {
+            "name": "Vibroswords",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            }
+        },
+        "keywords": {
+            "charge": true
+        }
+    },{
         "type": "force",
         "name": "Force Reflexes",
         "points": 5
@@ -292,6 +482,82 @@
         "type": "force",
         "name": "Saber Throw",
         "points": 5
+    },{
+        "type": "grenades",
+        "name": "Concussion Grenades",
+        "points": 3,
+        "weapon": {
+            "name": "Concussion Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "EMP \"Droid Poppers\"",
+        "points": 3,
+        "weapon": {
+            "name": "EMP \"Droid Poppers\"",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "ion": 1
+            }
+        },
+        "applyWeaponKeywordsOnce": true
+    },{
+        "type": "grenades",
+        "name": "Fragmentation Grenades",
+        "points": 5,
+        "weapon": {
+            "name": "Fragmentation Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "surgeCrit": true
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "Impact Grenades",
+        "points": 3,
+        "weapon": {
+            "name": "Impact Grenades",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        }
+    },{
+        "type": "grenades",
+        "name": "Smoke Grenades",
+        "points": 2,
+        "keywords": {
+            "smoke": 1
+        }
     },{
         "type": "heavyWeapon",
         "name": "B2-ACM Trooper",

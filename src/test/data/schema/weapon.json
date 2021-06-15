@@ -43,6 +43,7 @@
                         "sidearm": { "enum": ["melee", "range"] },
                         "spray": { "type": "boolean" },
                         "suppressive": { "type": "boolean" },
+                        "surgeCrit": { "type": "boolean" },
                         "versatile": { "type": "boolean" }
                     },
                     "additionalProperties": false

@@ -21,7 +21,7 @@ type AttackProfileDialogState = {
     faction: UP.Faction,
     rank: UP.Rank,
     unit: UP.UnitProfile,
-    weapon: UP.Weapon | null,
+    weapons: Array<UP.Weapon>,
     upgrades: Array<UC.Upgrade>
 };
 
@@ -38,15 +38,14 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         faction: UP.Faction | null = null,
         rank: UP.Rank | null = null,
         unit: UP.UnitProfile | null = null,
-        weapon: UP.Weapon | null = null,
-        upgrades: Array<UC.Upgrade> = []
+        weapons: Array<UP.Weapon> | null = null,
+        upgrades: Array<UC.Upgrade> | null = null
             ) : AttackProfileDialogState {
         const newFaction = faction !== null ? faction : (this.state?.faction ? this.state.faction : UP.Faction.rebel);
         const newRank = rank !== null ? rank : (this.state?.rank ? this.state.rank : UP.Rank.commander);
         const newUnit = (unit !== null && unit.faction === newFaction && unit.rank === newRank) ? unit :
             (unit === null && newFaction == this.state?.faction && newRank == this.state?.rank && this.state?.unit ? this.state.unit : this.getFirstUnit(newFaction, newRank));
-        const newWeapon = weapon !== null && newUnit.weapons.includes(weapon) ? weapon :
-            (weapon === null && this.state?.weapon && newUnit.weapons.includes(this.state.weapon) ? this.state.weapon : null);
+        const newWeapons = weapons !== null ? weapons : (newUnit === this.state?.unit ? this.state.weapons : []);
         const newUpgrades = upgrades !== null ? upgrades : (newUnit === this.state?.unit ? this.state.upgrades : []);
 
         return {
@@ -54,7 +53,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
             faction: newFaction,
             rank: newRank,
             unit: newUnit,
-            weapon: newWeapon,
+            weapons: newWeapons,
             upgrades: newUpgrades
         };
     }
@@ -79,7 +78,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private onWeaponChange = (_: number, weapon: UP.Weapon | null) => {
-        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon);
+        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon ? [weapon] : [], undefined);
         this.setState(newState);
     }
 
@@ -101,7 +100,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private onApplyChanges = () => {
-        this.props.applyAttackProfile(this.state.unit, this.state.weapon, this.state.upgrades);
+        this.props.applyAttackProfile(this.state.unit, this.state.weapons[0], this.state.upgrades);
         $('#' + this.props.id + '-closeButton').trigger('click');
     }
 
@@ -190,7 +189,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                         dataIndex={0}
                                         items={this.state.unit.weapons}
                                         includeBlankItem={true}
-                                        selectedItem={this.state.weapon}
+                                        selectedItem={this.state.weapons[0]}
                                         onItemChange={this.onWeaponChange}
                                     />
                                 </div>
