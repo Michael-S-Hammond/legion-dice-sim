@@ -117,26 +117,6 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return units[0];
     }
 
-    private getUnit(name: string) : UP.UnitProfile {
-        const units = this.#units.filter(profile =>
-            profile.faction === this.state.faction &&
-            profile.rank === this.state.rank &&
-            profile.name === name);
-
-        // callers are getting the name from the list of units, so it should always exist
-        if(units[0] === undefined) {
-            Telemetry.logError("AttackProfileDialog.tsx", "getUnit", "Unit not found");
-        }
-        return units[0];
-    }
-
-    private getUpgrade(type: UP.UnitUpgrade, name: string) : UC.Upgrade | null {
-        const upgrades = UC.getUpgrades().filter(u =>
-            u.type === type &&
-            u.name === name);
-        return upgrades.length === 1 ? upgrades[0] : null;
-    }
-
     private isAvailable(upgrade: UC.Upgrade) : boolean {
         if(!upgrade.restrictions || upgrade.restrictions.length === 0) {
             return true;
@@ -171,11 +151,11 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
 
     render() : JSX.Element {
         return (
-            <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="attackModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Attack profile</h5>
+                            <h5 className="modal-title" id="attackModalLabel">Attack profile</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

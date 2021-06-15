@@ -59,17 +59,20 @@ export type WeaponKeywords = {
     cumbersome?: boolean,
     fixed?: Array<FixedPosition>,
     highVelocity?: boolean,
+    immobilize?: number,
     immune?: Array<WeaponImmune>,
     impact?: number,
     ion?: number,
     lethal?: number,
     longShot?: number,
+    reconfigure?: boolean,
     pierce?: number,
     poison?: number,
     ram?: number,
     scatter?: boolean,
     spray?: boolean,
-    suppressive?: boolean
+    suppressive?: boolean,
+    versatile?: boolean
 }
 
 export type AttackDice = {
@@ -216,6 +219,7 @@ export type UnitKeyword = {
     pullingTheStrings?: boolean,
     quickThinking?: boolean,
     ready?: number,
+    recharge?: number,
     regenerate?: number,
     relentless?: boolean,
     reliable?: number,

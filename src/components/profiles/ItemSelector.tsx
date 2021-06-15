@@ -29,7 +29,7 @@ class ItemSelector<T extends UP.NamedItem> extends React.Component<ItemSelectorP
             <select
                 id={this.props.id + "-itemSelect"}
                 value={this.props.selectedItem?.name}
-                className="rounded-lg px-2"
+                className="rounded-lg px-2 ml-2"
                 onChange={this.onChange}>
                 { this.props.includeBlankItem &&
                     <option key="" value=""></option>

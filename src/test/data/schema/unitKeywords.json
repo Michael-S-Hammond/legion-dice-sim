@@ -114,6 +114,7 @@
                 "pullingTheStrings": { "type": "boolean" },
                 "quickThinking": { "type": "boolean" },
                 "ready": { "type": "number", "minimum": 1, "maximum": 1 },
+                "recharge": { "type": "number", "minimum": 1, "maximum": 2 },
                 "regenerate": { "type": "number", "minimum": 1, "maximum": 3 },
                 "relentless": { "type": "boolean" },
                 "reliable": { "type": "number", "minimum": 1, "maximum": 1 },

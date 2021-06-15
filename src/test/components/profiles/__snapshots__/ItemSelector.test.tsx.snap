@@ -2,7 +2,7 @@
 
 exports[`ItemSelector matches the snapshot 1`] = `
 <select
-  className="rounded-lg px-2"
+  className="rounded-lg px-2 ml-2"
   id="ws-5-itemSelect"
   onChange={[Function]}
   value="Lightsaber"

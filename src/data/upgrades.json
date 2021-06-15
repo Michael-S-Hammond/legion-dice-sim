@@ -1,6 +1,268 @@
 {
     "upgrades": [{
         "type": "armament",
+        "name": "A-180 Pistol Config",
+        "points": 0,
+        "restrictions": [{
+            "unit": "Jyn Erso"
+        }],
+        "weapon": {
+            "name": "A-180 Pistol Config",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "A-180 Rifle Config",
+        "points": 0,
+        "restrictions": [{
+            "unit": "Jyn Erso"
+        }],
+        "weapon": {
+            "name": "A-180 Rifle Config",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "A-300 Long Range Rifle Config",
+        "points": 0,
+        "restrictions": [{
+            "unit": "Rebel Pathfinders"
+        }],
+        "weapon": {
+            "name": "A-300 Long Range Rifle Config",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "A-300 Short Range Rifle Config",
+        "points": 0,
+        "restrictions": [{
+            "unit": "Rebel Pathfinders"
+        }],
+        "weapon": {
+            "name": "A-300 Short Range Rifle Config",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "A280-CFE Pistol Config",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Cassian Andor"
+        }],
+        "weapon": {
+            "name": "A280-CFE Pistol Config",
+            "minimumRange": 1,
+            "dice": {
+                "red": 2,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "longShot": 1,
+                "pierce": 1,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "A280-CFE Sniper Config",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Cassian Andor"
+        }],
+        "weapon": {
+            "name": "A280-CFE Sniper Config",
+            "minimumRange": 1,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "cumbersome": true,
+                "highVelocity": true,
+                "pierce": 1,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "CR-24 Flame Rifle",
+        "points": 15,
+        "restrictions": [{
+            "unit": "Dewback Rider"
+        }],
+        "weapon": {
+            "name": "CR-24 Flame Rifle",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "blast": true,
+                "spray": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "Deflector Shields",
+        "points": 18,
+        "restrictions": [{
+            "unit": "BX-Series Droid Commandos"
+        }],
+        "keywords": {
+            "shielded": 2,
+            "recharge": 2
+        }
+    },{
+        "type": "armament",
+        "name": "DT-57 \"Annihialator\"",
+        "points": 12,
+        "restrictions": [{
+            "unit": "General Grievous"
+        }],
+        "weapon": {
+            "name": "DT-57 \"Annihialator\"",
+            "minimumRange": 0,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "pierce": 1,
+                "versatile": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "E-11D Focused Fire Config",
+        "points": 8,
+        "restrictions": [{
+            "unit": "Imperial Death Troopers"
+        }],
+        "weapon": {
+            "name": "E-11D Focused Fire Config",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "reconfigure": true,
+                "suppressive": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "E-11D Grenade Launcher Config",
+        "points": 8,
+        "restrictions": [{
+            "unit": "Imperial Death Troopers"
+        }],
+        "weapon": {
+            "name": "E-11D Grenade Launcher Config",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "reconfigure": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "Electro Gauntlets",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Cad Bane"
+        }],
+        "weapon": {
+            "name": "Electro Gauntlets",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "immobilize": 3,
+                "suppressive": true
+            }
+        }
+    },{
+        "type": "armament",
+        "name": "Iden's DLT-20A Rifle",
+        "points": 15,
+        "restrictions": [{
+            "unit": "Iden Versio"
+        }],
+        "weapon": {
+            "name": "Iden's DLT-20A Rifle",
+            "minimumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "highVelocity": true,
+                "pierce": 1
+            }
+        }
+    },{
+        "type": "armament",
         "name": "Jyn's SE-14 Blaster",
         "points": 10,
         "restrictions": [{
