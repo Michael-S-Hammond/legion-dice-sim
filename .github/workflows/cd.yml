@@ -87,7 +87,7 @@ jobs:
           path: build
 
       - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.1.1
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: 'build'
           container_name: '$web'
@@ -116,7 +116,7 @@ jobs:
           path: build
 
       - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.1.1
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
           source_dir: 'build'
           container_name: '$web'
