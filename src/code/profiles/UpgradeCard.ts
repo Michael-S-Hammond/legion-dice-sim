@@ -17,29 +17,29 @@ export interface Upgrade extends UP.NamedItem {
     restrictions?: Array<Restriction>
 }
 
-export interface ArmamentUpgrade extends Upgrade {
-    type: UP.UnitUpgrade.armament,
-    weapon: UP.Weapon
+export interface WeaponUpgrade extends Upgrade {
+    weapon?: UP.Weapon
+}
+
+export interface ArmamentUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.armament
 }
 
 export interface ForceUpgrade extends Upgrade {
     type: UP.UnitUpgrade.force
 }
 
-export interface GrenadeUpgrade extends Upgrade {
+export interface GrenadeUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.grenades,
-    weapon?: UP.Weapon,
     applyWeaponKeywordsOnce?: boolean
 }
 
-export interface HardpointUpgrade extends Upgrade {
-    type: UP.UnitUpgrade.hardpoint,
-    weapon: UP.Weapon
+export interface HardpointUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.hardpoint
 }
 
-export interface HeavyWeaponUpgrade extends Upgrade {
-    type: UP.UnitUpgrade.heavyWeapon,
-    weapon?: UP.Weapon
+export interface HeavyWeaponUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.heavyWeapon
 }
 
 export interface PilotUpgradeCard extends Upgrade {
@@ -47,6 +47,10 @@ export interface PilotUpgradeCard extends Upgrade {
 }
 
 export interface UpgradeCardRegistry {
+    ArmamentUpgrade: ArmamentUpgrade,
+    ForceUpgrade: ForceUpgrade,
+    GrenadeUpgrade: GrenadeUpgrade,
+    HardpointUpgrade: HardpointUpgrade,
     HeavyWeaponUpgradeCard: HeavyWeaponUpgrade,
     PilotUpgradeCard: PilotUpgradeCard
 }

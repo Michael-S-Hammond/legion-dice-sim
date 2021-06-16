@@ -560,6 +560,27 @@
         }
     },{
         "type": "hardpoint",
+        "name": "88 Twin Light Blaster Cannon",
+        "points": 20,
+        "restrictions": [{
+            "unit": "AT-ST"
+        }],
+        "weapon": {
+            "name": "88 Twin Light Blaster Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "fixed": ["front"]
+            }
+        }
+    },{
+        "type": "hardpoint",
         "name": "AG-2G Quad Laser",
         "points": 36,
         "restrictions": [{
@@ -598,6 +619,67 @@
                 "blast": true,
                 "fixed": ["front"],
                 "spray": true
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "AT-RT Laser Cannon",
+        "points": 10,
+        "restrictions": [{
+            "unit": "AT-RT"
+        }],
+        "weapon": {
+            "name": "AT-RT Laser Cannon",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "fixed": ["front"]
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "AT-RT Rotary Blaster",
+        "points": 20,
+        "restrictions": [{
+            "unit": "AT-RT"
+        }],
+        "weapon": {
+            "name": "AT-RT Rotary Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "AT-ST Mortar Launcher",
+        "points": 10,
+        "restrictions": [{
+            "unit": "AT-ST"
+        }],
+        "weapon": {
+            "name": "AT-ST Mortar Launcher",
+            "minimumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "fixed": ["front"],
+                "suppressive": true
             }
         }
     },{
@@ -676,6 +758,127 @@
                 "red": 1,
                 "black": 1,
                 "white": 1
+            },
+            "keywords": {
+                "critical": 1
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "M-45 Ion Blaster",
+        "points": 31,
+        "restrictions": [{
+            "unit": "X-34 Landspeeder"
+        }],
+        "weapon": {
+            "name": "M-45 Ion Blaster",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 4
+            },
+            "keywords": {
+                "fixed": ["front"],
+                "impact": 1,
+                "ion": 1
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "Mark II Medium Blaster",
+        "points": 26,
+        "restrictions": [{
+            "unit": "X-34 Landspeeder"
+        }],
+        "weapon": {
+            "name": "Mark II Medium Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "Mo/Dk Power Harpoon",
+        "points": 0,
+        "restrictions": [{
+            "unit": "T-47 Airspeeder"
+        }],
+        "weapon": {
+            "name": "Mo/Dk Power Harpoon",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1,
+                "fixed": ["rear"],
+                "towCable": true
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "RT-97C Rifle Pintle",
+        "points": 14,
+        "restrictions": [{
+            "unit": "TX-225 GAVw Occupier Combat Assault Tank"
+        }],
+        "weapon": {
+            "name": "RT-97C Rifle Pintle",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 3
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "TX-130 Beam Cannon Turret",
+        "points": 30,
+        "restrictions": [{
+            "unit": "TX-130 Saber-class Fighter Tank"
+        }],
+        "weapon": {
+            "name": "TX-130 Beam Cannon Turret",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "beam": 2
+            }
+        }
+    },{
+        "type": "hardpoint",
+        "name": "TX-130 Twin Laser Turret",
+        "points": 14,
+        "restrictions": [{
+            "unit": "TX-130 Saber-class Fighter Tank"
+        }],
+        "weapon": {
+            "name": "TX-130 Twin Laser Turret",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
             },
             "keywords": {
                 "critical": 1

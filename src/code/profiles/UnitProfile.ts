@@ -54,6 +54,7 @@ export enum WeaponImmune {
 }
 
 export type WeaponKeywords = {
+    beam?: number,
     blast?: boolean,
     critical?: number,
     cumbersome?: boolean,
@@ -73,6 +74,7 @@ export type WeaponKeywords = {
     spray?: boolean,
     suppressive?: boolean,
     surgeCrit?: boolean,
+    towCable?: boolean,
     versatile?: boolean
 }
 
