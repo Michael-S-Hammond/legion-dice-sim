@@ -9,12 +9,43 @@ type Tracking = {
     useBaseWeapon: boolean,
     minimumRange: number,
     maximumRange?: number,
+    fixedPosition: Array<UP.FixedPosition> | null,
     miniCount: number,
     offense: T.OffenseInput
 }
 
 function getBoolean(value: boolean | null | undefined) : boolean {
     return value ? true : false;
+}
+
+function isPositionCompatible(weapon: UP.Weapon, position: Array<UP.FixedPosition> | null) : boolean {
+    if(weapon.keywords?.fixed && position) {
+        for(const arc of weapon.keywords.fixed) {
+            if(position.includes(arc)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    return true;
+}
+
+function getPositionOverlap(weapon: UP.Weapon, position: Array<UP.FixedPosition> | null) : Array<UP.FixedPosition> | null {
+    if(weapon.keywords?.fixed && position) {
+        const intersection: Array<UP.FixedPosition> = [];
+        for(const arc of weapon.keywords.fixed) {
+            if(position.includes(arc)) {
+                intersection.push(arc);
+            }
+        }
+
+        return intersection
+    } else if(position) {
+        return position;
+    } else if(weapon.keywords?.fixed) {
+        return weapon.keywords.fixed;
+    }
+    return null;
 }
 
 function isRangeCompatible(weapon: UP.Weapon, minimumRange: number, maximumRange?: number) : boolean {
@@ -76,15 +107,23 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking) 
         return;
     }
 
+    if(!isPositionCompatible(weapon, tracking.fixedPosition)) {
+        return;
+    }
+
     if(!isRangeCompatible(weapon, tracking.minimumRange, tracking.maximumRange)) {
         return;
-    } else {
-        tracking.minimumRange = Math.max(weapon.minimumRange, tracking.minimumRange);
-        if(!tracking.maximumRange) {
-            tracking.maximumRange = weapon.maximumRange;
-        } else if(weapon.maximumRange) {
-            tracking.maximumRange = Math.min(weapon.maximumRange, tracking.maximumRange);
-        }
+    }
+
+    // update compatible fixed position
+    tracking.fixedPosition = getPositionOverlap(weapon, tracking.fixedPosition);
+
+    // update compatible range
+    tracking.minimumRange = Math.max(weapon.minimumRange, tracking.minimumRange);
+    if(!tracking.maximumRange) {
+        tracking.maximumRange = weapon.maximumRange;
+    } else if(weapon.maximumRange) {
+        tracking.maximumRange = Math.min(weapon.maximumRange, tracking.maximumRange);
     }
 
     if(tracking.activeWeapons === 0) {
@@ -168,7 +207,7 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
             }
         }
     });
-    
+
     if(arsenal === 0) {
         arsenal = 1;
     }
@@ -179,6 +218,7 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
         defaultWeapon: null,
         useBaseWeapon: totalWeapons <= arsenal,
         minimumRange: 0,
+        fixedPosition: null,
         miniCount: profile.miniCount,
         offense: {
             redDice: 0,
@@ -202,9 +242,6 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
         }
     }
 }
-
-// TODO: Fixed position
-// TODO: More arsenal testing
 
 export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
     const tracking = createTrackingObject(profile, weapon, upgrades, tokens);
