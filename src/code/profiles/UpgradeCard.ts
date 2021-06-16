@@ -29,6 +29,10 @@ export interface ForceUpgrade extends Upgrade {
     type: UP.UnitUpgrade.force
 }
 
+export interface GearUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.gear
+}
+
 export interface GrenadeUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.grenades,
     applyWeaponKeywordsOnce?: boolean

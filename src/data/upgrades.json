@@ -483,6 +483,89 @@
         "name": "Saber Throw",
         "points": 5
     },{
+        "type": "gear",
+        "name": "Ascension Cables",
+        "points": 4,
+        "keywords": {
+            "scale": true
+        }
+    },{
+        "type": "gear",
+        "name": "Electro Grappling Line",
+        "points": 5,
+        "restrictions": [{
+            "unit": "Sabine Wren"
+        }]
+    },{
+        "type": "gear",
+        "name": "Electrobinoculars",
+        "points": 8,
+        "keywords": {
+            "spotter": 1
+        }
+    },{
+        "type": "gear",
+        "name": "Emergency Stims",
+        "points": 8
+    },{
+        "type": "gear",
+        "name": "Environmental Gear",
+        "points": 2,
+        "keywords": {
+            "unhindered": true
+        }
+    },{
+        "type": "gear",
+        "name": "Grappling Hooks",
+        "points": 1,
+        "keywords": {
+            "expertClimber": true
+        }
+    },{
+        "type": "gear",
+        "name": "JT-12 Jetpacks",
+        "points": 10,
+        "keywords": {
+            "jump": 2
+        },
+        "restrictions": [{
+            "unit": "Clone Captain Rex"
+        },{
+            "unit": "ARC Troopers"
+        }]
+    },{
+        "type": "gear",
+        "name": "Personal Combat Shield",
+        "points": 5,
+        "keywords": {
+            "shielded": 1,
+            "recharge": 1
+        },
+        "restrictions": [{
+            "unit": "Sabine Wren"
+        }]
+    },{
+        "type": "gear",
+        "name": "Portable Scanner",
+        "points": 6,
+        "keywords": {
+            "takeCover": 1
+        }
+    },{
+        "type": "gear",
+        "name": "Recon Intel",
+        "points": 2,
+        "keywords": {
+            "scout": 1
+        }
+    },{
+        "type": "gear",
+        "name": "Targeting Scopes",
+        "points": 4,
+        "keywords": {
+            "precise": 1
+        }
+    },{
         "type": "grenades",
         "name": "Concussion Grenades",
         "points": 3,

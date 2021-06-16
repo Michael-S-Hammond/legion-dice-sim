@@ -39,6 +39,17 @@
             ],
             "required": ["type"]
         },
+        "gearUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "gear" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "grenadesUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -92,6 +103,7 @@
             "oneOf": [
                 { "$ref": "#/definitions/armamentUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
+                { "$ref": "#/definitions/gearUpgrade" },
                 { "$ref": "#/definitions/grenadesUpgrade" },
                 { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },

@@ -175,6 +175,9 @@ function applyUpgrades(tracking: Tracking, upgrade: UC.Upgrade) : void {
         case UP.UnitUpgrade.armament:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
             break;
+        case UP.UnitUpgrade.gear:
+            applyUpgradeKeywords(upgrade, tracking);
+            break;
         case UP.UnitUpgrade.grenades:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
             break;
@@ -236,7 +239,7 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
             lethalX: { active: false, value: 1},
             makashiMastery: getBoolean(profile.keywords?.makashiMastery),
             pierceX: { active: false, value: 1},
-            preciseX: { active: false, value: 1},
+            preciseX: profile.keywords?.precise ? { active: true, value: profile.keywords.precise } : { active: false, value: 1},
             ramX: { active: false, value: 1},
             sharpshooterX: { active: false, value: 1}
         }
