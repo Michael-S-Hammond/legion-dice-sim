@@ -33,6 +33,11 @@ export interface GearUpgrade extends Upgrade {
     type: UP.UnitUpgrade.gear
 }
 
+export interface GeneratorUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.generator,
+    weaponKeywords: UP.WeaponKeywords
+}
+
 export interface GrenadeUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.grenades,
     applyWeaponKeywordsOnce?: boolean

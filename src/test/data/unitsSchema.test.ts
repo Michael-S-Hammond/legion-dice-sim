@@ -9,6 +9,7 @@ import unitRankSchema from './schema/unitRank.json';
 import unitSchema from './schema/unit.json';
 import unitTypeSchema from './schema/unitType.json';
 import weaponSchema from './schema/weapon.json';
+import weaponKeywordsSchema from './schema/weaponKeywords.json';
 
 describe('units.json schema', () => {
     it('is valid', () => {
@@ -36,6 +37,7 @@ describe('units.json schema', () => {
         ajv.addSchema(unitSchema);
         ajv.addSchema(unitTypeSchema);
         ajv.addSchema(weaponSchema);
+        ajv.addSchema(weaponKeywordsSchema);
 
         const validator = ajv.getSchema("http://www.legiondice.com/schemas/unitcollection");
         const validationResult = validator ? validator(units) : false;

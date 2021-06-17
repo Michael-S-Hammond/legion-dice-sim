@@ -102,6 +102,26 @@ function applyUpgradeKeywords(upgrade: UC.Upgrade, tracking: Tracking) {
     }
 }
 
+function applyWeaponKeywords(keywords: UP.WeaponKeywords, multiplier: number, tracking: Tracking) {
+    if(keywords.blast) {
+        tracking.offense.blast = true;
+    }
+    applyValueXKeyword(keywords.critical, tracking.offense.criticalX, multiplier);
+    if(!keywords.highVelocity) {
+        tracking.offense.highVelocity = false;
+    } else if(tracking.activeWeapons === 0) {
+        tracking.offense.highVelocity = true;
+    }
+    applyValueXKeyword(keywords.impact, tracking.offense.impactX, multiplier);
+    applyValueXKeyword(keywords.ion, tracking.offense.ionX, 1);
+    applyValueXKeyword(keywords.lethal, tracking.offense.lethalX, multiplier);
+    applyValueXKeyword(keywords.pierce, tracking.offense.pierceX, multiplier);
+    applyValueXKeyword(keywords.ram, tracking.offense.ramX, multiplier);
+    if(keywords.surgeCrit) {
+        tracking.offense.surge = T.AttackSurgeConversion.Critical;
+    }
+}
+
 function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking) {
     if(tracking.activeWeapons >= tracking.weaponCount) {
         return;
@@ -137,23 +157,7 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking) 
     }
 
     if(weapon.keywords) {
-        if(weapon.keywords.blast) {
-            tracking.offense.blast = true;
-        }
-        applyValueXKeyword(weapon.keywords.critical, tracking.offense.criticalX, multiplier);
-        if(!weapon.keywords.highVelocity) {
-            tracking.offense.highVelocity = false;
-        } else if(tracking.activeWeapons === 0) {
-            tracking.offense.highVelocity = true;
-        }
-        applyValueXKeyword(weapon.keywords.impact, tracking.offense.impactX, multiplier);
-        applyValueXKeyword(weapon.keywords.ion, tracking.offense.ionX, 1);
-        applyValueXKeyword(weapon.keywords.lethal, tracking.offense.lethalX, multiplier);
-        applyValueXKeyword(weapon.keywords.pierce, tracking.offense.pierceX, multiplier);
-        applyValueXKeyword(weapon.keywords.ram, tracking.offense.ramX, multiplier);
-        if(weapon.keywords.surgeCrit) {
-            tracking.offense.surge = T.AttackSurgeConversion.Critical;
-        }
+        applyWeaponKeywords(weapon.keywords, multiplier, tracking);
     }
 
     tracking.activeWeapons++;
@@ -170,13 +174,19 @@ function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, track
     }
 }
 
-function applyUpgrades(tracking: Tracking, upgrade: UC.Upgrade) : void {
+function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
     switch(upgrade.type) {
         case UP.UnitUpgrade.armament:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
             break;
         case UP.UnitUpgrade.gear:
             applyUpgradeKeywords(upgrade, tracking);
+            break;
+        case UP.UnitUpgrade.generator:
+            if(tracking.fixedPosition && tracking.fixedPosition.length > 0) {
+                const generator = upgrade as UC.GeneratorUpgrade;
+                applyWeaponKeywords(generator.weaponKeywords, tracking.miniCount, tracking);
+            }
             break;
         case UP.UnitUpgrade.grenades:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
@@ -255,8 +265,16 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
     }
 
     upgrades.forEach(u => {
-        applyUpgrades(tracking, u);
+        if(u.type !== UP.UnitUpgrade.generator) {
+            applyUpgrade(tracking, u);
+        }
     });
+
+    upgrades.forEach(u => {
+        if(u.type === UP.UnitUpgrade.generator) {
+            applyUpgrade(tracking, u);
+        }
+    })
 
     const input = T.createDefaultAttackInput();
     input.offense = tracking.offense;

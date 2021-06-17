@@ -566,6 +566,20 @@
             "precise": 1
         }
     },{
+        "type": "generator",
+        "name": "Barrage Generator",
+        "points": 3,
+        "weaponKeywords": {
+            "suppressive": true
+        }
+    },{
+        "type": "generator",
+        "name": "Overcharged Generator",
+        "points": 3,
+        "weaponKeywords": {
+            "impact": 1
+        }
+    },{
         "type": "grenades",
         "name": "Concussion Grenades",
         "points": 3,

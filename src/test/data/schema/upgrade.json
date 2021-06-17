@@ -50,6 +50,18 @@
             ],
             "required": ["type"]
         },
+        "generatorUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "generator" },
+                        "weaponKeywords": { "$ref": "weaponkeywords#/definitions/keywords" }
+                    }
+                }
+            ],
+            "required": ["type", "weaponKeywords"]
+        },
         "grenadesUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -104,6 +116,7 @@
                 { "$ref": "#/definitions/armamentUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
                 { "$ref": "#/definitions/gearUpgrade" },
+                { "$ref": "#/definitions/generatorUpgrade" },
                 { "$ref": "#/definitions/grenadesUpgrade" },
                 { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
