@@ -51,6 +51,10 @@ export interface HeavyWeaponUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.heavyWeapon
 }
 
+export interface OrdinanceUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.ordinance
+}
+
 export interface PilotUpgradeCard extends Upgrade {
     type: UP.UnitUpgrade.pilot
 }

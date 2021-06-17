@@ -197,6 +197,9 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
         case UP.UnitUpgrade.heavyWeapon:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, 1, tracking);
             break;
+        case UP.UnitUpgrade.ordinance:
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            break;
     }
 }
 

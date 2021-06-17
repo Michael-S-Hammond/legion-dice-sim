@@ -58,6 +58,7 @@ export type WeaponKeywords = {
     blast?: boolean,
     critical?: number,
     cumbersome?: boolean,
+    cycle?: boolean,
     fixed?: Array<FixedPosition>,
     highVelocity?: boolean,
     immobilize?: number,

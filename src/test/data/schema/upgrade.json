@@ -99,6 +99,18 @@
             ],
             "required": ["type"]
         },
+        "ordinanceUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "ordinance" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "pilotUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -120,6 +132,7 @@
                 { "$ref": "#/definitions/grenadesUpgrade" },
                 { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
+                { "$ref": "#/definitions/ordinanceUpgrade" },
                 { "$ref": "#/definitions/pilotUpgrade" }
             ]
         }

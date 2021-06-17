@@ -8,6 +8,7 @@
                 "blast": { "type": "boolean" },
                 "critical": { "type": "number", "minimum": 1, "maximum": 2 },
                 "cumbersome": { "type": "boolean" },
+                "cycle": { "type": "boolean" },
                 "fixed": { "type": "array", "items": { "enum": ["front", "rear"] } },
                 "highVelocity": { "type": "boolean" },
                 "immobilize": { "type": "number", "minimum": 1, "maximum": 3 },

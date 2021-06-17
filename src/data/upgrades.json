@@ -1958,6 +1958,65 @@
             }
         }
     },{
+        "type": "ordinance",
+        "name": "\"Bunker Buster\" Shells",
+        "points": 12,
+        "weapon": {
+            "name": "\"Bunker Buster\" Shells",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 3
+            },
+            "keywords": {
+                "blast": true,
+                "cycle": true,
+                "fixed": ["front"],
+                "scatter": true
+            }
+        }
+    },{
+        "type": "ordinance",
+        "name": "Armor-Piercing Shells",
+        "points": 10,
+        "weapon": {
+            "name": "Armor-Piercing Shells",
+            "minimumRange": 2,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "cycle": true,
+                "fixed": ["front"],
+                "impact": 3
+            }
+        }
+    },{
+        "type": "ordinance",
+        "name": "High-Energy Shells",
+        "points": 8,
+        "weapon": {
+            "name": "High-Energy Shells",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "critical": 1,
+                "cycle": true,
+                "highVelocity": true,
+                "fixed": ["front"]
+            }
+        }
+    },{
         "type": "pilot",
         "name": "General Weiss",
         "unique": true,
