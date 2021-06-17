@@ -188,6 +188,7 @@ export type UnitKeyword = {
     equip?: Array<string>,
     exemplar?: boolean,
     expertClimber?: boolean,
+    fieldCommander?: boolean,
     fireSupport?: boolean,
     flawed?: boolean,
     fullPivot?: boolean,

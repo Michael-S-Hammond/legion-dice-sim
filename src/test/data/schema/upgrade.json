@@ -116,7 +116,8 @@
                 { "$ref": "#/definitions/baseUpgrade" },
                 {
                     "properties": {
-                        "type": { "const": "pilot" }
+                        "type": { "const": "pilot" },
+                        "weaponKeywords": { "$ref": "weaponkeywords#/definitions/keywords" }
                     }
                 }
             ],

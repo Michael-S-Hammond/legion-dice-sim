@@ -2018,6 +2018,62 @@
         }
     },{
         "type": "pilot",
+        "name": "Aayla Secura",
+        "unique": true,
+        "points": 5,
+        "restrictions": [{
+            "unit": "TX-130 Saber-class Fighter Tank"
+        }],
+        "keywords": {
+            "inspire": 2,
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Baron Rudor",
+        "unique": true,
+        "points": 12,
+        "restrictions": [{
+            "faction": "empire",
+            "type": "repulsorVehicle"
+        }],
+        "keywords": {
+            "marksman": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Clone Commander Fox",
+        "unique": true,
+        "points": 10,
+        "restrictions": [{
+            "faction": "republic",
+            "unit": "LAAT/le Patrol Transport"
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Clone Shock Trooper Pilot",
+        "points": 4,
+        "restrictions": [{
+            "faction": "republic",
+            "unit": "LAAT/le Patrol Transport"
+        }]
+    },{
+        "type": "pilot",
+        "name": "First Sergeant Arbmab",
+        "unique": true,
+        "points": 5,
+        "restrictions": [{
+            "faction": "empire",
+            "type": "groundVehicle"
+        }],
+        "keywords": {
+            "tactical": 1
+        }
+    },{
+        "type": "pilot",
         "name": "General Weiss",
         "unique": true,
         "points": 1,
@@ -2028,5 +2084,158 @@
         "keywords": {
             "arsenal": 2
         }
+    },{
+        "type": "pilot",
+        "name": "Governor Pryce",
+        "unique": true,
+        "points": 1,
+        "restrictions": [{
+            "faction": "empire",
+            "rank": "heavy"
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Hotshot Pilot",
+        "points": 8,
+        "restrictions": [{
+            "faction": "rebel",
+            "type": "repulsorVehicle"
+        }],
+        "keywords": {
+            "sharpshooter": 1
+        }
+    },{
+        "type": "pilot",
+        "name": "Hound & Grizzer",
+        "unique": true,
+        "points": 8,
+        "restrictions": [{
+            "faction": "republic",
+            "unit": "LAAT/le Patrol Transport"
+        }],
+        "keywords": {
+            "observe": 4
+        }
+    },{
+        "type": "pilot",
+        "name": "Imperial Hammers Elite Armor Pilot",
+        "points": 10,
+        "restrictions": [{
+            "faction": "empire",
+            "type": "groundVehicle"
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Imperial TIE Pilot",
+        "points": 8,
+        "restrictions": [{
+            "faction": "empire",
+            "type": "repulsorVehicle"
+        }]
+    },{
+        "type": "pilot",
+        "name": "Lok Durd",
+        "unique": true,
+        "points": 9,
+        "restrictions": [{
+            "unit": "AAT Trade Federation Battle Tank"
+        }],
+        "weaponKeywords": {
+            "suppressive": true
+        }
+    },{
+        "type": "pilot",
+        "name": "OOM-Series Droid Pilot",
+        "points": 7,
+        "restrictions": [{
+            "unit": "AAT Trade Federation Battle Tank"
+        }],
+        "keywords": {
+            "coordinate": [{
+                "type": "droidTrooper"
+            }]
+        }
+    },{
+        "type": "pilot",
+        "name": "Outer Rim Speeder Jockey",
+        "points": 10,
+        "restrictions": [{
+            "faction": "rebel",
+            "type": "repulsorVehicle"
+        }],
+        "keywords": {
+            "cover": 1
+        }
+    },{
+        "type": "pilot",
+        "name": "Plo Koon",
+        "unique": true,
+        "points": 9,
+        "restrictions": [{
+            "unit": "TX-130 Saber-class Fighter Tank"
+        }],
+        "keywords": {
+            "agile": 2
+        }
+    },{
+        "type": "pilot",
+        "name": "Reckless Driver",
+        "points": 6,
+        "restrictions": [{
+            "unit":"A-A5 Speeder Truck"
+        }]
+    },{
+        "type": "pilot",
+        "name": "Ryder Azadi",
+        "unique": true,
+        "points": 5,
+        "restrictions": [{
+            "faction": "rebel",
+            "type": "repulsorVehicle"
+        }]
+    },{
+        "type": "pilot",
+        "name": "Shriv Suurgav",
+        "unique": true,
+        "points": 5,
+        "restrictions": [{
+            "faction": "rebel",
+            "rank": "heavy"
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "T-Series Tactical Droid Pilot",
+        "points": 5,
+        "restrictions": [{
+            "unit": "AAT Trade Federation Battle Tank"
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
+    },{
+        "type": "pilot",
+        "name": "Veteran Clone Pilot",
+        "points": 7,
+        "restrictions": [{
+            "unit": "TX-130 Saber-class Fighter Tank"
+        }]
+    },{
+        "type": "pilot",
+        "name": "Wedge Antilles",
+        "unique": true,
+        "points": 1,
+        "restrictions": [{
+            "faction": "rebel",
+            "type": "repulsorVehicle"
+        }]
     }]
 }

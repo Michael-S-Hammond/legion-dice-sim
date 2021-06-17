@@ -56,7 +56,8 @@ export interface OrdinanceUpgrade extends WeaponUpgrade {
 }
 
 export interface PilotUpgradeCard extends Upgrade {
-    type: UP.UnitUpgrade.pilot
+    type: UP.UnitUpgrade.pilot,
+    weaponKeywords: UP.WeaponKeywords
 }
 
 export interface UpgradeCardRegistry {
