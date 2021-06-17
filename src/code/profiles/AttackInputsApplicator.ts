@@ -122,8 +122,8 @@ function applyWeaponKeywords(keywords: UP.WeaponKeywords, multiplier: number, tr
     }
 }
 
-function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking) {
-    if(tracking.activeWeapons >= tracking.weaponCount) {
+function applyWeapon(weapon: UP.Weapon, type: UP.UnitUpgrade | null, multiplier: number, tracking: Tracking) {
+    if(tracking.activeWeapons >= tracking.weaponCount && type !== UP.UnitUpgrade.heavyWeapon) {
         return;
     }
 
@@ -160,7 +160,9 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking) 
         applyWeaponKeywords(weapon.keywords, multiplier, tracking);
     }
 
-    tracking.activeWeapons++;
+    if(type !== UP.UnitUpgrade.heavyWeapon) {
+        tracking.activeWeapons++;
+    }
 }
 
 function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, tracking: Tracking) {
@@ -169,7 +171,7 @@ function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, track
     }
     if(upgrade.weapon !== undefined) {
         if(upgrade.weapon) {
-            applyWeapon(upgrade.weapon, multiplier, tracking);
+            applyWeapon(upgrade.weapon, upgrade.type, multiplier, tracking);
         }
     }
 }
@@ -178,6 +180,9 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
     switch(upgrade.type) {
         case UP.UnitUpgrade.armament:
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            break;
+        case UP.UnitUpgrade.crew:
+            applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking);
             break;
         case UP.UnitUpgrade.gear:
             applyUpgradeKeywords(upgrade, tracking);
@@ -267,7 +272,7 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
     const tracking = createTrackingObject(profile, weapon, upgrades, tokens);
 
     if(tracking.useBaseWeapon && weapon) {
-        applyWeapon(weapon, tracking.miniCount, tracking);
+        applyWeapon(weapon, null, tracking.miniCount, tracking);
         tracking.defaultWeapon = weapon;
     }
 

@@ -475,6 +475,140 @@
             "charge": true
         }
     },{
+        "type": "crew",
+        "name": "A-300 Rifle Gunner",
+        "points": 9,
+        "restrictions": [{
+            "unit": "X-34 Landspeeder"
+        }],
+        "weapon": {
+            "name": "A-300 Rifle Gunner",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }
+    },{
+        "type": "crew",
+        "name": "BARC Ion Gunner",
+        "points": 22,
+        "restrictions": [{
+            "unit": "BARC Speeder"
+        }],
+        "weapon": {
+            "name": "BARC Ion Gunner",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 1
+            },
+            "keywords": {
+                "fixed": ["front", "rear"],
+                "impact": 1,
+                "ion": 1
+            }
+        }
+    },{
+        "type": "crew",
+        "name": "BARC RPS-6 Gunner",
+        "points": 21,
+        "restrictions": [{
+            "unit": "BARC Speeder"
+        }],
+        "weapon": {
+            "name": "BARC RPS-6 Gunner",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 2
+            }
+        }
+    },{
+        "type": "crew",
+        "name": "BARC Twin Laser Gunner",
+        "points": 15,
+        "restrictions": [{
+            "unit": "BARC Speeder"
+        }],
+        "weapon": {
+            "name": "BARC Twin Laser Gunner",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "fixed": ["front", "rear"]
+            }
+        }
+    },{
+        "type": "crew",
+        "name": "Backworld Medic",
+        "points": 12,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        }]
+    },{
+        "type": "crew",
+        "name": "Refurbished \"Gonk\" Droid",
+        "points": 10,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        },{
+            "unit": "X-34 Landspeeder"
+        }],
+        "keywords": {
+            "shielded": 2
+        }
+    },{
+        "type": "crew",
+        "name": "RPS-6 Rocket Gunner",
+        "points": 31,
+        "restrictions": [{
+            "unit": "X-34 Landspeeder"
+        }],
+        "weapon": {
+            "name": "RPS-6 Rocket Gunner",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 2
+            }
+        }
+    },{
+        "type": "crew",
+        "name": "Unorthodox Tactician",
+        "points": 10,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        }]
+    },{
+        "type": "crew",
+        "name": "Unstable R5 Astromech",
+        "points": 6,
+        "restrictions": [{
+            "unit": "A-A5 Speeder Truck"
+        },{
+            "unit": "X-34 Landspeeder"
+        }]
+    },{
         "type": "force",
         "name": "Force Reflexes",
         "points": 5

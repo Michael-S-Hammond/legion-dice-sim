@@ -10,7 +10,7 @@ export type Restriction = {
 }
 
 export interface Upgrade extends UP.NamedItem {
-    type: string,
+    type: UP.UnitUpgrade,
     unique?: boolean,
     points: number,
     keywords?: UP.UnitKeyword,
@@ -23,6 +23,10 @@ export interface WeaponUpgrade extends Upgrade {
 
 export interface ArmamentUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.armament
+}
+
+export interface CrewUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.crew
 }
 
 export interface ForceUpgrade extends Upgrade {

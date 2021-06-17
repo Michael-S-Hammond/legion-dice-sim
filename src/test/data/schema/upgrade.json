@@ -28,6 +28,18 @@
             ],
             "required": ["type"]
         },
+        "crewUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "crew" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "forceUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -127,6 +139,7 @@
             "type": "object",
             "oneOf": [
                 { "$ref": "#/definitions/armamentUpgrade" },
+                { "$ref": "#/definitions/crewUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
                 { "$ref": "#/definitions/gearUpgrade" },
                 { "$ref": "#/definitions/generatorUpgrade" },
