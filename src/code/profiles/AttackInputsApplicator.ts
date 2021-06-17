@@ -216,7 +216,8 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
 
         if(u.type === UP.UnitUpgrade.armament ||
                 u.type === UP.UnitUpgrade.grenades ||
-                u.type === UP.UnitUpgrade.hardpoint) {
+                u.type === UP.UnitUpgrade.hardpoint ||
+                u.type === UP.UnitUpgrade.ordinance) {
             const weaponUpgrade = <UC.WeaponUpgrade>u;
             if(weaponUpgrade.weapon) {
                 totalWeapons++;
