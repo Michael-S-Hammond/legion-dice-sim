@@ -2371,5 +2371,65 @@
             "faction": "rebel",
             "type": "repulsorVehicle"
         }]
+    },{
+        "type": "training",
+        "name": "Defensive Stance",
+        "points": 5,
+        "restrictions": [{
+            "upgrade": "force"
+        }]
+    },{
+        "type": "training",
+        "name": "Duck and Cover",
+        "points": 4
+    },{
+        "type": "training",
+        "name": "Endurance",
+        "points": 6
+    },{
+        "type": "training",
+        "name": "Hunter",
+        "points": 6
+    },{
+        "type": "training",
+        "name": "Offensive Push",
+        "points": 4,
+        "keywords": {
+            "tactical": 1
+        }
+    },{
+        "type": "training",
+        "name": "Offensive Stance",
+        "points": 5,
+        "restrictions": [{
+            "upgrade": "force"
+        }]
+    },{
+        "type": "training",
+        "name": "Overwatch",
+        "points": 4,
+        "keywords": {
+            "sentinel": true
+        }
+    },{
+        "type": "training",
+        "name": "Seize the Initiative",
+        "points": 5,
+        "restrictions": [{
+            "rank": "commander"
+        },{
+            "rank": "operative"
+        }]
+    },{
+        "type": "training",
+        "name": "Situational Awareness",
+        "points": 2,
+        "keywords": {
+            "outmaneuver": true
+        }
+    },{
+        "type": "training",
+        "name": "Tenacity",
+        "points": 4
     }]
 }

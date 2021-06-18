@@ -135,6 +135,17 @@
             ],
             "required": ["type"]
         },
+        "trainingUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "training" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "upgrade": {
             "type": "object",
             "oneOf": [
@@ -147,7 +158,8 @@
                 { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
                 { "$ref": "#/definitions/ordinanceUpgrade" },
-                { "$ref": "#/definitions/pilotUpgrade" }
+                { "$ref": "#/definitions/pilotUpgrade" },
+                { "$ref": "#/definitions/trainingUpgrade"}
             ]
         }
     }

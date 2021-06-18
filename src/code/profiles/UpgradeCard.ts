@@ -3,10 +3,11 @@ import upgradesFile from '../../data/upgrades.json';
 import * as UP from './UnitProfile';
 
 export type Restriction = {
-    unit?: string,
     faction?: UP.Faction,
     rank?: UP.Rank,
-    type?: UP.UnitType
+    type?: UP.UnitType,
+    unit?: string,
+    upgrade?: UP.UnitUpgrade
 }
 
 export interface Upgrade extends UP.NamedItem {
@@ -64,13 +65,22 @@ export interface PilotUpgradeCard extends Upgrade {
     weaponKeywords: UP.WeaponKeywords
 }
 
+export interface TrainingUpgradeCard extends Upgrade {
+    type: UP.UnitUpgrade.training
+}
+
 export interface UpgradeCardRegistry {
     ArmamentUpgrade: ArmamentUpgrade,
+    CrewUpgrade: CrewUpgrade,
     ForceUpgrade: ForceUpgrade,
+    GearUpgrade: GearUpgrade,
+    GeneratorUpgrade: GeneratorUpgrade,
     GrenadeUpgrade: GrenadeUpgrade,
     HardpointUpgrade: HardpointUpgrade,
     HeavyWeaponUpgradeCard: HeavyWeaponUpgrade,
-    PilotUpgradeCard: PilotUpgradeCard
+    OrdinanceUpgrade: OrdinanceUpgrade,
+    PilotUpgradeCard: PilotUpgradeCard,
+    TrainingUpgradeCard: TrainingUpgradeCard
 }
 
 export type UpgradeCardType = UpgradeCardRegistry[keyof UpgradeCardRegistry];

@@ -133,11 +133,15 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                 match = false;
             }
 
-            if(r.type && (!this.state.unit || r.type !== this.state.unit.unitType)) {
+            if(r.type && r.type !== this.state.unit.unitType) {
                 match = false;
             }
 
-            if(r.rank && (!this.state.unit || r.rank !== this.state.unit.rank)) {
+            if(r.rank && r.rank !== this.state.unit.rank) {
+                match = false;
+            }
+
+            if(r.upgrade && !(this.state?.unit.upgrades && this.state.unit.upgrades.includes(r.upgrade))) {
                 match = false;
             }
 

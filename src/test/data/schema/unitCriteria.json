@@ -7,7 +7,25 @@
                 "faction": { "$ref": "faction#/definitions/faction" },
                 "rank": { "$ref": "unitrank#/definitions/unitRank" },
                 "type": { "$ref": "unittype#/definitions/unitType" },
-                "unit": { "type": "string", "minLength": 1 }
+                "unit": { "type": "string", "minLength": 1 },
+                "upgrade": {
+                    "enum": [
+                        "armament",
+                        "command",
+                        "comms",
+                        "crew",
+                        "force",
+                        "gear",
+                        "generator",
+                        "grenades",
+                        "hardpoint",
+                        "heavyWeapon",
+                        "ordinance",
+                        "personnel",
+                        "pilot",
+                        "training"
+                    ]
+                }
             },
             "additionalProperties": false
         }

@@ -208,6 +208,9 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
         case UP.UnitUpgrade.pilot:
             applyUpgradeKeywords(upgrade, tracking);
             break;
+        case UP.UnitUpgrade.training:
+            applyUpgradeKeywords(upgrade, tracking);
+            break;
     }
 }
 
