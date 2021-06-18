@@ -53,6 +53,11 @@ export enum WeaponImmune {
     deflect = "deflect",
 }
 
+export enum Sidearm {
+    melee = "melee",
+    ranged = "ranged"
+}
+
 export type WeaponKeywords = {
     beam?: number,
     blast?: boolean,
@@ -72,6 +77,7 @@ export type WeaponKeywords = {
     poison?: number,
     ram?: number,
     scatter?: boolean,
+    sidearm?: Sidearm,
     spray?: boolean,
     suppressive?: boolean,
     surgeCrit?: boolean,
@@ -115,7 +121,7 @@ export enum AiActions {
     move = "move"
 }
 
-export type RepairUnitKeyword = {
+export type CapacityUnitKeyword = {
     value: number,
     capacity: number
 }
@@ -219,6 +225,7 @@ export type UnitKeyword = {
     marksman?: boolean,
     masterOfTheForce?: number,
     nimble?: boolean,
+    noncombatant?: boolean,
     observe?: number,
     outmaneuver?: boolean,
     precise?: number,
@@ -229,7 +236,7 @@ export type UnitKeyword = {
     regenerate?: number,
     relentless?: boolean,
     reliable?: number,
-    repair?: RepairUnitKeyword,
+    repair?: CapacityUnitKeyword,
     reposition?: boolean
     retinue?: string,
     scale?: boolean,
@@ -252,6 +259,7 @@ export type UnitKeyword = {
     teamwork?: string,
     tempted?: boolean,
     transport?: Transport,
+    treat?: CapacityUnitKeyword,
     uncannyLuck?: number,
     unhindered?: boolean,
     weakPoint?: WeakPoint,

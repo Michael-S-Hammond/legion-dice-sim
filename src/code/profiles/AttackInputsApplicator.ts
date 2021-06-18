@@ -75,6 +75,13 @@ function isRangeCompatible(weapon: UP.Weapon, minimumRange: number, maximumRange
         (minimumRange >= weapon.minimumRange && minimumRange <= weapon.maximumRange);
 }
 
+function isPersonnelCombatant(personnel: UC.PersonnelUpgradeCard) : boolean {
+    if(personnel.keywords?.noncombatant !== undefined) {
+        return !personnel.keywords?.noncombatant;
+    }
+    return true;
+}
+
 function applyValueXKeyword(value: number | undefined, keyword: T.AbilityX, unitCount = 1) {
     if(value !== undefined) {
         if(keyword.active) {
@@ -122,8 +129,8 @@ function applyWeaponKeywords(keywords: UP.WeaponKeywords, multiplier: number, tr
     }
 }
 
-function applyWeapon(weapon: UP.Weapon, type: UP.UnitUpgrade | null, multiplier: number, tracking: Tracking) {
-    if(tracking.activeWeapons >= tracking.weaponCount && type !== UP.UnitUpgrade.heavyWeapon) {
+function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking, incrementWeapon: boolean) {
+    if(incrementWeapon && tracking.activeWeapons >= tracking.weaponCount) {
         return;
     }
 
@@ -160,26 +167,46 @@ function applyWeapon(weapon: UP.Weapon, type: UP.UnitUpgrade | null, multiplier:
         applyWeaponKeywords(weapon.keywords, multiplier, tracking);
     }
 
-    if(type !== UP.UnitUpgrade.heavyWeapon) {
+    if(incrementWeapon) {
         tracking.activeWeapons++;
     }
 }
 
-function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, tracking: Tracking) {
+function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, tracking: Tracking, incrementWeapon: boolean) {
     if(upgrade.keywords) {
         applyUpgradeKeywords(upgrade, tracking);
     }
     if(upgrade.weapon !== undefined) {
         if(upgrade.weapon) {
-            applyWeapon(upgrade.weapon, upgrade.type, multiplier, tracking);
+            applyWeapon(upgrade.weapon, multiplier, tracking, incrementWeapon);
         }
+    }
+}
+
+function applyHeavyWeaponUpgrade(upgrade: UC.HeavyWeaponUpgrade, tracking: Tracking) {
+    if(upgrade.weapon && isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+        applyWeaponUpgrade(upgrade, 1, tracking, false);
+    } else if(tracking.defaultWeapon) {
+        applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+    }
+}
+
+function applyPersonnelUpgrade(upgrade: UC.PersonnelUpgradeCard, tracking: Tracking) {
+    if(isPersonnelCombatant(upgrade)) {
+        if(upgrade.weapon && isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+            applyWeaponUpgrade(upgrade, 1, tracking, false);
+        } else if(tracking.defaultWeapon) {
+            applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+        }
+    } else {
+        applyUpgradeKeywords(upgrade, tracking);
     }
 }
 
 function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
     switch(upgrade.type) {
         case UP.UnitUpgrade.armament:
-            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking, true);
             break;
         case UP.UnitUpgrade.command:
             // No commands upgrades currently affect attack
@@ -188,7 +215,10 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
             // No comms upgrades currently affect attack
             break;
         case UP.UnitUpgrade.crew:
-            applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking);
+            applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking, true);
+            break;
+        case UP.UnitUpgrade.force:
+            applyUpgradeKeywords(upgrade, tracking);
             break;
         case UP.UnitUpgrade.gear:
             applyUpgradeKeywords(upgrade, tracking);
@@ -200,16 +230,19 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
             }
             break;
         case UP.UnitUpgrade.grenades:
-            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking, true);
             break;
         case UP.UnitUpgrade.hardpoint:
-            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking, true);
             break;
         case UP.UnitUpgrade.heavyWeapon:
-            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, 1, tracking);
+            applyHeavyWeaponUpgrade(upgrade as UC.HeavyWeaponUpgrade, tracking);
             break;
         case UP.UnitUpgrade.ordinance:
-            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking, true);
+            break;
+        case UP.UnitUpgrade.personnel:
+            applyPersonnelUpgrade(upgrade as UC.PersonnelUpgradeCard, tracking);
             break;
         case UP.UnitUpgrade.pilot:
             applyUpgradeKeywords(upgrade, tracking);
@@ -277,11 +310,14 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
     }
 }
 
+// TODO: Sidearm
+// TODO: Arsenal with multiple weapons on Unit card
+
 export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
     const tracking = createTrackingObject(profile, weapon, upgrades, tokens);
 
     if(tracking.useBaseWeapon && weapon) {
-        applyWeapon(weapon, null, tracking.miniCount, tracking);
+        applyWeapon(weapon, tracking.miniCount, tracking, true);
         tracking.defaultWeapon = weapon;
     }
 

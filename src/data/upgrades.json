@@ -2305,6 +2305,349 @@
             }
         }
     },{
+        "type": "personnel",
+        "name": "2-1B Medical Droid",
+        "points": 18,
+        "restrictions": [{
+            "faction": "rebel"
+        }],
+        "keywords": {
+            "treat": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "B1 Battle Droid",
+        "points": 5,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }]
+    },{
+        "type": "personnel",
+        "name": "B1 Security Droid",
+        "points": 7,
+        "restrictions": [{
+            "unit": "B1 Battle Droids"
+        }]
+    },{
+        "type": "personnel",
+        "name": "B2 Super Battle Droid",
+        "points": 13,
+        "restrictions": [{
+            "unit": "B2 Battle Droids"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Clone Commander",
+        "points": 20,
+        "restrictions": [{
+            "type": "cloneTrooper"
+        }],
+        "keywords": {
+            "inspire": 1,
+            "reliable": 1,
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Clone Comms Technician",
+        "points": 12,
+        "restrictions": [{
+            "type": "cloneTrooper"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Clone Engineer",
+        "points": 18,
+        "restrictions": [{
+            "type": "cloneTrooper"
+        }],
+        "keywords": {
+            "repair": {
+                "value": 1,
+                "capacity": 1
+            }
+        }
+    },{
+        "type": "personnel",
+        "name": "Clone Medic",
+        "points": 20,
+        "restrictions": [{
+            "type": "cloneTrooper"
+        }],
+        "keywords": {
+            "treat": {
+                "value": 1,
+                "capacity": 1
+            }
+        }
+    },{
+        "type": "personnel",
+        "name": "EV-series Medical Droid",
+        "points": 14,
+        "restrictions": [{
+            "type": "droidTrooper"
+        }],
+        "keywords": {
+            "treat": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Fleet Trooper",
+        "points": 11,
+        "restrictions": [{
+            "unit": "Fleet Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "FX-9 Medical Droid",
+        "points": 19,
+        "restrictions": [{
+            "faction": "empire"
+        }],
+        "keywords": {
+            "treat": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Imperial Comms Technician",
+        "points": 10,
+        "restrictions": [{
+            "faction": "empire"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Imperial Officer",
+        "points": 20,
+        "restrictions": [{
+            "faction": "empire"
+        }],
+        "keywords": {
+            "inspire": 1,
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "OOM-Series Battle Droid",
+        "points": 12,
+        "restrictions": [{
+            "unit":"B1 Battle Droids"
+        }],
+        "keywords": {
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "PK-series Worker Droid",
+        "points": 12,
+        "restrictions": [{
+            "type": "droidTrooper"
+        }],
+        "keywords": {
+            "repair": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Phase I Clone Captain",
+        "points": 14,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }],
+        "keywords": {
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Phase I Clone Specialist",
+        "points": 14,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Phase I Clone Trooper",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Phase I Clone Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Phase II Clone Trooper",
+        "points": 13,
+        "restrictions": [{
+            "unit": "Phase II Clone Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "R4 Astromech Droid",
+        "points": 9,
+        "restrictions": [{
+            "faction": "empire"
+        }],
+        "keywords": {
+            "repair": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "R5 Astromech Droid",
+        "points": 8,
+        "restrictions": [{
+            "faction": "rebel"
+        }],
+        "keywords": {
+            "repair": {
+                "value": 1,
+                "capacity": 2
+            },
+            "noncombatant": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Rebel Comms Technician",
+        "points": 9,
+        "restrictions": [{
+            "faction": "rebel"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Rebel Officer",
+        "points": 19,
+        "restrictions": [{
+            "faction": "rebel"
+        }],
+        "keywords": {
+            "inspire": 1,
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Rebel Trooper",
+        "points": 7,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Rebel Trooper Captain",
+        "points": 11,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }],
+        "keywords": {
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Rebel Trooper Specialist",
+        "points": 12,
+        "restrictions": [{
+            "unit": "Rebel Troopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Rebel Veteran",
+        "points": 9,
+        "restrictions": [{
+            "unit": "Rebel Veterans"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Shoretrooper",
+        "points": 10,
+        "restrictions": [{
+            "unit": "Shoretroopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Stormtrooper",
+        "points": 8,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "Stormtrooper Captain",
+        "points": 12,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }],
+        "keywords": {
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Stormtrooper Specialist",
+        "points": 12,
+        "restrictions": [{
+            "unit": "Stormtroopers"
+        }]
+    },{
+        "type": "personnel",
+        "name": "T-Series Tactical Droid",
+        "points": 18,
+        "restrictions": [{
+            "type": "droidTrooper"
+        }],
+        "weapon": {
+            "name": "T-Series Tactical Droid",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "sidearm": "ranged"
+            }
+        },
+        "keywords": {
+            "reliable": 1,
+            "leader": true
+        }
+    },{
+        "type": "personnel",
+        "name": "Viper Recon Droid",
+        "points": 8,
+        "restrictions": [{
+            "type": "droidTrooper"
+        }],
+        "weapon": {
+            "name": "Viper Recon Droid",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "sidearm": "ranged"
+            }
+        },
+        "keywords": {
+            "observe": 2
+        }
+    },{
         "type": "pilot",
         "name": "Aayla Secura",
         "unique": true,

@@ -110,6 +110,7 @@
                 "marksman": { "type": "boolean" },
                 "masterOfTheForce": { "type": "number", "minimum": 1, "maximum": 2 },
                 "nimble": { "type": "boolean" },
+                "noncombatant": { "type": "boolean" },
                 "observe": { "type": "number", "minimum": 1, "maximum": 4 },
                 "outmaneuver": { "type": "boolean" },
                 "precise": { "type": "number", "minimum": 1, "maximum": 2 },
@@ -165,6 +166,15 @@
                         "required": ["open"],
                         "additionalProperties": false
                     }]
+                },
+                "treat": {
+                    "type": "object",
+                    "properties": {
+                        "value": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "capacity": { "type": "number", "minimum": 1, "maximum": 2 }
+                    },
+                    "required": ["value", "capacity"],
+                    "additionalProperties": false
                 },
                 "uncannyLuck": { "type": "number", "minimum": 1, "maximum": 3 },
                 "unhindered": { "type": "boolean" },

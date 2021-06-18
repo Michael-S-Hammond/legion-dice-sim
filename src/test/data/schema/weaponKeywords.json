@@ -27,7 +27,7 @@
                 "ram": { "type": "number", "minimum": 1, "maximum": 1 },
                 "reconfigure": { "type": "boolean" },
                 "scatter": { "type": "boolean" },
-                "sidearm": { "enum": ["melee", "range"] },
+                "sidearm": { "enum": ["melee", "ranged"] },
                 "spray": { "type": "boolean" },
                 "suppressive": { "type": "boolean" },
                 "surgeCrit": { "type": "boolean" },

@@ -145,6 +145,18 @@
             ],
             "required": ["type"]
         },
+        "personnelUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "personnel" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "pilotUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -182,6 +194,7 @@
                 { "$ref": "#/definitions/hardpointUpgrade" },
                 { "$ref": "#/definitions/heavyWeaponUpgrade" },
                 { "$ref": "#/definitions/ordinanceUpgrade" },
+                { "$ref": "#/definitions/personnelUpgrade" },
                 { "$ref": "#/definitions/pilotUpgrade" },
                 { "$ref": "#/definitions/trainingUpgrade"}
             ]
