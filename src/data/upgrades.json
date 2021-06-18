@@ -475,6 +475,34 @@
             "charge": true
         }
     },{
+        "type": "command",
+        "name": "Agressive Tactics",
+        "points": 15
+    },{
+        "type": "command",
+        "name": "Commanding Presence",
+        "points": 5
+    },{
+        "type": "command",
+        "name": "Esteemed Leader",
+        "points": 5
+    },{
+        "type": "command",
+        "name": "Improvised Orders",
+        "points": 5
+    },{
+        "type": "command",
+        "name": "Inspiring Presence",
+        "points": 5
+    },{
+        "type": "command",
+        "name": "Strict Orders",
+        "points": 5
+    },{
+        "type": "command",
+        "name": "Vigilance",
+        "points": 5
+    },{
         "type": "crew",
         "name": "A-300 Rifle Gunner",
         "points": 9,

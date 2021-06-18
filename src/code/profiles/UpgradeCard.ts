@@ -26,6 +26,10 @@ export interface ArmamentUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.armament
 }
 
+export interface CommandUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.command
+}
+
 export interface CrewUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.crew
 }
@@ -71,6 +75,7 @@ export interface TrainingUpgradeCard extends Upgrade {
 
 export interface UpgradeCardRegistry {
     ArmamentUpgrade: ArmamentUpgrade,
+    CommandUpgrade: CommandUpgrade,
     CrewUpgrade: CrewUpgrade,
     ForceUpgrade: ForceUpgrade,
     GearUpgrade: GearUpgrade,
