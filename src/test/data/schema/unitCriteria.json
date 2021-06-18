@@ -25,7 +25,8 @@
                         "pilot",
                         "training"
                     ]
-                }
+                },
+                "not": { "type": "boolean" }
             },
             "additionalProperties": false
         }

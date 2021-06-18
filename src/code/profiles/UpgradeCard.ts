@@ -7,7 +7,8 @@ export type Restriction = {
     rank?: UP.Rank,
     type?: UP.UnitType,
     unit?: string,
-    upgrade?: UP.UnitUpgrade
+    upgrade?: UP.UnitUpgrade,
+    not?: boolean
 }
 
 export interface Upgrade extends UP.NamedItem {
@@ -28,6 +29,10 @@ export interface ArmamentUpgrade extends WeaponUpgrade {
 
 export interface CommandUpgrade extends Upgrade {
     type: UP.UnitUpgrade.command
+}
+
+export interface CommsUpgrade extends Upgrade {
+    type: UP.UnitUpgrade.comms
 }
 
 export interface CrewUpgrade extends WeaponUpgrade {
@@ -76,6 +81,7 @@ export interface TrainingUpgradeCard extends Upgrade {
 export interface UpgradeCardRegistry {
     ArmamentUpgrade: ArmamentUpgrade,
     CommandUpgrade: CommandUpgrade,
+    CommsUpgrade: CommsUpgrade,
     CrewUpgrade: CrewUpgrade,
     ForceUpgrade: ForceUpgrade,
     GearUpgrade: GearUpgrade,

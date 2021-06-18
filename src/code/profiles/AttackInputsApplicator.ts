@@ -182,7 +182,10 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking);
             break;
         case UP.UnitUpgrade.command:
-            // No commands currently affect attack
+            // No commands upgrades currently affect attack
+            break;
+        case UP.UnitUpgrade.comms:
+            // No comms upgrades currently affect attack
             break;
         case UP.UnitUpgrade.crew:
             applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking);

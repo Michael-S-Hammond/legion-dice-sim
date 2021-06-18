@@ -145,6 +145,10 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                 match = false;
             }
 
+            if(r.not === true) {
+                match = !match;
+            }
+
             if(match) {
                 foundMatch = true;
             }

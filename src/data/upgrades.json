@@ -503,6 +503,65 @@
         "name": "Vigilance",
         "points": 5
     },{
+        "type": "comms",
+        "name": "Command Control Array",
+        "points": 2,
+        "restrictions": [{
+            "type": "groundVehicle"
+        },{
+            "type": "repulsorVehicle"
+        }]
+    },{
+        "type": "comms",
+        "name": "Comms Jammer",
+        "points": 5
+    },{
+        "type": "comms",
+        "name": "Comms Relay",
+        "points": 5,
+        "restrictions": [{
+            "type": "emplacementTrooper",
+            "not": true
+        }]
+    },{
+        "type": "comms",
+        "name": "HQ Uplink",
+        "points": 10
+    },{
+        "type": "comms",
+        "name": "Integrated Comms Antenna",
+        "points": 3,
+        "restrictions": [{
+            "type": "droidTrooper"
+        }]
+    },{
+        "type": "comms",
+        "name": "Linked Targeting Array",
+        "points": 5,
+        "restrictions": [{
+            "type": "emplacementTrooper"
+        },{
+            "type": "groundVehicle"
+        },{
+            "type": "repulsorVehicle"
+        }],
+        "keywords": {
+            "target": 1
+        }
+    },{
+        "type": "comms",
+        "name": "Long-Range Comlink",
+        "points": 5
+    },{
+        "type": "comms",
+        "name": "Onboard Comms Channel",
+        "points": 3,
+        "restrictions": [{
+            "type": "groundVehicle"
+        },{
+            "type": "repulsorVehicle"
+        }]
+    },{
         "type": "crew",
         "name": "A-300 Rifle Gunner",
         "points": 9,
