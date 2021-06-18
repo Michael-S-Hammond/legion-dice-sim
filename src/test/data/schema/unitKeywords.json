@@ -34,6 +34,7 @@
                 "dauntless": { "type": "boolean" },
                 "defend": { "type": "number", "minimum": 1, "maximum": 1 },
                 "deflect": { "type": "boolean" },
+                "demoralize": { "type": "number", "minimum": 1, "maximum": 1 },
                 "detachment": { "type": "string", "minLength": 1 },
                 "direct": { "$ref": "unitcriteria#/definitions/unitCriteria" },
                 "disengage": { "type": "boolean" },

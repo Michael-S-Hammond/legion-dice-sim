@@ -697,8 +697,75 @@
         }]
     },{
         "type": "force",
+        "name": "Anger",
+        "points": 5,
+        "restrictions": [{
+            "faction": "empire"
+        },{
+            "faction": "separatist"
+        }]
+    },{
+        "type": "force",
+        "name": "Battle Meditation",
+        "points": 5
+    },{
+        "type": "force",
+        "name": "Fear",
+        "points": 3,
+        "restrictions": [{
+            "faction": "empire"
+        },{
+            "faction": "separatist"
+        }],
+        "keywords": {
+            "demoralize": 1
+        }
+    },{
+        "type": "force",
+        "name": "Force Barrier",
+        "points": 10
+    },{
+        "type": "force",
+        "name": "Force Choke",
+        "points": 5,
+        "restrictions": [{
+            "faction": "empire"
+        },{
+            "faction": "separatist"
+        }]
+    },{
+        "type": "force",
+        "name": "Force Guidance",
+        "points": 5
+    },{
+        "type": "force",
+        "name": "Force Push",
+        "points": 10
+    },{
+        "type": "force",
         "name": "Force Reflexes",
         "points": 5
+    },{
+        "type": "force",
+        "name": "Hope",
+        "points": 3,
+        "restrictions": [{
+            "faction": "rebel"
+        },{
+            "faction": "republic"
+        }],
+        "keywords": {
+            "inspire": 1
+        }
+    },{
+        "type": "force",
+        "name": "Jedi Mind Trick",
+        "points": 5,
+        "restrictions": [{
+            "faction": "rebel"
+        },{
+            "faction": "republic"
+        }]
     },{
         "type": "force",
         "name": "Saber Throw",

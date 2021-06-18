@@ -177,6 +177,7 @@ export type UnitKeyword = {
     dauntless?: boolean,
     defend?: number,
     deflect?: boolean,
+    demoralize?: number,
     detachment?: string,
     direct?: UnitCriteria,
     disengage?: boolean,
