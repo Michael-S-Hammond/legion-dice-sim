@@ -2801,7 +2801,7 @@
             "type": "repulsorVehicle"
         }],
         "keywords": {
-            "cover": 1
+            "cover": "light"
         }
     },{
         "type": "pilot",

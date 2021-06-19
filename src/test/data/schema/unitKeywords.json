@@ -27,7 +27,7 @@
                     "type": "array",
                     "items": { "$ref": "unitcriteria#/definitions/unitCriteria" }
                 },
-                "cover": { "type": "number", "minimum": 1, "maximum": 2 },
+                "cover": { "enum": ["none", "light", "heavy"] },
                 "covertOps": { "type": "boolean" },
                 "cunning": { "type": "boolean" },
                 "dangerSense": { "type": "number", "minimum": 1, "maximum": 4 },

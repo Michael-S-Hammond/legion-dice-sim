@@ -21,7 +21,7 @@ class Defense extends React.Component<DefenseProps> {
     }
 
     private handleCoverChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newCover = Number(e.target.value);
+        const newCover = (e.target.value) as unknown as T.Cover;
         this.props.eventHandlers.handleCoverChange(newCover);
     }
 
@@ -48,9 +48,9 @@ class Defense extends React.Component<DefenseProps> {
                     <span className="mx-2 my-auto drop-down-label">Cover:</span>
                     <select value={this.props.input.cover} className="rounded-lg mr-4 px-2"
                         onChange={this.handleCoverChange}>
-                        <option value="1">None</option>
-                        <option value="2">Light</option>
-                        <option value="3">Heavy</option>
+                        <option value="none">None</option>
+                        <option value="light">Light</option>
+                        <option value="heavy">Heavy</option>
                     </select>
                 </div>
                 <DefenseAbilities

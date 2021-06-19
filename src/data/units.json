@@ -1064,7 +1064,7 @@
         "keywords": {
             "armor": true,
             "arsenal": 2,
-            "cover": 1,
+            "cover": "light",
             "immune": ["blast", "melee", "range1Weapons"],
             "speeder": 2
         }
@@ -1095,7 +1095,7 @@
         "keywords": {
             "armorX": 2,
             "arsenal": 3,
-            "cover": 1,
+            "cover": "light",
             "lightTransport": { "open": 1 },
             "speeder": 1
         }
@@ -2010,7 +2010,7 @@
          }],
          "upgrades": ["comms"],
          "keywords": {
-             "cover": 1,
+             "cover": "light",
              "speeder": 1
          }
     },{
@@ -2219,7 +2219,7 @@
         "keywords": {
             "armor": false,
             "arsenal": 2,
-            "cover": 1,
+            "cover": "light",
             "hover": {
                 "air": 2
             },
@@ -2724,7 +2724,7 @@
         "upgrades": ["crew", "comms"],
         "keywords": {
             "arsenal": 2,
-            "cover": 1,
+            "cover": "light",
             "speeder": 1
         }
     },{
@@ -2842,7 +2842,7 @@
         "keywords": {
             "armor": false,
             "arsenal": 2,
-            "cover": 1,
+            "cover": "light",
             "hover": {
                 "air": 2
             },
@@ -3336,7 +3336,7 @@
             },{
                 "type": "repulsorVehicle"
             }],
-            "cover": 1,
+            "cover": "light",
             "speeder": 1
         }
     },{

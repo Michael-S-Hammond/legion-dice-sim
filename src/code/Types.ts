@@ -23,9 +23,9 @@ export enum AttackSurgeConversion {
 }
 
 export enum Cover {
-  None = 1,
-  Light = 2,
-  Heavy = 3,
+  None = "none",
+  Light = "light",
+  Heavy = "heavy",
 }
 
 export enum DefenseDieResult {

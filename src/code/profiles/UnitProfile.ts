@@ -171,7 +171,7 @@ export type UnitKeyword = {
     compel?: boolean,
     contingencies?: number,
     coordinate?: Array<UnitCriteria>,
-    cover?: number,
+    cover?: T.Cover,
     covertOps?: boolean,
     cunning?: boolean,
     dangerSense?: number,

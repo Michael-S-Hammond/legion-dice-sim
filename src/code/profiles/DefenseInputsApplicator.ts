@@ -40,9 +40,9 @@ function applyUpgrade(upgrade: UC.Upgrade, tracking: Tracking) {
             tracking.defense.block = true;
         }
 
-        if(upgrade.keywords.cover === 2) {
+        if(upgrade.keywords.cover === T.Cover.Heavy) {
             tracking.defense.cover = T.Cover.Heavy;
-        } else if(upgrade.keywords.cover === 1) {
+        } else if(upgrade.keywords.cover === T.Cover.Light) {
             tracking.defense.cover = (tracking.defense.cover === T.Cover.None) ? T.Cover.Light : T.Cover.Heavy;
         }
 
@@ -92,7 +92,7 @@ function createTrackingObject(profile: UP.UnitProfile, upgrades: Array<UC.Upgrad
             armor: getBoolean(profile.keywords?.armor),
             armorX: getValueX(profile.keywords?.armorX),
             block: getBoolean(profile.keywords?.block),
-            cover: T.Cover.None,
+            cover: (profile.keywords?.cover) ? profile.keywords.cover : T.Cover.None,
             dangerSenseX: getValueX(profile.keywords?.dangerSense),
             deflect: getBoolean(profile.keywords?.deflect),
             dieColor: profile.defenseDie,

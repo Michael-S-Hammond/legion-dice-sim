@@ -7,6 +7,7 @@ exports[`Defense matches the snapshot 1`] = `
   >
     Defense
     <LoadProfileButton
+      dialogId="defenseProfileDialog"
       tooltip="Load defense profile"
     />
   </h2>
@@ -72,20 +73,20 @@ exports[`Defense matches the snapshot 1`] = `
     <select
       className="rounded-lg mr-4 px-2"
       onChange={[Function]}
-      value={1}
+      value="none"
     >
       <option
-        value="1"
+        value="none"
       >
         None
       </option>
       <option
-        value="2"
+        value="light"
       >
         Light
       </option>
       <option
-        value="3"
+        value="heavy"
       >
         Heavy
       </option>
@@ -130,7 +131,7 @@ exports[`Defense matches the snapshot 1`] = `
           "value": 1,
         },
         "block": false,
-        "cover": 1,
+        "cover": "none",
         "dangerSenseX": Object {
           "active": false,
           "value": 1,
@@ -172,6 +173,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
   >
     Defense
     <LoadProfileButton
+      dialogId="defenseProfileDialog"
       tooltip="Load defense profile"
     />
   </h2>
@@ -237,20 +239,20 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
     <select
       className="rounded-lg mr-4 px-2"
       onChange={[Function]}
-      value={1}
+      value="none"
     >
       <option
-        value="1"
+        value="none"
       >
         None
       </option>
       <option
-        value="2"
+        value="light"
       >
         Light
       </option>
       <option
-        value="3"
+        value="heavy"
       >
         Heavy
       </option>
@@ -295,7 +297,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
           "value": 1,
         },
         "block": false,
-        "cover": 1,
+        "cover": "none",
         "dangerSenseX": Object {
           "active": false,
           "value": 1,
