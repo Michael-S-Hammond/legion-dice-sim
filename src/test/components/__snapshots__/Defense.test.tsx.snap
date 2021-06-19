@@ -14,7 +14,7 @@ exports[`Defense matches the snapshot 1`] = `
     className="d-flex justify-content-center my-2"
   >
     <SurgeDieSelector
-      color={3}
+      color="white"
       onClick={[MockFunction]}
       surge={true}
     />
@@ -136,7 +136,7 @@ exports[`Defense matches the snapshot 1`] = `
           "value": 1,
         },
         "deflect": false,
-        "dieColor": 3,
+        "dieColor": "white",
         "djemSoMastery": false,
         "duelist": false,
         "hasForceUpgrades": false,
@@ -179,7 +179,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
     className="d-flex justify-content-center my-2"
   >
     <SurgeDieSelector
-      color={3}
+      color="white"
       onClick={[MockFunction]}
       surge={true}
     />
@@ -301,7 +301,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
           "value": 1,
         },
         "deflect": false,
-        "dieColor": 3,
+        "dieColor": "white",
         "djemSoMastery": false,
         "duelist": false,
         "hasForceUpgrades": false,

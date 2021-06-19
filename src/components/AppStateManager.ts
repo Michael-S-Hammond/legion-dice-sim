@@ -4,6 +4,7 @@ import * as T from '../code/Types';
 import * as UP from '../code/profiles/UnitProfile';
 import * as UC from '../code/profiles/UpgradeCard';
 import * as AIA from '../code/profiles/AttackInputsApplicator';
+import * as DIA from '../code/profiles/DefenseInputsApplicator';
 
 export type AppState = {
     inputs: T.AttackInput,
@@ -183,6 +184,13 @@ export class AppStateManager {
         const input = AIA.createAttackInputsFromProfile(profile, weapon, upgrades, newState.inputs.offense.tokens);
         newState.inputs.offense = input.offense;
         newState.inputs.combat.meleeAttack = input.combat.meleeAttack;
+        this.setState(newState);
+    }
+
+    public applyDefenseStateProfile(profile: UP.UnitProfile, upgrades: Array<UC.Upgrade>) : void {
+        const newState = this.cloneState();
+        const input = DIA.createDefenseInputsFromProfile(profile, upgrades, newState.inputs.defense.tokens);
+        newState.inputs.defense = input.defense;
         this.setState(newState);
     }
 

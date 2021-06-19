@@ -150,7 +150,7 @@
         "name": "Deflector Shields",
         "points": 18,
         "restrictions": [{
-            "unit": "BX-Series Droid Commandos"
+            "unit": "BX-series Droid Commandos"
         }],
         "keywords": {
             "shielded": 2,

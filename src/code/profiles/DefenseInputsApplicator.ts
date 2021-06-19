@@ -1,0 +1,126 @@
+import * as T from '../Types';
+import * as UP from './UnitProfile';
+import * as UC from './UpgradeCard';
+
+type Tracking = {
+    defense: T.DefenseInput
+}
+
+function getBoolean(value: boolean | null | undefined) : boolean {
+    return value ? true : false;
+}
+
+function getValueX(value: number | null | undefined) : T.AbilityX {
+    if(value !== null && value !== undefined) {
+        if(value > 0) {
+            return { active: true, value: value }
+        }
+    }
+    return { active: false, value: 1};
+}
+
+function applyValueXKeyword(value: number | undefined, keyword: T.AbilityX, unitCount = 1) {
+    if(value !== undefined) {
+        if(keyword.active) {
+            keyword.value += (value * unitCount);
+        } else {
+            keyword.active = true;
+            keyword.value = (value * unitCount);
+        }
+    }
+}
+
+function applyUpgrade(upgrade: UC.Upgrade, tracking: Tracking) {
+    if(upgrade.keywords) {
+        if(upgrade.keywords.armor) {
+            tracking.defense.armor = true;
+        }
+        applyValueXKeyword(upgrade.keywords.armorX, tracking.defense.armorX);
+        if(upgrade.keywords.block) {
+            tracking.defense.block = true;
+        }
+
+        if(upgrade.keywords.cover === 2) {
+            tracking.defense.cover = T.Cover.Heavy;
+        } else if(upgrade.keywords.cover === 1) {
+            tracking.defense.cover = (tracking.defense.cover === T.Cover.None) ? T.Cover.Light : T.Cover.Heavy;
+        }
+
+        applyValueXKeyword(upgrade.keywords.dangerSense, tracking.defense.dangerSenseX);
+        if(upgrade.keywords.deflect) {
+            tracking.defense.deflect = true;
+        }
+        if(upgrade.keywords.djemSoMastery) {
+            tracking.defense.djemSoMastery = true;
+        }
+        if(upgrade.keywords.duelist) {
+            tracking.defense.duelist = true;
+        }
+
+        if(upgrade.keywords.immune) {
+            upgrade.keywords.immune.forEach(i => {
+                switch(i) {
+                    case "blast":
+                        tracking.defense.immuneBlast = true;
+                        break;
+                    case "pierce":
+                        tracking.defense.immunePierce = true;
+                        break;
+                }
+            });
+        }
+
+        if(upgrade.keywords.impervious) {
+            tracking.defense.impervious = true;
+        }
+        if(upgrade.keywords.lowProfile) {
+            tracking.defense.lowProfile = true;
+        }
+        if(upgrade.keywords.outmaneuver) {
+            tracking.defense.outmaneuver = true;
+        }
+        if(upgrade.keywords.soresuMastery) {
+            tracking.defense.soresuMastery = true;
+        }
+        applyValueXKeyword(upgrade.keywords.uncannyLuck, tracking.defense.uncannyLuckX);
+    }
+}
+
+function createTrackingObject(profile: UP.UnitProfile, upgrades: Array<UC.Upgrade>, tokens: T.DefenseTokens) : Tracking {
+    return {
+        defense: {
+            armor: getBoolean(profile.keywords?.armor),
+            armorX: getValueX(profile.keywords?.armorX),
+            block: getBoolean(profile.keywords?.block),
+            cover: T.Cover.None,
+            dangerSenseX: getValueX(profile.keywords?.dangerSense),
+            deflect: getBoolean(profile.keywords?.deflect),
+            dieColor: profile.defenseDie,
+            djemSoMastery: getBoolean(profile.keywords?.djemSoMastery),
+            duelist: getBoolean(profile.keywords?.duelist),
+            hasForceUpgrades: (profile.upgrades || []).filter(u => u === UP.UnitUpgrade.force).length > 0,
+            immuneBlast: (profile.keywords?.immune || []).filter(i => i === "blast").length > 0,
+            immunePierce: (profile.keywords?.immune || []).filter(i => i === "pierce").length > 0,
+            impervious: getBoolean(profile.keywords?.impervious),
+            lowProfile: getBoolean(profile.keywords?.lowProfile),
+            outmaneuver: getBoolean(profile.keywords?.outmaneuver),
+            soresuMastery: getBoolean(profile.keywords?.soresuMastery),
+            surge: profile.defenseSurge,
+            tokens: tokens,
+            uncannyLuckX: getValueX(profile.keywords?.uncannyLuck)
+        }
+    }
+}
+
+export function createDefenseInputsFromProfile(profile: UP.UnitProfile, upgrades: Array<UC.Upgrade>, tokens: T.DefenseTokens) : T.AttackInput {
+    const tracking = createTrackingObject(profile, upgrades, tokens);
+
+    upgrades.forEach(u => {
+        applyUpgrade(u, tracking);
+    });
+
+    const input = T.createDefaultAttackInput();
+    input.defense = tracking.defense;
+
+    return input;
+}

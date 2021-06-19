@@ -33,11 +33,6 @@ export enum UnitType {
     repulsorVehicle = "repulsorVehicle"
 }
 
-export enum DefenseDie {
-    red = "red",
-    white = "white"
-}
-
 export enum AttackSurge {
     blank = "blank",
     hit = "hit",
@@ -274,7 +269,7 @@ export interface UnitProfile extends NamedItem {
     miniCount: number,
     points: number,
     unitType: UnitType,
-    defenseDie: DefenseDie,
+    defenseDie: T.DieColor,
     wounds: number,
     courage?: number,
     resilience?: number,

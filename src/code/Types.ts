@@ -1,7 +1,7 @@
 export enum DieColor {
-    Red = 1,
-    Black = 2,
-    White = 3,
+    Red = "red",
+    Black = "black",
+    White = "white",
 }
 
 export enum AttackDieResult {

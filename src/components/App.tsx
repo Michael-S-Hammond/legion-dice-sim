@@ -85,6 +85,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
         ></AttackProfileDialog>
         <DefenseProfileDialog
           id='defenseProfileDialog'
+          applyDefenseProfile={(profile: UP.UnitProfile, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
         ></DefenseProfileDialog>
 
         <div className="container">
