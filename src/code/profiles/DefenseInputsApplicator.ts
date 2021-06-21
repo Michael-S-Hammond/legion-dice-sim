@@ -79,6 +79,9 @@ function applyUpgrade(upgrade: UC.Upgrade, tracking: Tracking) {
         if(upgrade.keywords.outmaneuver) {
             tracking.defense.outmaneuver = true;
         }
+        if(upgrade.keywords.shielded) {
+            tracking.defense.tokens.shield += upgrade.keywords.shielded;
+        }
         if(upgrade.keywords.soresuMastery) {
             tracking.defense.soresuMastery = true;
         }

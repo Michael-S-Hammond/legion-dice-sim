@@ -1,0 +1,72 @@
+{
+    "$id": "http://www.legiondice.com/schemas/allowList",
+    "definitions": {
+        "upgradeType": {
+            "armament": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "command": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "comms": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "crew": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "force": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "gear": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "generator": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "grenades": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "hardpoint": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "heavyWeapon": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "ordinance": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "personnel": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "pilot": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            },
+            "training": {
+                "type": "array",
+                "item": { "type": "string", "minLength": 1 }
+            }
+        },
+        "whitelist": {
+            "type": "object",
+            "properties": {
+                "attack": { "$ref": "#/definitions/upgradeType"},
+                "defense": { "$ref": "#/definitions/upgradeType"}
+            },
+            "required": ["attack", "defense"],
+            "additionalProperties": false
+        }
+    }
+}

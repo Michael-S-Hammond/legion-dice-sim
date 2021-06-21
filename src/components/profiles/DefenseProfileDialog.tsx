@@ -2,6 +2,7 @@ import '../../css/ProfileDialog.css'
 
 import React from 'react';
 
+import * as AL from '../../code/profiles/AllowList';
 import * as UP from '../../code/profiles/UnitProfile';
 import * as UC from '../../code/profiles/UpgradeCard';
 
@@ -58,6 +59,13 @@ class DefenseProfileDialog extends React.Component<DefenseProfileDialogProps, De
         return this.#units.filter(profile => profile.faction == faction && profile.rank == rank);
     }
 
+    private getFilteredUpgradeTypes() : Array<UP.UnitUpgrade> {
+        const filtered = this.state.unit.upgrades?.filter(u => 
+            UC.getUpgrades().filter(ufilter => ufilter.type === u && this.isAvailable(ufilter)).length > 0
+        );
+        return filtered ? filtered : [];
+    }
+
     private onFactionChange = (newFaction: UP.Faction) => {
         const newState = this.getNewStateObject(newFaction);
         this.setState(newState);
@@ -108,6 +116,10 @@ class DefenseProfileDialog extends React.Component<DefenseProfileDialogProps, De
     }
 
     private isAvailable(upgrade: UC.Upgrade) : boolean {
+        if(!AL.isUpgradeInAllowList(upgrade, AL.AllowListName.defense)) {
+            return false;
+        }
+
         if(!upgrade.restrictions || upgrade.restrictions.length === 0) {
             return true;
         }
@@ -183,7 +195,7 @@ class DefenseProfileDialog extends React.Component<DefenseProfileDialogProps, De
                                     />
                                 </div>
                                 {
-                                    this.state.unit?.upgrades?.map((utype, i) =>
+                                    this.getFilteredUpgradeTypes().map((utype, i) =>
                                         <div key={i} className="row justify-content-center my-2">
                                             <img className={utype + "-upgrade-img"}></img>
                                             <ItemSelector<UC.Upgrade>

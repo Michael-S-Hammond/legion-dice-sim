@@ -209,10 +209,10 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
             applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, tracking.miniCount, tracking, true);
             break;
         case UP.UnitUpgrade.command:
-            // No commands upgrades currently affect attack
+            applyUpgradeKeywords(upgrade, tracking);
             break;
         case UP.UnitUpgrade.comms:
-            // No comms upgrades currently affect attack
+            applyUpgradeKeywords(upgrade, tracking);
             break;
         case UP.UnitUpgrade.crew:
             applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking, true);
@@ -250,6 +250,20 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
         case UP.UnitUpgrade.training:
             applyUpgradeKeywords(upgrade, tracking);
             break;
+    }
+}
+
+function applySpecialUpgrades(upgrades: Array<UC.Upgrade>, tracking: Tracking) {
+    if(upgrades.filter(u => u.type === UP.UnitUpgrade.force && u.name === "Saber Throw").length > 0) {
+        if(tracking.activeWeapons === 1 && tracking.maximumRange === 0) {
+            const totalDice = tracking.offense.redDice + tracking.offense.blackDice + tracking.offense.whiteDice;
+            const halfDice = Math.floor((totalDice + 1) / 2);
+            tracking.offense.redDice = Math.min(tracking.offense.redDice, halfDice);
+            tracking.offense.blackDice = Math.min(tracking.offense.blackDice, halfDice - tracking.offense.redDice);
+            tracking.offense.whiteDice = Math.min(tracking.offense.whiteDice, halfDice - tracking.offense.redDice - tracking.offense.blackDice);
+            tracking.minimumRange = 1;
+            tracking.maximumRange = 2;
+        }
     }
 }
 
@@ -332,6 +346,8 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
             applyUpgrade(tracking, u);
         }
     })
+
+    applySpecialUpgrades(upgrades, tracking);
 
     const input = T.createDefaultAttackInput();
     input.offense = tracking.offense;
