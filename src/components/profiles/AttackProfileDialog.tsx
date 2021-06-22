@@ -124,9 +124,21 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         return units[0];
     }
 
-    private isAvailable(upgrade: UC.Upgrade) : boolean {
+    private isAvailable(upgrade: UC.Upgrade, index?: number) : boolean {
         if(!AL.isUpgradeInAllowList(upgrade, AL.AllowListName.attack)) {
             return false;
+        }
+
+        if(index !== undefined) {
+            let duplicate = false;
+            this.state.upgrades.forEach((u, i) => {
+                if(u.name === upgrade.name && u.type === upgrade.type && index !== i) {
+                    duplicate = true;
+                }
+            });
+            if(duplicate) {
+                return false;
+            }
         }
 
         if(!upgrade.restrictions || upgrade.restrictions.length === 0) {
@@ -221,7 +233,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                                 id={this.props.id + "-" + i + "-upgrade"}
                                                 dataIndex={i}
                                                 includeBlankItem={true}
-                                                items={UC.getUpgrades().filter(ufilter => ufilter.type === utype && this.isAvailable(ufilter))}
+                                                items={UC.getUpgrades().filter((ufilter) => ufilter.type === utype && this.isAvailable(ufilter, i))}
                                                 selectedItem={this.state.upgrades[i]}
                                                 onItemChange={this.onUpgradeChange}
                                             />
