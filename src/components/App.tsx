@@ -8,15 +8,15 @@ import * as T from '../code/Types';
 import * as UP from '../code/profiles/UnitProfile';
 import * as UC from '../code/profiles/UpgradeCard';
 import * as AS from './AppStateManager';
+import * as AL from '../code/profiles/AllowList';
 
 import Attack from './Attack';
-import AttackProfileDialog from './profiles/AttackProfileDialog';
 import Combat from './Combat';
 import Defense from './Defense';
-import DefenseProfileDialog from './profiles/DefenseProfileDialog';
 import DiceResults from './DiceResults';
 // import Notification from './Notification';
 import Header from './Header';
+import ProfileSelectorDialog from './profiles/ProfileSelectorDialog';
 
 import { Telemetry } from '../tools/Telemetry';
 
@@ -79,14 +79,16 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
         <Header></Header>
         {/* <Notification message='Rerolls received a substantial update. More coming soon.'></Notification> */}
 
-        <AttackProfileDialog
+        <ProfileSelectorDialog
           id='attackProfileDialog'
-          applyAttackProfile={(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
-        ></AttackProfileDialog>
-        <DefenseProfileDialog
+          applyProfile={(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
+          upgradeAllowListName={AL.AllowListName.attack}
+        ></ProfileSelectorDialog>
+        <ProfileSelectorDialog
           id='defenseProfileDialog'
-          applyDefenseProfile={(profile: UP.UnitProfile, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
-        ></DefenseProfileDialog>
+          applyProfile={(profile: UP.UnitProfile, _: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
+          upgradeAllowListName={AL.AllowListName.defense}
+        ></ProfileSelectorDialog>
 
         <div className="container">
           <div className="row">
