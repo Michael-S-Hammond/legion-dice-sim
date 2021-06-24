@@ -1,6 +1,6 @@
 {
     "attack": {
-        "armamanet": [
+        "armament": [
             "A-180 Pistol Config",
             "A-180 Rifle Config",
             "A280-CFE Pistol Config",
@@ -64,7 +64,7 @@
             "TX-130 Beam Cannon Turret",
             "TX-130 Twin Laser Turret"
         ],
-        "heavy": [
+        "heavyWeapon": [
             "B2-ACM Trooper",
             "B2-HA Trooper",
             "Battle Shield Wookiee (Defensive)",
@@ -161,7 +161,7 @@
         "gear": [
             "Personal Combat Shield"
         ],
-        "heavy": [
+        "heavyWeapon": [
             "Battle Shield Wookiee (Defensive)",
             "Beskad Duelist"
         ],
