@@ -12,12 +12,13 @@ import RankButtonGroup from './RankButtonGroup';
 
 import { Telemetry } from '../../tools/Telemetry';
 
-type AttackProfileDialogProps = {
+type ProfileSelectorDialogProps = {
     id: string,
-    applyAttackProfile: (profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>) => void
+    upgradeAllowListName: AL.AllowListName,
+    applyProfile: (profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>) => void
 };
 
-type AttackProfileDialogState = {
+type ProfileSelectorDialogState = {
     units: Array<UP.UnitProfile>,
     faction: UP.Faction,
     rank: UP.Rank,
@@ -26,10 +27,10 @@ type AttackProfileDialogState = {
     upgrades: Array<UC.Upgrade>
 };
 
-class AttackProfileDialog extends React.Component<AttackProfileDialogProps, AttackProfileDialogState> {
+class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, ProfileSelectorDialogState> {
     #units: Array<UP.UnitProfile>;
 
-    constructor(props : AttackProfileDialogProps) {
+    constructor(props : ProfileSelectorDialogProps) {
         super(props);
         this.#units = UP.getUnits();
         this.state = this.getNewStateObject();
@@ -41,7 +42,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
         unit: UP.UnitProfile | null = null,
         weapons: Array<UP.Weapon> | null = null,
         upgrades: Array<UC.Upgrade> | null = null
-            ) : AttackProfileDialogState {
+            ) : ProfileSelectorDialogState {
         const newFaction = faction !== null ? faction : (this.state?.faction ? this.state.faction : UP.Faction.rebel);
         const newRank = rank !== null ? rank : (this.state?.rank ? this.state.rank : UP.Rank.commander);
         const newUnit = (unit !== null && unit.faction === newFaction && unit.rank === newRank) ? unit :
@@ -64,7 +65,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private getFilteredUpgradeTypes() : Array<UP.UnitUpgrade> {
-        const filtered = this.state.unit.upgrades?.filter(u => 
+        const filtered = this.state.unit.upgrades?.filter(u =>
             UC.getUpgrades().filter(ufilter => ufilter.type === u && this.isAvailable(ufilter)).length > 0
         );
         return filtered ? filtered : [];
@@ -108,7 +109,7 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 
     private onApplyChanges = () => {
-        this.props.applyAttackProfile(this.state.unit, this.state.weapons[0], this.state.upgrades);
+        this.props.applyProfile(this.state.unit, this.state.weapons.length > 0 ? this.state.weapons[0] : null, this.state.upgrades);
         $('#' + this.props.id + '-closeButton').trigger('click');
     }
 
@@ -119,13 +120,13 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
 
         // if the result is undefined, we have a data problem
         if(units[0] === undefined) {
-            Telemetry.logError("AttackProfileDialog.tsx", "getFirstUnit", "Unit not found");
+            Telemetry.logError("ProfileSelectorDialog.tsx", "getFirstUnit", "Unit not found");
         }
         return units[0];
     }
 
     private isAvailable(upgrade: UC.Upgrade, index?: number) : boolean {
-        if(!AL.isUpgradeInAllowList(upgrade, AL.AllowListName.attack)) {
+        if(!AL.isUpgradeInAllowList(upgrade, this.props.upgradeAllowListName)) {
             return false;
         }
 
@@ -182,11 +183,11 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
 
     render() : JSX.Element {
         return (
-            <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby="attackModalLabel" aria-hidden="true">
+            <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby={this.props.id + "ModalLabel"} aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="attackModalLabel">Attack profile</h5>
+                            <h5 className="modal-title" id="{this.props.id + ModalLabel}">{this.props.upgradeAllowListName === AL.AllowListName.attack ? "Attack" : "Defense"} profile</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -215,17 +216,18 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
                                         onItemChange={this.onUnitChange}
                                     />
                                 </div>
-                                <div className="row justify-content-center my-2">
-                                    <ItemSelector<UP.Weapon>
-                                        id={this.props.id + "-" + 0 + "-weapon"}
-                                        dataIndex={0}
-                                        items={this.state.unit.weapons}
-                                        includeBlankItem={true}
-                                        selectedItem={this.state.weapons[0]}
-                                        onItemChange={this.onWeaponChange}
-                                    />
-                                </div>
-                                {
+                                { this.props.upgradeAllowListName === AL.AllowListName.attack &&
+                                    <div className="row justify-content-center my-2">
+                                        <ItemSelector<UP.Weapon>
+                                            id={this.props.id + "-" + 0 + "-weapon"}
+                                            dataIndex={0}
+                                            items={this.state.unit.weapons}
+                                            includeBlankItem={true}
+                                            selectedItem={this.state.weapons[0]}
+                                            onItemChange={this.onWeaponChange}
+                                        />
+                                    </div>
+                                } {
                                     this.getFilteredUpgradeTypes().map((utype, i) =>
                                         <div key={i} className="row justify-content-center my-2">
                                             <img className={utype + "-upgrade-img"}></img>
@@ -253,4 +255,4 @@ class AttackProfileDialog extends React.Component<AttackProfileDialogProps, Atta
     }
 }
 
-export default AttackProfileDialog;
+export default ProfileSelectorDialog;
