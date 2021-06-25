@@ -1,0 +1,1015 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitProfile adds value from upgrade: Han Solo + uncanny luck upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": true,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": true,
+    "value": 4,
+  },
+}
+`;
+
+exports[`UnitProfile applies a commander unit: Emperor Palpatine 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": true,
+  "immuneBlast": false,
+  "immunePierce": true,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies a heavy unit: X-34 Landspeeder 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "block": false,
+  "cover": "light",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies a special forces unit: ARC Troopers 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies a support unit: Droidekas 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 4,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies a trooper unit: Rebel Troopers 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies an operative unit: Cad Bane 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies armor X upgrade: Wookie Warriors + Battle Shield Wookiee (Defensive) 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": true,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies armor upgrade: 74-Z Speeder Bikes + armor upgrade 1`] = `
+Object {
+  "armor": true,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "light",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies block upgrade: Wookie Warriors + block upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": true,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": true,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies cover upgrade (heavy upgrade): T-47 Airspeeder + heavy cover upgrade 1`] = `
+Object {
+  "armor": true,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "heavy",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": true,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies cover upgrade (light to heavy): T-47 Airspeeder + Outer Rim Speeder Jockey 1`] = `
+Object {
+  "armor": true,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "heavy",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": true,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies cover upgrade (none to light): A-A5 Speeder Truck + Outer Rim Speeder Jockey 1`] = `
+Object {
+  "armor": true,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "light",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies deflect upgrade: General Grievous + deflect upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": true,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": true,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies djem so mastery upgrade: General Grievous + djem so mastery upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": true,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": true,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies duelist upgrade: Mandalorian Resistance + Beskad Duelist 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": true,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies immune: blast upgrade: Phase I Clone Troopers + immune: blast upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": true,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies immune: pierce upgrade: Han Solo + immune: pierce upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": true,
+  "impervious": false,
+  "lowProfile": true,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": true,
+    "value": 3,
+  },
+}
+`;
+
+exports[`UnitProfile applies impervious upgrade: Padmé Amidala + impervious upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies low profile upgrade: Agent Kallus + low profile upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": true,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies outmaneuver upgrade: Phase II Clone Troopers + Situational Awareness 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": true,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies shielded upgrade: Sabine Wren + Personal Combat Shield 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 1,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile applies soresu mastery upgrade: General Grievous + soresu mastery upgrade 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": true,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "red",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": true,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": true,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile handles cover upgrade (heavy + upgrade): cover upgrade (heavy +  Outer Rim Speeder Jockey) 1`] = `
+Object {
+  "armor": true,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "heavy",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": true,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile handles no keywords on profile: unit with no keywords 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": true,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;
+
+exports[`UnitProfile handles no upgrade slots on profile: unit with no upgrades 1`] = `
+Object {
+  "armor": false,
+  "armorX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "block": false,
+  "cover": "none",
+  "dangerSenseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "deflect": false,
+  "dieColor": "white",
+  "djemSoMastery": false,
+  "duelist": false,
+  "hasForceUpgrades": false,
+  "immuneBlast": false,
+  "immunePierce": false,
+  "impervious": false,
+  "lowProfile": false,
+  "outmaneuver": false,
+  "soresuMastery": false,
+  "surge": false,
+  "tokens": Object {
+    "dodge": 0,
+    "observation": 0,
+    "shield": 0,
+    "suppression": 0,
+    "surge": 0,
+  },
+  "uncannyLuckX": Object {
+    "active": false,
+    "value": 1,
+  },
+}
+`;

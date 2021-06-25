@@ -2437,6 +2437,51 @@
         }
     },{
         "faction": "republic",
+        "name": "Wookiee Chieftain",
+        "subtitle": "Clan Leader",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 7,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ancestral Weapon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            }
+        },{
+            "name": "Chieftain's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "training", "gear"],
+        "keywords": {
+            "agile": 1,
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
         "name": "R2-D2",
         "subtitle": "Hero of a Thousand Devices",
         "unique": true,

@@ -109,7 +109,13 @@ function createTrackingObject(profile: UP.UnitProfile, upgrades: Array<UC.Upgrad
             outmaneuver: getBoolean(profile.keywords?.outmaneuver),
             soresuMastery: getBoolean(profile.keywords?.soresuMastery),
             surge: profile.defenseSurge,
-            tokens: tokens,
+            tokens: {
+                dodge: tokens.dodge,
+                observation: tokens.observation,
+                shield: profile.keywords?.shielded ? tokens.shield + profile.keywords.shielded : tokens.shield,
+                suppression: tokens.suppression,
+                surge: tokens.surge
+            },
             uncannyLuckX: getValueX(profile.keywords?.uncannyLuck)
         }
     }
