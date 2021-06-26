@@ -350,4 +350,60 @@ describe('UnitProfile', () => {
         const input = DIA.createDefenseInputsFromProfile(profile, upgrades, defaultTokens);
         expect(input.defense).toMatchSnapshot("unit with no keywords");
     });
+
+    it('handles duck and cover with no cover', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Han Solo')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Duck and Cover');
+
+        const input = DIA.createDefenseInputsFromProfile(profile, upgrades, defaultTokens);
+        expect(input.defense.cover === T.Cover.Light);
+    });
+
+    it('handles duck and cover with light cover', () => {
+        const profile = {
+            faction: UP.Faction.rebel,
+            name: "Slippery Trooper",
+            rank: UP.Rank.corps,
+            miniCount: 1,
+            points: 40,
+            unitType: UP.UnitType.trooper,
+            defenseDie: T.DieColor.White,
+            wounds: 1,
+            attackSurge: UP.AttackSurge.blank,
+            defenseSurge: true,
+            speed: 1,
+            weapons: [],
+            keywords: {
+                cover: T.Cover.Light
+            }
+        };
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Duck and Cover');
+
+        const input = DIA.createDefenseInputsFromProfile(profile, upgrades, defaultTokens);
+        expect(input.defense.cover === T.Cover.Light);
+    });
+
+    it('handles duck and cover with heavy cover', () => {
+        const profile = {
+            faction: UP.Faction.rebel,
+            name: "Evasive Trooper",
+            rank: UP.Rank.corps,
+            miniCount: 1,
+            points: 60,
+            unitType: UP.UnitType.trooper,
+            defenseDie: T.DieColor.White,
+            wounds: 1,
+            attackSurge: UP.AttackSurge.blank,
+            defenseSurge: true,
+            speed: 1,
+            weapons: [],
+            keywords: {
+                cover: T.Cover.Heavy
+            }
+        };
+         const upgrades = UC.getUpgrades().filter(u => u.name === 'Duck and Cover');
+
+        const input = DIA.createDefenseInputsFromProfile(profile, upgrades, defaultTokens);
+        expect(input.defense.cover === T.Cover.Heavy);
+    });
 });

@@ -89,6 +89,14 @@ function applyUpgrade(upgrade: UC.Upgrade, tracking: Tracking) {
     }
 }
 
+function applySpecialUpgrades(upgrades: Array<UC.Upgrade>, tracking: Tracking) {
+    if(upgrades.filter(u => u.type === UP.UnitUpgrade.training && u.name === "Duck and Cover").length > 0) {
+        if(tracking.defense.cover === T.Cover.None) {
+            tracking.defense.cover = T.Cover.Light;
+        }
+    }
+}
+
 function createTrackingObject(profile: UP.UnitProfile, upgrades: Array<UC.Upgrade>, tokens: T.DefenseTokens) : Tracking {
     return {
         defense: {
@@ -127,6 +135,8 @@ export function createDefenseInputsFromProfile(profile: UP.UnitProfile, upgrades
     upgrades.forEach(u => {
         applyUpgrade(u, tracking);
     });
+
+    applySpecialUpgrades(upgrades, tracking);
 
     const input = T.createDefaultAttackInput();
     input.defense = tracking.defense;
