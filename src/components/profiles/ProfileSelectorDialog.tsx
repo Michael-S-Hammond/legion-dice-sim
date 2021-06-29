@@ -9,6 +9,7 @@ import * as UC from '../../code/profiles/UpgradeCard';
 import FactionButtonGroup from './FactionButtonGroup';
 import ItemSelector from './ItemSelector';
 import RankButtonGroup from './RankButtonGroup';
+import UnitSelector from './UnitSelector';
 
 import { Telemetry } from '../../tools/Telemetry';
 
@@ -81,7 +82,7 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
         this.setState(newState);
     }
 
-    private onUnitChange = (_: number, unit: UP.UnitProfile | null) => {
+    private onUnitChange = (unit: UP.UnitProfile | null) => {
         const newState = this.getNewStateObject(undefined, undefined, unit, undefined, undefined);
         this.setState(newState);
     }
@@ -207,13 +208,12 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
                                     ></RankButtonGroup>
                                 </div>
                                 <div className="row justify-content-center my-2">
-                                    <ItemSelector<UP.UnitProfile>
+                                    <UnitSelector
                                         id={this.props.id + "-unit"}
                                         dataIndex={0}
-                                        items={this.state.units}
-                                        includeBlankItem={false}
-                                        selectedItem={this.state.unit}
-                                        onItemChange={this.onUnitChange}
+                                        units={this.state.units}
+                                        selectedUnit={this.state.unit}
+                                        onUnitChange={this.onUnitChange}
                                     />
                                 </div>
                                 { this.props.upgradeAllowListName === AL.AllowListName.attack &&

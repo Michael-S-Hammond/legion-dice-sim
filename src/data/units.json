@@ -704,7 +704,7 @@
         }
     },{
         "faction": "rebel",
-        "name": "Rebel Commandos *",
+        "name": "Rebel Commandos",
         "subtitle": "Strike Team",
         "rank": "specialForces",
         "miniCount": 1,
@@ -859,7 +859,7 @@
         }
     },{
         "faction": "rebel",
-        "name": "Mandalorian Resistance *",
+        "name": "Mandalorian Resistance",
         "subtitle": "Clan Wren",
         "rank": "specialForces",
         "miniCount": 1,
@@ -1771,7 +1771,7 @@
         }
     },{
         "faction": "empire",
-        "name": "Scout Troopers *",
+        "name": "Scout Troopers",
         "subtitle": "Strike Team",
         "rank": "specialForces",
         "miniCount": 1,
@@ -1934,7 +1934,7 @@
         }
     },{
         "faction": "empire",
-        "name": "Imperial Special Forces *",
+        "name": "Imperial Special Forces",
         "subtitle": "Inferno Squad",
         "rank": "specialForces",
         "miniCount": 1,
@@ -2683,7 +2683,7 @@
         }
     },{
         "faction": "republic",
-        "name": "ARC Troopers *",
+        "name": "ARC Troopers",
         "subtitle": "Strike Team",
         "rank": "specialForces",
         "miniCount": 1,
@@ -3237,7 +3237,7 @@
         }
     },{
         "faction": "separatist",
-        "name": "BX-series Droid Commandos *",
+        "name": "BX-series Droid Commandos",
         "subtitle": "Strike Team",
         "rank": "specialForces",
         "miniCount": 1,

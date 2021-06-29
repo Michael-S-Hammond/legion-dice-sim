@@ -62,11 +62,71 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
           <div
             className="row justify-content-center my-2"
           >
-            <ItemSelector
+            <UnitSelector
               dataIndex={0}
               id="attackProfileSelector-unit"
-              includeBlankItem={false}
-              items={
+              onUnitChange={[Function]}
+              selectedUnit={
+                Object {
+                  "attackSurge": "critical",
+                  "courage": 3,
+                  "defenseDie": "red",
+                  "defenseSurge": false,
+                  "faction": "rebel",
+                  "keywords": Object {
+                    "charge": true,
+                    "deflect": true,
+                    "immune": Array [
+                      "pierce",
+                    ],
+                    "jump": 1,
+                  },
+                  "miniCount": 1,
+                  "name": "Luke Skywalker",
+                  "points": 160,
+                  "rank": "commander",
+                  "speed": 2,
+                  "subtitle": "Hero of the Empire",
+                  "unique": true,
+                  "unitType": "trooper",
+                  "upgrades": Array [
+                    "force",
+                    "force",
+                    "gear",
+                  ],
+                  "weapons": Array [
+                    Object {
+                      "dice": Object {
+                        "black": 6,
+                        "red": 0,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "impact": 2,
+                        "pierce": 2,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Anakin's Lightsaber",
+                    },
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Luke's DL-44 Blaster Pistol",
+                    },
+                  ],
+                  "wounds": 6,
+                }
+              }
+              units={
                 Array [
                   Object {
                     "attackSurge": "critical",
@@ -428,67 +488,6 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
                     "wounds": 6,
                   },
                 ]
-              }
-              onItemChange={[Function]}
-              selectedItem={
-                Object {
-                  "attackSurge": "critical",
-                  "courage": 3,
-                  "defenseDie": "red",
-                  "defenseSurge": false,
-                  "faction": "rebel",
-                  "keywords": Object {
-                    "charge": true,
-                    "deflect": true,
-                    "immune": Array [
-                      "pierce",
-                    ],
-                    "jump": 1,
-                  },
-                  "miniCount": 1,
-                  "name": "Luke Skywalker",
-                  "points": 160,
-                  "rank": "commander",
-                  "speed": 2,
-                  "subtitle": "Hero of the Empire",
-                  "unique": true,
-                  "unitType": "trooper",
-                  "upgrades": Array [
-                    "force",
-                    "force",
-                    "gear",
-                  ],
-                  "weapons": Array [
-                    Object {
-                      "dice": Object {
-                        "black": 6,
-                        "red": 0,
-                        "white": 0,
-                      },
-                      "keywords": Object {
-                        "impact": 2,
-                        "pierce": 2,
-                      },
-                      "maximumRange": 0,
-                      "minimumRange": 0,
-                      "name": "Anakin's Lightsaber",
-                    },
-                    Object {
-                      "dice": Object {
-                        "black": 0,
-                        "red": 2,
-                        "white": 0,
-                      },
-                      "keywords": Object {
-                        "pierce": 2,
-                      },
-                      "maximumRange": 2,
-                      "minimumRange": 1,
-                      "name": "Luke's DL-44 Blaster Pistol",
-                    },
-                  ],
-                  "wounds": 6,
-                }
               }
             />
           </div>
@@ -694,11 +693,71 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
           <div
             className="row justify-content-center my-2"
           >
-            <ItemSelector
+            <UnitSelector
               dataIndex={0}
               id="defenseProfileSelector-unit"
-              includeBlankItem={false}
-              items={
+              onUnitChange={[Function]}
+              selectedUnit={
+                Object {
+                  "attackSurge": "critical",
+                  "courage": 3,
+                  "defenseDie": "red",
+                  "defenseSurge": false,
+                  "faction": "rebel",
+                  "keywords": Object {
+                    "charge": true,
+                    "deflect": true,
+                    "immune": Array [
+                      "pierce",
+                    ],
+                    "jump": 1,
+                  },
+                  "miniCount": 1,
+                  "name": "Luke Skywalker",
+                  "points": 160,
+                  "rank": "commander",
+                  "speed": 2,
+                  "subtitle": "Hero of the Empire",
+                  "unique": true,
+                  "unitType": "trooper",
+                  "upgrades": Array [
+                    "force",
+                    "force",
+                    "gear",
+                  ],
+                  "weapons": Array [
+                    Object {
+                      "dice": Object {
+                        "black": 6,
+                        "red": 0,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "impact": 2,
+                        "pierce": 2,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Anakin's Lightsaber",
+                    },
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Luke's DL-44 Blaster Pistol",
+                    },
+                  ],
+                  "wounds": 6,
+                }
+              }
+              units={
                 Array [
                   Object {
                     "attackSurge": "critical",
@@ -1060,67 +1119,6 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
                     "wounds": 6,
                   },
                 ]
-              }
-              onItemChange={[Function]}
-              selectedItem={
-                Object {
-                  "attackSurge": "critical",
-                  "courage": 3,
-                  "defenseDie": "red",
-                  "defenseSurge": false,
-                  "faction": "rebel",
-                  "keywords": Object {
-                    "charge": true,
-                    "deflect": true,
-                    "immune": Array [
-                      "pierce",
-                    ],
-                    "jump": 1,
-                  },
-                  "miniCount": 1,
-                  "name": "Luke Skywalker",
-                  "points": 160,
-                  "rank": "commander",
-                  "speed": 2,
-                  "subtitle": "Hero of the Empire",
-                  "unique": true,
-                  "unitType": "trooper",
-                  "upgrades": Array [
-                    "force",
-                    "force",
-                    "gear",
-                  ],
-                  "weapons": Array [
-                    Object {
-                      "dice": Object {
-                        "black": 6,
-                        "red": 0,
-                        "white": 0,
-                      },
-                      "keywords": Object {
-                        "impact": 2,
-                        "pierce": 2,
-                      },
-                      "maximumRange": 0,
-                      "minimumRange": 0,
-                      "name": "Anakin's Lightsaber",
-                    },
-                    Object {
-                      "dice": Object {
-                        "black": 0,
-                        "red": 2,
-                        "white": 0,
-                      },
-                      "keywords": Object {
-                        "pierce": 2,
-                      },
-                      "maximumRange": 2,
-                      "minimumRange": 1,
-                      "name": "Luke's DL-44 Blaster Pistol",
-                    },
-                  ],
-                  "wounds": 6,
-                }
               }
             />
           </div>
