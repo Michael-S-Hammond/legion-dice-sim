@@ -14,6 +14,12 @@ type Tracking = {
     offense: T.OffenseInput
 }
 
+enum SidearmAction {
+    defaultAction = 1,
+    ignoreUpgrade = 2,
+    useSidearm = 3
+}
+
 function getBoolean(value: boolean | null | undefined) : boolean {
     return value ? true : false;
 }
@@ -73,6 +79,29 @@ function isRangeCompatible(weapon: UP.Weapon, minimumRange: number, maximumRange
         (weapon.minimumRange >= minimumRange && weapon.minimumRange <= maximumRange) ||
         (maximumRange >= weapon.minimumRange && maximumRange <= weapon.maximumRange) ||
         (minimumRange >= weapon.minimumRange && minimumRange <= weapon.maximumRange);
+}
+
+function determineSidearmAction(upgrade: UC.WeaponUpgrade, tracking: Tracking) : SidearmAction {
+    let action = SidearmAction.defaultAction;
+    if(upgrade.weapon) {
+        switch (upgrade.weapon.keywords?.sidearm) {
+            case UP.Sidearm.melee:
+                if(tracking.minimumRange === 0) {
+                    action = SidearmAction.useSidearm;
+                }
+                break;
+            case UP.Sidearm.ranged:
+                if(tracking.maximumRange === undefined || tracking.maximumRange > 0) {
+                    if(isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+                        action = SidearmAction.useSidearm;
+                    } else {
+                        action = SidearmAction.ignoreUpgrade;
+                    }
+                }
+                break;
+        }
+    }
+    return action;
 }
 
 function isPersonnelCombatant(personnel: UC.PersonnelUpgradeCard) : boolean {
@@ -184,18 +213,22 @@ function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, track
 }
 
 function applyHeavyWeaponUpgrade(upgrade: UC.HeavyWeaponUpgrade, tracking: Tracking) {
-    if(upgrade.weapon && isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+    const action = determineSidearmAction(upgrade, tracking);
+
+    if(action === SidearmAction.useSidearm && upgrade.weapon) {
         applyWeaponUpgrade(upgrade, 1, tracking, false);
-    } else if(tracking.defaultWeapon) {
+    } else if(action === SidearmAction.defaultAction && tracking.defaultWeapon) {
         applyWeapon(tracking.defaultWeapon, 1, tracking, false);
     }
 }
 
 function applyPersonnelUpgrade(upgrade: UC.PersonnelUpgradeCard, tracking: Tracking) {
+    const action = determineSidearmAction(upgrade, tracking);
+
     if(isPersonnelCombatant(upgrade)) {
-        if(upgrade.weapon && isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+        if(action === SidearmAction.useSidearm && upgrade.weapon) {
             applyWeaponUpgrade(upgrade, 1, tracking, false);
-        } else if(tracking.defaultWeapon) {
+        } else if(action === SidearmAction.defaultAction && tracking.defaultWeapon) {
             applyWeapon(tracking.defaultWeapon, 1, tracking, false);
         }
     } else {
@@ -324,7 +357,6 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
     }
 }
 
-// TODO: Sidearm
 // TODO: Arsenal with multiple weapons on Unit card
 
 export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
