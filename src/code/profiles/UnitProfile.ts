@@ -283,6 +283,33 @@ export interface UnitProfile extends NamedItem {
 
 const units: Array<UnitProfile> = <Array<UnitProfile>>(unitsFile.units);
 
+export function isRangeCompatible(weapon: Weapon, minimumRange: number, maximumRange?: number) : boolean {
+    // both have melee
+    if(weapon.minimumRange === 0 && minimumRange === 0) {
+        return true;
+    }
+
+    // both have infinite range
+    if(weapon.maximumRange === undefined && maximumRange === undefined) {
+        return true;
+    }
+
+    // one has infinite range
+    if(maximumRange === undefined) {
+        return weapon.maximumRange !== undefined && weapon.maximumRange >= minimumRange;
+    }
+
+    if(weapon.maximumRange === undefined) {
+        return maximumRange >= weapon.minimumRange;
+    }
+
+    // test ranges for overlap
+    return (weapon.maximumRange >= minimumRange && weapon.maximumRange <= maximumRange) ||
+        (weapon.minimumRange >= minimumRange && weapon.minimumRange <= maximumRange) ||
+        (maximumRange >= weapon.minimumRange && maximumRange <= weapon.maximumRange) ||
+        (minimumRange >= weapon.minimumRange && minimumRange <= weapon.maximumRange);
+}
+
 export function getUnits() : Array<UnitProfile> {
     return units;
 }

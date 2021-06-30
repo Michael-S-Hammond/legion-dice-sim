@@ -16,7 +16,7 @@ import { Telemetry } from '../../tools/Telemetry';
 type ProfileSelectorDialogProps = {
     id: string,
     upgradeAllowListName: AL.AllowListName,
-    applyProfile: (profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>) => void
+    applyProfile: (profile: UP.UnitProfile, weapon: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) => void
 };
 
 type ProfileSelectorDialogState = {
@@ -25,6 +25,7 @@ type ProfileSelectorDialogState = {
     rank: UP.Rank,
     unit: UP.UnitProfile,
     weapons: Array<UP.Weapon>,
+    weaponSelectionCount: number,
     upgrades: Array<UC.Upgrade>
 };
 
@@ -35,6 +36,35 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
         super(props);
         this.#units = UP.getUnits();
         this.state = this.getNewStateObject();
+    }
+
+    private getMaxCompatibleWeapons(unit: UP.UnitProfile) : number {
+        let minRange = 0;
+        let maxRange: number | undefined = undefined;
+        let compatibleCount = 0;
+        let maxCompatibleCount = 0;
+
+        if(unit.weapons) {
+            for(let i = 0; i < unit.weapons.length - maxCompatibleCount; i++) {
+                minRange = 0;
+                maxRange = undefined;
+                compatibleCount = 0;
+
+                for(let j = i; j < unit.weapons.length; j++) {
+                    const weapon = unit.weapons[j];
+                    if(UP.isRangeCompatible(weapon, minRange, maxRange)) {
+                        compatibleCount++;
+                        minRange = Math.max(minRange, weapon.minimumRange);
+                        maxRange = maxRange === undefined ? weapon.maximumRange :
+                            weapon.maximumRange === undefined ? maxRange :
+                            Math.min(maxRange, weapon.maximumRange);
+                    }
+                    maxCompatibleCount = Math.max(compatibleCount, maxCompatibleCount);
+                }
+            }
+        }
+
+        return maxCompatibleCount;
     }
 
     private getNewStateObject(
@@ -57,6 +87,7 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
             rank: newRank,
             unit: newUnit,
             weapons: newWeapons,
+            weaponSelectionCount: Math.min(this.getMaxCompatibleWeapons(newUnit), newUnit.keywords?.arsenal === undefined ? 1 : newUnit.keywords.arsenal),
             upgrades: newUpgrades
         };
     }
@@ -87,20 +118,32 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
         this.setState(newState);
     }
 
-    private onWeaponChange = (_: number, weapon: UP.Weapon | null) => {
-        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon ? [weapon] : [], undefined);
+    private onWeaponChange = (index: number, weapon: UP.Weapon | null) => {
+        const newWeapons: Array<UP.Weapon> = [];
+        this.state.weapons.forEach((w, i) => {
+            // not copying the element at index so that it can be removed if desired
+            if(i !== index) {
+                newWeapons[i] = w;
+            }
+        });
+
+        if(weapon) {
+            newWeapons[index] = weapon;
+        }
+
+        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon ? newWeapons : [], undefined);
         this.setState(newState);
     }
 
     private onUpgradeChange = (index: number, upgrade: UC.Upgrade | null) => {
         const newUpgrades: Array<UC.Upgrade> = [];
-
         this.state.upgrades.forEach((u, i) => {
             // not copying the element at index so that it can be removed if desired
             if(i !== index) {
                 newUpgrades[i] = u;
             }
         });
+
         if(upgrade) {
             newUpgrades[index] = upgrade;
         }
@@ -110,7 +153,7 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
     }
 
     private onApplyChanges = () => {
-        this.props.applyProfile(this.state.unit, this.state.weapons.length > 0 ? this.state.weapons[0] : null, this.state.upgrades);
+        this.props.applyProfile(this.state.unit, this.state.weapons, this.state.upgrades);
         $('#' + this.props.id + '-closeButton').trigger('click');
     }
 
@@ -182,6 +225,29 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
         return foundMatch;
     }
 
+    private renderWeapons(count: number, condition: boolean) : JSX.Element | null {
+        const children: Array<JSX.Element> = [];
+
+        for(let i = 0; i < count && condition; i++) {
+            children.push(
+                <div key={this.props.id + "-weapon-" + i} className="row justify-content-center my-2">
+                    <ItemSelector<UP.Weapon>
+                        id={this.props.id + "-weapon-" + i}
+                        dataIndex={i}
+                        items={this.state.unit.weapons}
+                        includeBlankItem={true}
+                        selectedItem={this.state.weapons[i]}
+                        onItemChange={this.onWeaponChange}
+                    />
+                </div>);
+        }
+
+        return children.length === 0 ? null :
+            (<div>
+                {children}
+            </div>);
+    }
+
     render() : JSX.Element {
         return (
             <div className="modal fade" id={this.props.id} tabIndex={-1} aria-labelledby={this.props.id + "ModalLabel"} aria-hidden="true">
@@ -215,19 +281,9 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
                                         selectedUnit={this.state.unit}
                                         onUnitChange={this.onUnitChange}
                                     />
-                                </div>
-                                { this.props.upgradeAllowListName === AL.AllowListName.attack &&
-                                    <div className="row justify-content-center my-2">
-                                        <ItemSelector<UP.Weapon>
-                                            id={this.props.id + "-" + 0 + "-weapon"}
-                                            dataIndex={0}
-                                            items={this.state.unit.weapons}
-                                            includeBlankItem={true}
-                                            selectedItem={this.state.weapons[0]}
-                                            onItemChange={this.onWeaponChange}
-                                        />
-                                    </div>
-                                } {
+                                </div>{
+                                    this.renderWeapons(this.state.weaponSelectionCount, this.props.upgradeAllowListName === AL.AllowListName.attack)
+                                }{
                                     this.getFilteredUpgradeTypes().map((utype, i) =>
                                         <div key={i} className="row justify-content-center my-2">
                                             <img className={utype + "-upgrade-img"}></img>

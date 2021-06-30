@@ -6,7 +6,7 @@ type Tracking = {
     weaponCount: number,
     activeWeapons: number,
     defaultWeapon: UP.Weapon | null,
-    useBaseWeapon: boolean,
+    useUnitWeaponCount: number,
     minimumRange: number,
     maximumRange?: number,
     fixedPosition: Array<UP.FixedPosition> | null,
@@ -54,33 +54,6 @@ function getPositionOverlap(weapon: UP.Weapon, position: Array<UP.FixedPosition>
     return null;
 }
 
-function isRangeCompatible(weapon: UP.Weapon, minimumRange: number, maximumRange?: number) : boolean {
-    // both have melee
-    if(weapon.minimumRange === 0 && minimumRange === 0) {
-        return true;
-    }
-
-    // both have infinite range
-    if(weapon.maximumRange === undefined && maximumRange === undefined) {
-        return true;
-    }
-
-    // one has infinite range
-    if(maximumRange === undefined) {
-        return weapon.maximumRange !== undefined && weapon.maximumRange >= minimumRange;
-    }
-
-    if(weapon.maximumRange === undefined) {
-        return maximumRange >= weapon.minimumRange;
-    }
-
-    // test ranges for overlap
-    return (weapon.maximumRange >= minimumRange && weapon.maximumRange <= maximumRange) ||
-        (weapon.minimumRange >= minimumRange && weapon.minimumRange <= maximumRange) ||
-        (maximumRange >= weapon.minimumRange && maximumRange <= weapon.maximumRange) ||
-        (minimumRange >= weapon.minimumRange && minimumRange <= weapon.maximumRange);
-}
-
 function determineSidearmAction(upgrade: UC.WeaponUpgrade, tracking: Tracking) : SidearmAction {
     let action = SidearmAction.defaultAction;
     if(upgrade.weapon) {
@@ -92,7 +65,7 @@ function determineSidearmAction(upgrade: UC.WeaponUpgrade, tracking: Tracking) :
                 break;
             case UP.Sidearm.ranged:
                 if(tracking.maximumRange === undefined || tracking.maximumRange > 0) {
-                    if(isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+                    if(UP.isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
                         action = SidearmAction.useSidearm;
                     } else {
                         action = SidearmAction.ignoreUpgrade;
@@ -167,7 +140,7 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking, 
         return;
     }
 
-    if(!isRangeCompatible(weapon, tracking.minimumRange, tracking.maximumRange)) {
+    if(!UP.isRangeCompatible(weapon, tracking.minimumRange, tracking.maximumRange)) {
         return;
     }
 
@@ -300,8 +273,8 @@ function applySpecialUpgrades(upgrades: Array<UC.Upgrade>, tracking: Tracking) {
     }
 }
 
-function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : Tracking {
-    let totalWeapons = weapon ? 1 : 0;
+function createTrackingObject(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : Tracking {
+    let totalWeapons = weapons.length;
     let arsenal = 0;
     if(profile.keywords?.arsenal) {
         arsenal = profile.keywords.arsenal;
@@ -330,7 +303,7 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
         weaponCount: arsenal,
         activeWeapons: 0,
         defaultWeapon: null,
-        useBaseWeapon: totalWeapons <= arsenal,
+        useUnitWeaponCount: Math.min(Math.max(0, arsenal - (totalWeapons - weapons.length)), weapons.length),
         minimumRange: 0,
         fixedPosition: null,
         miniCount: profile.miniCount,
@@ -357,14 +330,18 @@ function createTrackingObject(profile: UP.UnitProfile, weapon: UP.Weapon | null,
     }
 }
 
-// TODO: Arsenal with multiple weapons on Unit card
+export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
+    const tracking = createTrackingObject(profile, weapons, upgrades, tokens);
 
-export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrades: Array<UC.Upgrade>, tokens: T.OffenseTokens) : T.AttackInput {
-    const tracking = createTrackingObject(profile, weapon, upgrades, tokens);
-
-    if(tracking.useBaseWeapon && weapon) {
-        applyWeapon(weapon, tracking.miniCount, tracking, true);
-        tracking.defaultWeapon = weapon;
+    let usedUnitWeapons = 0;
+    for(let i = 0; i < weapons.length && usedUnitWeapons < tracking.useUnitWeaponCount; i++) {
+        if(UP.isRangeCompatible(weapons[i], tracking.minimumRange, tracking.maximumRange)) {
+            applyWeapon(weapons[i], tracking.miniCount, tracking, true);
+            if(!tracking.defaultWeapon) {
+                tracking.defaultWeapon = weapons[i];
+            }
+            usedUnitWeapons++;
+        }
     }
 
     upgrades.forEach(u => {
@@ -373,13 +350,14 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapon: U
         }
     });
 
+    applySpecialUpgrades(upgrades, tracking);
+
+    // apply generators last because they depend on which weapons are used
     upgrades.forEach(u => {
         if(u.type === UP.UnitUpgrade.generator) {
             applyUpgrade(tracking, u);
         }
-    })
-
-    applySpecialUpgrades(upgrades, tracking);
+    });
 
     const input = T.createDefaultAttackInput();
     input.offense = tracking.offense;

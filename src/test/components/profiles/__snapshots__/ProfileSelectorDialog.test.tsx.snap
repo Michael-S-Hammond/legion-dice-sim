@@ -491,48 +491,50 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
               }
             />
           </div>
-          <div
-            className="row justify-content-center my-2"
-          >
-            <ItemSelector
-              dataIndex={0}
-              id="attackProfileSelector-0-weapon"
-              includeBlankItem={true}
-              items={
-                Array [
-                  Object {
-                    "dice": Object {
-                      "black": 6,
-                      "red": 0,
-                      "white": 0,
+          <div>
+            <div
+              className="row justify-content-center my-2"
+              key="attackProfileSelector-weapon-0"
+            >
+              <ItemSelector
+                dataIndex={0}
+                id="attackProfileSelector-weapon-0"
+                includeBlankItem={true}
+                items={
+                  Array [
+                    Object {
+                      "dice": Object {
+                        "black": 6,
+                        "red": 0,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "impact": 2,
+                        "pierce": 2,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Anakin's Lightsaber",
                     },
-                    "keywords": Object {
-                      "impact": 2,
-                      "pierce": 2,
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Luke's DL-44 Blaster Pistol",
                     },
-                    "maximumRange": 0,
-                    "minimumRange": 0,
-                    "name": "Anakin's Lightsaber",
-                  },
-                  Object {
-                    "dice": Object {
-                      "black": 0,
-                      "red": 2,
-                      "white": 0,
-                    },
-                    "keywords": Object {
-                      "pierce": 2,
-                    },
-                    "maximumRange": 2,
-                    "minimumRange": 1,
-                    "name": "Luke's DL-44 Blaster Pistol",
-                  },
-                ]
-              }
-              onItemChange={[Function]}
-            />
+                  ]
+                }
+                onItemChange={[Function]}
+              />
+            </div>
           </div>
-           
           <div
             className="row justify-content-center my-2"
             key="0"
@@ -1122,7 +1124,6 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
               }
             />
           </div>
-           
         </div>
       </div>
       <div

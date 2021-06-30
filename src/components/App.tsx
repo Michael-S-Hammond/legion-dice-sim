@@ -81,12 +81,12 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
 
         <ProfileSelectorDialog
           id='attackProfileDialog'
-          applyProfile={(profile: UP.UnitProfile, weapon: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapon, upgrade)}
+          applyProfile={(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapons, upgrade)}
           upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>
         <ProfileSelectorDialog
           id='defenseProfileDialog'
-          applyProfile={(profile: UP.UnitProfile, _: UP.Weapon | null, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
+          applyProfile={(profile: UP.UnitProfile, _: Array<UP.Weapon>, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
           upgradeAllowListName={AL.AllowListName.defense}
         ></ProfileSelectorDialog>
 
