@@ -285,7 +285,14 @@ export interface UnitProfile extends NamedItem {
     keywords?: UnitKeyword
 }
 
-const units: Array<UnitProfile> = <Array<UnitProfile>>(unitsFile.units);
+const units: Array<UnitProfile> = (<Array<UnitProfile>>(unitsFile.units)).sort((first: UnitProfile, second: UnitProfile) => {
+    const nameResult = first.name.localeCompare(second.name);
+    const firstSubtitle = first.subtitle ? first.subtitle : "";
+    const secondSubtitle = second.subtitle ? second.subtitle : "";
+    const subtitleResult = firstSubtitle?.localeCompare(secondSubtitle);
+
+    return nameResult !== 0 ? nameResult : subtitleResult;
+});
 
 export function isRangeCompatible(weapon: Weapon, minimumRange: number, maximumRange?: number) : boolean {
     // both have melee
