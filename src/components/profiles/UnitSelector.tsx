@@ -92,7 +92,7 @@ class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState>
                             className="rounded px-2 mx-auto"
                             onChange={this.onSubtitleChange}>
                             { this.props.units.filter(u => u.name === this.props.selectedUnit.name).map(u =>
-                                <option key={u.subtitle} value={u.subtitle}>{u.subtitle}</option>) }
+                                <option key={u.name + "-" + u.subtitle} value={u.subtitle}>{u.subtitle}</option>) }
                         </select>
                     </div>
                 }

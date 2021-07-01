@@ -15,9 +15,8 @@ type Tracking = {
 }
 
 enum SidearmAction {
-    defaultAction = 1,
-    ignoreUpgrade = 2,
-    useSidearm = 3
+    default = 1,
+    ignoreUpgrade = 2
 }
 
 function getBoolean(value: boolean | null | undefined) : boolean {
@@ -55,19 +54,12 @@ function getPositionOverlap(weapon: UP.Weapon, position: Array<UP.FixedPosition>
 }
 
 function determineSidearmAction(upgrade: UC.WeaponUpgrade, tracking: Tracking) : SidearmAction {
-    let action = SidearmAction.defaultAction;
+    let action = SidearmAction.default;
     if(upgrade.weapon) {
         switch (upgrade.weapon.keywords?.sidearm) {
-            case UP.Sidearm.melee:
-                if(tracking.minimumRange === 0) {
-                    action = SidearmAction.useSidearm;
-                }
-                break;
             case UP.Sidearm.ranged:
                 if(tracking.maximumRange === undefined || tracking.maximumRange > 0) {
-                    if(UP.isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
-                        action = SidearmAction.useSidearm;
-                    } else {
+                    if(!UP.isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
                         action = SidearmAction.ignoreUpgrade;
                     }
                 }
@@ -186,23 +178,31 @@ function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, track
 }
 
 function applyHeavyWeaponUpgrade(upgrade: UC.HeavyWeaponUpgrade, tracking: Tracking) {
-    const action = determineSidearmAction(upgrade, tracking);
+    if(upgrade.weapon) {
+        const action = determineSidearmAction(upgrade, tracking);
 
-    if(action === SidearmAction.useSidearm && upgrade.weapon) {
-        applyWeaponUpgrade(upgrade, 1, tracking, false);
-    } else if(action === SidearmAction.defaultAction && tracking.defaultWeapon) {
-        applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+        if(action === SidearmAction.default) {
+            if(UP.isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+                applyWeaponUpgrade(upgrade, 1, tracking, false);
+            } else if(tracking.defaultWeapon) {
+                applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+            }
+        }
     }
 }
 
 function applyPersonnelUpgrade(upgrade: UC.PersonnelUpgradeCard, tracking: Tracking) {
-    const action = determineSidearmAction(upgrade, tracking);
-
     if(isPersonnelCombatant(upgrade)) {
-        if(action === SidearmAction.useSidearm && upgrade.weapon) {
-            applyWeaponUpgrade(upgrade, 1, tracking, false);
-        } else if(action === SidearmAction.defaultAction && tracking.defaultWeapon) {
-            applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+        if(upgrade.weapon) {
+            const action = determineSidearmAction(upgrade, tracking);
+
+            if(action === SidearmAction.default) {
+                if(UP.isRangeCompatible(upgrade.weapon, tracking.minimumRange, tracking.maximumRange)) {
+                    applyWeaponUpgrade(upgrade, 1, tracking, false);
+                } else if(tracking.defaultWeapon) {
+                    applyWeapon(tracking.defaultWeapon, 1, tracking, false);
+                }
+            }
         }
     } else {
         applyUpgradeKeywords(upgrade, tracking);
