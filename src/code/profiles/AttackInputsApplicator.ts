@@ -336,15 +336,16 @@ export function createAttackInputsFromProfile(profile: UP.UnitProfile, weapons: 
     const tracking = createTrackingObject(profile, weapons, upgrades, tokens);
 
     let usedUnitWeapons = 0;
-    for(let i = 0; i < weapons.length && usedUnitWeapons < tracking.useUnitWeaponCount; i++) {
-        if(UP.isRangeCompatible(weapons[i], tracking.minimumRange, tracking.maximumRange)) {
-            applyWeapon(weapons[i], tracking.miniCount, tracking, true);
+    weapons.forEach(w => {
+        if(usedUnitWeapons < tracking.useUnitWeaponCount &&
+                UP.isRangeCompatible(w, tracking.minimumRange, tracking.maximumRange)) {
+            applyWeapon(w, tracking.miniCount, tracking, true);
             if(!tracking.defaultWeapon) {
-                tracking.defaultWeapon = weapons[i];
+                tracking.defaultWeapon = w;
             }
             usedUnitWeapons++;
         }
-    }
+    });
 
     upgrades.forEach(u => {
         if(u.type !== UP.UnitUpgrade.generator) {
