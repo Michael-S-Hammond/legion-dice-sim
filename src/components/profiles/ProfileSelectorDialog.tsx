@@ -127,11 +127,11 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
             }
         });
 
-        if(weapon) {
+        if(weapon && !newWeapons.includes(weapon)) {
             newWeapons[index] = weapon;
         }
 
-        const newState = this.getNewStateObject(undefined, undefined, undefined, weapon ? newWeapons : [], undefined);
+        const newState = this.getNewStateObject(undefined, undefined, undefined, newWeapons, undefined);
         this.setState(newState);
     }
 
