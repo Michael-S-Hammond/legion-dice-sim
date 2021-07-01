@@ -143,7 +143,7 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking, 
     tracking.minimumRange = Math.max(weapon.minimumRange, tracking.minimumRange);
     if(!tracking.maximumRange) {
         tracking.maximumRange = weapon.maximumRange;
-    } else if(weapon.maximumRange) {
+    } else if(weapon.maximumRange !== undefined) {
         tracking.maximumRange = Math.min(weapon.maximumRange, tracking.maximumRange);
     }
 
