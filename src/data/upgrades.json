@@ -562,6 +562,60 @@
             "type": "repulsorVehicle"
         }]
     },{
+        "type": "counterpart",
+        "name": "C-3PO",
+        "unique": true,
+        "points": 15,
+        "unitType": "droidTrooper",
+        "miniCount": 1,
+        "weapon": {
+            "name": "Clumsy Kick",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        },
+        "restrictions": [{
+            "unit": "R2-D2"
+        }],
+        "keywords": {
+            "calculateOdds": true,
+            "distract": true,
+            "counterpart": "R2-D2"
+        }
+    },{
+        "type": "counterpart",
+        "name": "Iden's ID10 Seeker Droid",
+        "unique": true,
+        "points": 15,
+        "unitType": "droidTrooper",
+        "miniCount": 1,
+        "weapon": {
+            "name": "Electro-Shock",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        },
+        "restrictions": [{
+            "unit": "Iden Versio"
+        }],
+        "keywords": {
+            "counterpart": "Iden Versio",
+            "recharge": 1,
+            "shielded": 1,
+            "small": true
+        }
+    },{
         "type": "crew",
         "name": "A-300 Rifle Gunner",
         "points": 9,

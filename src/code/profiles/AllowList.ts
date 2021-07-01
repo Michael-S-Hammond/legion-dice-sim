@@ -11,6 +11,7 @@ type AllowList = {
     armament?: Array<string>,
     command?: Array<string>,
     comms?: Array<string>,
+    counterpart?: Array<string>,
     crew?: Array<string>,
     force?: Array<string>,
     gear?: Array<string>,

@@ -16,6 +16,10 @@
                     "type": "array",
                     "item": { "type": "string", "minLength": 1 }
                 },
+                "counterpart": {
+                    "type": "array",
+                    "item": { "type": "string", "minLength": 1 }
+                },
                 "crew": {
                     "type": "array",
                     "item": { "type": "string", "minLength": 1 }

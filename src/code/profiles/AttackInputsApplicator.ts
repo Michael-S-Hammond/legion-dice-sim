@@ -170,10 +170,9 @@ function applyWeaponUpgrade(upgrade: UC.WeaponUpgrade, multiplier: number, track
     if(upgrade.keywords) {
         applyUpgradeKeywords(upgrade, tracking);
     }
-    if(upgrade.weapon !== undefined) {
-        if(upgrade.weapon) {
-            applyWeapon(upgrade.weapon, multiplier, tracking, incrementWeapon);
-        }
+
+    if(upgrade.weapon) {
+        applyWeapon(upgrade.weapon, multiplier, tracking, incrementWeapon);
     }
 }
 
@@ -219,6 +218,9 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
             break;
         case UP.UnitUpgrade.comms:
             applyUpgradeKeywords(upgrade, tracking);
+            break;
+        case UP.UnitUpgrade.counterpart:
+            applyWeaponUpgrade(upgrade as UC.WeaponUpgrade, (upgrade as UC.CounterpartUpgrade).miniCount, tracking, false);
             break;
         case UP.UnitUpgrade.crew:
             applyWeaponUpgrade(upgrade as UC.CrewUpgrade, 1, tracking, true);

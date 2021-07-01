@@ -35,6 +35,12 @@ export interface CommsUpgrade extends Upgrade {
     type: UP.UnitUpgrade.comms
 }
 
+export interface CounterpartUpgrade extends WeaponUpgrade {
+    type: UP.UnitUpgrade.counterpart,
+    unitType: UP.UnitType,
+    miniCount: number
+}
+
 export interface CrewUpgrade extends WeaponUpgrade {
     type: UP.UnitUpgrade.crew
 }
@@ -86,6 +92,7 @@ export interface UpgradeCardRegistry {
     ArmamentUpgrade: ArmamentUpgrade,
     CommandUpgrade: CommandUpgrade,
     CommsUpgrade: CommsUpgrade,
+    CounterpartUpgrade: CounterpartUpgrade,
     CrewUpgrade: CrewUpgrade,
     ForceUpgrade: ForceUpgrade,
     GearUpgrade: GearUpgrade,

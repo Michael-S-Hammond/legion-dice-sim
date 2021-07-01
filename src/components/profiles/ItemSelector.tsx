@@ -24,11 +24,15 @@ class ItemSelector<T extends UP.NamedItem> extends React.Component<ItemSelectorP
         this.props.onItemChange(this.props.dataIndex, newItem);
     }
 
+    private getStringOrDefault(value: string | undefined) : string {
+        return value ? value : "";
+    }
+
     render() : JSX.Element {
         return (
             <select
                 id={this.props.id + "-itemSelect"}
-                value={this.props.selectedItem?.name}
+                value={this.getStringOrDefault(this.props.selectedItem?.name)}
                 className="rounded-lg px-2 ml-2"
                 onChange={this.onChange}>
                 { this.props.includeBlankItem &&

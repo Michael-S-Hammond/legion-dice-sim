@@ -50,6 +50,20 @@
             ],
             "required": ["type"]
         },
+        "counterpartUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "counterpart" },
+                        "unitType": { "$ref": "unittype#/definitions/unitType" },
+                        "miniCount": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
         "crewUpgrade": {
             "allOf": [
                 { "$ref": "#/definitions/baseUpgrade" },
@@ -186,6 +200,7 @@
                 { "$ref": "#/definitions/armamentUpgrade" },
                 { "$ref": "#/definitions/commandUpgrade" },
                 { "$ref": "#/definitions/commsUpgrade" },
+                { "$ref": "#/definitions/counterpartUpgrade" },
                 { "$ref": "#/definitions/crewUpgrade" },
                 { "$ref": "#/definitions/forceUpgrade" },
                 { "$ref": "#/definitions/gearUpgrade" },

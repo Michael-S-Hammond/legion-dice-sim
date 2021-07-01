@@ -94,20 +94,21 @@ export interface Weapon extends NamedItem {
 }
 
 export enum UnitUpgrade {
-    heavyWeapon = 'heavyWeapon',
-    personnel = 'personnel',
-    force = 'force',
-    command = 'command',
-    hardpoint = 'hardpoint',
-    gear = 'gear',
-    grenades = 'grenades',
-    comms = 'comms',
-    pilot = 'pilot',
-    training = 'training',
-    generator = 'generator',
     armament = 'armament',
+    command = 'command',
+    comms = 'comms',
+    counterpart = 'counterpart',
     crew = 'crew',
-    ordinance = 'ordinance'
+    force = 'force',
+    gear = 'gear',
+    generator = 'generator',
+    grenades = 'grenades',
+    hardpoint = 'hardpoint',
+    heavyWeapon = 'heavyWeapon',
+    ordinance = 'ordinance',
+    personnel = 'personnel',
+    pilot = 'pilot',
+    training = 'training'
 }
 
 export enum AiActions {
@@ -171,6 +172,7 @@ export type UnitKeyword = {
     compel?: boolean,
     contingencies?: number,
     coordinate?: Array<UnitCriteria>,
+    counterpart?: string,
     cover?: T.Cover,
     covertOps?: boolean,
     cunning?: boolean,
@@ -181,8 +183,9 @@ export type UnitKeyword = {
     demoralize?: number,
     detachment?: string,
     direct?: UnitCriteria,
+    disciplined?: number,
     disengage?: boolean,
-    disciplined?: boolean,
+    distract?: boolean,
     djemSoMastery?: boolean,
     duelist?: boolean,
     enrage?: number,
@@ -241,6 +244,7 @@ export type UnitKeyword = {
     sentinel?: boolean,
     sharpshooter?: number,
     shielded?: number,
+    small?: boolean,
     smoke?: number,
     soresuMastery?: boolean,
     speeder?: number,
