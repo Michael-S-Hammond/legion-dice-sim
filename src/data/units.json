@@ -783,6 +783,45 @@
         }
     },{
         "faction": "rebel",
+        "name": "Wookiee Warriors",
+        "subtitle": "Kashyyk Defenders",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "X1 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "gear", "grenades"],
+        "keywords": {
+            "indomitable": true,
+            "scale": true,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
         "name": "Rebel Pathfinders",
         "rank": "specialForces",
         "miniCount": 4,
@@ -2733,6 +2772,84 @@
         }
     },{
         "faction": "republic",
+        "name": "Wookiee Warriors",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 69,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ryyk Blade",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Kashyyyk Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+        "keywords": {
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Wookiee Warriors",
+        "subtitle": "Kashyyk Defenders",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "X1 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "gear", "grenades"],
+        "keywords": {
+            "indomitable": true,
+            "scale": true,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "republic",
         "name": "BARC Speeder",
         "rank": "support",
         "miniCount": 1,
@@ -2910,7 +3027,7 @@
         "defenseSurge": false,
         "speed": 2,
         "weapons": [{
-            "name": "Trophy Lightsabers",
+            "name": "Trophy Lightsabers (L)",
             "minimumRange": 0,
             "maximumRange": 0,
             "dice": {
@@ -2923,7 +3040,7 @@
                 "pierce": 1
             }
         },{
-            "name": "Trophy Lightsabers *",
+            "name": "Trophy Lightsabers (R)",
             "minimumRange": 0,
             "maximumRange": 0,
             "dice": {

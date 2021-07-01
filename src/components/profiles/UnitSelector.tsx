@@ -28,6 +28,10 @@ class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState>
         return count;
     }
 
+    private doesSubtitleMatch(first: string | undefined, second: string): boolean {
+        return (first === undefined && second.length === 0) || first === second;
+    }
+
     private onNameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newName = e.target.value;
         let newUnit = this.props.selectedUnit;
@@ -46,7 +50,7 @@ class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState>
         const newSubtitle = e.target.value;
         let newUnit = this.props.selectedUnit;
 
-        const possibleUnits = this.props.units.filter(u => u.name === this.props.selectedUnit.name && u.subtitle === newSubtitle);
+        const possibleUnits = this.props.units.filter(u => u.name === this.props.selectedUnit.name && this.doesSubtitleMatch(u.subtitle, newSubtitle));
         if(possibleUnits.length > 0) {
             newUnit = possibleUnits[0];
         }

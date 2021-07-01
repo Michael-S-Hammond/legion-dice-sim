@@ -1875,6 +1875,26 @@
         }
     },{
         "type": "heavyWeapon",
+        "name": "Long Gun Wookiee",
+        "points": 26,
+        "restrictions": [{
+            "unit": "Wookiee Warriors"
+        }],
+        "weapon": {
+            "name": "Long Gun Wookiee",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }
+    },{
+        "type": "heavyWeapon",
         "name": "MPL-57 Barrage Trooper",
         "points": 22,
         "restrictions": [{
