@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UnitProfile adds value from upgrade: Han Solo + uncanny luck upgrade 1`] = `
+exports[`DefenseInputApplicator adds value from upgrade: Han Solo + uncanny luck upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -39,7 +39,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies a commander unit: Emperor Palpatine 1`] = `
+exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -78,7 +78,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies a heavy unit: X-34 Landspeeder 1`] = `
+exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -117,7 +117,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies a special forces unit: ARC Troopers 1`] = `
+exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -156,7 +156,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies a support unit: Droidekas 1`] = `
+exports[`DefenseInputApplicator applies a support unit: Droidekas 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -195,7 +195,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies a trooper unit: Rebel Troopers 1`] = `
+exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -234,7 +234,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies an operative unit: Cad Bane 1`] = `
+exports[`DefenseInputApplicator applies an operative unit: Cad Bane 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -273,7 +273,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies armor X upgrade: Wookie Warriors + Battle Shield Wookiee (Defensive) 1`] = `
+exports[`DefenseInputApplicator applies armor X upgrade: Wookie Warriors + Battle Shield Wookiee (Defensive) 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -312,7 +312,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies armor upgrade: 74-Z Speeder Bikes + armor upgrade 1`] = `
+exports[`DefenseInputApplicator applies armor upgrade: 74-Z Speeder Bikes + armor upgrade 1`] = `
 Object {
   "armor": true,
   "armorX": Object {
@@ -351,7 +351,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies block upgrade: Wookie Warriors + block upgrade 1`] = `
+exports[`DefenseInputApplicator applies block upgrade: Wookie Warriors + block upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -390,7 +390,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies cover upgrade (heavy upgrade): T-47 Airspeeder + heavy cover upgrade 1`] = `
+exports[`DefenseInputApplicator applies cover upgrade (heavy upgrade): T-47 Airspeeder + heavy cover upgrade 1`] = `
 Object {
   "armor": true,
   "armorX": Object {
@@ -429,7 +429,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies cover upgrade (light to heavy): T-47 Airspeeder + Outer Rim Speeder Jockey 1`] = `
+exports[`DefenseInputApplicator applies cover upgrade (light to heavy): T-47 Airspeeder + Outer Rim Speeder Jockey 1`] = `
 Object {
   "armor": true,
   "armorX": Object {
@@ -468,7 +468,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies cover upgrade (none to light): A-A5 Speeder Truck + Outer Rim Speeder Jockey 1`] = `
+exports[`DefenseInputApplicator applies cover upgrade (none to light): A-A5 Speeder Truck + Outer Rim Speeder Jockey 1`] = `
 Object {
   "armor": true,
   "armorX": Object {
@@ -507,7 +507,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies deflect upgrade: General Grievous + deflect upgrade 1`] = `
+exports[`DefenseInputApplicator applies deflect upgrade: General Grievous + deflect upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -546,7 +546,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies djem so mastery upgrade: General Grievous + djem so mastery upgrade 1`] = `
+exports[`DefenseInputApplicator applies djem so mastery upgrade: General Grievous + djem so mastery upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -585,7 +585,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies duelist upgrade: Mandalorian Resistance + Beskad Duelist 1`] = `
+exports[`DefenseInputApplicator applies duelist upgrade: Mandalorian Resistance + Beskad Duelist 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -624,7 +624,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies immune: blast upgrade: Phase I Clone Troopers + immune: blast upgrade 1`] = `
+exports[`DefenseInputApplicator applies immune: blast upgrade: Phase I Clone Troopers + immune: blast upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -663,7 +663,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies immune: pierce upgrade: Han Solo + immune: pierce upgrade 1`] = `
+exports[`DefenseInputApplicator applies immune: pierce upgrade: Han Solo + immune: pierce upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -702,7 +702,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies impervious upgrade: Padmé Amidala + impervious upgrade 1`] = `
+exports[`DefenseInputApplicator applies impervious upgrade: Padmé Amidala + impervious upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -741,7 +741,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies low profile upgrade: Agent Kallus + low profile upgrade 1`] = `
+exports[`DefenseInputApplicator applies low profile upgrade: Agent Kallus + low profile upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -780,7 +780,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies outmaneuver upgrade: Phase II Clone Troopers + Situational Awareness 1`] = `
+exports[`DefenseInputApplicator applies outmaneuver upgrade: Phase II Clone Troopers + Situational Awareness 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -819,7 +819,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies shielded upgrade: Sabine Wren + Personal Combat Shield 1`] = `
+exports[`DefenseInputApplicator applies shielded upgrade: Sabine Wren + Personal Combat Shield 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -858,7 +858,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile applies soresu mastery upgrade: General Grievous + soresu mastery upgrade 1`] = `
+exports[`DefenseInputApplicator applies soresu mastery upgrade: General Grievous + soresu mastery upgrade 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -897,7 +897,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile handles cover upgrade (heavy + upgrade): cover upgrade (heavy +  Outer Rim Speeder Jockey) 1`] = `
+exports[`DefenseInputApplicator handles cover upgrade (heavy + upgrade): cover upgrade (heavy +  Outer Rim Speeder Jockey) 1`] = `
 Object {
   "armor": true,
   "armorX": Object {
@@ -936,7 +936,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile handles no keywords on profile: unit with no keywords 1`] = `
+exports[`DefenseInputApplicator handles no keywords on profile: unit with no keywords 1`] = `
 Object {
   "armor": false,
   "armorX": Object {
@@ -975,7 +975,7 @@ Object {
 }
 `;
 
-exports[`UnitProfile handles no upgrade slots on profile: unit with no upgrades 1`] = `
+exports[`DefenseInputApplicator handles no upgrade slots on profile: unit with no upgrades 1`] = `
 Object {
   "armor": false,
   "armorX": Object {

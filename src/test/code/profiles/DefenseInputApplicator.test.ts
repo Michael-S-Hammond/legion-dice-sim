@@ -3,7 +3,7 @@ import * as T from '../../../code/Types';
 import * as UC from '../../../code/profiles/UpgradeCard';
 import * as UP from '../../../code/profiles/UnitProfile';
 
-describe('UnitProfile', () => {
+describe('DefenseInputApplicator', () => {
     const defaultTokens: T.DefenseTokens = {
         dodge: 0,
         observation: 0,

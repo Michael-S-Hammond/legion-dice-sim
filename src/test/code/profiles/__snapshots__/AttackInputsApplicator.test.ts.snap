@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine - Default Offense 1`] = `
+Object {
+  "blackDice": 2,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 2,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder - Default Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": true,
+}
+`;
+
+exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers - Default Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 4,
+}
+`;
+
+exports[`DefenseInputApplicator applies a support unit: Droidekas - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`DefenseInputApplicator applies a support unit: Droidekas - Default Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 2,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": true,
+}
+`;
+
+exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers - Default Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`DefenseInputApplicator applies an operative unit: Cad Bane - Default Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`DefenseInputApplicator applies an operative unit: Cad Bane - Default Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
