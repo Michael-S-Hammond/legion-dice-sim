@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine - Default Combat 1`] = `
+exports[`AttackInputApplicator applies a commander unit: Emperor Palpatine - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -10,7 +10,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a commander unit: Emperor Palpatine - Default Offense 1`] = `
+exports[`AttackInputApplicator applies a commander unit: Emperor Palpatine - Default Offense 1`] = `
 Object {
   "blackDice": 2,
   "blast": false,
@@ -60,7 +60,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder - Default Combat 1`] = `
+exports[`AttackInputApplicator applies a heavy unit: X-34 Landspeeder - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -70,7 +70,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a heavy unit: X-34 Landspeeder - Default Offense 1`] = `
+exports[`AttackInputApplicator applies a heavy unit: X-34 Landspeeder - Default Offense 1`] = `
 Object {
   "blackDice": 0,
   "blast": false,
@@ -120,7 +120,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers - Default Combat 1`] = `
+exports[`AttackInputApplicator applies a special forces unit: ARC Troopers - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -130,7 +130,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a special forces unit: ARC Troopers - Default Offense 1`] = `
+exports[`AttackInputApplicator applies a special forces unit: ARC Troopers - Default Offense 1`] = `
 Object {
   "blackDice": 4,
   "blast": false,
@@ -180,7 +180,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a support unit: Droidekas - Default Combat 1`] = `
+exports[`AttackInputApplicator applies a support unit: Droidekas - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -190,7 +190,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a support unit: Droidekas - Default Offense 1`] = `
+exports[`AttackInputApplicator applies a support unit: Droidekas - Default Offense 1`] = `
 Object {
   "blackDice": 4,
   "blast": false,
@@ -240,7 +240,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers - Default Combat 1`] = `
+exports[`AttackInputApplicator applies a trooper unit: Rebel Troopers - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -250,7 +250,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies a trooper unit: Rebel Troopers - Default Offense 1`] = `
+exports[`AttackInputApplicator applies a trooper unit: Rebel Troopers - Default Offense 1`] = `
 Object {
   "blackDice": 4,
   "blast": false,
@@ -300,7 +300,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies an operative unit: Cad Bane - Default Combat 1`] = `
+exports[`AttackInputApplicator applies an operative unit: Cad Bane - Default Combat 1`] = `
 Object {
   "guardian": Object {
     "active": false,
@@ -310,7 +310,7 @@ Object {
 }
 `;
 
-exports[`DefenseInputApplicator applies an operative unit: Cad Bane - Default Offense 1`] = `
+exports[`AttackInputApplicator applies an operative unit: Cad Bane - Default Offense 1`] = `
 Object {
   "blackDice": 4,
   "blast": false,
