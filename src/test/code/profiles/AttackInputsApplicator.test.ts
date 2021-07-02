@@ -61,4 +61,44 @@ describe('AttackInputApplicator', () => {
         const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[0]], upgrades, defaultTokens);
         testOffenseAndCombatSnapshots(input, 'Rebel Troopers - Default');
     });
+
+    it('applies blast upgrade', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Rebel Troopers')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Concussion Grenades');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Rebel Troopers - Concussion Grenades')
+    });
+
+    it('handles high velocity upgrade with high velocity on default weapon', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'AAT Trade Federation Battle Tank')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'High-Energy Shells');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'AAT Trade Federation Battle Tank - High-Energy Shells');
+    });
+
+    it('handles high velocity upgrade without high velocity on default weapon', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Scout Troopers' && u.subtitle === 'Strike Team')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'DLT-19x Sniper');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Scout Troopers: Strike Team - DLT-19x Sniper');
+    });
+
+    it('handles non-high velocity upgrade with high velocity on default weapon', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'AAT Trade Federation Battle Tank')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === '\"Bunker Buster\" Shells');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'AAT Trade Federation Battle Tank - \"Bunker Buster\" Shells');
+    });
+
+    it('handles high velocity upgrade without default weapon', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Scout Troopers' && u.subtitle === 'Strike Team')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'DLT-19x Sniper');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Scout Troopers: Strike Team (no weapon) - DLT-19x Sniper');
+    });
 });

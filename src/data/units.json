@@ -2521,6 +2521,54 @@
         }
     },{
         "faction": "republic",
+        "name": "Chewbacca",
+        "subtitle": "Hero of Kashyyyk",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 9,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overwhelm",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        },{
+            "name": "Chewbacca's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "keywords": {
+            "enrage": 4,
+            "guardian": 2,
+            "reliable": 2,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
         "name": "R2-D2",
         "subtitle": "Hero of a Thousand Devices",
         "unique": true,

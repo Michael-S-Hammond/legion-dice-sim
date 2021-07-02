@@ -359,3 +359,303 @@ Object {
   "whiteDice": 0,
 }
 `;
+
+exports[`AttackInputApplicator applies blast upgrade: Rebel Troopers - Concussion Grenades Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator applies blast upgrade: Rebel Troopers - Concussion Grenades Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": true,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - High-Energy Shells Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - High-Energy Shells Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": true,
+    "value": 3,
+  },
+  "duelist": false,
+  "highVelocity": true,
+  "impactX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 6,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 1,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade without default weapon: Scout Troopers: Strike Team (no weapon) - DLT-19x Sniper Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade without default weapon: Scout Troopers: Strike Team (no weapon) - DLT-19x Sniper Offense 1`] = `
+Object {
+  "blackDice": 2,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": true,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade without high velocity on default weapon: Scout Troopers: Strike Team - DLT-19x Sniper Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles high velocity upgrade without high velocity on default weapon: Scout Troopers: Strike Team - DLT-19x Sniper Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles non-high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - "Bunker Buster" Shells Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles non-high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - "Bunker Buster" Shells Offense 1`] = `
+Object {
+  "blackDice": 1,
+  "blast": true,
+  "criticalX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 4,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 3,
+}
+`;
