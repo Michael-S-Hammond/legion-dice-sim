@@ -659,3 +659,63 @@ Object {
   "whiteDice": 3,
 }
 `;
+
+exports[`AttackInputApplicator handles upgrade with surge -> critical conversion: Stormtroopers - Fragmentation Grenades Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles upgrade with surge -> critical conversion: Stormtroopers - Fragmentation Grenades Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 4,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;

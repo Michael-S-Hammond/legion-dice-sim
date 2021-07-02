@@ -101,4 +101,12 @@ describe('AttackInputApplicator', () => {
         const input = AIA.createAttackInputsFromProfile(profile, [], upgrades, defaultTokens);
         testOffenseAndCombatSnapshots(input, 'Scout Troopers: Strike Team (no weapon) - DLT-19x Sniper');
     });
+
+    it('handles upgrade with surge -> critical conversion', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Stormtroopers')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Fragmentation Grenades');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Stormtroopers - Fragmentation Grenades');
+    });
 });
