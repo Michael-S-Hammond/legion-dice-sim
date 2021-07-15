@@ -124,7 +124,7 @@ jobs:
           sync: true
 
 
-  deploy-production:
+  deploy-production-tmto:
     name: Deploy to Azure (TellMeTheOdds.net) production environment
 
     runs-on: ubuntu-latest
