@@ -122,3 +122,90 @@ jobs:
           container_name: '$web'
           connection_string: ${{ secrets.StorageAccountConnectionString }}
           sync: true
+
+  deploy-dev-tmto:
+    name: Deploy TellMeTheOdds dev environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - build
+
+    environment:
+      name: "TellMeTheOdds-Dev"
+      url: "http://dev.tellmetheodds.net"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
+
+  deploy-beta-tmto:
+    name: Deploy TellMeTheOdds beta environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - deploy-dev-tmto
+
+    environment:
+      name: "TellMeTheOdds-Beta"
+      url: "http://beta.tellmetheodds.net"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
+
+  deploy-production-tmto:
+    name: Deploy TellMeTheOdds production environment
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - deploy-dev-tmto
+
+    environment:
+      name: "TellMeTheOdds-Prod"
+      url: "https://www.tellmetheodds.net"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
