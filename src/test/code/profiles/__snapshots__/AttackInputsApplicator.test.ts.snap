@@ -420,6 +420,666 @@ Object {
 }
 `;
 
+exports[`AttackInputApplicator handles armament upgrade with base weapon - no arsenal: Jyn Erso - A-180 Pistol Config + base weapon Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles armament upgrade with base weapon - no arsenal: Jyn Erso - A-180 Pistol Config + base weapon Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 2,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 1,
+}
+`;
+
+exports[`AttackInputApplicator handles armament upgrade with base weapon with arsenal: General Grievous - DT-57 "Annihialator" + base weapon Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles armament upgrade with base weapon with arsenal: General Grievous - DT-57 "Annihialator" + base weapon Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": true,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 1,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 3,
+}
+`;
+
+exports[`AttackInputApplicator handles armament upgrade: Jyn Erso - A-180 Pistol Config Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles armament upgrade: Jyn Erso - A-180 Pistol Config Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 2,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 1,
+}
+`;
+
+exports[`AttackInputApplicator handles counterpart upgrade: BARC Speeder - BARC Ion Gunner Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles counterpart upgrade: BARC Speeder - BARC Ion Gunner Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 1,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`AttackInputApplicator handles counterpart upgrade: Iden Versio - Iden's ID10 Seeker Droid Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles counterpart upgrade: Iden Versio - Iden's ID10 Seeker Droid Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 6,
+}
+`;
+
+exports[`AttackInputApplicator handles force upgrade: Darth Vader (Commander) - Saber Throw Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles force upgrade: Darth Vader (Commander) - Saber Throw Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 3,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": true,
+    "value": 3,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 3,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles gear upgrade: Stormtroopers - Targeting Scopes Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles gear upgrade: Stormtroopers - Targeting Scopes Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 4,
+}
+`;
+
+exports[`AttackInputApplicator handles generator upgrade without fixed position weapon: E-Web - Overcharged Generator - no fixed position Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles generator upgrade without fixed position weapon: E-Web - Overcharged Generator - no fixed position Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Generator Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Generator Offense 1`] = `
+Object {
+  "blackDice": 2,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 1,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`AttackInputApplicator handles hardpoint upgrade - incompatible arc: T-47 Airspeeder - Mo/Dk Power Harpoon Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles hardpoint upgrade - incompatible arc: T-47 Airspeeder - Mo/Dk Power Harpoon Offense 1`] = `
+Object {
+  "blackDice": 3,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 3,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 3,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 3,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles hardpoint upgrade: TX-130 Saber-class Fighter Tank - TX-130 Twin Laser Turret Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles hardpoint upgrade: TX-130 Saber-class Fighter Tank - TX-130 Twin Laser Turret Offense 1`] = `
+Object {
+  "blackDice": 5,
+  "blast": false,
+  "criticalX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 2,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 2,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
 exports[`AttackInputApplicator handles high velocity upgrade with high velocity on default weapon: AAT Trade Federation Battle Tank - High-Energy Shells Combat 1`] = `
 Object {
   "guardian": Object {
