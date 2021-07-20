@@ -6,7 +6,7 @@ import { shallowToJson } from 'enzyme-to-json';
 import * as UP from '../../../code/profiles/UnitProfile';
 import RankButtonGroup from '../../../components/profiles/RankButtonGroup';
 
-describe('FactionButtonGroup', () => {
+describe('RankButtonGroup', () => {
     it('matches the snapshot', () => {
         const onRankChange = jest.fn();
         const rank = UP.Rank.commander;

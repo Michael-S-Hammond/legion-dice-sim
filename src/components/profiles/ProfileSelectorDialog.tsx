@@ -276,7 +276,6 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
                                 <div className="row justify-content-center my-2">
                                     <UnitSelector
                                         id={this.props.id + "-unit"}
-                                        dataIndex={0}
                                         units={this.state.units}
                                         selectedUnit={this.state.unit}
                                         onUnitChange={this.onUnitChange}

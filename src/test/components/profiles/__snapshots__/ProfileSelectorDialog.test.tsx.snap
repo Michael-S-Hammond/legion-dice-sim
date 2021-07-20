@@ -63,7 +63,6 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
             className="row justify-content-center my-2"
           >
             <UnitSelector
-              dataIndex={0}
               id="attackProfileSelector-unit"
               onUnitChange={[Function]}
               selectedUnit={
@@ -709,7 +708,6 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
             className="row justify-content-center my-2"
           >
             <UnitSelector
-              dataIndex={0}
               id="defenseProfileSelector-unit"
               onUnitChange={[Function]}
               selectedUnit={

@@ -4,7 +4,6 @@ import * as UP from '../../code/profiles/UnitProfile';
 
 type UnitSelectorProps = {
     id: string,
-    dataIndex: number,
     units: Array<UP.UnitProfile>,
     selectedUnit: UP.UnitProfile,
     onUnitChange: (unit: UP.UnitProfile) => void,
