@@ -197,4 +197,54 @@ describe('AttackInputApplicator', () => {
         const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[0]], upgrades, defaultTokens);
         testOffenseAndCombatSnapshots(input, 'T-47 Airspeeder - Mo/Dk Power Harpoon');
     });
+
+    it('handles personnel upgrade', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Rebel Troopers')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Rebel Trooper');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Rebel Troopers - Rebel Trooper');
+    });
+
+    it('handles personnel upgrade - non-combatant', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Rebel Troopers')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'R5 Astromech Droid');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Rebel Troopers - R5 Astromech Droid');
+    });
+
+    it('handles personnel upgrade with sidearm', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'B2 Super Battle Droids')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'T-Series Tactical Droid');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'B2 Super Battle Droids - T-Series Tactical Droid');
+    });
+
+    it('handles personnel upgrade with sidearm - melee vs. range', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'Imperial Royal Guards')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Electrostaff Guard');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'Imperial Royal Guards - Electrostaff Guard');
+    });
+
+    it('handles pilot upgrade', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'X-34 Landspeeder')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'Hotshot Pilot');
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[0]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'X-34 Landspeeder - Hotshot Pilot');
+    });
+
+    it('handles upgrade with arsenal', () => {
+        const profile = UP.getUnits().filter(u => u.name === 'AT-ST')[0];
+        const upgrades = UC.getUpgrades().filter(u => u.name === 'General Weiss');
+        upgrades.push(UC.getUpgrades().filter(u => u.name === '88 Twin Light Blaster Cannon')[0]);
+        upgrades.push(UC.getUpgrades().filter(u => u.name === 'DW-3 Concussion Grenade Launcher')[0]);
+
+        const input = AIA.createAttackInputsFromProfile(profile, [profile.weapons[1]], upgrades, defaultTokens);
+        testOffenseAndCombatSnapshots(input, 'AT-ST - General Weiss + Weapons');
+    });
 });

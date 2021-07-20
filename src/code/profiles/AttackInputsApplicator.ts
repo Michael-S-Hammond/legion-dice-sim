@@ -202,6 +202,8 @@ function applyPersonnelUpgrade(upgrade: UC.PersonnelUpgradeCard, tracking: Track
                     applyWeapon(tracking.defaultWeapon, 1, tracking, false);
                 }
             }
+        } else if(tracking.defaultWeapon) {
+            applyWeapon(tracking.defaultWeapon, 1, tracking, false);
         }
     } else {
         applyUpgradeKeywords(upgrade, tracking);

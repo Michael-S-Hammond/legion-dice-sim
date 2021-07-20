@@ -1320,6 +1320,366 @@ Object {
 }
 `;
 
+exports[`AttackInputApplicator handles personnel upgrade - non-combatant: Rebel Troopers - R5 Astromech Droid Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade - non-combatant: Rebel Troopers - R5 Astromech Droid Offense 1`] = `
+Object {
+  "blackDice": 4,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade with sidearm - melee vs. range: Imperial Royal Guards - Electrostaff Guard Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade with sidearm - melee vs. range: Imperial Royal Guards - Electrostaff Guard Offense 1`] = `
+Object {
+  "blackDice": 8,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade with sidearm: B2 Super Battle Droids - T-Series Tactical Droid Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade with sidearm: B2 Super Battle Droids - T-Series Tactical Droid Offense 1`] = `
+Object {
+  "blackDice": 3,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 1,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 3,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade: Rebel Troopers - Rebel Trooper Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles personnel upgrade: Rebel Troopers - Rebel Trooper Offense 1`] = `
+Object {
+  "blackDice": 5,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 0,
+}
+`;
+
+exports[`AttackInputApplicator handles pilot upgrade: X-34 Landspeeder - Hotshot Pilot Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles pilot upgrade: X-34 Landspeeder - Hotshot Pilot Offense 1`] = `
+Object {
+  "blackDice": 0,
+  "blast": false,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 0,
+  "sharpshooterX": Object {
+    "active": true,
+    "value": 1,
+  },
+  "surge": 2,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 2,
+}
+`;
+
+exports[`AttackInputApplicator handles upgrade with arsenal: AT-ST - General Weiss + Weapons Combat 1`] = `
+Object {
+  "guardian": Object {
+    "active": false,
+    "value": 1,
+  },
+  "meleeAttack": false,
+}
+`;
+
+exports[`AttackInputApplicator handles upgrade with arsenal: AT-ST - General Weiss + Weapons Offense 1`] = `
+Object {
+  "blackDice": 5,
+  "blast": true,
+  "criticalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "duelist": false,
+  "highVelocity": false,
+  "impactX": Object {
+    "active": true,
+    "value": 4,
+  },
+  "ionX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "jediHunter": false,
+  "lethalX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "makashiMastery": false,
+  "pierceX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "preciseX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "ramX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "redDice": 3,
+  "sharpshooterX": Object {
+    "active": false,
+    "value": 1,
+  },
+  "surge": 1,
+  "tokens": Object {
+    "aim": 0,
+    "surge": 0,
+  },
+  "whiteDice": 3,
+}
+`;
+
 exports[`AttackInputApplicator handles upgrade with surge -> critical conversion: Stormtroopers - Fragmentation Grenades Combat 1`] = `
 Object {
   "guardian": Object {
