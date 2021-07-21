@@ -117,4 +117,28 @@ describe('UnitSelector', () => {
         expect(onUnitChange).toHaveBeenCalledTimes(1);
         expect(unit).toEqual(targetUnit);
     });
+
+    it('handles updating units', () => {
+        const units = UP.getUnits().filter(u => u.faction === UP.Faction.separatist && u.rank === UP.Rank.specialForces);
+        let unit = units[1];
+        const newUnits = UP.getUnits().filter(u => u.faction === UP.Faction.separatist && u.rank === UP.Rank.operative);
+        const targetUnit = newUnits[0];
+
+        const onUnitChange = jest.fn(newUnit => {
+            unit = newUnit;
+        });
+
+        const selector = shallow(<UnitSelector
+                id='my-unit-selector'
+                selectedUnit={unit}
+                units={units}
+                onUnitChange={onUnitChange}
+            ></UnitSelector>);
+        expect(selector.state('matchingNames')).toEqual(2);
+        selector.setProps({
+            units: newUnits,
+            selectedUnit: targetUnit
+        });
+        expect(selector.state('matchingNames')).toEqual(1);
+    });
 });
