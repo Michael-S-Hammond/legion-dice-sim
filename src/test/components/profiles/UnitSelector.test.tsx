@@ -10,7 +10,7 @@ describe('UnitSelector', () => {
     it('matches the snapshot', () => {
         const onUnitChange = jest.fn();
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.empire && u.rank === UP.Rank.corps);
-        let unit = units.filter(u => u.name === 'DF-90 Mortar Trooper')[0];
+        const unit = units.filter(u => u.name === 'DF-90 Mortar Trooper')[0];
 
         const selector = shallow(<UnitSelector
                 id='my-unit-selector'
@@ -25,7 +25,7 @@ describe('UnitSelector', () => {
     it('matches the snapshot with subtitle', () => {
         const onUnitChange = jest.fn();
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.operative);
-        let unit = units.filter(u => u.name === 'Luke Skywalker')[0];
+        const unit = units.filter(u => u.name === 'Luke Skywalker')[0];
 
         const selector = shallow(<UnitSelector
                 id='my-unit-selector'
@@ -40,7 +40,7 @@ describe('UnitSelector', () => {
     it('matches the snapshot when multiple units have same name', () => {
         const onUnitChange = jest.fn();
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.republic && u.rank === UP.Rank.specialForces);
-        let unit = units.filter(u => u.name === 'ARC Troopers')[1];
+        const unit = units.filter(u => u.name === 'ARC Troopers')[1];
 
         const selector = shallow(<UnitSelector
                 id='my-unit-selector'
