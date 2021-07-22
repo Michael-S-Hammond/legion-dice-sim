@@ -8,20 +8,14 @@ type DieCounterProps = {
     onClick: () => void,
 };
 
-class DieCounter extends React.Component<DieCounterProps> {
-    constructor(props : DieCounterProps) {
-        super(props);
-    }
-
-    render() : JSX.Element {
-        return (
-            <button
-                className={`btn border border-secondary rounded-lg die-counter mx-1 ${ this.props.styleName }`}
-                onClick={() => this.props.onClick()}>
-                    { this.props.count }
-            </button>
-        );
-    }
+function DieCounter(props: DieCounterProps) : JSX.Element {
+    return (
+        <button
+            className={`btn border border-secondary rounded-lg die-counter mx-1 ${ props.styleName }`}
+            onClick={() => props.onClick()}>
+                { props.count }
+        </button>
+    );
 }
 
 export default DieCounter;

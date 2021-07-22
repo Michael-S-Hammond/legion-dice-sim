@@ -15,52 +15,46 @@ type DefenseProps = {
     eventHandlers: AS.AppStateDefenseEventHandlers,
 }
 
-class Defense extends React.Component<DefenseProps> {
-    constructor(props : DefenseProps) {
-        super(props);
-    }
-
-    private handleCoverChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+function Defense(props: DefenseProps) : JSX.Element {
+    const handleCoverChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newCover = (e.target.value) as unknown as T.Cover;
-        this.props.eventHandlers.handleCoverChange(newCover);
+        props.eventHandlers.handleCoverChange(newCover);
     }
 
-    render() : JSX.Element {
-        return (
-            <div>
-                <h2 className="d-flex justify-content-center my-2">Defense
-                    <LoadProfileButton
-                        dialogId={this.props.profileDialogId}
-                        tooltip='Load defense profile'></LoadProfileButton>
-                </h2>
-                <div className="d-flex justify-content-center my-2">
-                    <SurgeDieSelector
-                        color={this.props.input.dieColor}
-                        surge={this.props.input.surge}
-                        onClick={this.props.eventHandlers.changeDie}></SurgeDieSelector>
-                </div>
-                <DefenseTokens
-                    showSimplifiedView={this.props.showSimpleView}
-                    tokens={this.props.input.tokens}
-                    eventHandlers={this.props.eventHandlers}
-                    ></DefenseTokens>
-                <div className="d-flex justify-content-center my-2">
-                    <span className="mx-2 my-auto drop-down-label">Cover:</span>
-                    <select value={this.props.input.cover} className="rounded-lg mr-4 px-2"
-                        onChange={this.handleCoverChange}>
-                        <option value="none">None</option>
-                        <option value="light">Light</option>
-                        <option value="heavy">Heavy</option>
-                    </select>
-                </div>
-                <DefenseAbilities
-                    showSimpleView={this.props.showSimpleView}
-                    inputs={this.props.input}
-                    eventHandlers={this.props.eventHandlers}
-                    ></DefenseAbilities>
+    return (
+        <div>
+            <h2 className="d-flex justify-content-center my-2">Defense
+                <LoadProfileButton
+                    dialogId={props.profileDialogId}
+                    tooltip='Load defense profile'></LoadProfileButton>
+            </h2>
+            <div className="d-flex justify-content-center my-2">
+                <SurgeDieSelector
+                    color={props.input.dieColor}
+                    surge={props.input.surge}
+                    onClick={props.eventHandlers.changeDie}></SurgeDieSelector>
             </div>
-        );
-    }
+            <DefenseTokens
+                showSimplifiedView={props.showSimpleView}
+                tokens={props.input.tokens}
+                eventHandlers={props.eventHandlers}
+                ></DefenseTokens>
+            <div className="d-flex justify-content-center my-2">
+                <span className="mx-2 my-auto drop-down-label">Cover:</span>
+                <select value={props.input.cover} className="rounded-lg mr-4 px-2"
+                    onChange={handleCoverChange}>
+                    <option value="none">None</option>
+                    <option value="light">Light</option>
+                    <option value="heavy">Heavy</option>
+                </select>
+            </div>
+            <DefenseAbilities
+                showSimpleView={props.showSimpleView}
+                inputs={props.input}
+                eventHandlers={props.eventHandlers}
+                ></DefenseAbilities>
+        </div>
+    );
 }
 
 export default Defense;
