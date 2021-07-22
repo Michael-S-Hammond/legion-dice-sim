@@ -634,6 +634,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
         </button>
         <button
           className="btn btn-primary"
+          id="attackProfileSelector-applyButton"
           onClick={[Function]}
           type="button"
         >
@@ -1208,6 +1209,7 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
         </button>
         <button
           className="btn btn-primary"
+          id="defenseProfileSelector-applyButton"
           onClick={[Function]}
           type="button"
         >

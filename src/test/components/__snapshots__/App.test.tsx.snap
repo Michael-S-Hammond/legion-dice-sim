@@ -1,0 +1,673 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App handles simple view 1`] = `
+<main
+  role="main"
+>
+  <Header />
+  <ProfileSelectorDialog
+    applyProfile={[Function]}
+    id="attackProfileDialog"
+    upgradeAllowListName="attack"
+  />
+  <ProfileSelectorDialog
+    applyProfile={[Function]}
+    id="defenseProfileDialog"
+    upgradeAllowListName="defense"
+  />
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-8 offset-md-2 mt-3"
+      >
+        <div
+          className="d-flex justify-content-center my-auto custom-control custom-switch"
+          key="showSimplifiedViewToggle-abilitytoggle"
+        >
+          <input
+            checked={true}
+            className="custom-control-input my-auto"
+            id="showSimplifiedViewToggle"
+            key="showSimplifiedViewToggle-toggle-input"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="custom-control-label drop-down-label mx-2 my-auto"
+            htmlFor="showSimplifiedViewToggle"
+            key="showSimplifiedViewToggle-toggle-label"
+          >
+            Simplified View
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-5 offset-md-1 col-lg-4 offset-lg-2"
+      >
+        <Attack
+          eventHandlers={
+            Object {
+              "handleBlastChange": [Function],
+              "handleCriticalXChange": [Function],
+              "handleCriticalXValueChange": [Function],
+              "handleDuelistChange": [Function],
+              "handleHighVelocityChange": [Function],
+              "handleImpactXChange": [Function],
+              "handleImpactXValueChange": [Function],
+              "handleIonXChange": [Function],
+              "handleIonXValueChange": [Function],
+              "handleJediHunterChange": [Function],
+              "handleLethalXChange": [Function],
+              "handleLethalXValueChange": [Function],
+              "handleMakashiMasteryChange": [Function],
+              "handlePierceXChange": [Function],
+              "handlePierceXValueChange": [Function],
+              "handlePreciseXChange": [Function],
+              "handlePreciseXValueChange": [Function],
+              "handleRamXChange": [Function],
+              "handleRamXValueChange": [Function],
+              "handleSharpshooterXChange": [Function],
+              "handleSharpshooterXValueChange": [Function],
+              "handleSurgeConversionChange": [Function],
+              "incrementAimTokenCount": [Function],
+              "incrementBlackDice": [Function],
+              "incrementRedDice": [Function],
+              "incrementSurgeTokenCount": [Function],
+              "incrementWhiteDice": [Function],
+              "resetDiceCount": [Function],
+              "resetTokenCounts": [Function],
+            }
+          }
+          input={
+            Object {
+              "blackDice": 0,
+              "blast": false,
+              "criticalX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "duelist": false,
+              "highVelocity": false,
+              "impactX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "ionX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "jediHunter": false,
+              "lethalX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "makashiMastery": false,
+              "pierceX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "preciseX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "ramX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "redDice": 0,
+              "sharpshooterX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "surge": 1,
+              "tokens": Object {
+                "aim": 0,
+                "surge": 0,
+              },
+              "whiteDice": 0,
+            }
+          }
+          profileDialogId="attackProfileDialog"
+          showSimpleView={true}
+        />
+      </div>
+      <div
+        className="col-md-5 col-lg-4"
+      >
+        <Defense
+          eventHandlers={
+            Object {
+              "changeDie": [Function],
+              "handleArmorChange": [Function],
+              "handleArmorXChange": [Function],
+              "handleArmorXValueChange": [Function],
+              "handleBlockChange": [Function],
+              "handleCoverChange": [Function],
+              "handleDangerSenseXChange": [Function],
+              "handleDangerSenseXValueChange": [Function],
+              "handleDeflectChange": [Function],
+              "handleDjemSoMasteryChange": [Function],
+              "handleDuelistChange": [Function],
+              "handleHasForceUpgradesChange": [Function],
+              "handleImmuneBlastChange": [Function],
+              "handleImmunePierceChange": [Function],
+              "handleImperviousChange": [Function],
+              "handleLowProfileChange": [Function],
+              "handleOutmaneuverChange": [Function],
+              "handleSoresuMasteryChange": [Function],
+              "handleUncannyLuckXChange": [Function],
+              "handleUncannyLuckXValueChange": [Function],
+              "incrementDodgeTokenCount": [Function],
+              "incrementObservationTokenCount": [Function],
+              "incrementShieldTokenCount": [Function],
+              "incrementSuppressionTokenCount": [Function],
+              "incrementSurgeTokenCount": [Function],
+              "resetTokenCount": [Function],
+            }
+          }
+          input={
+            Object {
+              "armor": false,
+              "armorX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "block": false,
+              "cover": "none",
+              "dangerSenseX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "deflect": false,
+              "dieColor": "white",
+              "djemSoMastery": false,
+              "duelist": false,
+              "hasForceUpgrades": false,
+              "immuneBlast": false,
+              "immunePierce": false,
+              "impervious": false,
+              "lowProfile": false,
+              "outmaneuver": false,
+              "soresuMastery": false,
+              "surge": true,
+              "tokens": Object {
+                "dodge": 0,
+                "observation": 0,
+                "shield": 0,
+                "suppression": 0,
+                "surge": 0,
+              },
+              "uncannyLuckX": Object {
+                "active": false,
+                "value": 1,
+              },
+            }
+          }
+          profileDialogId="defenseProfileDialog"
+          showSimpleView={true}
+        />
+      </div>
+      <div
+        className="col-md-6 offset-md-3 col-lg-4 offset-lg-0 collapse"
+      >
+        <Combat
+          eventHandlers={
+            Object {
+              "handleGuardianXChange": [Function],
+              "handleGuardianXValueChange": [Function],
+              "handleMeleeAttackChange": [Function],
+            }
+          }
+          input={
+            Object {
+              "guardian": Object {
+                "active": false,
+                "value": 1,
+              },
+              "meleeAttack": false,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="d-flex flex-wrap justify-content-center my-3"
+    >
+      <span
+        className="mx-2 my-auto drop-down-label"
+      >
+        Rolls:
+      </span>
+      <select
+        className="rounded-lg mr-4 px-2"
+        onChange={[Function]}
+        value={10000}
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="10000"
+        >
+          10,000
+        </option>
+      </select>
+      <button
+        className="btn btn-secondary border border-secondary rounded-lg mx-2 px-3 roll-button"
+        onClick={[Function]}
+      >
+        Roll
+      </button>
+      <div
+        className="d-flex justify-content-center my-auto custom-control custom-switch"
+        key="showExpectedRangeToggle-abilitytoggle"
+      >
+        <input
+          checked={true}
+          className="custom-control-input my-auto collapse"
+          id="showExpectedRangeToggle"
+          key="showExpectedRangeToggle-toggle-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="custom-control-label drop-down-label mx-2 my-auto collapse"
+          htmlFor="showExpectedRangeToggle"
+          key="showExpectedRangeToggle-toggle-label"
+        >
+          Show expected range
+        </label>
+      </div>
+    </div>
+    <DiceResults
+      results={
+        Object {
+          "firstAttack": Object {
+            "attack": Object {
+              "criticals": 0,
+              "hits": 0,
+              "misses": 0,
+              "surges": 0,
+            },
+            "defense": Object {
+              "blanks": 0,
+              "blocks": 0,
+              "forcedSaves": 0,
+              "surges": 0,
+              "wounds": 0,
+            },
+          },
+          "summary": Object {
+            "attackCount": 0,
+            "attackSurge": Array [],
+            "blocks": Array [],
+            "critical": Array [],
+            "defenseSurge": Array [],
+            "forcedSaveStats": Object {
+              "mean": 0,
+              "median": 0,
+              "stddev": 0,
+            },
+            "forcedSaves": Array [],
+            "hit": Array [],
+            "woundStats": Object {
+              "mean": 0,
+              "median": 0,
+              "stddev": 0,
+            },
+            "wounds": Array [],
+          },
+        }
+      }
+      showExpectedRange={true}
+      visibility={1}
+    />
+  </div>
+</main>
+`;
+
+exports[`App matches the snapshot 1`] = `
+<main
+  role="main"
+>
+  <Header />
+  <ProfileSelectorDialog
+    applyProfile={[Function]}
+    id="attackProfileDialog"
+    upgradeAllowListName="attack"
+  />
+  <ProfileSelectorDialog
+    applyProfile={[Function]}
+    id="defenseProfileDialog"
+    upgradeAllowListName="defense"
+  />
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-8 offset-md-2 mt-3"
+      >
+        <div
+          className="d-flex justify-content-center my-auto custom-control custom-switch"
+          key="showSimplifiedViewToggle-abilitytoggle"
+        >
+          <input
+            checked={false}
+            className="custom-control-input my-auto"
+            id="showSimplifiedViewToggle"
+            key="showSimplifiedViewToggle-toggle-input"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          <label
+            className="custom-control-label drop-down-label mx-2 my-auto"
+            htmlFor="showSimplifiedViewToggle"
+            key="showSimplifiedViewToggle-toggle-label"
+          >
+            Simplified View
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-5 offset-md-1 col-lg-4 offset-lg-0"
+      >
+        <Attack
+          eventHandlers={
+            Object {
+              "handleBlastChange": [Function],
+              "handleCriticalXChange": [Function],
+              "handleCriticalXValueChange": [Function],
+              "handleDuelistChange": [Function],
+              "handleHighVelocityChange": [Function],
+              "handleImpactXChange": [Function],
+              "handleImpactXValueChange": [Function],
+              "handleIonXChange": [Function],
+              "handleIonXValueChange": [Function],
+              "handleJediHunterChange": [Function],
+              "handleLethalXChange": [Function],
+              "handleLethalXValueChange": [Function],
+              "handleMakashiMasteryChange": [Function],
+              "handlePierceXChange": [Function],
+              "handlePierceXValueChange": [Function],
+              "handlePreciseXChange": [Function],
+              "handlePreciseXValueChange": [Function],
+              "handleRamXChange": [Function],
+              "handleRamXValueChange": [Function],
+              "handleSharpshooterXChange": [Function],
+              "handleSharpshooterXValueChange": [Function],
+              "handleSurgeConversionChange": [Function],
+              "incrementAimTokenCount": [Function],
+              "incrementBlackDice": [Function],
+              "incrementRedDice": [Function],
+              "incrementSurgeTokenCount": [Function],
+              "incrementWhiteDice": [Function],
+              "resetDiceCount": [Function],
+              "resetTokenCounts": [Function],
+            }
+          }
+          input={
+            Object {
+              "blackDice": 0,
+              "blast": false,
+              "criticalX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "duelist": false,
+              "highVelocity": false,
+              "impactX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "ionX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "jediHunter": false,
+              "lethalX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "makashiMastery": false,
+              "pierceX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "preciseX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "ramX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "redDice": 0,
+              "sharpshooterX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "surge": 1,
+              "tokens": Object {
+                "aim": 0,
+                "surge": 0,
+              },
+              "whiteDice": 0,
+            }
+          }
+          profileDialogId="attackProfileDialog"
+          showSimpleView={false}
+        />
+      </div>
+      <div
+        className="col-md-5 col-lg-4"
+      >
+        <Defense
+          eventHandlers={
+            Object {
+              "changeDie": [Function],
+              "handleArmorChange": [Function],
+              "handleArmorXChange": [Function],
+              "handleArmorXValueChange": [Function],
+              "handleBlockChange": [Function],
+              "handleCoverChange": [Function],
+              "handleDangerSenseXChange": [Function],
+              "handleDangerSenseXValueChange": [Function],
+              "handleDeflectChange": [Function],
+              "handleDjemSoMasteryChange": [Function],
+              "handleDuelistChange": [Function],
+              "handleHasForceUpgradesChange": [Function],
+              "handleImmuneBlastChange": [Function],
+              "handleImmunePierceChange": [Function],
+              "handleImperviousChange": [Function],
+              "handleLowProfileChange": [Function],
+              "handleOutmaneuverChange": [Function],
+              "handleSoresuMasteryChange": [Function],
+              "handleUncannyLuckXChange": [Function],
+              "handleUncannyLuckXValueChange": [Function],
+              "incrementDodgeTokenCount": [Function],
+              "incrementObservationTokenCount": [Function],
+              "incrementShieldTokenCount": [Function],
+              "incrementSuppressionTokenCount": [Function],
+              "incrementSurgeTokenCount": [Function],
+              "resetTokenCount": [Function],
+            }
+          }
+          input={
+            Object {
+              "armor": false,
+              "armorX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "block": false,
+              "cover": "none",
+              "dangerSenseX": Object {
+                "active": false,
+                "value": 1,
+              },
+              "deflect": false,
+              "dieColor": "white",
+              "djemSoMastery": false,
+              "duelist": false,
+              "hasForceUpgrades": false,
+              "immuneBlast": false,
+              "immunePierce": false,
+              "impervious": false,
+              "lowProfile": false,
+              "outmaneuver": false,
+              "soresuMastery": false,
+              "surge": true,
+              "tokens": Object {
+                "dodge": 0,
+                "observation": 0,
+                "shield": 0,
+                "suppression": 0,
+                "surge": 0,
+              },
+              "uncannyLuckX": Object {
+                "active": false,
+                "value": 1,
+              },
+            }
+          }
+          profileDialogId="defenseProfileDialog"
+          showSimpleView={false}
+        />
+      </div>
+      <div
+        className="col-md-6 offset-md-3 col-lg-4 offset-lg-0 collapse.show"
+      >
+        <Combat
+          eventHandlers={
+            Object {
+              "handleGuardianXChange": [Function],
+              "handleGuardianXValueChange": [Function],
+              "handleMeleeAttackChange": [Function],
+            }
+          }
+          input={
+            Object {
+              "guardian": Object {
+                "active": false,
+                "value": 1,
+              },
+              "meleeAttack": false,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="d-flex flex-wrap justify-content-center my-3"
+    >
+      <span
+        className="mx-2 my-auto drop-down-label"
+      >
+        Rolls:
+      </span>
+      <select
+        className="rounded-lg mr-4 px-2"
+        onChange={[Function]}
+        value={10000}
+      >
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="10000"
+        >
+          10,000
+        </option>
+      </select>
+      <button
+        className="btn btn-secondary border border-secondary rounded-lg mx-2 px-3 roll-button"
+        onClick={[Function]}
+      >
+        Roll
+      </button>
+      <div
+        className="d-flex justify-content-center my-auto custom-control custom-switch"
+        key="showExpectedRangeToggle-abilitytoggle"
+      >
+        <input
+          checked={true}
+          className="custom-control-input my-auto collapse"
+          id="showExpectedRangeToggle"
+          key="showExpectedRangeToggle-toggle-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          className="custom-control-label drop-down-label mx-2 my-auto collapse"
+          htmlFor="showExpectedRangeToggle"
+          key="showExpectedRangeToggle-toggle-label"
+        >
+          Show expected range
+        </label>
+      </div>
+    </div>
+    <DiceResults
+      results={
+        Object {
+          "firstAttack": Object {
+            "attack": Object {
+              "criticals": 0,
+              "hits": 0,
+              "misses": 0,
+              "surges": 0,
+            },
+            "defense": Object {
+              "blanks": 0,
+              "blocks": 0,
+              "forcedSaves": 0,
+              "surges": 0,
+              "wounds": 0,
+            },
+          },
+          "summary": Object {
+            "attackCount": 0,
+            "attackSurge": Array [],
+            "blocks": Array [],
+            "critical": Array [],
+            "defenseSurge": Array [],
+            "forcedSaveStats": Object {
+              "mean": 0,
+              "median": 0,
+              "stddev": 0,
+            },
+            "forcedSaves": Array [],
+            "hit": Array [],
+            "woundStats": Object {
+              "mean": 0,
+              "median": 0,
+              "stddev": 0,
+            },
+            "wounds": Array [],
+          },
+        }
+      }
+      showExpectedRange={true}
+      visibility={1}
+    />
+  </div>
+</main>
+`;

@@ -301,7 +301,7 @@ class ProfileSelectorDialog extends React.Component<ProfileSelectorDialogProps, 
                         </div>
                         <div className="modal-footer">
                             <button type="button" id={this.props.id + "-closeButton"} className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary" onClick={this.onApplyChanges}>Apply</button>
+                            <button type="button" id={this.props.id + "-applyButton"} className="btn btn-primary" onClick={this.onApplyChanges}>Apply</button>
                         </div>
                     </div>
                 </div>
