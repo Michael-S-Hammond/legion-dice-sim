@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { shallow, mount } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -37,17 +41,17 @@ describe('ProfileSelectorDialog', () => {
     it('handles faction change', () => {
         const onApplyProfile = jest.fn();
 
-        const dialog = mount(<ProfileSelectorDialog
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#empire').simulate('change', { target: { value: String(UP.Faction.empire) }});
+        expect(screen.getByDisplayValue('rebel')).toBeChecked();
 
-        expect(dialog.state('faction')).toEqual(String(UP.Faction.empire));
-        expect(dialog.state('unit')).toEqual(UP.getUnits().filter(u =>
-            u.faction === UP.Faction.empire && u.rank === UP.Rank.commander)[0]);
+        userEvent.click(screen.getByTitle('Empire'));
+        expect(screen.getByDisplayValue('rebel')).not.toBeChecked();
+        expect(screen.getByDisplayValue('empire')).toBeChecked();
     });
 
     it('handles rank change', () => {

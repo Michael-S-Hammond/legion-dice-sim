@@ -19,7 +19,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
       >
         <h5
           className="modal-title"
-          id="{this.props.id + ModalLabel}"
+          id="{props.id + ModalLabel}"
         >
           Attack
            profile
@@ -665,7 +665,7 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
       >
         <h5
           className="modal-title"
-          id="{this.props.id + ModalLabel}"
+          id="{props.id + ModalLabel}"
         >
           Defense
            profile
