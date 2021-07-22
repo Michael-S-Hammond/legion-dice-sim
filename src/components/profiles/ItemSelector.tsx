@@ -11,37 +11,35 @@ type ItemSelectorProps<T extends UP.NamedItem> = {
     onItemChange: (index: number, item: T | null) => void,
 }
 
-class ItemSelector<T extends UP.NamedItem> extends React.Component<ItemSelectorProps<T>> {
-    private onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+function ItemSelector<T extends UP.NamedItem>(props: ItemSelectorProps<T>) {
+    const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newName = e.target.value;
         let newItem: T | null = null;
         if(newName.length > 0) {
-            const possibleItems = this.props.items.filter(i => i.name === newName);
+            const possibleItems = props.items.filter(i => i.name === newName);
             if(possibleItems.length > 0) {
                 newItem = possibleItems[0];
             }
         }
-        this.props.onItemChange(this.props.dataIndex, newItem);
+        props.onItemChange(props.dataIndex, newItem);
     }
 
-    private getStringOrDefault(value: string | undefined) : string {
+    function getStringOrDefault(value: string | undefined) : string {
         return value ? value : "";
     }
 
-    render() : JSX.Element {
-        return (
-            <select
-                id={this.props.id + "-itemSelect"}
-                value={this.getStringOrDefault(this.props.selectedItem?.name)}
-                className="rounded-lg px-2 ml-2"
-                onChange={this.onChange}>
-                { this.props.includeBlankItem &&
-                    <option key="" value=""></option>
-                }
-                { this.props.items?.map(i => <option key={i.name} value={i.name}>{i.name}</option>)}
-            </select>
-        );
-    }
+    return (
+        <select
+            id={props.id + "-itemSelect"}
+            value={getStringOrDefault(props.selectedItem?.name)}
+            className="rounded-lg px-2 ml-2"
+            onChange={onChange}>
+            { props.includeBlankItem &&
+                <option key="" value=""></option>
+            }
+            { props.items?.map(i => <option key={i.name} value={i.name}>{i.name}</option>) }
+        </select>
+    );
 }
 
 export default ItemSelector;

@@ -7,7 +7,6 @@ import LoadProfileButton from '../../../components/profiles/LoadProfileButton';
 
 describe('FactionButtonGroup', () => {
     it('matches the snapshot', () => {
-        const onFactionChange = jest.fn();
         const button = shallow(<LoadProfileButton
                 dialogId='fakeDialog'
                 tooltip='My tooltip'

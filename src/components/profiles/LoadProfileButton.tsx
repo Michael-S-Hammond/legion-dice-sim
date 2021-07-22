@@ -7,21 +7,15 @@ type LoadProfileButtonProps = {
     tooltip: string,
 };
 
-class LoadProfileButton extends React.Component<LoadProfileButtonProps> {
-    constructor(props : LoadProfileButtonProps) {
-        super(props);
-    }
-
-    render() : JSX.Element {
-        return (
-            <button
-                className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
-                title={this.props.tooltip}
-                data-toggle="modal"
-                data-target={"#" + this.props.dialogId}>
-            </button>
-        );
-    }
+function LoadProfileButton(props : LoadProfileButtonProps) {
+    return (
+        <button
+            className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+            title={props.tooltip}
+            data-toggle="modal"
+            data-target={"#" + props.dialogId}>
+        </button>
+    );
 }
 
 export default LoadProfileButton;
