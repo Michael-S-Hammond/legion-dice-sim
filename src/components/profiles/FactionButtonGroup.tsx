@@ -7,7 +7,7 @@ type FactionButtonGroupProps = {
     onFactionChange: (faction: UP.Faction) => void,
 }
 
-function FactionButtonGroup(props: FactionButtonGroupProps) {
+function FactionButtonGroup(props: FactionButtonGroupProps) : JSX.Element {
     const onFactionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newFaction = e.target.value as UP.Faction;
         props.onFactionChange(newFaction);

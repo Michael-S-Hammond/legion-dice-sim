@@ -7,7 +7,7 @@ type LoadProfileButtonProps = {
     tooltip: string,
 };
 
-function LoadProfileButton(props : LoadProfileButtonProps) {
+function LoadProfileButton(props : LoadProfileButtonProps) : JSX.Element {
     return (
         <button
             className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"

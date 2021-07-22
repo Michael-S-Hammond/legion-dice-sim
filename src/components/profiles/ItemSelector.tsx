@@ -11,7 +11,7 @@ type ItemSelectorProps<T extends UP.NamedItem> = {
     onItemChange: (index: number, item: T | null) => void,
 }
 
-function ItemSelector<T extends UP.NamedItem>(props: ItemSelectorProps<T>) {
+function ItemSelector<T extends UP.NamedItem>(props: ItemSelectorProps<T>) : JSX.Element {
     const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newName = e.target.value;
         let newItem: T | null = null;

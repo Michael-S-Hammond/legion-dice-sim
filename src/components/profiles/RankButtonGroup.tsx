@@ -7,7 +7,7 @@ type RankButtonGroupProps = {
     onRankChange: (rank: UP.Rank) => void,
 }
 
-function RankButtonGroup(props: RankButtonGroupProps) {
+function RankButtonGroup(props: RankButtonGroupProps) : JSX.Element {
     const onRankChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newRank = e.target.value as UP.Rank;
         props.onRankChange(newRank);
