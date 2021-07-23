@@ -39,7 +39,15 @@ describe('ProfileSelectorDialog', () => {
     });
 
     it('handles faction change', () => {
-        const onApplyProfile = jest.fn();
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
+
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
 
         render(<ProfileSelectorDialog
             id="attackProfileSelector"
@@ -52,127 +60,234 @@ describe('ProfileSelectorDialog', () => {
         userEvent.click(screen.getByTitle('Empire'));
         expect(screen.getByDisplayValue('rebel')).not.toBeChecked();
         expect(screen.getByDisplayValue('empire')).toBeChecked();
+
+        userEvent.click(screen.getByText('Apply'));
+        const target = UP.getUnits().filter(u => u.faction === UP.Faction.empire && u.rank === UP.Rank.commander)[0];
+        expect(trackedProfile).toEqual(target);
     });
 
     it('handles rank change', () => {
-        const onApplyProfile = jest.fn();
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#operative').simulate('change', { target: { value: String(UP.Rank.operative) }});
+        expect(screen.getByDisplayValue('commander')).toBeChecked();
 
-        expect(dialog.state('rank')).toEqual(String(UP.Rank.operative));
-        expect(dialog.state('unit')).toEqual(UP.getUnits().filter(u =>
-            u.faction === UP.Faction.rebel && u.rank === UP.Rank.operative)[0]);
+        userEvent.click(screen.getByTitle('Operative'));
+        expect(screen.getByDisplayValue('commander')).not.toBeChecked();
+        expect(screen.getByDisplayValue('operative')).toBeChecked();
+
+        userEvent.click(screen.getByText('Apply'));
+        const target = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.operative)[0];
+        expect(trackedProfile).toEqual(target);
     });
 
     it('handles unit change', () => {
-        const onApplyProfile = jest.fn();
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#attackProfileSelector-unit-nameSelect').simulate('change', { target: { value: String('Leia Organa') }});
-
-        expect(dialog.state('unit')).toEqual(UP.getUnits().filter(u => u.name === 'Leia Organa')[0]);
+        const target = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.commander)[2];
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name', hidden: true }),
+            [target.name]);
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
     });
 
     it('handles weapon change', () => {
-        const onApplyProfile = jest.fn();
-        const unit = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.commander)[0];
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#attackProfileSelector-weapon-0-itemSelect').simulate('change', { target: { value: unit.weapons[0].name }});
-        expect(dialog.state('weapons')).toEqual([unit.weapons[0]]);
+        const target = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.commander)[0];
+        const weapons = [target.weapons[1]];
+
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Weapon 0', hidden: true }),
+            [weapons[0].name]);
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
+        expect(trackedWeapons).toEqual(weapons);
     });
 
     it('handles weapon change with multiple weapons', () => {
-        const onApplyProfile = jest.fn();
-        const unit = UP.getUnits().filter(u => u.name == 'Boba Fett')[0];
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#empire').simulate('change', { target: { value: String(UP.Faction.empire) }});
-        dialog.find('#operative').simulate('change', { target: { value: String(UP.Rank.operative) }});
-        dialog.find('#attackProfileSelector-unit-nameSelect').simulate('change', { target: { value: String('Boba Fett') }});
-        dialog.find('#attackProfileSelector-weapon-0-itemSelect').simulate('change', { target: { value: unit.weapons[1].name }});
-        dialog.find('#attackProfileSelector-weapon-1-itemSelect').simulate('change', { target: { value: unit.weapons[2].name }});
+        userEvent.click(screen.getByTitle('Empire'));
+        userEvent.click(screen.getByTitle('Operative'));
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name', hidden: true }),
+            ['Boba Fett']);
 
-        expect(dialog.state('weapons')).toEqual([unit.weapons[1], unit.weapons[2]]);
+        const target = UP.getUnits().filter(u => u.name === 'Boba Fett')[0];
+        const weapons = [target.weapons[1], target.weapons[2]];
+
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Weapon 0', hidden: true }),
+            [weapons[0].name]);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Weapon 1', hidden: true }),
+            [weapons[1].name]);
+
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
+        expect(trackedWeapons).toEqual(weapons);
     });
 
     it('handles weapon change to clear value', () => {
-        const onApplyProfile = jest.fn();
-        const unit = UP.getUnits().filter(u => u.name == 'Boba Fett')[0];
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#empire').simulate('change', { target: { value: String(UP.Faction.empire) }});
-        dialog.find('#operative').simulate('change', { target: { value: String(UP.Rank.operative) }});
-        dialog.find('#attackProfileSelector-unit-nameSelect').simulate('change', { target: { value: String('Boba Fett') }});
-        dialog.find('#attackProfileSelector-weapon-0-itemSelect').simulate('change', { target: { value: unit.weapons[1].name }});
-        dialog.find('#attackProfileSelector-weapon-1-itemSelect').simulate('change', { target: { value: unit.weapons[2].name }});
-        dialog.find('#attackProfileSelector-weapon-0-itemSelect').simulate('change', { target: { value: '' }});
+        const target = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.commander)[0];
+        const offsetWeapon = target.weapons[0];
 
-        expect(dialog.state('weapons')).toEqual([undefined, unit.weapons[2]]);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Weapon 0', hidden: true }),
+            [offsetWeapon.name]);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Weapon 0', hidden: true }),
+            ['']);
+
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
+        expect(trackedWeapons).toEqual([]);
     });
 
     it('handles upgrade change', () => {
-        const onApplyProfile = jest.fn();
-        const upgrade = UC.getUpgrades().filter(u => u.name === 'A280-CFE Sniper Config')[0];
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#attackProfileSelector-1-upgrade-itemSelect').simulate('change', { target: { value: upgrade.name }});
-        expect(dialog.state('upgrades')).toEqual([undefined, upgrade]);
+        const target = UP.getUnits().filter(u => u.name === 'Cassian Andor')[0];
+        const upgrade = UC.getUpgrades().filter(u => u.name === 'A280-CFE Sniper Config')[0];
+
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name', hidden: true }),
+            [target.name]);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Upgrade 1', hidden: true }),
+            [upgrade.name]);
+        
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
+        expect(trackedUpgrades).toEqual([undefined, upgrade]);
     });
 
     it('handles multiple upgrades', () => {
-        const onApplyProfile = jest.fn();
-        const upgrade1 = UC.getUpgrades().filter(u => u.name === 'DC-15x ARC Trooper')[0];
-        const upgrade2 = UC.getUpgrades().filter(u => u.name === 'Targeting Scopes')[0];
+        let trackedProfile = UP.getUnits()[0];
+        let trackedWeapons: Array<UP.Weapon> = [];
+        let trackedUpgrades: Array<UC.Upgrade> = [];
 
-        const dialog = mount(<ProfileSelectorDialog
+        function onApplyProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) {
+            trackedProfile = profile;
+            trackedWeapons = weapons;
+            trackedUpgrades = upgrades;
+        }
+
+        render(<ProfileSelectorDialog
             id="attackProfileSelector"
             applyProfile={onApplyProfile}
             upgradeAllowListName={AL.AllowListName.attack}
         ></ProfileSelectorDialog>);
 
-        dialog.find('#republic').simulate('change', { target: { value: String(UP.Faction.republic) }});
-        dialog.find('#specialForces').simulate('change', { target: { value: String(UP.Rank.specialForces) }});
-        dialog.find('#attackProfileSelector-unit-nameSelect').simulate('change', { target: { value: String('ARC Troopers') }});
-        dialog.find('#attackProfileSelector-unit-subtitleSelect').simulate('change', { target: { value: String('Strike Team') }});
-        dialog.find('#attackProfileSelector-0-upgrade-itemSelect').simulate('change', { target: { value: upgrade1.name }});
-        dialog.find('#attackProfileSelector-1-upgrade-itemSelect').simulate('change', { target: { value: upgrade2.name }});
+        userEvent.click(screen.getByTitle('Republic'));
+        userEvent.click(screen.getByTitle('Special Forces'));
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name', hidden: true }),
+            ['ARC Troopers']);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit subtitle', hidden: true }),
+            ['Strike Team']);
 
-        expect(dialog.state('upgrades')).toEqual([upgrade1, upgrade2]);
+        const target = UP.getUnits().filter(u => u.name === 'ARC Troopers' && u.subtitle === 'Strike Team')[0];
+        const upgrade1 = UC.getUpgrades().filter(u => u.name === 'DC-15x ARC Trooper')[0];
+        const upgrade2 = UC.getUpgrades().filter(u => u.name === 'Targeting Scopes')[0];
 
-        dialog.find('#attackProfileSelector-0-upgrade-itemSelect').simulate('change', { target: { value: '' }});
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Upgrade 0', hidden: true }),
+            [upgrade1.name]);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Upgrade 1', hidden: true }),
+            [upgrade2.name]);
 
-        expect(dialog.state('upgrades')).toEqual([undefined, upgrade2]);
+        userEvent.click(screen.getByText('Apply'));
+        expect(trackedProfile).toEqual(target);
+        expect(trackedUpgrades).toEqual([upgrade1, upgrade2]);
     });
 });

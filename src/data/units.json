@@ -2,7 +2,7 @@
     "units": [{
         "faction": "rebel",
         "name": "Luke Skywalker",
-        "subtitle": "Hero of the Empire",
+        "subtitle": "Hero of the Rebellion",
         "unique": true,
         "rank": "commander",
         "miniCount": 1,

@@ -2,6 +2,8 @@ import '../../css/ProfileDialog.css';
 
 import React from 'react';
 
+import $ from 'jquery';
+
 import * as AL from '../../code/profiles/AllowList';
 import * as UP from '../../code/profiles/UnitProfile';
 import * as UC from '../../code/profiles/UpgradeCard';
@@ -246,6 +248,7 @@ function ProfileSelectorDialog(props: ProfileSelectorDialogProps) : JSX.Element 
                     <ItemSelector<UP.Weapon>
                         id={props.id + "-weapon-" + i}
                         dataIndex={i}
+                        ariaLabel={'Weapon ' + i}
                         items={state.unit.weapons}
                         includeBlankItem={true}
                         selectedItem={state.weapons[i]}
@@ -300,6 +303,7 @@ function ProfileSelectorDialog(props: ProfileSelectorDialogProps) : JSX.Element 
                                         <ItemSelector<UC.Upgrade>
                                             id={props.id + "-" + i + "-upgrade"}
                                             dataIndex={i}
+                                            ariaLabel={'Upgrade ' + i}
                                             includeBlankItem={true}
                                             items={UC.getUpgrades().filter((ufilter) => ufilter.type === utype && isAvailable(ufilter, i))}
                                             selectedItem={state.upgrades[i]}

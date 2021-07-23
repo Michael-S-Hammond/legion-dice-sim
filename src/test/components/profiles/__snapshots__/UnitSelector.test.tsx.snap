@@ -6,6 +6,7 @@ exports[`UnitSelector matches the snapshot 1`] = `
     className="d-flex mx-auto"
   >
     <select
+      aria-label="Unit name"
       className="rounded px-2 mx-auto"
       id="my-unit-selector-nameSelect"
       onChange={[Function]}
@@ -46,6 +47,7 @@ exports[`UnitSelector matches the snapshot when multiple units have same name 1`
     className="d-flex mx-auto"
   >
     <select
+      aria-label="Unit name"
       className="rounded px-2 mx-auto"
       id="my-unit-selector-nameSelect"
       onChange={[Function]}
@@ -69,6 +71,7 @@ exports[`UnitSelector matches the snapshot when multiple units have same name 1`
     className="d-flex mx-auto mt-2"
   >
     <select
+      aria-label="Unit subtitle"
       className="rounded px-2 mx-auto"
       id="my-unit-selector-subtitleSelect"
       onChange={[Function]}
@@ -94,6 +97,7 @@ exports[`UnitSelector matches the snapshot with subtitle 1`] = `
     className="d-flex mx-auto"
   >
     <select
+      aria-label="Unit name"
       className="rounded px-2 mx-auto"
       id="my-unit-selector-nameSelect"
       onChange={[Function]}

@@ -397,7 +397,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
                     "points": 160,
                     "rank": "commander",
                     "speed": 2,
-                    "subtitle": "Hero of the Empire",
+                    "subtitle": "Hero of the Rebellion",
                     "unique": true,
                     "unitType": "trooper",
                     "upgrades": Array [
@@ -492,6 +492,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
               key="attackProfileSelector-weapon-0"
             >
               <ItemSelector
+                ariaLabel="Weapon 0"
                 dataIndex={0}
                 id="attackProfileSelector-weapon-0"
                 includeBlankItem={true}
@@ -534,6 +535,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
               className="gear-upgrade-img"
             />
             <ItemSelector
+              ariaLabel="Upgrade 0"
               dataIndex={0}
               id="attackProfileSelector-0-upgrade"
               includeBlankItem={true}
@@ -560,6 +562,7 @@ exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
               className="armament-upgrade-img"
             />
             <ItemSelector
+              ariaLabel="Upgrade 1"
               dataIndex={1}
               id="attackProfileSelector-1-upgrade"
               includeBlankItem={true}
@@ -1043,7 +1046,7 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
                     "points": 160,
                     "rank": "commander",
                     "speed": 2,
-                    "subtitle": "Hero of the Empire",
+                    "subtitle": "Hero of the Rebellion",
                     "unique": true,
                     "unitType": "trooper",
                     "upgrades": Array [
@@ -1140,6 +1143,7 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
               className="training-upgrade-img"
             />
             <ItemSelector
+              ariaLabel="Upgrade 0"
               dataIndex={0}
               id="defenseProfileSelector-0-upgrade"
               includeBlankItem={true}
@@ -1171,6 +1175,7 @@ exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
               className="training-upgrade-img"
             />
             <ItemSelector
+              ariaLabel="Upgrade 1"
               dataIndex={1}
               id="defenseProfileSelector-1-upgrade"
               includeBlankItem={true}

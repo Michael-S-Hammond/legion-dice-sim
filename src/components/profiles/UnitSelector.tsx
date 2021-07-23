@@ -75,6 +75,7 @@ class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState>
                         id={this.props.id + "-nameSelect"}
                         value={this.props.selectedUnit.name}
                         className="rounded px-2 mx-auto"
+                        aria-label="Unit name"
                         onChange={this.onNameChange}>
                         { [...new Set(this.props.units.map(u => u.name))].
                             map(name => <option key={name} value={name}>{name}</option>)}
@@ -89,6 +90,7 @@ class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState>
                             id={this.props.id + "-subtitleSelect"}
                             value={this.props.selectedUnit.subtitle}
                             className="rounded px-2 mx-auto"
+                            aria-label="Unit subtitle"
                             onChange={this.onSubtitleChange}>
                             { this.props.units.filter(u => u.name === this.props.selectedUnit.name).map(u =>
                                 <option key={u.name + "-" + u.subtitle} value={u.subtitle}>{u.subtitle}</option>) }

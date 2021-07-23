@@ -5,6 +5,7 @@ import * as UP from '../../code/profiles/UnitProfile';
 type ItemSelectorProps<T extends UP.NamedItem> = {
     id: string,
     dataIndex: number,
+    ariaLabel: string,
     items: Array<T>,
     includeBlankItem: boolean,
     selectedItem: T | null,
@@ -33,7 +34,8 @@ function ItemSelector<T extends UP.NamedItem>(props: ItemSelectorProps<T>) : JSX
             id={props.id + "-itemSelect"}
             value={getStringOrDefault(props.selectedItem?.name)}
             className="rounded-lg px-2 ml-2"
-            onChange={onChange}>
+            onChange={onChange}
+            aria-label={props.ariaLabel}>
             { props.includeBlankItem &&
                 <option key="" value=""></option>
             }
