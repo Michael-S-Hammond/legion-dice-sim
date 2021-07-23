@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 import * as AL from '../../../code/profiles/AllowList';
@@ -243,7 +243,7 @@ describe('ProfileSelectorDialog', () => {
         userEvent.selectOptions(
             screen.getByRole('combobox', { name: 'Upgrade 1', hidden: true }),
             [upgrade.name]);
-        
+
         userEvent.click(screen.getByText('Apply'));
         expect(trackedProfile).toEqual(target);
         expect(trackedUpgrades).toEqual([undefined, upgrade]);

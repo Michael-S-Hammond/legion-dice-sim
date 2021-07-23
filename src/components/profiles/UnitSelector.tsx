@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import * as UP from '../../code/profiles/UnitProfile';
 
@@ -9,97 +9,81 @@ type UnitSelectorProps = {
     onUnitChange: (unit: UP.UnitProfile) => void,
 }
 
-type UnitSelectorState = {
-    matchingNames: number
-}
+function UnitSelector(props: UnitSelectorProps) : JSX.Element {
+    const [matchingNames, setMatchingNames] = useState(getMatchingNameCount(props.selectedUnit.name));
 
-class UnitSelector extends React.Component<UnitSelectorProps, UnitSelectorState> {
-    constructor(props : UnitSelectorProps) {
-        super(props);
-
-        this.state = {
-            matchingNames: this.getMatchingNameCount(props.selectedUnit.name)
-        };
-    }
-
-    private getMatchingNameCount(name: string): number {
-        const count = this.props.units.filter(u => u.name === name).length;
+    function getMatchingNameCount(name: string): number {
+        const count = props.units.filter(u => u.name === name).length;
         return count;
     }
 
-    private doesSubtitleMatch(first: string | undefined, second: string): boolean {
+    function doesSubtitleMatch(first: string | undefined, second: string): boolean {
         return (first === undefined && second.length === 0) || first === second;
     }
 
-    private onNameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const onNameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newName = e.target.value;
-        let newUnit = this.props.selectedUnit;
+        let newUnit = props.selectedUnit;
 
-        const possibleUnits = this.props.units.filter(u => u.name === newName);
+        const possibleUnits = props.units.filter(u => u.name === newName);
         if(possibleUnits.length > 0) {
             newUnit = possibleUnits[0];
         }
 
-        if(newUnit !== this.props.selectedUnit) {
-            this.props.onUnitChange(newUnit);
+        if(newUnit !== props.selectedUnit) {
+            props.onUnitChange(newUnit);
         }
     }
 
-    private onSubtitleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const onSubtitleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newSubtitle = e.target.value;
-        let newUnit = this.props.selectedUnit;
+        let newUnit = props.selectedUnit;
 
-        const possibleUnits = this.props.units.filter(u => u.name === this.props.selectedUnit.name && this.doesSubtitleMatch(u.subtitle, newSubtitle));
+        const possibleUnits = props.units.filter(u => u.name === props.selectedUnit.name && doesSubtitleMatch(u.subtitle, newSubtitle));
         if(possibleUnits.length > 0) {
             newUnit = possibleUnits[0];
         }
 
-        if(newUnit !== this.props.selectedUnit) {
-            this.props.onUnitChange(newUnit);
+        if(newUnit !== props.selectedUnit) {
+            props.onUnitChange(newUnit);
         }
     }
 
-    componentDidUpdate(prevProps: UnitSelectorProps) : void {
-        if(prevProps.selectedUnit !== this.props.selectedUnit) {
-            this.setState({
-                matchingNames: this.getMatchingNameCount(this.props.selectedUnit.name)
-            });
-        }
-    }
+    useEffect(() => {
+        setMatchingNames(getMatchingNameCount(props.selectedUnit.name));
+    }, [props.selectedUnit]);
 
-    render() : JSX.Element {
-        return (
-            <div>
-                <div className="d-flex mx-auto">
+    return (
+        <div>
+            <div className="d-flex mx-auto">
+                <select
+                    id={props.id + "-nameSelect"}
+                    value={props.selectedUnit.name}
+                    className="rounded px-2 mx-auto"
+                    aria-label="Unit name"
+                    onChange={onNameChange}>
+                    { [...new Set(props.units.map(u => u.name))].
+                        map(name => <option key={name} value={name}>{name}</option>)}
+                </select>
+            </div>
+            { matchingNames === 1 && props.selectedUnit.subtitle && props.selectedUnit.subtitle.length > 0 &&
+                <div key={props.id + "-subtitle-one"} className="text-center mt-2 mx-auto">{ props.selectedUnit.subtitle }</div>
+            }
+            { matchingNames > 1 &&
+                <div className="d-flex mx-auto mt-2">
                     <select
-                        id={this.props.id + "-nameSelect"}
-                        value={this.props.selectedUnit.name}
+                        id={props.id + "-subtitleSelect"}
+                        value={props.selectedUnit.subtitle}
                         className="rounded px-2 mx-auto"
-                        aria-label="Unit name"
-                        onChange={this.onNameChange}>
-                        { [...new Set(this.props.units.map(u => u.name))].
-                            map(name => <option key={name} value={name}>{name}</option>)}
+                        aria-label="Unit subtitle"
+                        onChange={onSubtitleChange}>
+                        { props.units.filter(u => u.name === props.selectedUnit.name).map(u =>
+                            <option key={u.name + "-" + u.subtitle} value={u.subtitle}>{u.subtitle}</option>) }
                     </select>
                 </div>
-                { this.state.matchingNames === 1 && this.props.selectedUnit.subtitle && this.props.selectedUnit.subtitle.length > 0 &&
-                    <div key={this.props.id + "-subtitle-one"} className="text-center mt-2 mx-auto">{ this.props.selectedUnit.subtitle }</div>
-                }
-                { this.state.matchingNames > 1 &&
-                    <div className="d-flex mx-auto mt-2">
-                        <select
-                            id={this.props.id + "-subtitleSelect"}
-                            value={this.props.selectedUnit.subtitle}
-                            className="rounded px-2 mx-auto"
-                            aria-label="Unit subtitle"
-                            onChange={this.onSubtitleChange}>
-                            { this.props.units.filter(u => u.name === this.props.selectedUnit.name).map(u =>
-                                <option key={u.name + "-" + u.subtitle} value={u.subtitle}>{u.subtitle}</option>) }
-                        </select>
-                    </div>
-                }
-            </div>
-        );
-    }
+            }
+        </div>
+    );
 }
 
 export default UnitSelector;

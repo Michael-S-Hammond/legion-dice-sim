@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -54,45 +58,49 @@ describe('UnitSelector', () => {
 
     it('handles unit change', () => {
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.rebel && u.rank === UP.Rank.commander);
-        let unit = units.filter(u => u.name === 'Luke Skywalker')[0];
+        let unit = units[0];
         const targetUnit = units.filter(u => u.name === 'Han Solo')[0];
+        expect(unit).not.toEqual(targetUnit);
 
-        const onUnitChange = jest.fn(newUnit => {
+        const onUnitChange = (newUnit: UP.UnitProfile) => {
             unit = newUnit;
-        });
+        };
 
-        const wrapper = shallow(<UnitSelector
-                id='my-unit-selector'
-                selectedUnit={unit}
-                units={units}
-                onUnitChange={onUnitChange}
-            ></UnitSelector>);
-        wrapper.find('#my-unit-selector-nameSelect').simulate('change',
-            { target: { value: 'Han Solo' } });
+        render(<UnitSelector
+            id='my-unit-selector'
+            selectedUnit={unit}
+            units={units}
+            onUnitChange={onUnitChange}
+        ></UnitSelector>);
 
-        expect(onUnitChange).toHaveBeenCalledTimes(1);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name' }),
+            [targetUnit.name]
+        );
         expect(unit).toEqual(targetUnit);
     });
 
     it('handles unit change to one with multiple of the same name', () => {
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.empire && u.rank === UP.Rank.specialForces);
-        let unit = units.filter(u => u.name === 'Imperial Death Troopers')[0];
+        let unit = units[0];
         const targetUnit = units.filter(u => u.name === 'Imperial Special Forces')[0];
+        expect(unit).not.toEqual(targetUnit);
 
-        const onUnitChange = jest.fn(newUnit => {
+        const onUnitChange = (newUnit: UP.UnitProfile) => {
             unit = newUnit;
-        });
+        };
 
-        const wrapper = shallow(<UnitSelector
-                id='my-unit-selector'
-                selectedUnit={unit}
-                units={units}
-                onUnitChange={onUnitChange}
-            ></UnitSelector>);
-        wrapper.find('#my-unit-selector-nameSelect').simulate('change',
-            { target: { value: 'Imperial Special Forces' } });
+        render(<UnitSelector
+            id='my-unit-selector'
+            selectedUnit={unit}
+            units={units}
+            onUnitChange={onUnitChange}
+        ></UnitSelector>);
 
-        expect(onUnitChange).toHaveBeenCalledTimes(1);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name' }),
+            [targetUnit.name]
+        );
         expect(unit).toEqual(targetUnit);
     });
 
@@ -100,45 +108,29 @@ describe('UnitSelector', () => {
         const units = UP.getUnits().filter(u => u.faction === UP.Faction.republic && u.rank === UP.Rank.specialForces);
         let unit = units.filter(u => u.name === 'ARC Troopers')[0];
         const targetUnit = units.filter(u => u.name === 'ARC Troopers')[1];
+        expect(unit).not.toEqual(targetUnit);
 
-        const onUnitChange = jest.fn(newUnit => {
+        const onUnitChange = (newUnit: UP.UnitProfile) => {
             unit = newUnit;
-        });
+        };
 
-        const wrapper = shallow(<UnitSelector
-                id='my-unit-selector'
-                selectedUnit={unit}
-                units={units}
-                onUnitChange={onUnitChange}
-            ></UnitSelector>);
-        wrapper.find('#my-unit-selector-subtitleSelect').simulate('change',
-            { target: { value: 'Strike Team' } });
+        render(<UnitSelector
+            id='my-unit-selector'
+            selectedUnit={unit}
+            units={units}
+            onUnitChange={onUnitChange}
+        ></UnitSelector>);
 
-        expect(onUnitChange).toHaveBeenCalledTimes(1);
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'Unit name' }),
+            [targetUnit.name]
+        );
+        if(targetUnit.subtitle) {
+            userEvent.selectOptions(
+                screen.getByRole('combobox', { name: 'Unit subtitle' }),
+                [targetUnit.subtitle]
+            );
+        }
         expect(unit).toEqual(targetUnit);
-    });
-
-    it('handles updating units', () => {
-        const units = UP.getUnits().filter(u => u.faction === UP.Faction.separatist && u.rank === UP.Rank.specialForces);
-        let unit = units[1];
-        const newUnits = UP.getUnits().filter(u => u.faction === UP.Faction.separatist && u.rank === UP.Rank.operative);
-        const targetUnit = newUnits[0];
-
-        const onUnitChange = jest.fn(newUnit => {
-            unit = newUnit;
-        });
-
-        const selector = shallow(<UnitSelector
-                id='my-unit-selector'
-                selectedUnit={unit}
-                units={units}
-                onUnitChange={onUnitChange}
-            ></UnitSelector>);
-        expect(selector.state('matchingNames')).toEqual(2);
-        selector.setProps({
-            units: newUnits,
-            selectedUnit: targetUnit
-        });
-        expect(selector.state('matchingNames')).toEqual(1);
     });
 });
