@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -22,17 +26,16 @@ describe('FactionButtonGroup', () => {
 
     it('handles being clicked', () => {
         let faction = UP.Faction.rebel;
-        const onFactionChange = jest.fn((newFaction) => {
+        function onFactionChange(newFaction: UP.Faction) {
             faction = newFaction;
-        });
+        }
 
-        const wrapper = shallow(<FactionButtonGroup
-            faction={faction}
-            onFactionChange={onFactionChange}
-        ></FactionButtonGroup>);
-        wrapper.find('#' + UP.Faction.separatist).simulate('change', { target: { value: String(UP.Faction.separatist) }});
+        render(<FactionButtonGroup
+                faction={faction}
+                onFactionChange={onFactionChange}
+            ></FactionButtonGroup>);
 
-        expect(onFactionChange).toHaveBeenCalledTimes(1);
+        userEvent.click(screen.getByTitle('Separatist'));
         expect(faction).toEqual(UP.Faction.separatist);
     })
 });

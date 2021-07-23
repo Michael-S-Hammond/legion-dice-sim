@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -9,42 +13,16 @@ import ItemSelector from '../../../components/profiles/ItemSelector';
 describe('ItemSelector', () => {
     it('matches the snapshot', () => {
         const onWeaponChange = jest.fn();
+        const unit = UP.getUnits().filter(u => u.name === 'Luke Skywalker' && u.rank === UP.Rank.commander)[0];
         const id = "ws-5";
         const index = 3;
-        const selectedWeapon: UP.Weapon = {
-            name: "Lightsaber",
-            minimumRange: 0,
-            maximumRange: 0,
-            dice: {
-                red: 3,
-                black: 2,
-                white: 1
-            },
-            keywords: {
-                impact: 2,
-                pierce: 2
-            }
-        };
-        const weapons = [
-            selectedWeapon, {
-                name: "Blaster",
-                minimumRange: 1,
-                maximumRange: 2,
-                dice: {
-                    red: 0,
-                    black: 1,
-                    white: 4
-                },
-                keywords: {
-                    pierce: 1
-                }
-            }
-        ];
+        const selectedWeapon = unit.weapons[0];
 
         const selector = shallow(<ItemSelector<UP.Weapon>
                 id={id}
                 dataIndex={index}
-                items={weapons}
+                ariaLabel='testSelector'
+                items={unit.weapons}
                 includeBlankItem={true}
                 selectedItem={selectedWeapon}
                 onItemChange={onWeaponChange}
@@ -54,104 +32,62 @@ describe('ItemSelector', () => {
     });
 
     it('handles value change', () => {
-        let weapon: UP.Weapon | null = null;
-        const onWeaponChange = jest.fn((_, newWeapon) => {
-            weapon = newWeapon;
-        });
+        const unit = UP.getUnits().filter(u => u.name === 'Luke Skywalker' && u.rank === UP.Rank.commander)[0];
         const id = "ws-5";
         const index = 3;
-        const selectedWeapon: UP.Weapon = {
-            name: "Lightsaber",
-            minimumRange: 0,
-            maximumRange: 0,
-            dice: {
-                red: 3,
-                black: 2,
-                white: 1
-            },
-            keywords: {
-                impact: 2,
-                pierce: 2
-            }
-        };
-        const weapons = [
-            selectedWeapon, {
-                name: "Blaster",
-                minimumRange: 1,
-                maximumRange: 2,
-                dice: {
-                    red: 0,
-                    black: 1,
-                    white: 4
-                },
-                keywords: {
-                    pierce: 1
-                }
-            }
-        ];
+        const startingWeapon: UP.Weapon | null = null;
+        let selectedWeapon: UP.Weapon | null = startingWeapon;
+        let eventIndex = 0;
 
-        const wrapper = shallow(<ItemSelector<UP.Weapon>
-            id={id}
-            dataIndex={index}
-            items={weapons}
-            includeBlankItem={true}
-            selectedItem={selectedWeapon}
-            onItemChange={onWeaponChange}
-        />);
-        wrapper.find("#" + id + "-itemSelect").simulate('change', { target: { value: weapons[1].name }});
+        function onWeaponChange(idx: any, newWeapon: UP.Weapon | null) {
+            eventIndex = idx;
+            selectedWeapon = newWeapon;
+        }
 
-        expect(onWeaponChange).toHaveBeenCalledTimes(1);
-        expect(weapon).toEqual(weapons[1]);
-    })
+        render(<ItemSelector<UP.Weapon>
+                id={id}
+                dataIndex={index}
+                ariaLabel='testSelector'
+                items={unit.weapons}
+                includeBlankItem={true}
+                selectedItem={startingWeapon}
+                onItemChange={onWeaponChange}
+            />);
+
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'testSelector' }),
+            [unit.weapons[1].name]);
+        expect(eventIndex).toEqual(index);
+        expect(selectedWeapon).toEqual(unit.weapons[1]);
+    });
 
     it('handles clearing value', () => {
-        let weapon: UP.Weapon | null = null;
-        const onWeaponChange = jest.fn((_, newWeapon) => {
-            weapon = newWeapon;
-        });
+        const unit = UP.getUnits().filter(u => u.name === 'Luke Skywalker' && u.rank === UP.Rank.commander)[0];
         const id = "ws-5";
         const index = 3;
-        const selectedWeapon: UP.Weapon = {
-            name: "Lightsaber",
-            minimumRange: 0,
-            maximumRange: 0,
-            dice: {
-                red: 3,
-                black: 2,
-                white: 1
-            },
-            keywords: {
-                impact: 2,
-                pierce: 2
-            }
-        };
-        const weapons = [
-            selectedWeapon, {
-                name: "Blaster",
-                minimumRange: 1,
-                maximumRange: 2,
-                dice: {
-                    red: 0,
-                    black: 1,
-                    white: 4
-                },
-                keywords: {
-                    pierce: 1
-                }
-            }
-        ];
+        const startingWeapon: UP.Weapon | null = unit.weapons[0];
+        let selectedWeapon: UP.Weapon | null = startingWeapon;
+        let eventIndex = 0;
 
-        const wrapper = shallow(<ItemSelector<UP.Weapon>
-            id={id}
-            dataIndex={index}
-            items={weapons}
-            includeBlankItem={true}
-            selectedItem={selectedWeapon}
-            onItemChange={onWeaponChange}
-        />);
-        wrapper.find("#" + id + "-itemSelect").simulate('change', { target: { value: "" }});
+        function onWeaponChange(idx: any, newWeapon: UP.Weapon | null) {
+            eventIndex = idx;
+            selectedWeapon = newWeapon;
+        }
 
-        expect(onWeaponChange).toHaveBeenCalledTimes(1);
-        expect(weapon).toBeNull();
-    })
+        render(<ItemSelector<UP.Weapon>
+                id={id}
+                dataIndex={index}
+                ariaLabel='testSelector'
+                items={unit.weapons}
+                includeBlankItem={true}
+                selectedItem={startingWeapon}
+                onItemChange={onWeaponChange}
+            />);
+
+        userEvent.selectOptions(
+            screen.getByRole('combobox', { name: 'testSelector' }),
+            ['']);
+        expect(eventIndex).toEqual(index);
+        expect(selectedWeapon).toEqual(null);
+    });
 });

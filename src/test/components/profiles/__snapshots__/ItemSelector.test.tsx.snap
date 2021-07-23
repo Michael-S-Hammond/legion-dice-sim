@@ -2,26 +2,27 @@
 
 exports[`ItemSelector matches the snapshot 1`] = `
 <select
+  aria-label="testSelector"
   className="rounded-lg px-2 ml-2"
   id="ws-5-itemSelect"
   onChange={[Function]}
-  value="Lightsaber"
+  value="Anakin's Lightsaber"
 >
   <option
     key=""
     value=""
   />
   <option
-    key="Lightsaber"
-    value="Lightsaber"
+    key="Anakin's Lightsaber"
+    value="Anakin's Lightsaber"
   >
-    Lightsaber
+    Anakin's Lightsaber
   </option>
   <option
-    key="Blaster"
-    value="Blaster"
+    key="Luke's DL-44 Blaster Pistol"
+    value="Luke's DL-44 Blaster Pistol"
   >
-    Blaster
+    Luke's DL-44 Blaster Pistol
   </option>
 </select>
 `;

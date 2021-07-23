@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
@@ -21,17 +25,16 @@ describe('RankButtonGroup', () => {
 
     it('handles being clicked', () => {
         let rank = UP.Rank.commander;
-        const onRankChange = jest.fn((newRank) => {
+        function onRankChange(newRank: UP.Rank) {
             rank = newRank;
-        });
+        }
 
-        const wrapper = shallow(<RankButtonGroup
+        render(<RankButtonGroup
             rank={rank}
             onRankChange={onRankChange}
         ></RankButtonGroup>);
-        wrapper.find('#' + UP.Rank.specialForces).simulate('change', { target: { value: String(UP.Rank.specialForces) }});
 
-        expect(onRankChange).toHaveBeenCalledTimes(1);
+        userEvent.click(screen.getByTitle('Special Forces'));
         expect(rank).toEqual(UP.Rank.specialForces);
     })
 });
