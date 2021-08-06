@@ -130,6 +130,7 @@ export type Hover = {
 export enum UnitImmune {
     blast = "blast",
     melee = "melee",
+    meleePierce = "meleePierce",
     pierce = "pierce",
     range1Weapons = "range1Weapons"
 }
@@ -236,7 +237,7 @@ export type UnitKeyword = {
     reliable?: number,
     repair?: CapacityUnitKeyword,
     reposition?: boolean
-    retinue?: string,
+    retinue?: UnitCriteria,
     scale?: boolean,
     scout?: number,
     scoutingParty?: number,

@@ -222,8 +222,9 @@ export class DiceRoller {
     // makashi mastery
     if(modifiedInput.offense.makashiMastery && modifiedInput.combat.meleeAttack &&
         modifiedInput.offense.pierceX.active && modifiedInput.offense.pierceX.value > 1 &&
-        (modifiedInput.defense.immunePierce || modifiedInput.defense.impervious)) {
+        (modifiedInput.defense.immunePierce || modifiedInput.defense.immuneMeleePierce || modifiedInput.defense.impervious)) {
       modifiedInput.offense.pierceX.value--;
+      modifiedInput.defense.immuneMeleePierce = false;
       modifiedInput.defense.immunePierce = false;
       modifiedInput.defense.impervious = false;
     }
@@ -491,7 +492,7 @@ export class DiceRoller {
     let defenseDiceCount = status.defenseResult.forcedSaves;
 
     // honor immune: pierce
-    if(modifiedInput.defense.immunePierce) {
+    if(modifiedInput.defense.immunePierce || (modifiedInput.defense.immuneMeleePierce && modifiedInput.combat.meleeAttack)) {
       modifiedInput.offense.pierceX.active = false;
     }
 

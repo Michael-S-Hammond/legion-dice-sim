@@ -935,7 +935,7 @@
             "equip": ["Tristan Wren", "Ursa Wren"],
             "impervious": true,
             "nimble": true,
-            "retinue": "Sabine Wren"
+            "retinue": { "unit": "Sabine Wren" }
         }
     },{
         "faction": "rebel",
@@ -2010,7 +2010,7 @@
             "infiltrate": true,
             "marksman": true,
             "reliable": 1,
-            "retinue": "Iden Versio"
+            "retinue": { "unit": "Iden Versio" }
         }
     },{
         "faction": "empire",
@@ -3444,8 +3444,49 @@
         }
     },{
         "faction": "separatist",
+        "name": "IG-100 MagnaGuard",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Electrostaff",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Precision Laser Dart",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "comms", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "charge": true,
+            "guardian": 2,
+            "immune": [ "meleePierce" ],
+            "retinue": { "rank": "commander" },
+            "unhindered": true
+        }
+    },{
+        "faction": "separatist",
         "name": "DRK-1 Sith Probe Droids",
-        "rank": "operative",
+        "rank": "specialForces",
         "miniCount": 3,
         "points": 35,
         "unitType": "droidTrooper",

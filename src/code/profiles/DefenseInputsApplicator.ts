@@ -60,10 +60,13 @@ function applyUpgrade(upgrade: UC.Upgrade, tracking: Tracking) {
         if(upgrade.keywords.immune) {
             upgrade.keywords.immune.forEach(i => {
                 switch(i) {
-                    case "blast":
+                    case UP.UnitImmune.blast:
                         tracking.defense.immuneBlast = true;
                         break;
-                    case "pierce":
+                    case UP.UnitImmune.meleePierce:
+                        tracking.defense.immuneMeleePierce = true;
+                        break;
+                    case UP.UnitImmune.pierce:
                         tracking.defense.immunePierce = true;
                         break;
                 }
@@ -110,8 +113,9 @@ function createTrackingObject(profile: UP.UnitProfile, upgrades: Array<UC.Upgrad
             djemSoMastery: getBoolean(profile.keywords?.djemSoMastery),
             duelist: getBoolean(profile.keywords?.duelist),
             hasForceUpgrades: (profile.upgrades || []).filter(u => u === UP.UnitUpgrade.force).length > 0,
-            immuneBlast: (profile.keywords?.immune || []).filter(i => i === "blast").length > 0,
-            immunePierce: (profile.keywords?.immune || []).filter(i => i === "pierce").length > 0,
+            immuneBlast: (profile.keywords?.immune || []).filter(i => i === UP.UnitImmune.blast).length > 0,
+            immuneMeleePierce: (profile.keywords?.immune || []).filter(i => i === UP.UnitImmune.meleePierce).length > 0,
+            immunePierce: (profile.keywords?.immune || []).filter(i => i === UP.UnitImmune.pierce).length > 0,
             impervious: getBoolean(profile.keywords?.impervious),
             lowProfile: getBoolean(profile.keywords?.lowProfile),
             outmaneuver: getBoolean(profile.keywords?.outmaneuver),
