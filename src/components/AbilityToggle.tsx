@@ -29,7 +29,7 @@ function AbilityToggle(props: AbilityProps) : JSX.Element {
                 onChange={handleActiveChanged}></input>
             <label key={`${props.id}-abilitytoggle-label`} className="custom-control-label drop-down-label mx-2 my-auto" htmlFor={props.id}>{props.label}</label>
             { props.alert &&
-                <a id={`${props.id}-abilitytoggle-popover`} tabIndex={0} role="button" className="btn btn-outline-secondary popover-button"
+                <a id={`${props.id}-abilitytoggle-popover`} tabIndex={0} role="button" className="btn popover-button"
                     data-toggle="popover" data-trigger="focus" data-placement="top" title="Info"
                     data-content={props.alert}></a>
             }
