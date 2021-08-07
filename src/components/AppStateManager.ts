@@ -1,5 +1,3 @@
-import Cookies from 'js-cookie';
-
 import * as T from '../code/Types';
 import * as UP from '../code/profiles/UnitProfile';
 import * as UC from '../code/profiles/UpgradeCard';
@@ -794,17 +792,7 @@ export class AppStateManager {
             showSimpleView: false,
         };
 
-        if(settingsString === null) {
-            const showExpectedRangeCookie = Cookies.get('showExpectedRange');
-            if(showExpectedRangeCookie !== undefined) {
-                settingsObject.showExpectedRange = showExpectedRangeCookie === 'true';
-            }
-
-            const showSimpleViewCookie = Cookies.get('showSimpleView');
-            if(showSimpleViewCookie !== undefined) {
-                settingsObject.showSimpleView = showSimpleViewCookie === 'true';
-            }
-        } else {
+        if(settingsString) {
             try {
                 const rawObject = JSON.parse(settingsString);
                 if(rawObject.hasOwnProperty('showExpectedRange')) {
