@@ -75,7 +75,7 @@ exports[`DiceResults matches the snapshot when not visible 1`] = `
       <h3
         className="stats-header"
       >
-        Required Blocks
+        Required Saves
       </h3>
       <div>
         <span
@@ -226,7 +226,7 @@ exports[`DiceResults matches the snapshot when showing graph result 1`] = `
       <h3
         className="stats-header"
       >
-        Required Blocks
+        Required Saves
       </h3>
       <div>
         <span
@@ -377,7 +377,7 @@ exports[`DiceResults matches the snapshot when showing single result 1`] = `
       <h3
         className="stats-header"
       >
-        Required Blocks
+        Required Saves
       </h3>
       <div>
         <span
