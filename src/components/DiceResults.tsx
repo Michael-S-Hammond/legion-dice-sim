@@ -1,7 +1,6 @@
 import '../css/DiceResults.css';
 
 import React from 'react';
-import * as mjs from 'mathjs';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ExpMod from 'highcharts/modules/exporting';
@@ -158,10 +157,61 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                     }
                 },
             },
+            exporting: {
+                chartOptions: {
+                    chart: {
+                        height: 800,
+                        width: 1200,
+                        marginBottom: 200,
+                        events: {
+                            load: function () {
+                                const headerCss: Highcharts.CSSObject = {
+                                    fontSize: '20px',
+                                    fontWeight: 'bold'
+                                };
+                                const statCss: Highcharts.CSSObject = {
+                                    fontSize: '14px'
+                                };
+
+                                const valuesOffset = 150;
+                                const verticalStart = 700;
+                                const verticalOffset = 25;
+                                const headerOffset = 25;
+
+                                const savesLeft = 300;
+                                const saveValuesLeft = savesLeft + valuesOffset;
+
+                                this.renderer.text('Required Saves', savesLeft + headerOffset, verticalStart, true).css(headerCss).add();
+                                this.renderer.text('Mean:', savesLeft, verticalStart + verticalOffset, true).css(statCss).add();
+                                this.renderer.text('Median:', savesLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
+                                this.renderer.text('Standard Deviation:', savesLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
+                                this.renderer.text(String(forcedSaveStats.mean), saveValuesLeft, verticalStart + verticalOffset, true).css(statCss).add();
+                                this.renderer.text(String(forcedSaveStats.median), saveValuesLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
+                                this.renderer.text(String(forcedSaveStats.stddev), saveValuesLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
+
+                                const woundsLeft = 725;
+                                const woundsValuesLeft = woundsLeft + valuesOffset;
+
+                                this.renderer.text('Mean:', woundsLeft, verticalStart + verticalOffset, true).css(statCss).add();
+                                this.renderer.text('Median:', woundsLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
+                                this.renderer.text('Standard Deviation:', woundsLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
+                                this.renderer.text(String(woundStats.mean), woundsValuesLeft, verticalStart + verticalOffset, true).css(statCss).add();
+                                this.renderer.text(String(woundStats.median), woundsValuesLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
+                                this.renderer.text(String(woundStats.stddev), woundsValuesLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
+
+                                this.renderer.text('Wounds', woundsLeft + headerOffset, verticalStart, true).css(headerCss).add();
+                            }
+                        }
+                    },
+                    legend: {
+                        y: -120
+                    }
+                }
+            }
         };
     }
 
-    componentDidUpdate() : void{
+    componentDidUpdate(): void {
         if (this.props.visibility === T.ResultOutput.Graph) {
             this.updateChart();
         }
@@ -206,11 +256,11 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
         this.performScrollIntoView();
     }
 
-    public forceChartUpdate() : void {
+    public forceChartUpdate(): void {
         this.refreshChart = true;
     }
 
-    public scrollIntoView() : void {
+    public scrollIntoView(): void {
         this.scrollUIIntoView = true;
     }
 
@@ -221,7 +271,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
         this.scrollUIIntoView = false;
     }
 
-    render() : JSX.Element {
+    render(): JSX.Element {
         return (
             <div ref={this.rootElementRef}>
                 <div className={`single-result justify-content-center my-3 ${this.props.visibility === T.ResultOutput.Single ? 'collapse.show' : 'collapse'}`}>
@@ -249,18 +299,18 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                 </div>
                 <div className={`row ${this.props.visibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}>
                     <div className="col-md-3 offset-md-3 my-3">
-                        <h3 className="stats-header">Required Blocks</h3>
+                        <h3 className="stats-header">Required Saves</h3>
                         <div>
                             <span className="stats-label">Median: </span>
                             <span>{this.props.results.summary.forcedSaveStats.median}</span>
                         </div>
                         <div>
                             <span className="stats-label">Mean: </span>
-                            <span>{mjs.round(this.props.results.summary.forcedSaveStats.mean, 3)}</span>
+                            <span>{this.props.results.summary.forcedSaveStats.mean}</span>
                         </div>
                         <div>
                             <span className="stats-label">Standard Deviation: </span>
-                            <span>{mjs.round(this.props.results.summary.forcedSaveStats.stddev, 3)}</span>
+                            <span>{this.props.results.summary.forcedSaveStats.stddev}</span>
                         </div>
                     </div>
                     <div className="col-md-3 my-3">
@@ -271,11 +321,11 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                         </div>
                         <div>
                             <span className="stats-label">Mean: </span>
-                            <span>{mjs.round(this.props.results.summary.woundStats.mean, 3)}</span>
+                            <span>{this.props.results.summary.woundStats.mean}</span>
                         </div>
                         <div>
                             <span className="stats-label">Standard Deviation: </span>
-                            <span>{mjs.round(this.props.results.summary.woundStats.stddev, 3)}</span>
+                            <span>{this.props.results.summary.woundStats.stddev}</span>
                         </div>
                     </div>
                 </div>
