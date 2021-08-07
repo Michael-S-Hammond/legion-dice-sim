@@ -79,6 +79,7 @@ exports[`AttackAbilities matches the snapshot 1`] = `
   />
   <AbilityToggle
     active={false}
+    alert="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
     id="marksmanXToggle"
     label="Marksman"
     onActiveChanged={[MockFunction]}
@@ -206,6 +207,7 @@ exports[`AttackAbilities matches the snapshot for simplified view 1`] = `
   />
   <AbilityToggle
     active={false}
+    alert="Marksman is not yet fully optimized for some edge cases, especially against Armor X."
     id="marksmanXToggle"
     label="Marksman"
     onActiveChanged={[MockFunction]}

@@ -94,6 +94,7 @@ function AttackAbilities(props: AttackAbilitiesProps) : JSX.Element {
                 id='marksmanXToggle'
                 label='Marksman'
                 visible={!props.showSimpleView}
+                alert='Marksman is not yet fully optimized for some edge cases, especially against Armor X.'
                 active={props.input.marksman}
                 onActiveChanged={props.eventHandlers.handleMarksmanChange}
                 ></AbilityToggle>
