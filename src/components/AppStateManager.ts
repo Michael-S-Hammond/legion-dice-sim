@@ -1,6 +1,8 @@
-import Cookies from 'js-cookie';
-
 import * as T from '../code/Types';
+import * as UP from '../code/profiles/UnitProfile';
+import * as UC from '../code/profiles/UpgradeCard';
+import * as AIA from '../code/profiles/AttackInputsApplicator';
+import * as DIA from '../code/profiles/DefenseInputsApplicator';
 
 export type AppState = {
     inputs: T.AttackInput,
@@ -33,6 +35,7 @@ export type AppStateAttackEventHandlers = {
     handleLethalXChange: (active: boolean) => void,
     handleLethalXValueChange: (value: number) => void,
     handleMakashiMasteryChange: (active: boolean) => void,
+    handleMarksmanChange: (active: boolean) => void,
     handlePierceXChange: (active: boolean) => void,
     handlePierceXValueChange: (value: number) => void,
     handlePreciseXChange: (active: boolean) => void,
@@ -63,6 +66,7 @@ export type AppStateDefenseEventHandlers = {
     handleDuelistChange: (active: boolean) => void,
     handleHasForceUpgradesChange: (active: boolean) => void,
     handleImmuneBlastChange: (active: boolean) => void,
+    handleImmuneMeleePierceChange: (active: boolean) => void,
     handleImmunePierceChange: (active: boolean) => void,
     handleImperviousChange: (active: boolean) => void,
     handleLowProfileChange: (active: boolean) => void,
@@ -175,6 +179,21 @@ export class AppStateManager {
         this.setState(newState);
     }
 
+    public applyAttackStateProfile(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrades: Array<UC.Upgrade>) : void {
+        const newState = this.cloneState();
+        const input = AIA.createAttackInputsFromProfile(profile, weapons, upgrades, newState.inputs.offense.tokens);
+        newState.inputs.offense = input.offense;
+        newState.inputs.combat.meleeAttack = input.combat.meleeAttack;
+        this.setState(newState);
+    }
+
+    public applyDefenseStateProfile(profile: UP.UnitProfile, upgrades: Array<UC.Upgrade>) : void {
+        const newState = this.cloneState();
+        const input = DIA.createDefenseInputsFromProfile(profile, upgrades, newState.inputs.defense.tokens);
+        newState.inputs.defense = input.defense;
+        this.setState(newState);
+    }
+
     private setState(newState: AppState) {
         this._state = newState;
         this._setState(newState);
@@ -259,6 +278,7 @@ export class AppStateManager {
             handleLethalXChange: (active: boolean) => this.handleLethalXChange(active),
             handleLethalXValueChange: (value: number) => this.handleLethalXValueChange(value),
             handleMakashiMasteryChange: (active: boolean) => this.handleMakashiMasteryChange(active),
+            handleMarksmanChange: (active: boolean) => this.handleMarksmanChange(active),
             handlePierceXChange: (active: boolean) => this.handlePierceXChange(active),
             handlePierceXValueChange: (value: number) => this.handlePierceXValueChange(value),
             handlePreciseXChange: (active: boolean) => this.handlePreciseXChange(active),
@@ -399,6 +419,12 @@ export class AppStateManager {
         this.setState(newState);
     }
 
+    private handleMarksmanChange(active: boolean) {
+        const newState = this.cloneState();
+        newState.inputs.offense.marksman = active;
+        this.setState(newState);
+    }
+
     private handlePierceXChange(hasPierceX: boolean) {
         const newState = this.cloneState();
         newState.inputs.offense.pierceX.active = hasPierceX;
@@ -469,6 +495,7 @@ export class AppStateManager {
             handleDuelistChange: (active: boolean) => this.handleDuelistDefenseChange(active),
             handleHasForceUpgradesChange: (active: boolean) => this.handleHasForceUpgradesChange(active),
             handleImmuneBlastChange: (active: boolean) => this.handleImmuneBlastChange(active),
+            handleImmuneMeleePierceChange: (active: boolean) => this.handleImmuneMeleePierceChange(active),
             handleImmunePierceChange: (active: boolean) => this.handleImmunePierceChange(active),
             handleImperviousChange: (active: boolean) => this.handleImperviousChange(active),
             handleLowProfileChange: (active: boolean) => this.handleLowProfileChange(active),
@@ -626,10 +653,21 @@ export class AppStateManager {
         this.setState(newState);
     }
 
+    private handleImmuneMeleePierceChange(active: boolean) {
+        const newState = this.cloneState();
+        newState.inputs.defense.immuneMeleePierce = active;
+        if (active) {
+            newState.inputs.defense.immunePierce = false;
+            newState.inputs.defense.impervious = false;
+        }
+        this.setState(newState);
+    }
+
     private handleImmunePierceChange(hasImmunePierce: boolean) {
         const newState = this.cloneState();
         newState.inputs.defense.immunePierce = hasImmunePierce;
         if (hasImmunePierce) {
+            newState.inputs.defense.immuneMeleePierce = false;
             newState.inputs.defense.impervious = false;
         }
         this.setState(newState);
@@ -639,6 +677,7 @@ export class AppStateManager {
         const newState = this.cloneState();
         newState.inputs.defense.impervious = hasImpervious;
         if (hasImpervious) {
+            newState.inputs.defense.immuneMeleePierce = false;
             newState.inputs.defense.immunePierce = false;
         }
         this.setState(newState);
@@ -753,17 +792,7 @@ export class AppStateManager {
             showSimpleView: false,
         };
 
-        if(settingsString === null) {
-            const showExpectedRangeCookie = Cookies.get('showExpectedRange');
-            if(showExpectedRangeCookie !== undefined) {
-                settingsObject.showExpectedRange = showExpectedRangeCookie === 'true';
-            }
-    
-            const showSimpleViewCookie = Cookies.get('showSimpleView');
-            if(showSimpleViewCookie !== undefined) {
-                settingsObject.showSimpleView = showSimpleViewCookie === 'true';
-            }
-        } else {
+        if(settingsString) {
             try {
                 const rawObject = JSON.parse(settingsString);
                 if(rawObject.hasOwnProperty('showExpectedRange')) {

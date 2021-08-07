@@ -5,7 +5,10 @@ import React from 'react';
 
 import * as DU from '../code/DiceRoller';
 import * as T from '../code/Types';
+import * as UP from '../code/profiles/UnitProfile';
+import * as UC from '../code/profiles/UpgradeCard';
 import * as AS from './AppStateManager';
+import * as AL from '../code/profiles/AllowList';
 
 import Attack from './Attack';
 import Combat from './Combat';
@@ -13,13 +16,13 @@ import Defense from './Defense';
 import DiceResults from './DiceResults';
 // import Notification from './Notification';
 import Header from './Header';
+import ProfileSelectorDialog from './profiles/ProfileSelectorDialog';
 
 import { Telemetry } from '../tools/Telemetry';
 
 class App extends React.Component<any, AS.AppState> { // eslint-disable-line @typescript-eslint/no-explicit-any
   private _stateManager: AS.AppStateManager;
   private _diceResultsRef: React.RefObject<DiceResults>;
-  private _telemetry: Telemetry;
 
   constructor(props: any) { // eslint-disable-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
     super(props);
@@ -28,7 +31,6 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
     this.state = this._stateManager.state;
 
     this._diceResultsRef = React.createRef();
-    this._telemetry = new Telemetry();
   }
 
   private handleShowExpectedRangeChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +61,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
 
     performance.measure('roll duration', 'start roll', 'end roll');
     const rollDuration = MJS.round(performance.getEntriesByName('roll duration', 'measure')[0].duration, 3);
-    this._telemetry.trackEvent("RollDice", {
+    Telemetry.trackEvent("RollDice", {
       Rolls: this.state.diceRolls,
       Duration: rollDuration,
       SimpleView: this.state.showSimpleView,
@@ -76,6 +78,18 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
       <main role="main">
         <Header></Header>
         {/* <Notification message='Rerolls received a substantial update. More coming soon.'></Notification> */}
+
+        <ProfileSelectorDialog
+          id='attackProfileDialog'
+          applyProfile={(profile: UP.UnitProfile, weapons: Array<UP.Weapon>, upgrade: Array<UC.Upgrade>) => this._stateManager.applyAttackStateProfile(profile, weapons, upgrade)}
+          upgradeAllowListName={AL.AllowListName.attack}
+        ></ProfileSelectorDialog>
+        <ProfileSelectorDialog
+          id='defenseProfileDialog'
+          applyProfile={(profile: UP.UnitProfile, _: Array<UP.Weapon>, upgrade: Array<UC.Upgrade>) => this._stateManager.applyDefenseStateProfile(profile, upgrade)}
+          upgradeAllowListName={AL.AllowListName.defense}
+        ></ProfileSelectorDialog>
+
         <div className="container">
           <div className="row">
             <div className="col-md-8 offset-md-2 mt-3">
@@ -95,6 +109,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
           <div className="row">
             <div className={`col-md-5 offset-md-1 col-lg-4 ${this.state.showSimpleView ? 'offset-lg-2' : 'offset-lg-0'}`}>
               <Attack
+                profileDialogId="attackProfileDialog"
                 showSimpleView={this.state.showSimpleView}
                 input={this.state.inputs.offense}
                 eventHandlers={this._stateManager.attackEventHandlers}
@@ -102,6 +117,7 @@ class App extends React.Component<any, AS.AppState> { // eslint-disable-line @ty
             </div>
             <div className="col-md-5 col-lg-4">
               <Defense
+                profileDialogId="defenseProfileDialog"
                 showSimpleView={this.state.showSimpleView}
                 input={this.state.inputs.defense}
                 eventHandlers={this._stateManager.defenseEventHandlers}

@@ -8,21 +8,21 @@ describe('ArmorRerollStrategy', () => {
     it('does not handle if no armor', () => {
         const strategy = new ArmorRerollStrategy();
         const input = T.createDefaultAttackInput();
-        expect(strategy.shouldHandle(input, RerollReason.ObservationToken)).toEqual(false);
+        expect(strategy.shouldHandle(input)).toEqual(false);
     });
 
     it('does not handle armor X', () => {
         const strategy = new ArmorRerollStrategy();
         const input = T.createDefaultAttackInput();
         input.defense.armorX.active = true;
-        expect(strategy.shouldHandle(input, RerollReason.ObservationToken)).toEqual(false);
+        expect(strategy.shouldHandle(input)).toEqual(false);
     });
 
     it('handles if armor', () => {
         const strategy = new ArmorRerollStrategy();
         const input = T.createDefaultAttackInput();
         input.defense.armor = true;
-        expect(strategy.shouldHandle(input, RerollReason.ObservationToken)).toEqual(true);
+        expect(strategy.shouldHandle(input)).toEqual(true);
     });
 
     it('is retrieved from factory correctly', () => {

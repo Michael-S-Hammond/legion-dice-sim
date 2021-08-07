@@ -1,0 +1,218 @@
+{
+    "$id": "http://www.legiondice.com/schemas/upgrade",
+    "definitions": {
+        "baseUpgrade": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string", "minLength": 1 },
+                "name": { "type": "string", "minLength": 1 },
+                "unique": { "type": "boolean" },
+                "points": { "type": "number", "minimum": 0, "maximum": 40 },
+                "keywords": { "$ref": "unitkeywords#/definitions/keywords" },
+                "restrictions": {
+                    "type": "array",
+                    "items": { "$ref": "unitcriteria#/definitions/unitCriteria" }
+                }
+            },
+            "required": ["name", "points"]
+        },
+        "armamentUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "armament" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "commandUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "command" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "commsUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "comms" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "counterpartUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "counterpart" },
+                        "unitType": { "$ref": "unittype#/definitions/unitType" },
+                        "miniCount": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "crewUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "crew" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "forceUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "force" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "gearUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "gear" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "generatorUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "generator" },
+                        "weaponKeywords": { "$ref": "weaponkeywords#/definitions/keywords" }
+                    }
+                }
+            ],
+            "required": ["type", "weaponKeywords"]
+        },
+        "grenadesUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "grenades" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" },
+                        "applyWeaponKeywordsOnce": { "type": "boolean" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "hardpointUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "hardpoint" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type", "weapon"]
+        },
+        "heavyWeaponUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "heavyWeapon" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "ordinanceUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "ordinance" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "personnelUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "personnel" },
+                        "weapon": { "$ref": "weapon#/definitions/weapon" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "pilotUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "pilot" },
+                        "weaponKeywords": { "$ref": "weaponkeywords#/definitions/keywords" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "trainingUpgrade": {
+            "allOf": [
+                { "$ref": "#/definitions/baseUpgrade" },
+                {
+                    "properties": {
+                        "type": { "const": "training" }
+                    }
+                }
+            ],
+            "required": ["type"]
+        },
+        "upgrade": {
+            "type": "object",
+            "oneOf": [
+                { "$ref": "#/definitions/armamentUpgrade" },
+                { "$ref": "#/definitions/commandUpgrade" },
+                { "$ref": "#/definitions/commsUpgrade" },
+                { "$ref": "#/definitions/counterpartUpgrade" },
+                { "$ref": "#/definitions/crewUpgrade" },
+                { "$ref": "#/definitions/forceUpgrade" },
+                { "$ref": "#/definitions/gearUpgrade" },
+                { "$ref": "#/definitions/generatorUpgrade" },
+                { "$ref": "#/definitions/grenadesUpgrade" },
+                { "$ref": "#/definitions/hardpointUpgrade" },
+                { "$ref": "#/definitions/heavyWeaponUpgrade" },
+                { "$ref": "#/definitions/ordinanceUpgrade" },
+                { "$ref": "#/definitions/personnelUpgrade" },
+                { "$ref": "#/definitions/pilotUpgrade" },
+                { "$ref": "#/definitions/trainingUpgrade"}
+            ]
+        }
+    }
+}

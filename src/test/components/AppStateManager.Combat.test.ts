@@ -1,7 +1,5 @@
 import * as AS from '../../components/AppStateManager';
 
-jest.mock('js-cookie');
-
 describe('AppStateManager', () => {
     let state: AS.AppState | undefined = undefined;
     const setState = (newState: AS.AppState) => {

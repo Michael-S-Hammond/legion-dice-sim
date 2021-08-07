@@ -14,6 +14,7 @@ describe('Defense', () => {
         const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
         const defense = shallow(<Defense
+            profileDialogId="defenseProfileDialog"
             showSimpleView={false}
             input={input.defense}
             eventHandlers={events}
@@ -28,6 +29,7 @@ describe('Defense', () => {
         const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
         const defense = shallow(<Defense
+            profileDialogId="defenseProfileDialog"
             showSimpleView={true}
             input={input.defense}
             eventHandlers={events}
@@ -42,6 +44,7 @@ describe('Defense', () => {
         const events = EventMocks.createMockAppStateDefenseEventHandlers();
 
         const wrapper = shallow(<Defense
+            profileDialogId="defenseProfileDialog"
             showSimpleView={false}
             input={input.defense}
             eventHandlers={events}

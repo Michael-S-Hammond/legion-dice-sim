@@ -10,23 +10,17 @@ type TokenProps = {
     tooltip: string,
 }
 
-class Token extends React.Component<TokenProps> {
-    constructor(props : TokenProps) {
-        super(props);
-    }
-
-    render() : JSX.Element {
-        return (
-            <div className={`${ this.props.visible ? 'collapse.show' : 'collapse'} token-parent`}>
-                <button
-                    className={`btn border btn-light border-secondary rounded-lg mx-1 ${this.props.tokenCssClass}`}
-                    onClick={() => this.props.onClick()}
-                    title={this.props.tooltip}>
-                </button>
-                <span className="token-count">{this.props.value}</span>
-            </div>
-        );
-    }
+function Token(props: TokenProps) : JSX.Element {
+    return (
+        <div className={`${ props.visible ? 'collapse.show' : 'collapse'} token-parent`}>
+            <button
+                className={`btn border btn-light border-secondary rounded-lg mx-1 ${props.tokenCssClass}`}
+                onClick={() => props.onClick()}
+                title={props.tooltip}>
+            </button>
+            <span className="token-count">{props.value}</span>
+        </div>
+    );
 }
 
 export default Token;

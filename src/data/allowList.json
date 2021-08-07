@@ -1,0 +1,182 @@
+{
+    "attack": {
+        "armament": [
+            "A-180 Pistol Config",
+            "A-180 Rifle Config",
+            "A280-CFE Pistol Config",
+            "A280-CFE Sniper Config",
+            "A-300 Long Range Rifle Config",
+            "A-300 Short Range Rifle Config",
+            "CR-24 Flame Rifle",
+            "DT-57 \"Annihialator\"",
+            "E-11D Focused Fire Config",
+            "E-11D Grenade Launcher Config",
+            "Electro Gauntlets",
+            "Iden's DLT-20A Rifle",
+            "Iden's TL-50 Repeater",
+            "J-19 Bo-rifle Blaster",
+            "J-19 Bo-rifle Staff",
+            "Jetpack Rockets",
+            "Jyn's SE-14 Blaster",
+            "Looted E-5 Blaster",
+            "RT-97C Blaster Rifle",
+            "T-21 Blaster Rifle",
+            "The Darksaber",
+            "Vibroswords"
+        ],
+        "counterpart": [
+            "C-3PO",
+            "Iden's ID10 Seeker Droid"
+        ],
+        "crew": [
+            "A-300 Rifle Gunner",
+            "BARC Ion Gunner",
+            "BARC RPS-6 Gunner",
+            "BARC Twin Laser Gunner",
+            "RPS-6 Rocket Gunner"
+        ],
+        "force": [
+            "Saber Throw"
+        ],
+        "gear": [
+            "Targeting Scopes"
+        ],
+        "generator": [
+            "Overcharged Generator"
+        ],
+        "grenades": [
+            "Concussion Grenades",
+            "EMP \"Droid Poppers\"",
+            "Fragmentation Grenades",
+            "Impact Grenades"
+        ],
+        "hardpoint": [
+            "88 Twin Light Blaster Cannon",
+            "AG-2G Quad Laser",
+            "AT-RT Flamethrower",
+            "AT-RT Laser Cannon",
+            "AT-RT Rotary Blaster",
+            "AT-ST Mortar Launcher",
+            "Ax-108 \"Ground Buzzer\"",
+            "DLT-19 Rifle Pintle",
+            "DW-3 Concussion Grenade Launcher",
+            "Heavy Laser Retrofit",
+            "M-45 Ion Blaster",
+            "Mark II Medium Blaster",
+            "Mo/Dk Power Harpoon",
+            "RT-97C Rifle Pintle",
+            "TX-130 Beam Cannon Turret",
+            "TX-130 Twin Laser Turret"
+        ],
+        "heavyWeapon": [
+            "B2-ACM Trooper",
+            "B2-HA Trooper",
+            "Battle Shield Wookiee (Defensive)",
+            "Battle Shield Wookiee (Offensive)",
+            "Beskad Duelist",
+            "Bistan",
+            "Bowcaster Wookiee",
+            "BX-series Droid Sniper",
+            "CM-0/93 Trooper",
+            "DC-15 Phase I Trooper",
+            "DC-15x ARC Trooper",
+            "DH-447 Sniper",
+            "DLT-19 Stormtrooper",
+            "DLT-19D Trooper",
+            "DLT-19x Sniper",
+            "DLT-20A Trooper",
+            "DP-23 Phase I Trooper",
+            "DT-F16",
+            "Del Meeko",
+            "E-5C B1 Trooper",
+            "E-5S B1 Trooper",
+            "E-60R B1 Trooper",
+            "Echo",
+            "Electrostaff Guard",
+            "Fives",
+            "Flametrooper",
+            "Gideon Hask",
+            "HH-12 Stormtrooper",
+            "Long Gun Wookiee",
+            "MPL-57 Barrage Trooper",
+            "MPL-57 Ion Trooper",
+            "Pao",
+            "Phase II Mortar Trooper",
+            "RPS-6 Phase I Trooper",
+            "RTC-97C Stormtrooper",
+            "Radiation Cannon B1 Trooper",
+            "Scatter Gun Trooper",
+            "SX-21 Trooper",
+            "T-21 Special Forces Trooper",
+            "T-21 Stormtrooper",
+            "T-21B Trooper",
+            "T-7 Ion Snowtrooper",
+            "Tristan Wren",
+            "Ursa Wren",
+            "Z-6 Phase I Trooper",
+            "Z-6 Phase II Trooper",
+            "Z-6 Trooper"
+        ],
+        "ordinance": [
+            "\"Bunker Buster\" Shells",
+            "Armor-Piercing Shells",
+            "High-Energy Shells"
+        ],
+        "personnel": [
+            "B1 Battle Droid",
+            "B1 Security Droid",
+            "B2 Super Battle Droid",
+            "Clone Commander",
+            "Clone Comms Technician",
+            "Clone Engineer",
+            "Clone Medic",
+            "Fleet Trooper",
+            "Imperial Comms Technician",
+            "Imperial Officer",
+            "OOM-Series Battle Droid",
+            "Phase I Clone Captain",
+            "Phase I Clone Specialist",
+            "Phase I Clone Trooper",
+            "Phase II Clone Trooper",
+            "Rebel Comms Technician",
+            "Rebel Officer",
+            "Rebel Trooper",
+            "Rebel Trooper Captain",
+            "Rebel Trooper Specialist",
+            "Rebel Veteran",
+            "Shoretrooper",
+            "Stormtrooper",
+            "Stormtrooper Captain",
+            "Stormtrooper Specialist",
+            "T-Series Tactical Droid",
+            "Viper Recon Droid"
+        ],
+        "pilot": [
+            "Baron Rudor",
+            "General Weiss",
+            "Hotshot Pilot"
+        ]
+    }, "defense": {
+        "armament": [
+            "Deflector Shields",
+            "The Darksaber"
+        ],
+        "crew": [
+            "Refurbished \"Gonk\" Droid"
+        ],
+        "gear": [
+            "Personal Combat Shield"
+        ],
+        "heavyWeapon": [
+            "Battle Shield Wookiee (Defensive)",
+            "Beskad Duelist"
+        ],
+        "pilot": [
+            "Outer Rim Speeder Jockey"
+        ],
+        "training": [
+            "Duck and Cover",
+            "Situational Awareness"
+        ]
+    }
+}

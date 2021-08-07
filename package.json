@@ -11,7 +11,7 @@
     "highcharts": "^9.1.2",
     "highcharts-react-official": "^3.0.0",
     "jest": "26.6.0",
-    "js-cookie": "^2.2.1",
+    "jquery": "^3.6.0",
     "mathjs": "^9.4.4",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
@@ -29,7 +29,8 @@
     "scss": "node-sass --watch src/scss -o src/css",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "lint-all": "eslint 'src/**/*.{js,ts,tsx}'",
-    "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint-fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "cloc": "cloc ./src --include-lang='TypeScript,Sass,JSON'"
   },
   "eslintConfig": {
     "extends": [
@@ -50,10 +51,11 @@
     ]
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.0.15",
     "@types/enzyme": "^3.10.9",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.24",
-    "@types/js-cookie": "^2.2.7",
+    "@types/jquery": "^3.5.5",
     "@types/mathjs": "^9.4.2",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",

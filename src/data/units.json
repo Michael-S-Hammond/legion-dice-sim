@@ -1,0 +1,3643 @@
+{
+    "units": [{
+        "faction": "rebel",
+        "name": "Luke Skywalker",
+        "subtitle": "Hero of the Rebellion",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Anakin's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 6,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },
+        {
+            "name": "Luke's DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "gear"],
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "deflect": true,
+            "immune": ["pierce"]
+        }
+    },{
+        "faction": "rebel",
+        "name": "Leia Organa",
+        "subtitle": "Fearless and Inventive",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Leia's Defender Sporting Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": [ "command", "command", "gear" ],
+        "keywords": {
+            "takeCover": 2,
+            "inspire": 2,
+            "nimble": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "rebel",
+        "name": "Han Solo",
+        "subtitle": "Unorthodox General",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Brawl",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            }
+        },{
+            "name": "Han's DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "keywords": {
+            "lowProfile": true,
+            "gunslinger": true,
+            "sharpshooter": 1,
+            "uncannyLuck": 3
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Officer",
+        "subtitle": "Resolute Commander",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Officer's A-180 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "gear"],
+        "keywords": {
+            "takeCover": 1,
+            "inspire": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Jyn Erso",
+        "subtitle": "Stardust",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Collapsible Tonfa",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "keywords": {
+            "quickThinking": true,
+            "dangerSense": 4,
+            "infiltrate": true,
+            "nimble": true,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Cassian Andor",
+        "subtitle": "Capable Intelligence Agent",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Cassian's Covert Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "armament"],
+        "keywords": {
+            "covertOps": true,
+            "dangerSense": 3,
+            "loadout": true,
+            "marksman": true,
+            "tactical": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Lando Calrissian",
+        "subtitle": "Smooth Operator",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 105,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "Lando's X-8 Night Sniper Pistol",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "keywords": {
+            "contingencies": 3,
+            "covertOps": true,
+            "flawed": true,
+            "sharpshooter": 2,
+            "uncannyLuck": 2
+        }
+    },{
+        "faction": "rebel",
+        "name": "Chewbacca",
+        "subtitle": "Walking Carpet",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 9,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overwhelm",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        },{
+            "name": "Chewbacca's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "keywords": {
+            "enrage": 4,
+            "guardian": 3,
+            "scale": true,
+            "teamwork": "Han Solo"
+        }
+    },{
+        "faction": "rebel",
+        "name": "Sabine Wren",
+        "subtitle": "Explosive Artist",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Dual Westar-35 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "gear", "gear", "armament"],
+        "keywords": {
+            "jump": 2,
+            "gunslinger": true,
+            "impervious": true,
+            "nimble": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Luke Skywalker",
+        "subtitle": "Jedi Knight",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 195,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 7,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Luke's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 7,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "force", "training"],
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "deflect": true,
+            "disengage": true,
+            "immune": ["pierce"],
+            "masterOfTheForce": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "R2-D2",
+        "subtitle": "Hero of a Thousand Devices",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Electro-Shock",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms", "counterpart"],
+        "keywords": {
+            "repair": { "value": 2, "capacity": 2 },
+            "secretMission": true,
+            "grounded": true,
+            "inconspicuous": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "K-2SO",
+        "subtitle": "Sardonic Security Droid",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 70,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overpower",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["comms", "armament"],
+        "keywords": {
+            "calculateOdds": true,
+            "armorX": 1,
+            "detachment": "Cassian Andor",
+            "incognito": true,
+            "teamwork": "Cassian Andor"
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 40,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "nimble": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Fleet Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 40,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DH-17 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "ready": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Veterans",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 48,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "training", "gear", "grenades"],
+        "keywords": {
+            "coordinate": [{
+                "type": "emplacementTrooper"
+            }],
+            "defend": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mark II Medium Blaster Trooper",
+        "rank": "corps",
+        "miniCount": 1,
+        "points": 38,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Mark II Medium Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 2,
+                "cumbersome": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "detachment": "Rebel Veterans",
+            "fireSupport": true,
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Commandos",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 50,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "lowProfile": true,
+            "scout": 2,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Commandos",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-280 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "lowProfile": true,
+            "scout": 2,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Wookiee Warriors",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 69,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ryyk Blade",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Kashyyyk Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+        "keywords": {
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Wookiee Warriors",
+        "subtitle": "Kashyyk Resistance",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "X1 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "gear", "grenades"],
+        "keywords": {
+            "indomitable": true,
+            "scale": true,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "Rebel Pathfinders",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 58,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "A-300 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "dangerSense": 3,
+            "dauntless": true,
+            "infiltrate": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mandalorian Resistance",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "Westar 35 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 2,
+            "impervious": true,
+            "nimble": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Mandalorian Resistance",
+        "subtitle": "Clan Wren",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 34,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Westar 35 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 2,
+            "equip": ["Tristan Wren", "Ursa Wren"],
+            "impervious": true,
+            "nimble": true,
+            "retinue": { "unit": "Sabine Wren" }
+        }
+    },{
+        "faction": "rebel",
+        "name": "AT-RT",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Grappling Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "A-300 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "climbingVehicle": true,
+            "expertClimber": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "1.4 FD Laser Cannon Team",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 70,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 0,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "DH-17 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 4
+            }
+        },{
+            "name": "1.4 FD Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 5,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms", "generator"],
+        "keywords": {
+            "fullPivot": true,
+            "sentinel": true,
+            "stationary": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "Tauntaun Riders",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 95,
+        "unitType": "creatureTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "Horns & Hind Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "ram": 1
+            }
+        },{
+            "name": "DL-44 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["training", "comms"],
+        "keywords": {
+            "agile": 1,
+            "relentless": true,
+            "reposition": true,
+            "sharpshooter": 1,
+            "unhindered": true
+        }
+    },{
+        "faction": "rebel",
+        "name": "T-47 Airspeeder",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 130,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 7,
+        "resilience": 5,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "AP/11 Double Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 3,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "cover": "light",
+            "immune": ["blast", "melee", "range1Weapons"],
+            "speeder": 2
+        }
+    },{
+        "faction": "rebel",
+        "name": "X-34 Landspeeder",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 60,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Driver's DH-17 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["crew", "crew", "pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armorX": 2,
+            "arsenal": 3,
+            "cover": "light",
+            "lightTransport": { "open": 1 },
+            "speeder": 1
+        }
+    },{
+        "faction": "rebel",
+        "name": "A-A5 Speeder Truck",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 75,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 1,
+        "upgrades": ["crew", "crew", "pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "hover": { "ground": true },
+            "reposition": true,
+            "transport": { "closed": 1 },
+            "weakPoint": { "rear": 2 }
+        }
+    },{
+        "faction": "empire",
+        "name": "Darth Vader",
+        "subtitle": "Dark Lord of the Sith",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 175,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 8,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Vader's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 6,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        }],
+        "upgrades": ["force", "force", "force"],
+        "keywords": {
+            "deflect": true,
+            "immune": [ "pierce" ],
+            "masterOfTheForce": 1,
+            "relentless": true
+        }
+    },{
+        "faction": "empire",
+        "name": "General Veers",
+        "subtitle": "Master Tactician",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 80,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Veer's E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "gear"],
+        "keywords": {
+            "spotter": 2,
+            "inspire": 1,
+            "precise": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Emperor Palpatine",
+        "subtitle": "Ruler of the Galactic Empire",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Force Lightning",
+            "minimumRange": 0,
+            "maximumRange": 2,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "pierce": 2,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "pullingTheStrings": true,
+            "entourage": "Imperial Royal Guard",
+            "immune": ["pierce"],
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Officer",
+        "subtitle": "Ruthless Commander",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Officer's RK-3 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "gear"],
+        "keywords": {
+            "spotter": 1,
+            "inspire": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Director Orson Krennic",
+        "subtitle": "Architect of Terror",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Krennic's DT-29 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "gear"],
+        "keywords": {
+            "compel": true,
+            "cunning": true,
+            "entourage": "Imperial Death Troopers",
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Iden Versio",
+        "subtitle": "Inferno Squad Leader",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Iden's E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "armament", "counterpart"],
+        "keywords": {
+            "quickThinking": true,
+            "covertOps": true,
+            "loadout": true,
+            "marksman": true,
+            "nimble": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Agent Kallus",
+        "subtitle": "Hunter of Spectres",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Kallus's RK-3 Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "keywords": {
+            "contingencies": 2,
+            "cunning": true,
+            "flawed": true,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Boba Fett",
+        "subtitle": "Infamous Bounty Hunter",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "Boot Spikes",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Wrist Rocket",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "Fett's EE-3 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear", "gear"],
+        "keywords": {
+            "jump": 2,
+            "arsenal": 2,
+            "bounty": true,
+            "impervious": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "empire",
+        "name": "Bossk",
+        "subtitle": "Trandosian Terror",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 115,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 7,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Frenzy",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        },{
+            "name": "Relby-v10 Mortar Rifle",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "pierce": 1,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "keywords": {
+            "bounty": true,
+            "enrage": 3,
+            "expertClimber": true,
+            "regenerate": 3,
+            "unhindered": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Darth Vader",
+        "subtitle": "The Emperor's Apprentice",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 155,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Vader's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        },{
+            "name": "Force Throw",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "scatter": true
+            }
+        }],
+        "upgrades": ["force", "force", "training"],
+        "keywords": {
+            "deflect": true,
+            "immune": ["pierce"],
+            "jediHunter": true,
+            "masterOfTheForce": 1,
+            "relentless": true,
+            "spur": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Stormtroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 44,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "precise": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Snowtroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 44,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "steady": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Shoretroopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 52,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-22 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "personnel", "gear", "grenades"],
+        "keywords": {
+            "coordinate": [{
+                "type": "emplacementTrooper"
+            }],
+            "target": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "DF-90 Mortar Trooper",
+        "rank": "corps",
+        "miniCount": 1,
+        "points": 38,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "red",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "E-22 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DF-90 Mortar",
+            "minimumRange": 3,
+            "maximumRange": 4,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "critical": 1,
+                "cumbersome": true,
+                "suppressive": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "detachment": "Shoretroopers",
+            "fireSupport": true,
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Scout Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 48,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+           "name": "EC-17 Hold-out Blaster",
+           "minimumRange": 1,
+           "maximumRange": 2,
+           "dice": {
+               "red": 0,
+               "black": 2,
+               "white": 0
+           }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "lowProfile": true,
+            "scout": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Scout Troopers",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+           "name": "EC-17 Hold-out Blaster",
+           "minimumRange": 1,
+           "maximumRange": 2,
+           "dice": {
+               "red": 0,
+               "black": 2,
+               "white": 0
+           }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "lowProfile": true,
+            "scout": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Royal Guards",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 75,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Force Pike",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "EC-17 Hold-out Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+         }],
+         "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+         "keywords": {
+             "charge": false,
+             "disciplined": 2,
+             "guardian": 2
+         }
+    },{
+        "faction": "empire",
+        "name": "Imperial Death Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 76,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Close Quarters Combat",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "SE-14r Light Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        },{
+            "name": "E-11D Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "disciplined": 1,
+            "precise": 2,
+            "ready": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Special Forces",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 68,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Special Forces E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "infiltrate": true,
+            "marksman": true,
+            "reliable": 1
+        }
+    },{
+        "faction": "empire",
+        "name": "Imperial Special Forces",
+        "subtitle": "Inferno Squad",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 34,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Close Quarters Combat",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Inferno Squad E-11 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "heavyWeapon", "training", "training", "comms", "gear", "grenades"],
+        "keywords": {
+            "equip": ["Del Meeko", "Gideon Hask"],
+            "infiltrate": true,
+            "marksman": true,
+            "reliable": 1,
+            "retinue": { "unit": "Iden Versio" }
+        }
+    },{
+        "faction": "empire",
+        "name": "74-Z Speeder Bikes",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 75,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 3,
+        "weapons": [{
+            "name": "EC-17 Hold-out Blaster",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+         },{
+             "name": "Ax-20 Blaster Cannon",
+             "minimumRange": 1,
+             "maximumRange": 3,
+             "dice": {
+                 "red": 1,
+                 "black": 1,
+                 "white": 1
+             },
+             "keywords": {
+                 "fixed": ["front"],
+                 "impact": 1
+             }
+         }],
+         "upgrades": ["comms"],
+         "keywords": {
+             "cover": "light",
+             "speeder": 1
+         }
+    },{
+        "faction": "empire",
+        "name": "E-Web Heavy Blaster Team",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "emplacementTrooper",
+        "defenseDie": "red",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "E-11 Blaster Rifles",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        },{
+            "name": "E-Web Heavy Blaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "cumbersome": true,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms", "generator"],
+        "keywords": {
+            "fullPivot": true,
+            "reposition": true,
+            "sentinel": true
+        }
+    },{
+        "faction": "empire",
+        "name": "Dewback Rider",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 75,
+        "unitType": "creatureTrooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Razor Claws & Shock Prod",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "critical": 2,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["training", "comms", "armament"],
+        "keywords": {
+            "armorX": 1,
+            "relentless": true,
+            "reposition": true,
+            "spur": true,
+            "unhindered": true
+        }
+    },{
+        "faction": "empire",
+        "name": "AT-ST",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 11,
+        "resilience": 8,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Fence-cutting Blades",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "MS-4 Twin Blaster Cannon",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "fixed": ["front"],
+                "impact": 3
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "hardpoint", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "weakPoint": { "rear": 1 }
+        }
+    },{
+        "faction": "empire",
+        "name": "TX-225 GAVw Occupier Combat Assault Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 145,
+        "unitType": "groundVehicle",
+        "defenseDie": "red",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Forward Twin Mk 2e/w Cannons",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true,
+                "fixed": ["front"]
+            }
+        },{
+            "name": "Lateral Quad MK 2e/w Cannons",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "reposition": true,
+            "transport": { "open": 1 },
+            "weakPoint": { "sides": 1 }
+        }
+    },{
+        "faction": "empire",
+        "name": "LAAT/le Patrol Transport",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 120,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance"],
+        "keywords": {
+            "armor": false,
+            "arsenal": 2,
+            "cover": "light",
+            "hover": {
+                "air": 2
+            },
+            "immune": ["blast", "melee", "range1Weapons"],
+            "transport": { "closed": 1 }
+        }
+    },{
+        "faction": "republic",
+        "name": "Obi-Wan Kenobi",
+        "subtitle": "Civilized Warrior",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Obi-Wan's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 2,
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "command", "training"],
+        "keywords": {
+            "jump": 1,
+            "charge": true,
+            "guardian": 3,
+            "immune": ["pierce"],
+            "masterOfTheForce": 1,
+            "soresuMastery": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Clone Captain Rex",
+        "subtitle": "Honorable Soldier",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Dual DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "gear", "grenades"],
+        "keywords": {
+            "gunslinger": true,
+            "scout": 1,
+            "scoutingParty": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Clone Commander",
+        "subtitle": "Trained for Leadership",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Advanced Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            }
+        },{
+            "name": "Commander's DC-15 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        }],
+        "upgrades": ["command", "training", "gear"],
+        "keywords": {
+            "bolster": 2,
+            "direct": {
+                "rank": "corps",
+                "type": "cloneTrooper"
+            },
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Anakin Skywalker",
+        "subtitle": "The Chosen One",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Anakin's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 3,
+                "pierce": 3
+            }
+        }],
+        "upgrades": ["force", "force", "training", "training"],
+        "keywords": {
+            "jump": 1,
+            "djemSoMastery": true,
+            "flawed": true,
+            "immune": ["pierce"],
+            "tempted": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Yoda",
+        "subtitle": "Grand Master of the Jedi Order",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 4,
+        "attackSurge": "critical",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Yoda's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },{
+            "name": "Force Wave",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "blast": true,
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "guidance": true,
+            "ataruMastery": true,
+            "immune": ["pierce"],
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "republic",
+        "name": "Wookiee Chieftain",
+        "subtitle": "Clan Leader",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 7,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ancestral Weapon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            }
+        },{
+            "name": "Chieftain's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "training", "gear"],
+        "keywords": {
+            "agile": 1,
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Chewbacca",
+        "subtitle": "Hero of Kashyyyk",
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 9,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overwhelm",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        },{
+            "name": "Chewbacca's Bowcaster",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "training", "gear"],
+        "keywords": {
+            "enrage": 4,
+            "guardian": 2,
+            "reliable": 2,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
+        "name": "R2-D2",
+        "subtitle": "Hero of a Thousand Devices",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 45,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Electro-Shock",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 3
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms", "counterpart"],
+        "keywords": {
+            "repair": { "value": 2, "capacity": 2 },
+            "secretMission": true,
+            "grounded": true,
+            "inconspicuous": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Padmé Amidala",
+        "subtitle": "Spirited Senator",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 90,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Padmé's ELG-3A Blaster Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "training", "gear", "armament"],
+        "keywords": {
+            "quickThinking": true,
+            "authoritative": true,
+            "exemplar": true,
+            "nimble": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "republic",
+        "name": "Phase I Clone Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 52,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "grenades"],
+        "keywords": {
+            "fireSupport": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Phase II Clone Troopers",
+        "rank": "corps",
+        "miniCount": 4,
+        "points": 62,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "gear", "training", "grenades"],
+        "keywords": {
+            "fireSupport": true,
+            "reliable": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "ARC Troopers",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 72,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "gear", "grenades"],
+        "keywords": {
+            "impervious": true,
+            "scout": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "ARC Troopers",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 27,
+        "unitType": "cloneTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-17 Hand Blasters",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "gear", "gear", "grenades"],
+        "keywords": {
+            "heavyWeaponTeam": true,
+            "impervious": true,
+            "scout": 2,
+            "sharpshooter": 1,
+            "tactical": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "Wookiee Warriors",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 69,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Ryyk Blade",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Kashyyyk Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "gear", "grenades"],
+        "keywords": {
+            "charge": true,
+            "duelist": true,
+            "indomitable": true,
+            "scale": true
+        }
+    },{
+        "faction": "republic",
+        "name": "Wookiee Warriors",
+        "subtitle": "Kashyyk Defenders",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "wookieeTrooper",
+        "defenseDie": "white",
+        "wounds": 3,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "X1 Carbine",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "gear", "grenades"],
+        "keywords": {
+            "indomitable": true,
+            "scale": true,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "BARC Speeder",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 60,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 5,
+        "resilience": 3,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "DC-15A Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Twin Light Blaster Connons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["crew", "comms"],
+        "keywords": {
+            "arsenal": 2,
+            "cover": "light",
+            "speeder": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "AT-RT",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 65,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 4,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Grappling Claws",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 3,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 1
+            }
+        },{
+            "name": "Merr-Sonn RPC-2 Rocket Launcher",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 1
+            }
+        }],
+        "upgrades": ["hardpoint", "comms"],
+        "keywords": {
+            "armor": true,
+            "climbingVehicle": true,
+            "expertClimber": true,
+            "scout": 1
+        }
+    },{
+        "faction": "republic",
+        "name": "TX-130 Saber-class Fighter Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 9,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Lateral GA-6n Laser Cannons",
+            "minimumRange": 1,
+            "maximumRange": 4,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 2
+            },
+            "keywords": {
+                "critical": 1,
+                "impact": 2,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "hardpoint", "comms", "ordinance"],
+        "keywords": {
+            "armor": true,
+            "arsenal": 2,
+            "hover": { "ground": true },
+            "outmaneuver": true,
+            "weakPoint": {
+                "rear": 1,
+                "sides": 1
+            }
+        }
+    },{
+        "faction": "republic",
+        "name": "LAAT/le Patrol Transport",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 120,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 8,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Twin Laser Cannon",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance"],
+        "keywords": {
+            "armor": false,
+            "arsenal": 2,
+            "cover": "light",
+            "hover": {
+                "air": 2
+            },
+            "immune": ["blast", "melee", "range1Weapons"],
+            "transport": { "closed": 1 }
+        }
+    },{
+        "faction": "separatist",
+        "name": "General Grievous",
+        "subtitle": "Sinister Cyborg",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 8,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Trophy Lightsabers (L)",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        },{
+            "name": "Trophy Lightsabers (R)",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 1
+            },
+            "keywords": {
+                "impact": 1,
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "training", "armament"],
+        "keywords": {
+            "arsenal": 2,
+            "block": true,
+            "impervious": true,
+            "jediHunter": true,
+            "relentless": true,
+            "scale": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Count Dooku",
+        "subtitle": "Darth Tyranus",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 200,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Dooku's Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 5,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        },{
+            "name": "Dooku's Lightning",
+            "minimumRange": 1,
+            "maximumRange": 1,
+            "dice": {
+                "red": 0,
+                "black": 5,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1,
+                "scatter": true
+            }
+        }],
+        "upgrades": ["force", "force", "force", "command"],
+        "keywords": {
+            "cunning": true,
+            "deflect": true,
+            "immune": ["pierce"],
+            "makashiMastery": true,
+            "masterOfTheForce": 2
+        }
+    },{
+        "faction": "separatist",
+        "name": "T-series Tactical Droid",
+        "subtitle": "Programmed for Strategy",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 4,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Bludgeon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        },{
+            "name": "Commander's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["command", "comms", "gear"],
+        "keywords": {
+            "bolster": 2,
+            "direct": {
+                "rank": "corps",
+                "type": "droidTrooper"
+            },
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "Cad Bane",
+        "subtitle": "Needs No Introduction",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 125,
+        "unitType": "trooper",
+        "defenseDie": "white",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Martial Arts",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            }
+        },{
+            "name": "Dual LL-30 Blaster Pistols",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 4,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["training", "comms", "gear", "armament", "grenades"],
+        "keywords": {
+            "jump": 1,
+            "bounty": true,
+            "dangerSense": 2,
+            "sharpshooter": 1,
+            "steady": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Maul",
+        "subtitle": "Impatient Apprentice",
+        "unique": true,
+        "rank": "operative",
+        "miniCount": 1,
+        "points": 160,
+        "unitType": "trooper",
+        "defenseDie": "red",
+        "wounds": 6,
+        "courage": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Maul's Double Bladed Lightsaber",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 4
+            },
+            "keywords": {
+                "impact": 2,
+                "pierce": 2
+            }
+        }],
+        "upgrades": ["force", "force", "training", "training"],
+        "keywords": {
+            "jump": 1,
+            "deflect": true,
+            "immune": ["pierce"],
+            "juyoMastery": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "B1 Battle Droids",
+        "rank": "corps",
+        "miniCount": 6,
+        "points": 36,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Bludgeon",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        },{
+            "name": "E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "comms"],
+        "keywords": {
+            "ai": ["attack"],
+            "coordinate": [{
+                "type": "droidTrooper"
+            }]
+        }
+    },{
+        "faction": "separatist",
+        "name": "B2 Super Battle Droids",
+        "rank": "corps",
+        "miniCount": 3,
+        "points": 45,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Arm Cannons",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "personnel", "comms"],
+        "keywords": {
+            "ai": ["attack"],
+            "armorX": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "BX-series Droid Commandos",
+        "rank": "specialForces",
+        "miniCount": 4,
+        "points": 68,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Commando's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "armament", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "impervious": true,
+            "scale": true,
+            "scout": 3,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "BX-series Droid Commandos",
+        "subtitle": "Strike Team",
+        "rank": "specialForces",
+        "miniCount": 1,
+        "points": 20,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 1,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Unarmed",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 0
+            }
+        },{
+            "name": "Commando's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "comms", "armament", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "heavyWeaponTeam": true,
+            "impervious": true,
+            "scale": true,
+            "scout": 3,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "IG-100 MagnaGuard",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 72,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 2,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Electrostaff",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Precision Laser Dart",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["heavyWeapon", "training", "training", "comms", "grenades"],
+        "keywords": {
+            "ai": ["dodge", "move"],
+            "charge": true,
+            "guardian": 2,
+            "immune": [ "meleePierce" ],
+            "retinue": { "rank": "commander" },
+            "unhindered": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "DRK-1 Sith Probe Droids",
+        "rank": "specialForces",
+        "miniCount": 3,
+        "points": 35,
+        "unitType": "droidTrooper",
+        "defenseDie": "white",
+        "wounds": 1,
+        "courage": 1,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Electro-stun Micro Blaster",
+            "minimumRange": 0,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 0,
+                "white": 2
+            },
+            "keywords": {
+                "suppressive": true
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "observe": 3,
+            "detachment": "Maul",
+            "hover": { "air": 1 },
+            "incognito": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "Droidekas",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 80,
+        "unitType": "groundVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "blank",
+        "defenseSurge": true,
+        "speed": 1,
+        "weapons": [{
+            "name": "Dual Twin Blaster Cannons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "suppressive": true,
+                "fixed": ["front"],
+                "immune": ["deflect"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "ai": ["attack", "move"],
+            "generator": 1,
+            "shielded": 4,
+            "wheelMode": true
+        }
+    },{
+        "faction": "separatist",
+        "name": "STAP Riders",
+        "rank": "support",
+        "miniCount": 2,
+        "points": 73,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 3,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 3,
+        "weapons": [{
+            "name": "Repeating Dual Blaster Cannons",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 1,
+                "fixed": ["front"]
+            }
+        }],
+        "upgrades": ["comms"],
+        "keywords": {
+            "agile": 1,
+            "ai": ["move"],
+            "coordinate": [{
+                "type": "droidTrooper"
+            },{
+                "type": "groundVehicle"
+            },{
+                "type": "repulsorVehicle"
+            }],
+            "cover": "light",
+            "speeder": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "AAT Trade Federation Battle Tank",
+        "rank": "heavy",
+        "miniCount": 1,
+        "points": 170,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "red",
+        "wounds": 9,
+        "resilience": 6,
+        "attackSurge": "blank",
+        "defenseSurge": false,
+        "speed": 1,
+        "weapons": [{
+            "name": "Lateral Anti-Personnel Lasers",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 3,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["front"]
+            }
+        },{
+            "name": "MX-8 Artillery Laser Cannon",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "critical": 2,
+                "highVelocity": true,
+                "impact": 1
+            }
+        }],
+        "upgrades": ["pilot", "comms", "ordinance", "ordinance"],
+        "keywords": {
+            "ai": ["attack"],
+            "armor": true,
+            "arsenal": 2,
+            "barrage": true,
+            "hover": { "ground": true },
+            "weakPoint": { "rear": 2 }
+        }
+    }]
+}

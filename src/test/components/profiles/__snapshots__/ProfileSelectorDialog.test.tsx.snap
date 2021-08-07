@@ -1,0 +1,1227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileSelectorDialog attack profile matches the snapshot 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="attackProfileSelectorModalLabel"
+  className="modal fade"
+  id="attackProfileSelector"
+  tabIndex={-1}
+>
+  <div
+    className="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="{props.id + ModalLabel}"
+        >
+          Attack
+           profile
+        </h5>
+        <button
+          aria-label="Close"
+          className="close"
+          data-dismiss="modal"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="row justify-content-center my-2"
+          >
+            <FactionButtonGroup
+              faction="rebel"
+              onFactionChange={[Function]}
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+          >
+            <RankButtonGroup
+              onRankChange={[Function]}
+              rank="commander"
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+          >
+            <UnitSelector
+              id="attackProfileSelector-unit"
+              onUnitChange={[Function]}
+              selectedUnit={
+                Object {
+                  "attackSurge": "hit",
+                  "courage": 2,
+                  "defenseDie": "white",
+                  "defenseSurge": true,
+                  "faction": "rebel",
+                  "keywords": Object {
+                    "covertOps": true,
+                    "dangerSense": 3,
+                    "loadout": true,
+                    "marksman": true,
+                    "tactical": 1,
+                  },
+                  "miniCount": 1,
+                  "name": "Cassian Andor",
+                  "points": 90,
+                  "rank": "commander",
+                  "speed": 2,
+                  "subtitle": "Capable Intelligence Agent",
+                  "unique": true,
+                  "unitType": "trooper",
+                  "upgrades": Array [
+                    "training",
+                    "training",
+                    "gear",
+                    "armament",
+                  ],
+                  "weapons": Array [
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Advanced Combat Training",
+                    },
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 1,
+                        "white": 2,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Cassian's Covert Blaster",
+                    },
+                  ],
+                  "wounds": 6,
+                }
+              }
+              units={
+                Array [
+                  Object {
+                    "attackSurge": "hit",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "covertOps": true,
+                      "dangerSense": 3,
+                      "loadout": true,
+                      "marksman": true,
+                      "tactical": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Cassian Andor",
+                    "points": 90,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Capable Intelligence Agent",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "training",
+                      "training",
+                      "gear",
+                      "armament",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Advanced Combat Training",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 1,
+                          "white": 2,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Cassian's Covert Blaster",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "gunslinger": true,
+                      "lowProfile": true,
+                      "sharpshooter": 1,
+                      "uncannyLuck": 3,
+                    },
+                    "miniCount": 1,
+                    "name": "Han Solo",
+                    "points": 100,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Unorthodox General",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 0,
+                          "white": 3,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Brawl",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Han's DL-44 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 3,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "dangerSense": 4,
+                      "infiltrate": true,
+                      "nimble": true,
+                      "quickThinking": true,
+                      "sharpshooter": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Jyn Erso",
+                    "points": 100,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Stardust",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                      "armament",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 4,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "suppressive": true,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Collapsible Tonfa",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "contingencies": 3,
+                      "covertOps": true,
+                      "flawed": true,
+                      "sharpshooter": 2,
+                      "uncannyLuck": 2,
+                    },
+                    "miniCount": 1,
+                    "name": "Lando Calrissian",
+                    "points": 105,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Smooth Operator",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 1,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Combat Training",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 1,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 1,
+                        },
+                        "maximumRange": 3,
+                        "minimumRange": 1,
+                        "name": "Lando's X-8 Night Sniper Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "inspire": 2,
+                      "nimble": true,
+                      "sharpshooter": 2,
+                      "takeCover": 2,
+                    },
+                    "miniCount": 1,
+                    "name": "Leia Organa",
+                    "points": 90,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Fearless and Inventive",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "command",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 3,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Martial Arts",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 3,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Leia's Defender Sporting Blaster",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 3,
+                    "defenseDie": "red",
+                    "defenseSurge": false,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "charge": true,
+                      "deflect": true,
+                      "immune": Array [
+                        "pierce",
+                      ],
+                      "jump": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Luke Skywalker",
+                    "points": 160,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Hero of the Rebellion",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "force",
+                      "force",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 6,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "impact": 2,
+                          "pierce": 2,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Anakin's Lightsaber",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Luke's DL-44 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "hit",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "inspire": 1,
+                      "sharpshooter": 1,
+                      "takeCover": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Rebel Officer",
+                    "points": 45,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Resolute Commander",
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Unarmed",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 1,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Officer's A-180 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 4,
+                  },
+                ]
+              }
+            />
+          </div>
+          <div>
+            <div
+              className="row justify-content-center my-2"
+              key="attackProfileSelector-weapon-0"
+            >
+              <ItemSelector
+                ariaLabel="Weapon 0"
+                dataIndex={0}
+                id="attackProfileSelector-weapon-0"
+                includeBlankItem={true}
+                items={
+                  Array [
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Advanced Combat Training",
+                    },
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 1,
+                        "white": 2,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Cassian's Covert Blaster",
+                    },
+                  ]
+                }
+                onItemChange={[Function]}
+              />
+            </div>
+          </div>
+          <div
+            className="row justify-content-center my-2"
+            key="0"
+          >
+            <img
+              className="gear-upgrade-img"
+            />
+            <ItemSelector
+              ariaLabel="Upgrade 0"
+              dataIndex={0}
+              id="attackProfileSelector-0-upgrade"
+              includeBlankItem={true}
+              items={
+                Array [
+                  Object {
+                    "keywords": Object {
+                      "precise": 1,
+                    },
+                    "name": "Targeting Scopes",
+                    "points": 4,
+                    "type": "gear",
+                  },
+                ]
+              }
+              onItemChange={[Function]}
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+            key="1"
+          >
+            <img
+              className="armament-upgrade-img"
+            />
+            <ItemSelector
+              ariaLabel="Upgrade 1"
+              dataIndex={1}
+              id="attackProfileSelector-1-upgrade"
+              includeBlankItem={true}
+              items={
+                Array [
+                  Object {
+                    "name": "A280-CFE Pistol Config",
+                    "points": 10,
+                    "restrictions": Array [
+                      Object {
+                        "unit": "Cassian Andor",
+                      },
+                    ],
+                    "type": "armament",
+                    "weapon": Object {
+                      "dice": Object {
+                        "black": 1,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "longShot": 1,
+                        "pierce": 1,
+                        "reconfigure": true,
+                      },
+                      "minimumRange": 1,
+                      "name": "A280-CFE Pistol Config",
+                    },
+                  },
+                  Object {
+                    "name": "A280-CFE Sniper Config",
+                    "points": 10,
+                    "restrictions": Array [
+                      Object {
+                        "unit": "Cassian Andor",
+                      },
+                    ],
+                    "type": "armament",
+                    "weapon": Object {
+                      "dice": Object {
+                        "black": 1,
+                        "red": 1,
+                        "white": 0,
+                      },
+                      "keywords": Object {
+                        "cumbersome": true,
+                        "highVelocity": true,
+                        "pierce": 1,
+                        "reconfigure": true,
+                      },
+                      "minimumRange": 1,
+                      "name": "A280-CFE Sniper Config",
+                    },
+                  },
+                ]
+              }
+              onItemChange={[Function]}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-secondary"
+          data-dismiss="modal"
+          id="attackProfileSelector-closeButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn btn-primary"
+          id="attackProfileSelector-applyButton"
+          onClick={[Function]}
+          type="button"
+        >
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProfileSelectorDialog defense profile matches the snapshot 1`] = `
+<div
+  aria-hidden="true"
+  aria-labelledby="defenseProfileSelectorModalLabel"
+  className="modal fade"
+  id="defenseProfileSelector"
+  tabIndex={-1}
+>
+  <div
+    className="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+  >
+    <div
+      className="modal-content"
+    >
+      <div
+        className="modal-header"
+      >
+        <h5
+          className="modal-title"
+          id="{props.id + ModalLabel}"
+        >
+          Defense
+           profile
+        </h5>
+        <button
+          aria-label="Close"
+          className="close"
+          data-dismiss="modal"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <div
+        className="modal-body"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="row justify-content-center my-2"
+          >
+            <FactionButtonGroup
+              faction="rebel"
+              onFactionChange={[Function]}
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+          >
+            <RankButtonGroup
+              onRankChange={[Function]}
+              rank="commander"
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+          >
+            <UnitSelector
+              id="defenseProfileSelector-unit"
+              onUnitChange={[Function]}
+              selectedUnit={
+                Object {
+                  "attackSurge": "hit",
+                  "courage": 2,
+                  "defenseDie": "white",
+                  "defenseSurge": true,
+                  "faction": "rebel",
+                  "keywords": Object {
+                    "covertOps": true,
+                    "dangerSense": 3,
+                    "loadout": true,
+                    "marksman": true,
+                    "tactical": 1,
+                  },
+                  "miniCount": 1,
+                  "name": "Cassian Andor",
+                  "points": 90,
+                  "rank": "commander",
+                  "speed": 2,
+                  "subtitle": "Capable Intelligence Agent",
+                  "unique": true,
+                  "unitType": "trooper",
+                  "upgrades": Array [
+                    "training",
+                    "training",
+                    "gear",
+                    "armament",
+                  ],
+                  "weapons": Array [
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 2,
+                        "white": 0,
+                      },
+                      "maximumRange": 0,
+                      "minimumRange": 0,
+                      "name": "Advanced Combat Training",
+                    },
+                    Object {
+                      "dice": Object {
+                        "black": 0,
+                        "red": 1,
+                        "white": 2,
+                      },
+                      "keywords": Object {
+                        "pierce": 2,
+                      },
+                      "maximumRange": 2,
+                      "minimumRange": 1,
+                      "name": "Cassian's Covert Blaster",
+                    },
+                  ],
+                  "wounds": 6,
+                }
+              }
+              units={
+                Array [
+                  Object {
+                    "attackSurge": "hit",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "covertOps": true,
+                      "dangerSense": 3,
+                      "loadout": true,
+                      "marksman": true,
+                      "tactical": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Cassian Andor",
+                    "points": 90,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Capable Intelligence Agent",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "training",
+                      "training",
+                      "gear",
+                      "armament",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Advanced Combat Training",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 1,
+                          "white": 2,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Cassian's Covert Blaster",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "gunslinger": true,
+                      "lowProfile": true,
+                      "sharpshooter": 1,
+                      "uncannyLuck": 3,
+                    },
+                    "miniCount": 1,
+                    "name": "Han Solo",
+                    "points": 100,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Unorthodox General",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 0,
+                          "white": 3,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Brawl",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Han's DL-44 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 3,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "dangerSense": 4,
+                      "infiltrate": true,
+                      "nimble": true,
+                      "quickThinking": true,
+                      "sharpshooter": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Jyn Erso",
+                    "points": 100,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Stardust",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                      "armament",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 4,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "suppressive": true,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Collapsible Tonfa",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "contingencies": 3,
+                      "covertOps": true,
+                      "flawed": true,
+                      "sharpshooter": 2,
+                      "uncannyLuck": 2,
+                    },
+                    "miniCount": 1,
+                    "name": "Lando Calrissian",
+                    "points": 105,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Smooth Operator",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "training",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 1,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Combat Training",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 1,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 1,
+                        },
+                        "maximumRange": 3,
+                        "minimumRange": 1,
+                        "name": "Lando's X-8 Night Sniper Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "inspire": 2,
+                      "nimble": true,
+                      "sharpshooter": 2,
+                      "takeCover": 2,
+                    },
+                    "miniCount": 1,
+                    "name": "Leia Organa",
+                    "points": 90,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Fearless and Inventive",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "command",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 3,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Martial Arts",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 3,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Leia's Defender Sporting Blaster",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "critical",
+                    "courage": 3,
+                    "defenseDie": "red",
+                    "defenseSurge": false,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "charge": true,
+                      "deflect": true,
+                      "immune": Array [
+                        "pierce",
+                      ],
+                      "jump": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Luke Skywalker",
+                    "points": 160,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Hero of the Rebellion",
+                    "unique": true,
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "force",
+                      "force",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 6,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "impact": 2,
+                          "pierce": 2,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Anakin's Lightsaber",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 0,
+                          "red": 2,
+                          "white": 0,
+                        },
+                        "keywords": Object {
+                          "pierce": 2,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Luke's DL-44 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 6,
+                  },
+                  Object {
+                    "attackSurge": "hit",
+                    "courage": 2,
+                    "defenseDie": "white",
+                    "defenseSurge": true,
+                    "faction": "rebel",
+                    "keywords": Object {
+                      "inspire": 1,
+                      "sharpshooter": 1,
+                      "takeCover": 1,
+                    },
+                    "miniCount": 1,
+                    "name": "Rebel Officer",
+                    "points": 45,
+                    "rank": "commander",
+                    "speed": 2,
+                    "subtitle": "Resolute Commander",
+                    "unitType": "trooper",
+                    "upgrades": Array [
+                      "command",
+                      "gear",
+                    ],
+                    "weapons": Array [
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 0,
+                        },
+                        "maximumRange": 0,
+                        "minimumRange": 0,
+                        "name": "Unarmed",
+                      },
+                      Object {
+                        "dice": Object {
+                          "black": 1,
+                          "red": 0,
+                          "white": 1,
+                        },
+                        "maximumRange": 2,
+                        "minimumRange": 1,
+                        "name": "Officer's A-180 Blaster Pistol",
+                      },
+                    ],
+                    "wounds": 4,
+                  },
+                ]
+              }
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+            key="0"
+          >
+            <img
+              className="training-upgrade-img"
+            />
+            <ItemSelector
+              ariaLabel="Upgrade 0"
+              dataIndex={0}
+              id="defenseProfileSelector-0-upgrade"
+              includeBlankItem={true}
+              items={
+                Array [
+                  Object {
+                    "name": "Duck and Cover",
+                    "points": 4,
+                    "type": "training",
+                  },
+                  Object {
+                    "keywords": Object {
+                      "outmaneuver": true,
+                    },
+                    "name": "Situational Awareness",
+                    "points": 2,
+                    "type": "training",
+                  },
+                ]
+              }
+              onItemChange={[Function]}
+            />
+          </div>
+          <div
+            className="row justify-content-center my-2"
+            key="1"
+          >
+            <img
+              className="training-upgrade-img"
+            />
+            <ItemSelector
+              ariaLabel="Upgrade 1"
+              dataIndex={1}
+              id="defenseProfileSelector-1-upgrade"
+              includeBlankItem={true}
+              items={
+                Array [
+                  Object {
+                    "name": "Duck and Cover",
+                    "points": 4,
+                    "type": "training",
+                  },
+                  Object {
+                    "keywords": Object {
+                      "outmaneuver": true,
+                    },
+                    "name": "Situational Awareness",
+                    "points": 2,
+                    "type": "training",
+                  },
+                ]
+              }
+              onItemChange={[Function]}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="modal-footer"
+      >
+        <button
+          className="btn btn-secondary"
+          data-dismiss="modal"
+          id="defenseProfileSelector-closeButton"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          className="btn btn-primary"
+          id="defenseProfileSelector-applyButton"
+          onClick={[Function]}
+          type="button"
+        >
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

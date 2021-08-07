@@ -6,6 +6,9 @@ exports[`Attack matches the snapshot 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Attack
+    <LoadProfileButton
+      tooltip="Load attack profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
@@ -46,6 +49,7 @@ exports[`Attack matches the snapshot 1`] = `
         "handleLethalXChange": [MockFunction],
         "handleLethalXValueChange": [MockFunction],
         "handleMakashiMasteryChange": [MockFunction],
+        "handleMarksmanChange": [MockFunction],
         "handlePierceXChange": [MockFunction],
         "handlePierceXValueChange": [MockFunction],
         "handlePreciseXChange": [MockFunction],
@@ -117,6 +121,7 @@ exports[`Attack matches the snapshot 1`] = `
         "handleLethalXChange": [MockFunction],
         "handleLethalXValueChange": [MockFunction],
         "handleMakashiMasteryChange": [MockFunction],
+        "handleMarksmanChange": [MockFunction],
         "handlePierceXChange": [MockFunction],
         "handlePierceXValueChange": [MockFunction],
         "handlePreciseXChange": [MockFunction],
@@ -159,6 +164,7 @@ exports[`Attack matches the snapshot 1`] = `
           "value": 1,
         },
         "makashiMastery": false,
+        "marksman": false,
         "pierceX": Object {
           "active": false,
           "value": 1,
@@ -195,6 +201,9 @@ exports[`Attack matches the snapshot for simplified view 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Attack
+    <LoadProfileButton
+      tooltip="Load attack profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
@@ -235,6 +244,7 @@ exports[`Attack matches the snapshot for simplified view 1`] = `
         "handleLethalXChange": [MockFunction],
         "handleLethalXValueChange": [MockFunction],
         "handleMakashiMasteryChange": [MockFunction],
+        "handleMarksmanChange": [MockFunction],
         "handlePierceXChange": [MockFunction],
         "handlePierceXValueChange": [MockFunction],
         "handlePreciseXChange": [MockFunction],
@@ -306,6 +316,7 @@ exports[`Attack matches the snapshot for simplified view 1`] = `
         "handleLethalXChange": [MockFunction],
         "handleLethalXValueChange": [MockFunction],
         "handleMakashiMasteryChange": [MockFunction],
+        "handleMarksmanChange": [MockFunction],
         "handlePierceXChange": [MockFunction],
         "handlePierceXValueChange": [MockFunction],
         "handlePreciseXChange": [MockFunction],
@@ -348,6 +359,7 @@ exports[`Attack matches the snapshot for simplified view 1`] = `
           "value": 1,
         },
         "makashiMastery": false,
+        "marksman": false,
         "pierceX": Object {
           "active": false,
           "value": 1,

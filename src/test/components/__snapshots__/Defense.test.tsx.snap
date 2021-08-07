@@ -6,12 +6,16 @@ exports[`Defense matches the snapshot 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Defense
+    <LoadProfileButton
+      dialogId="defenseProfileDialog"
+      tooltip="Load defense profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
   >
     <SurgeDieSelector
-      color={3}
+      color="white"
       onClick={[MockFunction]}
       surge={true}
     />
@@ -32,6 +36,7 @@ exports[`Defense matches the snapshot 1`] = `
         "handleDuelistChange": [MockFunction],
         "handleHasForceUpgradesChange": [MockFunction],
         "handleImmuneBlastChange": [MockFunction],
+        "handleImmuneMeleePierceChange": [MockFunction],
         "handleImmunePierceChange": [MockFunction],
         "handleImperviousChange": [MockFunction],
         "handleLowProfileChange": [MockFunction],
@@ -69,20 +74,20 @@ exports[`Defense matches the snapshot 1`] = `
     <select
       className="rounded-lg mr-4 px-2"
       onChange={[Function]}
-      value={1}
+      value="none"
     >
       <option
-        value="1"
+        value="none"
       >
         None
       </option>
       <option
-        value="2"
+        value="light"
       >
         Light
       </option>
       <option
-        value="3"
+        value="heavy"
       >
         Heavy
       </option>
@@ -104,6 +109,7 @@ exports[`Defense matches the snapshot 1`] = `
         "handleDuelistChange": [MockFunction],
         "handleHasForceUpgradesChange": [MockFunction],
         "handleImmuneBlastChange": [MockFunction],
+        "handleImmuneMeleePierceChange": [MockFunction],
         "handleImmunePierceChange": [MockFunction],
         "handleImperviousChange": [MockFunction],
         "handleLowProfileChange": [MockFunction],
@@ -127,17 +133,18 @@ exports[`Defense matches the snapshot 1`] = `
           "value": 1,
         },
         "block": false,
-        "cover": 1,
+        "cover": "none",
         "dangerSenseX": Object {
           "active": false,
           "value": 1,
         },
         "deflect": false,
-        "dieColor": 3,
+        "dieColor": "white",
         "djemSoMastery": false,
         "duelist": false,
         "hasForceUpgrades": false,
         "immuneBlast": false,
+        "immuneMeleePierce": false,
         "immunePierce": false,
         "impervious": false,
         "lowProfile": false,
@@ -168,12 +175,16 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
     className="d-flex justify-content-center my-2"
   >
     Defense
+    <LoadProfileButton
+      dialogId="defenseProfileDialog"
+      tooltip="Load defense profile"
+    />
   </h2>
   <div
     className="d-flex justify-content-center my-2"
   >
     <SurgeDieSelector
-      color={3}
+      color="white"
       onClick={[MockFunction]}
       surge={true}
     />
@@ -194,6 +205,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
         "handleDuelistChange": [MockFunction],
         "handleHasForceUpgradesChange": [MockFunction],
         "handleImmuneBlastChange": [MockFunction],
+        "handleImmuneMeleePierceChange": [MockFunction],
         "handleImmunePierceChange": [MockFunction],
         "handleImperviousChange": [MockFunction],
         "handleLowProfileChange": [MockFunction],
@@ -231,20 +243,20 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
     <select
       className="rounded-lg mr-4 px-2"
       onChange={[Function]}
-      value={1}
+      value="none"
     >
       <option
-        value="1"
+        value="none"
       >
         None
       </option>
       <option
-        value="2"
+        value="light"
       >
         Light
       </option>
       <option
-        value="3"
+        value="heavy"
       >
         Heavy
       </option>
@@ -266,6 +278,7 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
         "handleDuelistChange": [MockFunction],
         "handleHasForceUpgradesChange": [MockFunction],
         "handleImmuneBlastChange": [MockFunction],
+        "handleImmuneMeleePierceChange": [MockFunction],
         "handleImmunePierceChange": [MockFunction],
         "handleImperviousChange": [MockFunction],
         "handleLowProfileChange": [MockFunction],
@@ -289,17 +302,18 @@ exports[`Defense matches the snapshot for simplified view 1`] = `
           "value": 1,
         },
         "block": false,
-        "cover": 1,
+        "cover": "none",
         "dangerSenseX": Object {
           "active": false,
           "value": 1,
         },
         "deflect": false,
-        "dieColor": 3,
+        "dieColor": "white",
         "djemSoMastery": false,
         "duelist": false,
         "hasForceUpgrades": false,
         "immuneBlast": false,
+        "immuneMeleePierce": false,
         "immunePierce": false,
         "impervious": false,
         "lowProfile": false,

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemSelector matches the snapshot 1`] = `
+<select
+  aria-label="testSelector"
+  className="rounded-lg px-2 ml-2"
+  id="ws-5-itemSelect"
+  onChange={[Function]}
+  value="Anakin's Lightsaber"
+>
+  <option
+    key=""
+    value=""
+  />
+  <option
+    key="Anakin's Lightsaber"
+    value="Anakin's Lightsaber"
+  >
+    Anakin's Lightsaber
+  </option>
+  <option
+    key="Luke's DL-44 Blaster Pistol"
+    value="Luke's DL-44 Blaster Pistol"
+  >
+    Luke's DL-44 Blaster Pistol
+  </option>
+</select>
+`;

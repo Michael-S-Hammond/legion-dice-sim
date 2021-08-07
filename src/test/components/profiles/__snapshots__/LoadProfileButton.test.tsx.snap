@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FactionButtonGroup matches the snapshot 1`] = `
+<button
+  className="btn btn-light border rounded-lg load-profile-button mx-2 my-auto"
+  data-target="#fakeDialog"
+  data-toggle="modal"
+  title="My tooltip"
+/>
+`;

@@ -80,6 +80,13 @@ exports[`DefenseAbilities matches the snapshot 1`] = `
   />
   <AbilityToggle
     active={false}
+    id="immuneMeleePierceToggle"
+    label="Immune: Melee Pierce"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
+  <AbilityToggle
+    active={false}
     id="immunePierceToggle"
     label="Immune: Pierce"
     onActiveChanged={[MockFunction]}
@@ -199,6 +206,13 @@ exports[`DefenseAbilities matches the snapshot for simplified view 1`] = `
   />
   <AbilityToggle
     active={false}
+    id="immuneMeleePierceToggle"
+    label="Immune: Melee Pierce"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
     id="immunePierceToggle"
     label="Immune: Pierce"
     onActiveChanged={[MockFunction]}
@@ -233,7 +247,7 @@ exports[`DefenseAbilities matches the snapshot for simplified view 1`] = `
     onActiveChanged={[MockFunction]}
     onValueChanged={[MockFunction]}
     value={1}
-    visible={true}
+    visible={false}
   />
 </div>
 `;

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FactionButtonGroup matches the snapshot 1`] = `
+<div
+  className="btn-group btn-group-toggle"
+  data-toggle="buttons"
+>
+  <label
+    className="btn btn-light faction-label active"
+    title="Rebel"
+  >
+    <input
+      autoComplete="off"
+      checked={true}
+      id="rebel"
+      name="faction"
+      onChange={[Function]}
+      type="radio"
+      value="rebel"
+    />
+    <img
+      className="rebel-faction-img mx-1"
+    />
+  </label>
+  <label
+    className="btn btn-light faction-label"
+    title="Empire"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      id="empire"
+      name="faction"
+      onChange={[Function]}
+      type="radio"
+      value="empire"
+    />
+    <img
+      className="empire-faction-img mx-1"
+    />
+  </label>
+  <label
+    className="btn btn-light faction-label"
+    title="Republic"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      id="republic"
+      name="faction"
+      onChange={[Function]}
+      type="radio"
+      value="republic"
+    />
+    <img
+      className="republic-faction-img mx-1"
+    />
+  </label>
+  <label
+    className="btn btn-light faction-label"
+    title="Separatist"
+  >
+    <input
+      autoComplete="off"
+      checked={false}
+      id="separatist"
+      name="faction"
+      onChange={[Function]}
+      type="radio"
+      value="separatist"
+    />
+    <img
+      className="separatist-faction-img mx-1"
+    />
+  </label>
+</div>
+`;

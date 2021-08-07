@@ -1,0 +1,197 @@
+{
+    "$id": "http://www.legiondice.com/schemas/unitkeywords",
+    "definitions": {
+        "keywords": {
+            "type": "object",
+            "properties": {
+                "agile": { "type": "number", "minimum": 1, "maximum": 2 },
+                "ai": {
+                    "type": "array",
+                    "items": { "enum": ["attack", "dodge", "move"] }
+                },
+                "armor": { "type": "boolean" },
+                "armorX": { "type": "number", "minimum": 1, "maximum": 2 },
+                "arsenal": { "type": "number", "minimum": 2, "maximum": 3 },
+                "ataruMastery": { "type": "boolean" },
+                "authoritative": { "type": "boolean" },
+                "barrage": { "type": "boolean" },
+                "block": { "type": "boolean" },
+                "bolster": { "type": "number", "minimum": 1, "maximum": 2 },
+                "bounty": { "type": "boolean" },
+                "calculateOdds": { "type": "boolean" },
+                "charge": { "type": "boolean" },
+                "climbingVehicle": { "type": "boolean" },
+                "compel": { "type": "boolean" },
+                "contingencies": { "type": "number", "minimum": 1, "maximum": 3 },
+                "coordinate": {
+                    "type": "array",
+                    "items": { "$ref": "unitcriteria#/definitions/unitCriteria" }
+                },
+                "counterpart": { "type": "string", "minLength": 1 },
+                "cover": { "enum": ["none", "light", "heavy"] },
+                "covertOps": { "type": "boolean" },
+                "cunning": { "type": "boolean" },
+                "dangerSense": { "type": "number", "minimum": 1, "maximum": 4 },
+                "dauntless": { "type": "boolean" },
+                "defend": { "type": "number", "minimum": 1, "maximum": 1 },
+                "deflect": { "type": "boolean" },
+                "demoralize": { "type": "number", "minimum": 1, "maximum": 1 },
+                "detachment": { "type": "string", "minLength": 1 },
+                "direct": { "$ref": "unitcriteria#/definitions/unitCriteria" },
+                "disciplined": { "type": "number", "minimum": 1, "maximum": 2 },
+                "disengage": { "type": "boolean" },
+                "distract": { "type": "boolean" },
+                "djemSoMastery": { "type": "boolean" },
+                "duelist": { "type": "boolean" },
+                "enrage": { "type": "number", "minimum": 1, "maximum": 4 },
+                "entourage": { "type": "string", "minLength": 1 },
+                "equip": { "type": "array", "items": { "type": "string" } },
+                "exemplar": { "type": "boolean" },
+                "expertClimber": { "type": "boolean" },
+                "fieldCommander": { "type": "boolean" },
+                "fireSupport": { "type": "boolean" },
+                "flawed": { "type": "boolean" },
+                "fullPivot": { "type": "boolean" },
+                "generator": { "type": "number", "minimum": 1, "maximum": 4 },
+                "grounded": { "type": "boolean" },
+                "guardian": { "type": "number", "minimum": 1, "maximum": 3 },
+                "guidance": { "type": "boolean" },
+                "gunslinger": { "type": "boolean" },
+                "heavyWeaponTeam": { "type": "boolean" },
+                "hover": {
+                    "type": "object",
+                    "oneOf": [{
+                        "properties": {
+                            "ground": { "type": "boolean" }
+                        },
+                        "required": ["ground"],
+                        "additionalProperties": false
+                    },{
+                        "properties": {
+                            "air": { "type": "number", "minimum": 1, "maximum": 2 }
+                        },
+                        "required": ["air"],
+                        "additionalProperties": false
+                    }]
+                  },
+                "immune": {
+                    "type": "array",
+                    "items": [{
+                        "enum": ["blast", "melee", "meleePierce", "pierce", "range1Weapons"]
+                    }]
+                },
+                "impervious": { "type": "boolean" },
+                "incognito": { "type": "boolean" },
+                "inconspicuous": { "type": "boolean" },
+                "indomitable": { "type": "boolean" },
+                "infiltrate": { "type": "boolean" },
+                "inspire": { "type": "number", "minimum": 1, "maximum": 2 },
+                "jediHunter": { "type": "boolean" },
+                "jump": { "type": "number", "minimum": 1, "maximum": 2 },
+                "juyoMastery": { "type": "boolean" },
+                "leader": { "type": "boolean" },
+                "lightTransport": {
+                    "type": "object",
+                    "oneOf": [{
+                        "properties": {
+                            "closed": { "type": "number", "minimum": 1, "maximum": 1 }
+                        },
+                        "required": ["closed"],
+                        "additionalProperties": false
+                    },{
+                        "properties": {
+                            "open": { "type": "number", "minimum": 1, "maximum": 1 }
+                        },
+                        "required": ["open"],
+                        "additionalProperties": false
+                    }]
+                },
+                "loadout": { "type": "boolean" },
+                "lowProfile": { "type": "boolean" },
+                "makashiMastery": { "type": "boolean" },
+                "marksman": { "type": "boolean" },
+                "masterOfTheForce": { "type": "number", "minimum": 1, "maximum": 2 },
+                "nimble": { "type": "boolean" },
+                "noncombatant": { "type": "boolean" },
+                "observe": { "type": "number", "minimum": 1, "maximum": 4 },
+                "outmaneuver": { "type": "boolean" },
+                "precise": { "type": "number", "minimum": 1, "maximum": 2 },
+                "pullingTheStrings": { "type": "boolean" },
+                "quickThinking": { "type": "boolean" },
+                "ready": { "type": "number", "minimum": 1, "maximum": 1 },
+                "recharge": { "type": "number", "minimum": 1, "maximum": 2 },
+                "regenerate": { "type": "number", "minimum": 1, "maximum": 3 },
+                "relentless": { "type": "boolean" },
+                "reliable": { "type": "number", "minimum": 1, "maximum": 2 },
+                "repair": {
+                    "type": "object",
+                    "properties": {
+                        "value": { "type": "number", "minimum": 1, "maximum": 2 },
+                        "capacity": { "type": "number", "minimum": 1, "maximum": 2 }
+                    },
+                    "required": ["value", "capacity"],
+                    "additionalProperties": false
+                },
+                "reposition": { "type": "boolean" },
+                "retinue": { "$ref": "unitcriteria#/definitions/unitCriteria" },
+                "scale": { "type": "boolean" },
+                "scout": { "type": "number", "minimum": 1, "maximum": 3 },
+                "scoutingParty": { "type": "number", "minimum": 1, "maximum": 2 },
+                "secretMission": { "type": "boolean" },
+                "sentinel": { "type": "boolean" },
+                "sharpshooter": { "type": "number", "minimum": 1, "maximum": 2 },
+                "shielded": { "type": "number", "minimum": 1, "maximum": 4 },
+                "small": { "type": "boolean" },
+                "smoke": { "type": "number", "minimum": 1, "maximum": 1 },
+                "soresuMastery": { "type": "boolean" },
+                "speeder": { "type": "number", "minimum": 1, "maximum": 2 },
+                "spotter": { "type": "number", "minimum": 1, "maximum": 2 },
+                "spur": { "type": "boolean" },
+                "stationary": { "type": "boolean" },
+                "steady": { "type": "boolean" },
+                "tactical": { "type": "number", "minimum": 1, "maximum": 1 },
+                "takeCover": { "type": "number", "minimum": 1, "maximum": 2 },
+                "target": { "type": "number", "minimum": 1, "maximum": 1 },
+                "teamwork": { "type": "string", "minLength": 1 },
+                "tempted": { "type": "boolean" },
+                "transport": {
+                    "type": "object",
+                    "oneOf": [{
+                        "properties": {
+                            "closed": { "type": "number", "minimum": 1, "maximum": 1 }
+                        },
+                        "required": ["closed"],
+                        "additionalProperties": false
+                    },{
+                        "properties": {
+                            "open": { "type": "number", "minimum": 1, "maximum": 1 }
+                        },
+                        "required": ["open"],
+                        "additionalProperties": false
+                    }]
+                },
+                "treat": {
+                    "type": "object",
+                    "properties": {
+                        "value": { "type": "number", "minimum": 1, "maximum": 1 },
+                        "capacity": { "type": "number", "minimum": 1, "maximum": 2 }
+                    },
+                    "required": ["value", "capacity"],
+                    "additionalProperties": false
+                },
+                "uncannyLuck": { "type": "number", "minimum": 1, "maximum": 3 },
+                "unhindered": { "type": "boolean" },
+                "weakPoint": {
+                    "type": "object",
+                    "properties": {
+                        "rear": { "type": "number", "minimum": 1, "maximum": 2 },
+                        "sides": { "type": "number", "minimum": 1, "maximum": 1 }
+                    },
+                    "additionalProperties": false
+                },
+                "wheelMode": { "type": "boolean" }
+            },
+            "additionalProperties": false
+        }
+    }
+}

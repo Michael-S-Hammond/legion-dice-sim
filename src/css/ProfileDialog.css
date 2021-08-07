@@ -1,0 +1,141 @@
+.rebel-faction-img {
+  content: url("../img/faction/Rebel.png");
+  height: 30px;
+  width: 30px; }
+
+.empire-faction-img {
+  content: url("../img/faction/Empire.png");
+  height: 30px;
+  width: 30px; }
+
+.republic-faction-img {
+  content: url("../img/faction/Republic.png");
+  height: 30px;
+  width: 30px; }
+
+.separatist-faction-img {
+  content: url("../img/faction/Separatist.png");
+  height: 30px;
+  width: 30px; }
+
+.faction-label {
+  padding: 2px; }
+
+.commander-rank-img {
+  content: url("../img/rank/commander.png");
+  height: 30px;
+  width: 30px; }
+
+.operative-rank-img {
+  content: url("../img/rank/operative.png");
+  height: 30px;
+  width: 30px; }
+
+.corps-rank-img {
+  content: url("../img/rank/corps.png");
+  height: 30px;
+  width: 30px; }
+
+.specialforces-rank-img {
+  content: url("../img/rank/specialforces.png");
+  height: 30px;
+  width: 30px; }
+
+.support-rank-img {
+  content: url("../img/rank/support.png");
+  height: 30px;
+  width: 30px; }
+
+.heavy-rank-img {
+  content: url("../img/rank/heavy.png");
+  height: 30px;
+  width: 30px; }
+
+.rank-label {
+  padding: 2px; }
+
+.armament-upgrade-img {
+  content: url("../img/upgrade/armament.png");
+  height: 30px;
+  width: 30px; }
+
+.command-upgrade-img {
+  content: url("../img/upgrade/command.png");
+  height: 30px;
+  width: 30px; }
+
+.comms-upgrade-img {
+  content: url("../img/upgrade/comms.png");
+  height: 30px;
+  width: 30px; }
+
+.counterpart-upgrade-img {
+  content: url("../img/upgrade/personnel.png");
+  height: 30px;
+  width: 30px; }
+
+.crew-upgrade-img {
+  content: url("../img/upgrade/crew.png");
+  height: 30px;
+  width: 30px; }
+
+.force-upgrade-img {
+  content: url("../img/upgrade/force.png");
+  height: 30px;
+  width: 30px; }
+
+.gear-upgrade-img {
+  content: url("../img/upgrade/gear.png");
+  height: 30px;
+  width: 30px; }
+
+.generatory-upgrade-img {
+  content: url("../img/upgrade/generator.png");
+  height: 30px;
+  width: 30px; }
+
+.grenades-upgrade-img {
+  content: url("../img/upgrade/grenades.png");
+  height: 30px;
+  width: 30px; }
+
+.hardpoint-upgrade-img {
+  content: url("../img/upgrade/hardpoint.png");
+  height: 30px;
+  width: 30px; }
+
+.heavyWeapon-upgrade-img {
+  content: url("../img/upgrade/heavyweapon.png");
+  height: 30px;
+  width: 30px; }
+
+.ordinance-upgrade-img {
+  content: url("../img/upgrade/ordinance.png");
+  height: 30px;
+  width: 30px; }
+
+.personnel-upgrade-img {
+  content: url("../img/upgrade/personnel.png");
+  height: 30px;
+  width: 30px; }
+
+.pilot-upgrade-img {
+  content: url("../img/upgrade/pilot.png");
+  height: 30px;
+  width: 30px; }
+
+.training-upgrade-img {
+  content: url("../img/upgrade/training.png");
+  height: 30px;
+  width: 30px; }
+
+.profile-select {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.profile-option {
+  max-width: 95% !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }

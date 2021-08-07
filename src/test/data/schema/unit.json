@@ -1,0 +1,42 @@
+{
+    "$id": "http://www.legiondice.com/schemas/unit",
+    "definitions": {
+        "unit": {
+            "type": "object",
+            "properties": {
+                "faction": { "$ref": "faction#/definitions/faction" },
+                "name": { "type": "string", "minLength": 1 },
+                "subtitle": { "type": "string", "minLength": 1 },
+                "unique": { "type": "boolean" },
+                "rank": { "$ref": "unitrank#/definitions/unitRank" },
+                "miniCount": { "type": "number", "minimum": 1, "maximum": 6 },
+                "points": { "type": "number", "minimum": 1, "maximum": 250 },
+                "unitType": { "$ref": "unittype#/definitions/unitType" },
+                "defenseDie": { "enum": ["red", "white"] },
+                "wounds": { "type": "number", "minimum": 1, "maximum": 11 },
+                "courage": { "type": "number", "minimum": 1, "maximum": 4 },
+                "resilience": { "type": "number", "minimum": 1, "maximum": 8 },
+                "attackSurge": { "enum": ["blank", "hit", "critical"] },
+                "defenseSurge": { "type": "boolean" },
+                "speed": { "type": "number", "minimum": 0, "maximum": 3 },
+                "weapons": {
+                    "type": "array",
+                    "items": { "$ref": "weapon#/definitions/weapon" }
+                },
+                "upgrades": {
+                    "type": "array",
+                    "items": [{
+                        "enum": ["heavyWeapon", "personnel", "force", "command",
+                            "hardpoint", "gear", "grenades", "comms", "pilot",
+                            "training", "generator", "armament", "crew", "ordinance"]
+                    }]
+                },
+                "keywords": { "$ref": "unitkeywords#/definitions/keywords" }
+            },
+            "required": ["faction", "name", "rank", "miniCount", "points",
+                "unitType", "defenseDie", "wounds", "attackSurge", "defenseSurge",
+                "speed"],
+            "additionalProperties": false
+        }
+    }
+}

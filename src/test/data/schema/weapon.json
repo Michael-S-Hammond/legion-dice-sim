@@ -1,0 +1,25 @@
+{
+    "$id": "http://www.legiondice.com/schemas/weapon",
+    "definitions": {
+        "weapon": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "minimumRange": { "type": "number", "minimum": 0, "maximum": 4 },
+                "maximumRange": { "type": "number", "minimum": 0, "maximum": 5 },
+                "dice": {
+                    "type": "object",
+                    "properties": {
+                        "red": { "type": "number", "minimum": 0, "maximum": 10 },
+                        "black": { "type": "number", "minimum": 0, "maximum": 10 },
+                        "white": { "type": "number", "minimum": 0, "maximum": 10 }
+                    },
+                    "required": ["red", "black", "white"]
+                },
+                "keywords": { "$ref": "weaponkeywords#/definitions/keywords" }
+            },
+            "required": ["name", "minimumRange", "dice"],
+            "additionalProperties": false
+        }
+    }
+}

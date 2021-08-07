@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitSelector matches the snapshot 1`] = `
+<div>
+  <div
+    className="d-flex mx-auto"
+  >
+    <select
+      aria-label="Unit name"
+      className="rounded px-2 mx-auto"
+      id="my-unit-selector-nameSelect"
+      onChange={[Function]}
+      value="DF-90 Mortar Trooper"
+    >
+      <option
+        key="DF-90 Mortar Trooper"
+        value="DF-90 Mortar Trooper"
+      >
+        DF-90 Mortar Trooper
+      </option>
+      <option
+        key="Shoretroopers"
+        value="Shoretroopers"
+      >
+        Shoretroopers
+      </option>
+      <option
+        key="Snowtroopers"
+        value="Snowtroopers"
+      >
+        Snowtroopers
+      </option>
+      <option
+        key="Stormtroopers"
+        value="Stormtroopers"
+      >
+        Stormtroopers
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`UnitSelector matches the snapshot when multiple units have same name 1`] = `
+<div>
+  <div
+    className="d-flex mx-auto"
+  >
+    <select
+      aria-label="Unit name"
+      className="rounded px-2 mx-auto"
+      id="my-unit-selector-nameSelect"
+      onChange={[Function]}
+      value="ARC Troopers"
+    >
+      <option
+        key="ARC Troopers"
+        value="ARC Troopers"
+      >
+        ARC Troopers
+      </option>
+      <option
+        key="Wookiee Warriors"
+        value="Wookiee Warriors"
+      >
+        Wookiee Warriors
+      </option>
+    </select>
+  </div>
+  <div
+    className="d-flex mx-auto mt-2"
+  >
+    <select
+      aria-label="Unit subtitle"
+      className="rounded px-2 mx-auto"
+      id="my-unit-selector-subtitleSelect"
+      onChange={[Function]}
+      value="Strike Team"
+    >
+      <option
+        key="ARC Troopers-undefined"
+      />
+      <option
+        key="ARC Troopers-Strike Team"
+        value="Strike Team"
+      >
+        Strike Team
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`UnitSelector matches the snapshot with subtitle 1`] = `
+<div>
+  <div
+    className="d-flex mx-auto"
+  >
+    <select
+      aria-label="Unit name"
+      className="rounded px-2 mx-auto"
+      id="my-unit-selector-nameSelect"
+      onChange={[Function]}
+      value="Luke Skywalker"
+    >
+      <option
+        key="Chewbacca"
+        value="Chewbacca"
+      >
+        Chewbacca
+      </option>
+      <option
+        key="K-2SO"
+        value="K-2SO"
+      >
+        K-2SO
+      </option>
+      <option
+        key="Luke Skywalker"
+        value="Luke Skywalker"
+      >
+        Luke Skywalker
+      </option>
+      <option
+        key="R2-D2"
+        value="R2-D2"
+      >
+        R2-D2
+      </option>
+      <option
+        key="Sabine Wren"
+        value="Sabine Wren"
+      >
+        Sabine Wren
+      </option>
+    </select>
+  </div>
+  <div
+    className="text-center mt-2 mx-auto"
+    key="my-unit-selector-subtitle-one"
+  >
+    Jedi Knight
+  </div>
+</div>
+`;

@@ -11,35 +11,29 @@ type CombatProps = {
     eventHandlers: AS.AppStateCombatEventHandlers,
 };
 
-class Combat extends React.Component<CombatProps> {
-    constructor(props: CombatProps) {
-        super(props);
-    }
-
-    render() : JSX.Element {
-        return (
-            <div>
-                <h2 className="d-flex justify-content-center my-2">Combat</h2>
-                <AbilityXToggle
-                    id='guardianXToggle'
-                    label='Guardian'
-                    visible={true}
-                    active={this.props.input.guardian.active}
-                    onActiveChanged={this.props.eventHandlers.handleGuardianXChange}
-                    value={this.props.input.guardian.value}
-                    onValueChanged={this.props.eventHandlers.handleGuardianXValueChange}
-                    maxValue={12}
-                    ></AbilityXToggle>
-                <AbilityToggle
-                    id='meleeAttackToggle'
-                    label='Melee Attack'
-                    visible={true}
-                    active={this.props.input.meleeAttack}
-                    onActiveChanged={this.props.eventHandlers.handleMeleeAttackChange}
-                    ></AbilityToggle>
-            </div>
-        )
-    }
+function Combat(props: CombatProps) : JSX.Element {
+    return (
+        <div>
+            <h2 className="d-flex justify-content-center my-2">Combat</h2>
+            <AbilityXToggle
+                id='guardianXToggle'
+                label='Guardian'
+                visible={true}
+                active={props.input.guardian.active}
+                onActiveChanged={props.eventHandlers.handleGuardianXChange}
+                value={props.input.guardian.value}
+                onValueChanged={props.eventHandlers.handleGuardianXValueChange}
+                maxValue={12}
+                ></AbilityXToggle>
+            <AbilityToggle
+                id='meleeAttackToggle'
+                label='Melee Attack'
+                visible={true}
+                active={props.input.meleeAttack}
+                onActiveChanged={props.eventHandlers.handleMeleeAttackChange}
+                ></AbilityToggle>
+        </div>
+    );
 }
 
 export default Combat;

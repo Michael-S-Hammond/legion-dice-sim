@@ -1,0 +1,40 @@
+{
+    "$id": "http://www.legiondice.com/schemas/weaponkeywords",
+    "definitions": {
+        "keywords": {
+            "type": "object",
+            "properties": {
+                "beam": { "type": "number", "minimum": 1, "maximum": 2 },
+                "blast": { "type": "boolean" },
+                "critical": { "type": "number", "minimum": 1, "maximum": 2 },
+                "cumbersome": { "type": "boolean" },
+                "cycle": { "type": "boolean" },
+                "fixed": { "type": "array", "items": { "enum": ["front", "rear"] } },
+                "highVelocity": { "type": "boolean" },
+                "immobilize": { "type": "number", "minimum": 1, "maximum": 3 },
+                "immune": {
+                    "type": "array",
+                    "items": [{
+                        "enum": ["deflect"]
+                    }]
+                },
+                "impact": { "type": "number", "minimum": 1, "maximum": 3 },
+                "ion": { "type": "number", "minimum": 1, "maximum": 2 },
+                "lethal": { "type": "number", "minimum": 1, "maximum": 1 },
+                "longShot": { "type": "number", "minimum": 1, "maximum": 1 },
+                "pierce": { "type": "number", "minimum": 1, "maximum": 3 },
+                "poison": { "type": "number", "minimum": 1, "maximum": 3 },
+                "ram": { "type": "number", "minimum": 1, "maximum": 1 },
+                "reconfigure": { "type": "boolean" },
+                "scatter": { "type": "boolean" },
+                "sidearm": { "enum": ["melee", "ranged"] },
+                "spray": { "type": "boolean" },
+                "suppressive": { "type": "boolean" },
+                "surgeCrit": { "type": "boolean" },
+                "towCable": { "type": "boolean" },
+                "versatile": { "type": "boolean" }
+            },
+            "additionalProperties": false
+        }
+    }
+}
