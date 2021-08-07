@@ -178,7 +178,7 @@ export class DiceRoller {
     }
 
     private defaultRollAttackDie(color: T.DieColor): T.AttackDieResult {
-        const number = Math.floor(Math.random() * Math.floor(8));
+        const number = Math.floor(Math.random() * 8);
         if (number === 7) {
             return T.AttackDieResult.Critical;
         }
@@ -194,7 +194,7 @@ export class DiceRoller {
     }
 
     private defaultRollDefenseDie(color: T.DieColor): T.DefenseDieResult {
-        const number = Math.floor(Math.random() * Math.floor(6));
+        const number = Math.floor(Math.random() * 6);
         if (number === 5) {
             return T.DefenseDieResult.Surge;
         }
@@ -209,10 +209,11 @@ export class DiceRoller {
         // 1. Roll dice
 
         // makashi mastery
-        if (modifiedInput.offense.makashiMastery && modifiedInput.combat.meleeAttack &&
-            modifiedInput.offense.pierceX.active && modifiedInput.offense.pierceX.value > 1 &&
-            (modifiedInput.defense.immunePierce || modifiedInput.defense.impervious)) {
+        if(modifiedInput.offense.makashiMastery && modifiedInput.combat.meleeAttack &&
+                modifiedInput.offense.pierceX.active && modifiedInput.offense.pierceX.value > 1 &&
+                (modifiedInput.defense.immunePierce || modifiedInput.defense.immuneMeleePierce || modifiedInput.defense.impervious)) {
             modifiedInput.offense.pierceX.value--;
+            modifiedInput.defense.immuneMeleePierce = false;
             modifiedInput.defense.immunePierce = false;
             modifiedInput.defense.impervious = false;
         }
@@ -489,10 +490,10 @@ export class DiceRoller {
         // number of defense dice to roll
         let defenseDiceCount = status.defenseResult.forcedSaves;
 
-        // honor immune: pierce
-        if (modifiedInput.defense.immunePierce) {
-            modifiedInput.offense.pierceX.active = false;
-        }
+    // honor immune: pierce
+    if(modifiedInput.defense.immunePierce || (modifiedInput.defense.immuneMeleePierce && modifiedInput.combat.meleeAttack)) {
+      modifiedInput.offense.pierceX.active = false;
+    }
 
         // impervious
         if (modifiedInput.defense.impervious && modifiedInput.offense.pierceX.active) {

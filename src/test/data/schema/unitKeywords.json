@@ -133,7 +133,7 @@
                     "additionalProperties": false
                 },
                 "reposition": { "type": "boolean" },
-                "retinue": { "type": "string", "minLength": 1 },
+                "retinue": { "$ref": "unitcriteria#/definitions/unitCriteria" },
                 "scale": { "type": "boolean" },
                 "scout": { "type": "number", "minimum": 1, "maximum": 3 },
                 "scoutingParty": { "type": "number", "minimum": 1, "maximum": 2 },

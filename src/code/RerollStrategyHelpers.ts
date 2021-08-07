@@ -5,7 +5,8 @@ import * as RS from "./RerollStrategy";
 
 export function getEffectiveLethal(input: T.AttackInput, effectiveHits: number, criticals: number) : number {
     const immunePierce = input.defense.immunePierce ||
-        (input.defense.duelist && input.combat.meleeAttack);
+        ((input.defense.duelist || input.defense.immuneMeleePierce) && input.combat.meleeAttack);
+    let effectiveLethal = 0;
     if(input.offense.lethalX.active && !immunePierce) {
         let effectiveDamage = input.defense.outmaneuver ?
             Math.max(0, (criticals + effectiveHits) - input.defense.tokens.dodge) :
@@ -16,9 +17,9 @@ export function getEffectiveLethal(input: T.AttackInput, effectiveHits: number, 
             pierceValue++;
         }
         const damageAfterPierce = Math.max(effectiveDamage - pierceValue, 0);
-        return Math.min(damageAfterPierce, input.offense.lethalX.value);
+        effectiveLethal = Math.min(damageAfterPierce, input.offense.lethalX.value);
     }
-    return 0;
+    return effectiveLethal;
 }
 
 export type Conversions = {

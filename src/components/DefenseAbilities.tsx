@@ -92,6 +92,13 @@ function DefenseAbilities(props: DefenseAbilitiesProps) : JSX.Element {
                 onActiveChanged={props.eventHandlers.handleImmuneBlastChange}
                 ></AbilityToggle>
             <AbilityToggle
+                id='immuneMeleePierceToggle'
+                label='Immune: Melee Pierce'
+                visible={!props.showSimpleView}
+                active={props.inputs.immuneMeleePierce}
+                onActiveChanged={props.eventHandlers.handleImmuneMeleePierceChange}
+                ></AbilityToggle>
+            <AbilityToggle
                 id='immunePierceToggle'
                 label='Immune: Pierce'
                 visible={true}

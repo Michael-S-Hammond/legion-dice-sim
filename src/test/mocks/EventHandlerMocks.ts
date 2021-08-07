@@ -56,6 +56,7 @@ export function createMockAppStateDefenseEventHandlers(): AS.AppStateDefenseEven
         handleDuelistChange: jest.fn(),
         handleHasForceUpgradesChange: jest.fn(),
         handleImmuneBlastChange: jest.fn(),
+        handleImmuneMeleePierceChange: jest.fn(),
         handleImmunePierceChange: jest.fn(),
         handleImperviousChange: jest.fn(),
         handleLowProfileChange: jest.fn(),

@@ -68,6 +68,7 @@ export type AppStateDefenseEventHandlers = {
     handleDuelistChange: (active: boolean) => void,
     handleHasForceUpgradesChange: (active: boolean) => void,
     handleImmuneBlastChange: (active: boolean) => void,
+    handleImmuneMeleePierceChange: (active: boolean) => void,
     handleImmunePierceChange: (active: boolean) => void,
     handleImperviousChange: (active: boolean) => void,
     handleLowProfileChange: (active: boolean) => void,
@@ -496,6 +497,7 @@ export class AppStateManager {
             handleDuelistChange: (active: boolean) => this.handleDuelistDefenseChange(active),
             handleHasForceUpgradesChange: (active: boolean) => this.handleHasForceUpgradesChange(active),
             handleImmuneBlastChange: (active: boolean) => this.handleImmuneBlastChange(active),
+            handleImmuneMeleePierceChange: (active: boolean) => this.handleImmuneMeleePierceChange(active),
             handleImmunePierceChange: (active: boolean) => this.handleImmunePierceChange(active),
             handleImperviousChange: (active: boolean) => this.handleImperviousChange(active),
             handleLowProfileChange: (active: boolean) => this.handleLowProfileChange(active),
@@ -653,10 +655,21 @@ export class AppStateManager {
         this.setState(newState);
     }
 
+    private handleImmuneMeleePierceChange(active: boolean) {
+        const newState = this.cloneState();
+        newState.inputs.defense.immuneMeleePierce = active;
+        if (active) {
+            newState.inputs.defense.immunePierce = false;
+            newState.inputs.defense.impervious = false;
+        }
+        this.setState(newState);
+    }
+
     private handleImmunePierceChange(hasImmunePierce: boolean) {
         const newState = this.cloneState();
         newState.inputs.defense.immunePierce = hasImmunePierce;
         if (hasImmunePierce) {
+            newState.inputs.defense.immuneMeleePierce = false;
             newState.inputs.defense.impervious = false;
         }
         this.setState(newState);
@@ -666,6 +679,7 @@ export class AppStateManager {
         const newState = this.cloneState();
         newState.inputs.defense.impervious = hasImpervious;
         if (hasImpervious) {
+            newState.inputs.defense.immuneMeleePierce = false;
             newState.inputs.defense.immunePierce = false;
         }
         this.setState(newState);
