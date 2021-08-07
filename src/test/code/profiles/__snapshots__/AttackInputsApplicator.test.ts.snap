@@ -34,6 +34,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 2,
@@ -94,6 +95,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -154,6 +156,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -214,6 +217,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -274,6 +278,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -334,6 +339,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -394,6 +400,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -454,6 +461,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -514,6 +522,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 2,
@@ -574,6 +583,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -634,6 +644,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -694,6 +705,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": true,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -754,6 +766,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 3,
@@ -814,6 +827,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -874,6 +888,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -934,6 +949,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -994,6 +1010,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1054,6 +1071,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1114,6 +1132,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1174,6 +1193,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -1234,6 +1254,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": true,
     "value": 1,
@@ -1294,6 +1315,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1354,6 +1376,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1414,6 +1437,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1474,6 +1498,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1534,6 +1559,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1594,6 +1620,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1654,6 +1681,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,
@@ -1714,6 +1742,7 @@ Object {
     "value": 1,
   },
   "makashiMastery": false,
+  "marksman": false,
   "pierceX": Object {
     "active": false,
     "value": 1,

@@ -58,6 +58,17 @@ class ArmorXRerollStrategy implements RS.RerollStrategy {
         }
         const effectiveRam = ramConvertMiss + ramConvertHit;
 
+        
+        if(reason === RS.RerollReason.AimToken) {
+            // marksman
+            const critsForMarksman = dmm.getResultCount(T.AttackDieResult.Critical);
+            const hitsForMarksman = dmm.getResultCount(T.AttackDieResult.Hit);
+            const conversions = RSH.getMarksmanConversions(input, hitsForMarksman, critsForMarksman, remaining);
+
+            dmm.tryConvertResultCount(T.AttackDieResult.Miss, T.AttackDieResult.Hit, conversions.blanksToHits);
+            dmm.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Critical, conversions.hitsToCrits);
+        }
+
         // convert for armor x
         const remainingArmor = Math.max(0, input.defense.armorX.value - hitsAfterRam);
         const effectiveArmor = input.defense.armorX.value - remainingArmor;

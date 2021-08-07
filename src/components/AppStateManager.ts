@@ -37,6 +37,7 @@ export type AppStateAttackEventHandlers = {
     handleLethalXChange: (active: boolean) => void,
     handleLethalXValueChange: (value: number) => void,
     handleMakashiMasteryChange: (active: boolean) => void,
+    handleMarksmanChange: (active: boolean) => void,
     handlePierceXChange: (active: boolean) => void,
     handlePierceXValueChange: (value: number) => void,
     handlePreciseXChange: (active: boolean) => void,
@@ -278,6 +279,7 @@ export class AppStateManager {
             handleLethalXChange: (active: boolean) => this.handleLethalXChange(active),
             handleLethalXValueChange: (value: number) => this.handleLethalXValueChange(value),
             handleMakashiMasteryChange: (active: boolean) => this.handleMakashiMasteryChange(active),
+            handleMarksmanChange: (active: boolean) => this.handleMarksmanChange(active),
             handlePierceXChange: (active: boolean) => this.handlePierceXChange(active),
             handlePierceXValueChange: (value: number) => this.handlePierceXValueChange(value),
             handlePreciseXChange: (active: boolean) => this.handlePreciseXChange(active),
@@ -415,6 +417,12 @@ export class AppStateManager {
     private handleMakashiMasteryChange(hasMakashiMastery: boolean) {
         const newState = this.cloneState();
         newState.inputs.offense.makashiMastery = hasMakashiMastery;
+        this.setState(newState);
+    }
+
+    private handleMarksmanChange(active: boolean) {
+        const newState = this.cloneState();
+        newState.inputs.offense.marksman = active;
         this.setState(newState);
     }
 

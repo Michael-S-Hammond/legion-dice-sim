@@ -1,14 +1,14 @@
 export enum DieColor {
-    Red = "red",
-    Black = "black",
-    White = "white",
+  Red = "red",
+  Black = "black",
+  White = "white",
 }
 
 export enum AttackDieResult {
-    Critical = 1,
-    Hit = 2,
-    Surge = 3,
-    Miss = 4,
+  Critical = 1,
+  Hit = 2,
+  Surge = 3,
+  Miss = 4,
 }
 
 export type AttackRoll = {
@@ -59,6 +59,7 @@ export type OffenseInput = {
   jediHunter: boolean,
   lethalX: AbilityX,
   makashiMastery: boolean,
+  marksman: boolean,
   pierceX: AbilityX,
   preciseX: AbilityX,
   ramX: AbilityX,
@@ -156,155 +157,128 @@ export enum ResultOutput {
   Graph = 3,
 }
 
-export function createDefaultAttackInput() : AttackInput {
+export function createDefaultAttackInput(): AttackInput {
   return {
-      offense: {
-          redDice: 0,
-          blackDice: 0,
-          whiteDice: 0,
-          surge: AttackSurgeConversion.Blank,
-          tokens: {
-            aim: 0,
-            surge: 0,
-          },
-          blast: false,
-          criticalX: { active: false, value: 1 },
-          duelist: false,
-          highVelocity: false,
-          impactX: { active: false, value: 1 },
-          ionX: { active: false, value: 1 },
-          jediHunter: false,
-          lethalX: { active: false, value: 1 },
-          makashiMastery: false,
-          pierceX: { active: false, value: 1 },
-          preciseX: { active: false, value: 1 },
-          ramX: { active: false, value: 1 },
-          sharpshooterX: { active: false, value: 1 },
+    offense: {
+      redDice: 0,
+      blackDice: 0,
+      whiteDice: 0,
+      surge: AttackSurgeConversion.Blank,
+      tokens: {
+        aim: 0,
+        surge: 0,
       },
-      defense: {
-          dieColor: DieColor.White,
-          surge: true,
-          tokens: {
-            dodge: 0,
-            observation: 0,
-            shield: 0,
-            suppression: 0,
-            surge: 0,
-          },
-          cover: Cover.None,
-          armor: false,
-          armorX: { active: false, value: 1 },
-          block: false,
-          dangerSenseX: { active: false, value: 1 },
-          deflect: false,
-          djemSoMastery: false,
-          duelist: false,
-          hasForceUpgrades: false,
-          immuneBlast: false,
-          immunePierce: false,
-          impervious: false,
-          lowProfile: false,
-          outmaneuver: false,
-          soresuMastery: false,
-          uncannyLuckX: { active: false, value: 1 }
+      blast: false,
+      criticalX: { active: false, value: 1 },
+      duelist: false,
+      highVelocity: false,
+      impactX: { active: false, value: 1 },
+      ionX: { active: false, value: 1 },
+      jediHunter: false,
+      lethalX: { active: false, value: 1 },
+      makashiMastery: false,
+      marksman: false,
+      pierceX: { active: false, value: 1 },
+      preciseX: { active: false, value: 1 },
+      ramX: { active: false, value: 1 },
+      sharpshooterX: { active: false, value: 1 },
+    },
+    defense: {
+      dieColor: DieColor.White,
+      surge: true,
+      tokens: {
+        dodge: 0,
+        observation: 0,
+        shield: 0,
+        suppression: 0,
+        surge: 0,
       },
-      combat: {
-        guardian: { active: false, value: 1 },
-        meleeAttack: false,
-      },
+      cover: Cover.None,
+      armor: false,
+      armorX: { active: false, value: 1 },
+      block: false,
+      dangerSenseX: { active: false, value: 1 },
+      deflect: false,
+      djemSoMastery: false,
+      duelist: false,
+      hasForceUpgrades: false,
+      immuneBlast: false,
+      immunePierce: false,
+      impervious: false,
+      lowProfile: false,
+      outmaneuver: false,
+      soresuMastery: false,
+      uncannyLuckX: { active: false, value: 1 }
+    },
+    combat: {
+      guardian: { active: false, value: 1 },
+      meleeAttack: false,
+    },
   }
 }
 
-export function cloneAttackInput(original: AttackInput) : AttackInput {
+function copyAbilityX(original: AbilityX): AbilityX {
   return {
-      offense: {
-        redDice: original.offense.redDice,
-        blackDice: original.offense.blackDice,
-        whiteDice: original.offense.whiteDice,
-        surge: original.offense.surge,
-        tokens: {
-          aim: original.offense.tokens.aim,
-          surge: original.offense.tokens.surge,
-        },
-        blast: original.offense.blast,
-        criticalX: {
-          active: original.offense.criticalX.active,
-          value: original.offense.criticalX.value
-        },
-        duelist: original.offense.duelist,
-        highVelocity: original.offense.highVelocity,
-        impactX: {
-          active: original.offense.impactX.active,
-          value: original.offense.impactX.value
-        },
-        ionX: {
-          active: original.offense.ionX.active,
-          value: original.offense.ionX.value
-        },
-        jediHunter: original.offense.jediHunter,
-        lethalX: {
-          active: original.offense.lethalX.active,
-          value: original.offense.lethalX.value
-        },
-        makashiMastery: original.offense.makashiMastery,
-        pierceX: {
-          active: original.offense.pierceX.active,
-          value: original.offense.pierceX.value
-        },
-        preciseX: {
-          active: original.offense.preciseX.active,
-          value: original.offense.preciseX.value
-        },
-        ramX: {
-          active: original.offense.ramX.active,
-          value: original.offense.ramX.value,
-        },
-        sharpshooterX: {
-          active: original.offense.sharpshooterX.active,
-          value: original.offense.sharpshooterX.value
-        },
+    active: original.active,
+    value: original.value
+  };
+}
+
+export function cloneAttackInput(original: AttackInput): AttackInput {
+  return {
+    offense: {
+      redDice: original.offense.redDice,
+      blackDice: original.offense.blackDice,
+      whiteDice: original.offense.whiteDice,
+      surge: original.offense.surge,
+      tokens: {
+        aim: original.offense.tokens.aim,
+        surge: original.offense.tokens.surge,
+      },
+      blast: original.offense.blast,
+      criticalX: copyAbilityX(original.offense.criticalX),
+      duelist: original.offense.duelist,
+      highVelocity: original.offense.highVelocity,
+      impactX: copyAbilityX(original.offense.impactX),
+      ionX: copyAbilityX(original.offense.ionX),
+      jediHunter: original.offense.jediHunter,
+      lethalX: copyAbilityX(original.offense.lethalX),
+      makashiMastery: original.offense.makashiMastery,
+      marksman: original.offense.marksman,
+      pierceX: copyAbilityX(original.offense.pierceX),
+      preciseX: copyAbilityX(original.offense.preciseX),
+      ramX: copyAbilityX(original.offense.ramX),
+      sharpshooterX: copyAbilityX(original.offense.sharpshooterX),
     },
     defense: {
-        dieColor: original.defense.dieColor,
-        surge: original.defense.surge,
-        tokens: {
-          dodge: original.defense.tokens.dodge,
-          observation: original.defense.tokens.observation,
-          shield: original.defense.tokens.shield,
-          suppression: original.defense.tokens.suppression,
-          surge: original.defense.tokens.surge,
-        },
-        cover: original.defense.cover,
-        armor: original.defense.armor,
-        armorX: {
-          active: original.defense.armorX.active,
-          value: original.defense.armorX.value
-        },
-        block: original.defense.block,
-        dangerSenseX: {
-          active: original.defense.dangerSenseX.active,
-          value: original.defense.dangerSenseX.value
-        },
-        deflect: original.defense.deflect,
-        djemSoMastery: original.defense.djemSoMastery,
-        duelist: original.defense.duelist,
-        hasForceUpgrades: original.defense.hasForceUpgrades,
-        immuneBlast: original.defense.immuneBlast,
-        immunePierce: original.defense.immunePierce,
-        impervious: original.defense.impervious,
-        lowProfile: original.defense.lowProfile,
-        outmaneuver: original.defense.outmaneuver,
-        soresuMastery: original.defense.soresuMastery,
-        uncannyLuckX: {
-          active: original.defense.uncannyLuckX.active,
-          value: original.defense.uncannyLuckX.value
-        },
+      dieColor: original.defense.dieColor,
+      surge: original.defense.surge,
+      tokens: {
+        dodge: original.defense.tokens.dodge,
+        observation: original.defense.tokens.observation,
+        shield: original.defense.tokens.shield,
+        suppression: original.defense.tokens.suppression,
+        surge: original.defense.tokens.surge,
+      },
+      cover: original.defense.cover,
+      armor: original.defense.armor,
+      armorX: copyAbilityX(original.defense.armorX),
+      block: original.defense.block,
+      dangerSenseX: copyAbilityX(original.defense.dangerSenseX),
+      deflect: original.defense.deflect,
+      djemSoMastery: original.defense.djemSoMastery,
+      duelist: original.defense.duelist,
+      hasForceUpgrades: original.defense.hasForceUpgrades,
+      immuneBlast: original.defense.immuneBlast,
+      immunePierce: original.defense.immunePierce,
+      impervious: original.defense.impervious,
+      lowProfile: original.defense.lowProfile,
+      outmaneuver: original.defense.outmaneuver,
+      soresuMastery: original.defense.soresuMastery,
+      uncannyLuckX: copyAbilityX(original.defense.uncannyLuckX),
     },
     combat: {
-      guardian: {
-        active: original.combat.guardian.active,
-        value: original.combat.guardian.value
-      },
+      guardian: copyAbilityX(original.combat.guardian),
       meleeAttack: original.combat.meleeAttack,
     },
   };

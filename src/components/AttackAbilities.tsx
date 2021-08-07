@@ -76,7 +76,7 @@ function AttackAbilities(props: AttackAbilitiesProps) : JSX.Element {
             <AbilityXToggle
                 id='lethalXToggle'
                 label='Lethal'
-                visible={true}
+                visible={!props.showSimpleView}
                 active={props.input.lethalX.active}
                 onActiveChanged={props.eventHandlers.handleLethalXChange}
                 value={props.input.lethalX.value}
@@ -89,6 +89,13 @@ function AttackAbilities(props: AttackAbilitiesProps) : JSX.Element {
                 visible={!props.showSimpleView}
                 active={props.input.makashiMastery}
                 onActiveChanged={props.eventHandlers.handleMakashiMasteryChange}
+                ></AbilityToggle>
+            <AbilityToggle
+                id='marksmanXToggle'
+                label='Marksman'
+                visible={!props.showSimpleView}
+                active={props.input.marksman}
+                onActiveChanged={props.eventHandlers.handleMarksmanChange}
                 ></AbilityToggle>
             <AbilityXToggle
                 id='pierceXToggle'

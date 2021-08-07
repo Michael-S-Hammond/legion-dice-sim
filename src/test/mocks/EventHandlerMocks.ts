@@ -23,6 +23,7 @@ export function createMockAppStateAttackEventHandlers(): AS.AppStateAttackEventH
         handleLethalXChange: jest.fn(),
         handleLethalXValueChange: jest.fn(),
         handleMakashiMasteryChange: jest.fn(),
+        handleMarksmanChange: jest.fn(),
         handlePierceXChange: jest.fn(),
         handlePierceXValueChange: jest.fn(),
         handlePreciseXChange: jest.fn(),

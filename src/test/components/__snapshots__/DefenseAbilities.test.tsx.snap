@@ -233,7 +233,7 @@ exports[`DefenseAbilities matches the snapshot for simplified view 1`] = `
     onActiveChanged={[MockFunction]}
     onValueChanged={[MockFunction]}
     value={1}
-    visible={true}
+    visible={false}
   />
 </div>
 `;

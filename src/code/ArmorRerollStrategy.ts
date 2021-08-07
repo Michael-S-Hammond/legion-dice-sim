@@ -35,6 +35,17 @@ class ArmorRerollStrategy implements RS.RerollStrategy {
             dmm.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Critical, ramRemaining);
         }
 
+        
+        if(reason === RS.RerollReason.AimToken) {
+            // marksman
+            const critsForMarksman = dmm.getResultCount(T.AttackDieResult.Critical);
+            const hitsForMarksman = dmm.getResultCount(T.AttackDieResult.Hit);
+            const conversions = RSH.getMarksmanConversions(input, hitsForMarksman, critsForMarksman, remaining);
+
+            dmm.tryConvertResultCount(T.AttackDieResult.Miss, T.AttackDieResult.Hit, conversions.blanksToHits);
+            dmm.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Critical, conversions.hitsToCrits);
+        }
+
         // any hits to be rerolled should be converted to misses in this block
         // therefore, hits should always be 0 when this completes
 

@@ -68,6 +68,7 @@ exports[`App handles simple view 1`] = `
               "handleLethalXChange": [Function],
               "handleLethalXValueChange": [Function],
               "handleMakashiMasteryChange": [Function],
+              "handleMarksmanChange": [Function],
               "handlePierceXChange": [Function],
               "handlePierceXValueChange": [Function],
               "handlePreciseXChange": [Function],
@@ -110,6 +111,7 @@ exports[`App handles simple view 1`] = `
                 "value": 1,
               },
               "makashiMastery": false,
+              "marksman": false,
               "pierceX": Object {
                 "active": false,
                 "value": 1,
@@ -404,6 +406,7 @@ exports[`App matches the snapshot 1`] = `
               "handleLethalXChange": [Function],
               "handleLethalXValueChange": [Function],
               "handleMakashiMasteryChange": [Function],
+              "handleMarksmanChange": [Function],
               "handlePierceXChange": [Function],
               "handlePierceXValueChange": [Function],
               "handlePreciseXChange": [Function],
@@ -446,6 +449,7 @@ exports[`App matches the snapshot 1`] = `
                 "value": 1,
               },
               "makashiMastery": false,
+              "marksman": false,
               "pierceX": Object {
                 "active": false,
                 "value": 1,

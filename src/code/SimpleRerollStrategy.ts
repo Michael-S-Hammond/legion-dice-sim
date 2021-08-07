@@ -36,12 +36,22 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
             dmm.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Critical, ramRemaining);
         }
 
-        // calculate misses that can be rerolled
+        if(reason === RS.RerollReason.AimToken) {
+            // marksman
+            const critsForMarksman = dmm.getResultCount(T.AttackDieResult.Critical);
+            const hitsForMarksman = dmm.getResultCount(T.AttackDieResult.Hit);
+            const conversions = RSH.getMarksmanConversions(input, hitsForMarksman, critsForMarksman, remaining);
+
+            dmm.tryConvertResultCount(T.AttackDieResult.Miss, T.AttackDieResult.Hit, conversions.blanksToHits);
+            dmm.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Critical, conversions.hitsToCrits);
+        }
+
+        // calculate dice  that can be rerolled
         rerollMiss = Math.min(rerollDiceCount, dmm.getResultCount(T.AttackDieResult.Miss));
 
-        // calculate hits that can be rerolled
         const totalCrits = dmm.getResultCount(T.AttackDieResult.Critical);
         const totalHits = dmm.getResultCount(T.AttackDieResult.Hit);
+        
         rerollHit = 0;
         if(rerollMiss < rerollDiceCount) {
             const possibleHits = Math.min(rolls.length - totalCrits, totalHits + RSH.getMaximumRerolledDice(input, remaining));

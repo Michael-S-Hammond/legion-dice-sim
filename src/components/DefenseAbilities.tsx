@@ -122,7 +122,7 @@ function DefenseAbilities(props: DefenseAbilitiesProps) : JSX.Element {
             <AbilityXToggle
                 id='uncannyLuckToggle'
                 label='Uncanny Luck'
-                visible={true}
+                visible={!props.showSimpleView}
                 active={props.inputs.uncannyLuckX.active}
                 onActiveChanged={props.eventHandlers.handleUncannyLuckXChange}
                 value={props.inputs.uncannyLuckX.value}

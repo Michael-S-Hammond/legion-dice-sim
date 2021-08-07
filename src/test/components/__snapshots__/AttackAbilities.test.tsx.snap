@@ -77,6 +77,13 @@ exports[`AttackAbilities matches the snapshot 1`] = `
     onActiveChanged={[MockFunction]}
     visible={true}
   />
+  <AbilityToggle
+    active={false}
+    id="marksmanXToggle"
+    label="Marksman"
+    onActiveChanged={[MockFunction]}
+    visible={true}
+  />
   <AbilityXToggle
     active={false}
     id="pierceXToggle"
@@ -188,12 +195,19 @@ exports[`AttackAbilities matches the snapshot for simplified view 1`] = `
     onActiveChanged={[MockFunction]}
     onValueChanged={[MockFunction]}
     value={1}
-    visible={true}
+    visible={false}
   />
   <AbilityToggle
     active={false}
     id="makashiMasteryToggle"
     label="Makashi Mastery"
+    onActiveChanged={[MockFunction]}
+    visible={false}
+  />
+  <AbilityToggle
+    active={false}
+    id="marksmanXToggle"
+    label="Marksman"
     onActiveChanged={[MockFunction]}
     visible={false}
   />

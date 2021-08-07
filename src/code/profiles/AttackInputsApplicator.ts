@@ -98,6 +98,9 @@ function applyUpgradeKeywords(upgrade: UC.Upgrade, tracking: Tracking) {
         if(upgrade.keywords.makashiMastery) {
             tracking.offense.makashiMastery = true;
         }
+        if(upgrade.keywords.marksman) {
+            tracking.offense.marksman = true;
+        }
         applyValueXKeyword(upgrade.keywords.precise, tracking.offense.preciseX);
         applyValueXKeyword(upgrade.keywords.sharpshooter, tracking.offense.sharpshooterX);
     }
@@ -326,6 +329,7 @@ function createTrackingObject(profile: UP.UnitProfile, weapons: Array<UP.Weapon>
             jediHunter: getBoolean(profile.keywords?.jediHunter),
             lethalX: { active: false, value: 1},
             makashiMastery: getBoolean(profile.keywords?.makashiMastery),
+            marksman: getBoolean(profile.keywords?.marksman),
             pierceX: { active: false, value: 1},
             preciseX: profile.keywords?.precise ? { active: true, value: profile.keywords.precise } : { active: false, value: 1},
             ramX: { active: false, value: 1},
