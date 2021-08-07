@@ -37,94 +37,7 @@ jobs:
           path: build/
 
   deploy-dev:
-    name: Deploy to Azure development environment
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - build
-
-    environment:
-      name: "Development"
-      url: "http://dev.legiondice.com"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: true
-
-  deploy-beta:
-    name: Deploy to Azure beta environment
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - deploy-dev
-
-    environment:
-      name: "Beta"
-      url: "http://beta.legiondice.com"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: true
-
-  deploy-production:
-    name: Deploy to Azure production environment
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - deploy-dev
-
-    environment:
-      name: "Production"
-      url: "http://www.legiondice.com"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: true
-
-  deploy-dev-tmto:
-    name: Deploy TellMeTheOdds dev environment
+    name: Deploy dev environment
 
     runs-on: ubuntu-latest
 
@@ -152,13 +65,13 @@ jobs:
           connection_string: ${{ secrets.StorageAccountConnectionString }}
           sync: true
 
-  deploy-beta-tmto:
-    name: Deploy TellMeTheOdds beta environment
+  deploy-beta:
+    name: Deploy beta environment
 
     runs-on: ubuntu-latest
 
     needs:
-      - deploy-dev-tmto
+      - deploy-dev
 
     environment:
       name: "TellMeTheOdds-Beta"
@@ -181,17 +94,46 @@ jobs:
           connection_string: ${{ secrets.StorageAccountConnectionString }}
           sync: true
 
-  deploy-production-tmto:
-    name: Deploy TellMeTheOdds production environment
+  deploy-production:
+    name: Deploy production environment
 
     runs-on: ubuntu-latest
 
     needs:
-      - deploy-dev-tmto
+      - deploy-dev
 
     environment:
       name: "TellMeTheOdds-Prod"
       url: "https://www.tellmetheodds.net"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v2.0.8
+        with:
+          name: 'build-output'
+          path: build
+
+      - name: Upload to Azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          source_dir: 'build'
+          container_name: '$web'
+          connection_string: ${{ secrets.StorageAccountConnectionString }}
+          sync: true
+
+  deploy-old-production:
+    name: Deploy to LegionDice.com
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - deploy-dev
+
+    environment:
+      name: "Production"
+      url: "http://www.legiondice.com"
 
     steps:
       - uses: actions/checkout@v2
