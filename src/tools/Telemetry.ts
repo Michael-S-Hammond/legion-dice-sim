@@ -7,7 +7,7 @@ export class Telemetry {
   private static initialize() {
     Telemetry._appInsights = new ApplicationInsights({
       config: {
-        connectionString: 'InstrumentationKey=693daa77-5cc8-4b66-be41-0cc5d3e8c460;IngestionEndpoint=https://northcentralus-0.in.applicationinsights.azure.com/'
+        connectionString: 'InstrumentationKey=58eb2b37-2eb1-4a5e-91b6-2e983bb20f36;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/'
       }
     });
     Telemetry._appInsights.loadAppInsights();
