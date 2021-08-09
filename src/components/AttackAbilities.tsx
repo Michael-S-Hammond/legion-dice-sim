@@ -30,7 +30,7 @@ function AttackAbilities(props: AttackAbilitiesProps) : JSX.Element {
                 onActiveChanged={props.eventHandlers.handleCriticalXChange}
                 value={props.input.criticalX.value}
                 onValueChanged={props.eventHandlers.handleCriticalXValueChange}
-                maxValue={3}
+                maxValue={4}
                 ></AbilityXToggle>
             <AbilityToggle
                 id='duelistAttackToggle'
