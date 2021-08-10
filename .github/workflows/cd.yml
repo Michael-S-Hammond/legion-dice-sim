@@ -122,32 +122,3 @@ jobs:
           container_name: '$web'
           connection_string: ${{ secrets.StorageAccountConnectionString }}
           sync: true
-
-  deploy-old-production:
-    name: Deploy to LegionDice.com
-
-    runs-on: ubuntu-latest
-
-    needs:
-      - deploy-dev
-
-    environment:
-      name: "Production"
-      url: "http://www.legiondice.com"
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v2.0.8
-        with:
-          name: 'build-output'
-          path: build
-
-      - name: Upload to Azure
-        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
-        with:
-          source_dir: 'build'
-          container_name: '$web'
-          connection_string: ${{ secrets.StorageAccountConnectionString }}
-          sync: true
