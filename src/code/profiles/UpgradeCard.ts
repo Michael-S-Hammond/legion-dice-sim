@@ -4,6 +4,7 @@ import * as UP from './UnitProfile';
 
 export type Restriction = {
     faction?: UP.Faction,
+    keyword?: string,
     rank?: UP.Rank,
     type?: UP.UnitType,
     unit?: string,
