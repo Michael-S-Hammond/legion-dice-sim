@@ -3205,6 +3205,144 @@
         }
     },{
         "faction": "separatist",
+        "name": "Super Tactical Droid",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 95,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Expertise",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            }
+        },{
+            "name": "Overseer's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 1,
+                "black": 0,
+                "white": 1
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        }],
+        "upgrades": ["command", "command", "comms", "gear"],
+        "keywords": {
+            "strategize": 1,
+            "direct": {
+                "keyword": "ai"
+            },
+            "override": 1,
+            "sharpshooter": 1
+        }
+    },{
+        "faction": "separatist",
+        "name": "Super Tactical Droid",
+        "subtitle": "Kalani",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "hit",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Combat Training",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        },{
+            "name": "Kalani's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        }],
+        "upgrades": ["command", "command", "command", "comms", "gear"],
+        "keywords": {
+            "strategize": 2,
+            "direct": {
+                "keyword": "ai"
+            },
+            "reinforcements": true,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "separatist",
+        "name": "Super Tactical Droid",
+        "subtitle": "Kraken",
+        "unique": true,
+        "rank": "commander",
+        "miniCount": 1,
+        "points": 100,
+        "unitType": "droidTrooper",
+        "defenseDie": "red",
+        "wounds": 5,
+        "courage": 2,
+        "attackSurge": "critical",
+        "defenseSurge": false,
+        "speed": 2,
+        "weapons": [{
+            "name": "Overwhelm",
+            "minimumRange": 0,
+            "maximumRange": 0,
+            "dice": {
+                "red": 4,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "lethal": 1
+            }
+        },{
+            "name": "Kraken's E-5 Blaster Rifle",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 0,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "pierce": 1
+            }
+        }],
+        "upgrades": ["command", "command", "training", "comms", "gear"],
+        "keywords": {
+            "strategize": 1,
+            "charge": true,
+            "override": 2,
+            "sharpshooter": 2
+        }
+    },{
+        "faction": "separatist",
         "name": "Cad Bane",
         "subtitle": "Needs No Introduction",
         "unique": true,

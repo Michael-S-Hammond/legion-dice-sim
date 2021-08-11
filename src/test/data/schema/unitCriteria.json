@@ -5,6 +5,11 @@
             "type": "object",
             "properties": {
                 "faction": { "$ref": "faction#/definitions/faction" },
+                "keyword": {
+                    "enum": [
+                        "ai"
+                    ]
+                },
                 "rank": { "$ref": "unitrank#/definitions/unitRank" },
                 "type": { "$ref": "unittype#/definitions/unitType" },
                 "unit": { "type": "string", "minLength": 1 },
