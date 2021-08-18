@@ -494,7 +494,7 @@ Object {
     "active": false,
     "value": 1,
   },
-  "meleeAttack": false,
+  "meleeAttack": true,
 }
 `;
 
