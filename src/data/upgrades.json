@@ -1833,6 +1833,27 @@
         }
     },{
         "type": "heavyWeapon",
+        "name": "Electro-whip MagnaGuard",
+        "points": 28,
+        "restrictions": [{
+            "unit": "IG-100 MagnaGuard"
+        }],
+        "weapon": {
+            "name": "Electro-whip MagnaGuard",
+            "minimumRange": 0,
+            "maximumRange": 1,
+            "dice": {
+                "red": 2,
+                "black": 0,
+                "white": 0
+            },
+            "keywords": {
+                "immobilize": 1,
+                "versatile": true
+            }
+        }
+    },{
+        "type": "heavyWeapon",
         "name": "Fives",
         "points": 36,
         "restrictions": [{
@@ -1927,6 +1948,13 @@
                 "impact": 3
             }
         }
+    },{
+        "type": "heavyWeapon",
+        "name": "IG-100 MagnaGuard",
+        "points": 22,
+        "restrictions": [{
+            "unit": "IG-100 MagnaGuard"
+        }]
     },{
         "type": "heavyWeapon",
         "name": "Long Gun Wookiee",
@@ -2056,6 +2084,27 @@
             },
             "keywords": {
                 "cumbersome": true,
+                "impact": 2
+            }
+        }
+    },{
+        "type": "heavyWeapon",
+        "name": "RPS-6 MagnaGuard",
+        "points": 28,
+        "restrictions": [{
+            "unit": "IG-100 MagnaGuard"
+        }],
+        "weapon": {
+            "name": "RPS-6 MagnaGuard",
+            "minimumRange": 2,
+            "maximumRange": 4,
+            "dice": {
+                "red": 1,
+                "black": 1,
+                "white": 1
+            },
+            "keywords": {
+                "critical": 1,
                 "impact": 2
             }
         }
