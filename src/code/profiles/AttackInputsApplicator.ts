@@ -144,7 +144,7 @@ function applyWeapon(weapon: UP.Weapon, multiplier: number, tracking: Tracking, 
 
     // update compatible range
     tracking.minimumRange = Math.max(weapon.minimumRange, tracking.minimumRange);
-    if(!tracking.maximumRange) {
+    if(tracking.maximumRange === undefined) {
         tracking.maximumRange = weapon.maximumRange;
     } else if(weapon.maximumRange !== undefined) {
         tracking.maximumRange = Math.min(weapon.maximumRange, tracking.maximumRange);
@@ -190,6 +190,8 @@ function applyHeavyWeaponUpgrade(upgrade: UC.HeavyWeaponUpgrade, tracking: Track
                 applyWeapon(tracking.defaultWeapon, 1, tracking, false);
             }
         }
+    } else if(tracking.defaultWeapon) {
+        applyWeapon(tracking.defaultWeapon, 1, tracking, false);
     }
 }
 
