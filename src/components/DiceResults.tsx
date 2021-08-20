@@ -206,6 +206,23 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                     legend: {
                         y: -120
                     }
+                },
+                menuItemDefinitions: {
+                    copyToClipboard: {
+                        onclick: () => {
+                            window.navigator.clipboard.writeText('Custom HighCharts!');
+                            // get chart base64: https://www.highcharts.com/forum/viewtopic.php?t=39980
+                            // get rest of clipboard API: https://github.com/Microsoft/TypeScript/issues/26728#issuecomment-479398447
+
+                            // all in one? https://stackoverflow.com/a/59462248
+                        },
+                        text: 'Copy to Clipboard'
+                    }
+                },
+                buttons: {
+                    contextButton: {
+                        menuItems: ["viewFullscreen", "printChart", "separator", "copyToClipboard", "separator", "downloadPNG", "downloadJPEG", "downloadSVG"]
+                    }
                 }
             }
         };
