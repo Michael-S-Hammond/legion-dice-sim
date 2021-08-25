@@ -525,6 +525,10 @@
         }]
     },{
         "type": "comms",
+        "name": "Hacked Comms Unit",
+        "points": 5
+    },{
+        "type": "comms",
         "name": "HQ Uplink",
         "points": 10
     },{
@@ -701,6 +705,28 @@
         "restrictions": [{
             "unit": "A-A5 Speeder Truck"
         }]
+    },{
+        "type": "crew",
+        "name": "Gnasp Gunner",
+        "points": 25,
+        "restrictions": [{
+            "unit": "Raddaugh Gnasp Fluttercraft"
+        }],
+        "weapon": {
+            "name": "Raddaugh Gnasp Fluttercraft",
+            "minimumRange": 1,
+            "maximumRange": 3,
+            "dice": {
+                "red": 2,
+                "black": 2,
+                "white": 0
+            },
+            "keywords": {
+                "fixed": ["rear"],
+                "impact": 1,
+                "pierce": 1
+            }
+        }
     },{
         "type": "crew",
         "name": "Refurbished \"Gonk\" Droid",

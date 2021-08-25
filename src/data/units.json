@@ -2985,6 +2985,36 @@
         }
     },{
         "faction": "republic",
+        "name": "Raddaugh Gnasp Fluttercraft",
+        "rank": "support",
+        "miniCount": 1,
+        "points": 55,
+        "unitType": "repulsorVehicle",
+        "defenseDie": "white",
+        "wounds": 6,
+        "resilience": 3,
+        "attackSurge": "hit",
+        "defenseSurge": true,
+        "speed": 2,
+        "weapons": [{
+            "name": "Pilot's Kashyyyk Pistol",
+            "minimumRange": 1,
+            "maximumRange": 2,
+            "dice": {
+                "red": 0,
+                "black": 1,
+                "white": 1
+            }
+        }],
+        "upgrades": ["crew", "comms"],
+        "keywords": {
+            "cover": "heavy",
+            "immune": ["blast", "melee", "range1Weapons"],
+            "reposition": true,
+            "speeder": 2
+        }
+    },{
+        "faction": "republic",
         "name": "TX-130 Saber-class Fighter Tank",
         "rank": "heavy",
         "miniCount": 1,
