@@ -152,6 +152,7 @@
                 "stationary": { "type": "boolean" },
                 "steady": { "type": "boolean" },
                 "strategize": { "type": "number", "minimum": 1, "maximum": 2 },
+                "surgeHit": { "type": "boolean" },
                 "tactical": { "type": "number", "minimum": 1, "maximum": 1 },
                 "takeCover": { "type": "number", "minimum": 1, "maximum": 2 },
                 "target": { "type": "number", "minimum": 1, "maximum": 1 },

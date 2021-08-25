@@ -256,6 +256,7 @@ export type UnitKeyword = {
     stationary?: boolean,
     steady?: boolean,
     strategize?: number,
+    surgeHit?: boolean,
     tactical?: number,
     takeCover?: number,
     target?: number,

@@ -33,6 +33,7 @@
             "BARC Ion Gunner",
             "BARC RPS-6 Gunner",
             "BARC Twin Laser Gunner",
+            "Gnasp Gunner",
             "RPS-6 Rocket Gunner"
         ],
         "force": [
@@ -157,7 +158,8 @@
         "pilot": [
             "Baron Rudor",
             "General Weiss",
-            "Hotshot Pilot"
+            "Hotshot Pilot",
+            "Imperial Hammers Elite Armor Pilot"
         ]
     }, "defense": {
         "armament": [
