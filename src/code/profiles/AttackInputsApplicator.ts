@@ -101,6 +101,9 @@ function applyUpgradeKeywords(upgrade: UC.Upgrade, tracking: Tracking) {
         if(upgrade.keywords.marksman) {
             tracking.offense.marksman = true;
         }
+        if(upgrade.keywords.surgeHit && tracking.offense.surge === T.AttackSurgeConversion.Blank) {
+            tracking.offense.surge = T.AttackSurgeConversion.Hit;
+        }
         applyValueXKeyword(upgrade.keywords.precise, tracking.offense.preciseX);
         applyValueXKeyword(upgrade.keywords.sharpshooter, tracking.offense.sharpshooterX);
     }
