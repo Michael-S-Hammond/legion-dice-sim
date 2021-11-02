@@ -1,9 +1,11 @@
 import * as T from './Types';
 
-export function getCoverModification(cover: T.Cover) : number {
-    return (cover === T.Cover.Heavy) ? 2 :
+export function getCoverModification(input: T.AttackInput, cover: T.Cover) : number {
+    const coverModifier = (cover === T.Cover.Heavy) ? 2 :
         (cover === T.Cover.Light) ? 1 :
         0;
+    return (input.defense.lowProfile && coverModifier > 0) ?
+        coverModifier + 1 : coverModifier;
 }
 
 export function getEffectiveCover(input: T.AttackInput) : T.Cover {
@@ -22,11 +24,6 @@ export function getEffectiveCover(input: T.AttackInput) : T.Cover {
         } else if(effectiveCover == T.Cover.Light) {
             effectiveCover = T.Cover.Heavy;
         }
-    }
-
-    // low profile
-    if(input.defense.lowProfile && effectiveCover === T.Cover.Light) {
-        effectiveCover = T.Cover.Heavy;
     }
 
     // sharpshooter X

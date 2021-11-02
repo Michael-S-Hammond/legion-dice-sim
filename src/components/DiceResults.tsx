@@ -178,7 +178,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                                 const verticalOffset = 25;
                                 const headerOffset = 25;
 
-                                const savesLeft = 300;
+                                const savesLeft = 725;
                                 const saveValuesLeft = savesLeft + valuesOffset;
 
                                 this.renderer.text('Required Saves', savesLeft + headerOffset, verticalStart, true).css(headerCss).add();
@@ -189,17 +189,16 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                                 this.renderer.text(String(forcedSaveStats.median), saveValuesLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
                                 this.renderer.text(String(forcedSaveStats.stddev), saveValuesLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
 
-                                const woundsLeft = 725;
+                                const woundsLeft = 300;
                                 const woundsValuesLeft = woundsLeft + valuesOffset;
 
+                                this.renderer.text('Wounds', woundsLeft + headerOffset, verticalStart, true).css(headerCss).add();
                                 this.renderer.text('Mean:', woundsLeft, verticalStart + verticalOffset, true).css(statCss).add();
                                 this.renderer.text('Median:', woundsLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
                                 this.renderer.text('Standard Deviation:', woundsLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
                                 this.renderer.text(String(woundStats.mean), woundsValuesLeft, verticalStart + verticalOffset, true).css(statCss).add();
                                 this.renderer.text(String(woundStats.median), woundsValuesLeft, verticalStart + verticalOffset * 2, true).css(statCss).add();
                                 this.renderer.text(String(woundStats.stddev), woundsValuesLeft, verticalStart + verticalOffset * 3, true).css(statCss).add();
-
-                                this.renderer.text('Wounds', woundsLeft + headerOffset, verticalStart, true).css(headerCss).add();
                             }
                         }
                     },
@@ -299,22 +298,7 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                 </div>
                 <div className={`row ${this.props.visibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}>
                     <div className="col-md-3 offset-md-3 my-3">
-                        <h3 className="stats-header">Required Saves</h3>
-                        <div>
-                            <span className="stats-label">Median: </span>
-                            <span>{this.props.results.summary.forcedSaveStats.median}</span>
-                        </div>
-                        <div>
-                            <span className="stats-label">Mean: </span>
-                            <span>{this.props.results.summary.forcedSaveStats.mean}</span>
-                        </div>
-                        <div>
-                            <span className="stats-label">Standard Deviation: </span>
-                            <span>{this.props.results.summary.forcedSaveStats.stddev}</span>
-                        </div>
-                    </div>
-                    <div className="col-md-3 my-3">
-                        <h3 className="stats-header">Wounds</h3>
+                    <h3 className="stats-header">Wounds</h3>
                         <div>
                             <span className="stats-label">Median: </span>
                             <span>{this.props.results.summary.woundStats.median}</span>
@@ -326,6 +310,21 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                         <div>
                             <span className="stats-label">Standard Deviation: </span>
                             <span>{this.props.results.summary.woundStats.stddev}</span>
+                        </div>
+                    </div>
+                    <div className="col-md-3 my-3">
+                    <h3 className="stats-header">Required Saves</h3>
+                        <div>
+                            <span className="stats-label">Median: </span>
+                            <span>{this.props.results.summary.forcedSaveStats.median}</span>
+                        </div>
+                        <div>
+                            <span className="stats-label">Mean: </span>
+                            <span>{this.props.results.summary.forcedSaveStats.mean}</span>
+                        </div>
+                        <div>
+                            <span className="stats-label">Standard Deviation: </span>
+                            <span>{this.props.results.summary.forcedSaveStats.stddev}</span>
                         </div>
                     </div>
                 </div>
