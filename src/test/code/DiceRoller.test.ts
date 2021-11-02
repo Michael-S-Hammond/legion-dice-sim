@@ -462,7 +462,23 @@ describe('DiceRoller', () => {
         expect(result.firstAttack.attack.hits).toEqual(5);
         expect(result.firstAttack.defense.forcedSaves).toEqual(5);
     });
-    test('Validate low profile', () => {
+
+    test('Validate low profile no cover', () => {
+        diceRoller.rollAttackDie = (color) => {
+            return T.AttackDieResult.Hit;
+        }
+
+        const atkInput = T.createDefaultAttackInput();
+        atkInput.offense.redDice = 4;
+        atkInput.defense.cover = T.Cover.None;
+        atkInput.defense.lowProfile = true;
+        const result = diceRoller.simulateAttacks(1, atkInput);
+
+        expect(result.firstAttack.attack.hits).toEqual(4);
+        expect(result.firstAttack.defense.forcedSaves).toEqual(4);
+    });
+
+    test('Validate low profile light cover', () => {
         diceRoller.rollAttackDie = (color) => {
             return T.AttackDieResult.Hit;
         }
@@ -475,6 +491,21 @@ describe('DiceRoller', () => {
 
         expect(result.firstAttack.attack.hits).toEqual(4);
         expect(result.firstAttack.defense.forcedSaves).toEqual(2);
+    });
+
+    test('Validate low profile heavy cover', () => {
+        diceRoller.rollAttackDie = (color) => {
+            return T.AttackDieResult.Hit;
+        }
+
+        const atkInput = T.createDefaultAttackInput();
+        atkInput.offense.redDice = 4;
+        atkInput.defense.cover = T.Cover.Heavy;
+        atkInput.defense.lowProfile = true;
+        const result = diceRoller.simulateAttacks(1, atkInput);
+
+        expect(result.firstAttack.attack.hits).toEqual(4);
+        expect(result.firstAttack.defense.forcedSaves).toEqual(1);
     });
 
     test('Validate uncanny luck', () => {

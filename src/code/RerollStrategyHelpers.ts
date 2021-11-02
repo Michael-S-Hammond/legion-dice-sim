@@ -40,7 +40,7 @@ export function getMarksmanConversions(input: T.AttackInput, hits: number, crits
     let aimTokens = rerolls.aimTokens;
 
     const totalDice = input.offense.redDice + input.offense.blackDice + input.offense.whiteDice;
-    const cover = EC.getCoverModification(EC.getEffectiveCover(input));
+    const cover = EC.getCoverModification(input, EC.getEffectiveCover(input));
     const maxCancelledHits =
         cover +
         (input.combat.guardian.active ? input.combat.guardian.value : 0);

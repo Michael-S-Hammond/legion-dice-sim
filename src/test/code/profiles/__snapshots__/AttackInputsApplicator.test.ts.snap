@@ -927,7 +927,7 @@ Object {
 
 exports[`AttackInputApplicator handles generator upgrade: E-Web - Overcharged Generator Offense 1`] = `
 Object {
-  "blackDice": 2,
+  "blackDice": 3,
   "blast": false,
   "criticalX": Object {
     "active": false,

@@ -13,7 +13,7 @@ class SimpleRerollStrategy implements RS.RerollStrategy {
                    remaining: RS.RemainingRerolls) : number[] | undefined {
         const dmm = new DiceModificationMatrix(rolls);
         const effectiveCover = EC.getEffectiveCover(input);
-        const coverModifier = EC.getCoverModification(effectiveCover);
+        const coverModifier = EC.getCoverModification(input, effectiveCover);
         let rerollMiss = 0;
         let rerollHit = 0;
 

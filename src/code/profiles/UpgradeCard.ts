@@ -56,6 +56,7 @@ export interface GearUpgrade extends Upgrade {
 
 export interface GeneratorUpgrade extends Upgrade {
     type: UP.UnitUpgrade.generator,
+    dice: UP.AttackDice,
     weaponKeywords: UP.WeaponKeywords
 }
 

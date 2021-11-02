@@ -43,6 +43,7 @@
             "Targeting Scopes"
         ],
         "generator": [
+            "Barrage Generator",
             "Overcharged Generator"
         ],
         "grenades": [
@@ -149,6 +150,7 @@
             "Rebel Trooper Specialist",
             "Rebel Veteran",
             "Shoretrooper",
+            "Snowtrooper",
             "Stormtrooper",
             "Stormtrooper Captain",
             "Stormtrooper Specialist",
