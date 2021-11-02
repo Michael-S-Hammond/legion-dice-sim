@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as T from '../code/Types';
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 
 import AbilityToggle from './AbilityToggle';
 import AbilityXToggle from './AbilityXToggle'
@@ -9,7 +9,7 @@ import AbilityXToggle from './AbilityXToggle'
 type AttackAbilitiesProps = {
     showSimpleView: boolean,
     input: T.OffenseInput,
-    eventHandlers: AS.AppStateAttackEventHandlers,
+    eventHandlers: SSM.SimulatorStateAttackEventHandlers,
 }
 
 function AttackAbilities(props: AttackAbilitiesProps) : JSX.Element {

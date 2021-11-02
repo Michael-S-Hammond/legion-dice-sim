@@ -291,6 +291,18 @@ class DiceResults extends React.Component<DiceResultsProps, DiceResultsState> {
                 <div className={`single-result justify-content-center my-3 ${this.props.visibility === T.ResultOutput.Single ? 'collapse.show' : 'collapse'}`}>
                     <span className="die-result">Wounds: {this.getFirstWoundCount()}</span>
                 </div>
+                <div className={`single-result justify-content-center my-3 ${this.props.visibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}>
+                    <button
+                        className='btn border btn-light border-secondary rounded-lg mx-1 graph-comparison-button-add'
+                        onClick={() => alert('add')}
+                        title='Save results for comparison'>
+                    </button>
+                    <button
+                        className='btn border btn-light border-secondary rounded-lg mx-1 graph-comparison-button-compare'
+                        onClick={ () => window.location.href='/compare' }
+                        title='Compare results'>
+                    </button>
+                </div>
                 <div id="chartContainer" className={`my-3 mx-auto ${this.props.visibility === T.ResultOutput.Graph ? 'collapse.show' : 'collapse'}`}>
                     <HighchartsReact
                         highcharts={Highcharts}

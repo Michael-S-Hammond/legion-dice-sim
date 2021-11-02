@@ -4,7 +4,7 @@ import * as UC from '../code/profiles/UpgradeCard';
 import * as AIA from '../code/profiles/AttackInputsApplicator';
 import * as DIA from '../code/profiles/DefenseInputsApplicator';
 
-export type AppState = {
+export type SimulatorState = {
     inputs: T.AttackInput,
     outputs: T.CombinedAttackOutput,
     diceRolls: number,
@@ -13,7 +13,7 @@ export type AppState = {
     showSimpleView: boolean,
 };
 
-export type AppStateAttackEventHandlers = {
+export type SimulatorStateAttackEventHandlers = {
     resetDiceCount: () => void,
     incrementRedDice: () => void,
     incrementBlackDice: () => void,
@@ -46,7 +46,7 @@ export type AppStateAttackEventHandlers = {
     handleSharpshooterXValueChange: (value: number) => void,
 };
 
-export type AppStateDefenseEventHandlers = {
+export type SimulatorStateDefenseEventHandlers = {
     changeDie: () => void,
     resetTokenCount: () => void,
     incrementDodgeTokenCount: () => void,
@@ -76,42 +76,42 @@ export type AppStateDefenseEventHandlers = {
     handleUncannyLuckXValueChange: (value: number) => void,
 };
 
-export type AppStateCombatEventHandlers = {
+export type SimulatorStateCombatEventHandlers = {
     handleGuardianXChange: (active: boolean) => void,
     handleGuardianXValueChange: (value: number) => void,
     handleMeleeAttackChange: (isMeleeAttack: boolean) => void,
 };
 
-export type AppStateBehaviorEventHandlers = {
+export type SimulatorStateBehaviorEventHandlers = {
     handleDiceCountChange: (count: number) => void,
     handleShowExpectedRangeChanged: (show: boolean) => void,
     handleShowSimplifiedViewChange: (show: boolean) => void,
 };
 
-export type UpdateStateFunction = (newState: AppState) => void;
+export type UpdateStateFunction = (newState: SimulatorState) => void;
 
-type AppSettings = {
+type SimulatorSettings = {
     showExpectedRange: boolean,
     showSimpleView: boolean,
 };
 
-export class AppStateManager {
+export class SimulatorStateManager {
     private _setState: UpdateStateFunction;
-    private _state: AppState;
-    private _attackEventHandlers: AppStateAttackEventHandlers;
-    private _defenseEventHandlers: AppStateDefenseEventHandlers;
-    private _combatEventHandlers: AppStateCombatEventHandlers;
-    private _behaviorEventHandlers: AppStateBehaviorEventHandlers;
+    private _state: SimulatorState;
+    private _attackEventHandlers: SimulatorStateAttackEventHandlers;
+    private _defenseEventHandlers: SimulatorStateDefenseEventHandlers;
+    private _combatEventHandlers: SimulatorStateCombatEventHandlers;
+    private _behaviorEventHandlers: SimulatorStateBehaviorEventHandlers;
 
-    public get state() : AppState { return this._state; }
+    public get state() : SimulatorState { return this._state; }
 
-    public get attackEventHandlers() : AppStateAttackEventHandlers { return this._attackEventHandlers; }
+    public get attackEventHandlers() : SimulatorStateAttackEventHandlers { return this._attackEventHandlers; }
 
-    public get defenseEventHandlers() : AppStateDefenseEventHandlers { return this._defenseEventHandlers; }
+    public get defenseEventHandlers() : SimulatorStateDefenseEventHandlers { return this._defenseEventHandlers; }
 
-    public get combatEventHandlers() : AppStateCombatEventHandlers { return this._combatEventHandlers; }
+    public get combatEventHandlers() : SimulatorStateCombatEventHandlers { return this._combatEventHandlers; }
 
-    public get behaviorEventHandlers() : AppStateBehaviorEventHandlers { return this._behaviorEventHandlers; }
+    public get behaviorEventHandlers() : SimulatorStateBehaviorEventHandlers { return this._behaviorEventHandlers; }
 
     constructor(updateStateFunction: UpdateStateFunction) {
         this._setState = updateStateFunction;
@@ -194,7 +194,7 @@ export class AppStateManager {
         this.setState(newState);
     }
 
-    private setState(newState: AppState) {
+    private setState(newState: SimulatorState) {
         this._state = newState;
         this._setState(newState);
     }
@@ -207,7 +207,7 @@ export class AppStateManager {
         return newArray;
     }
 
-    private cloneState(): AppState {
+    private cloneState(): SimulatorState {
         return {
             inputs: T.cloneAttackInput(this.state.inputs),
             outputs: {
@@ -255,7 +255,7 @@ export class AppStateManager {
     }
 
     // attack event handlers
-    private createAttackEventHandlers(): AppStateAttackEventHandlers {
+    private createAttackEventHandlers(): SimulatorStateAttackEventHandlers {
         return {
             resetDiceCount: () => this.resetAttackDiceCount(),
             incrementRedDice: () => this.incrementRedAttackDice(),
@@ -474,7 +474,7 @@ export class AppStateManager {
     }
 
     // defense event handlers
-    private createDefenseEventHandlers(): AppStateDefenseEventHandlers {
+    private createDefenseEventHandlers(): SimulatorStateDefenseEventHandlers {
         return {
             changeDie: () => this.changeDefenseDie(),
             resetTokenCount: () => this.resetDefenseTokenCount(),
@@ -719,7 +719,7 @@ export class AppStateManager {
     }
 
     // combat event handlers
-    private createCombatEventHandlers(): AppStateCombatEventHandlers {
+    private createCombatEventHandlers(): SimulatorStateCombatEventHandlers {
         return {
             handleGuardianXChange: (active: boolean) => this.handleGuardianXChange(active),
             handleGuardianXValueChange: (value: number) => this.handleGuardianXValueChange(value),
@@ -746,7 +746,7 @@ export class AppStateManager {
     }
 
     // behavior event handlers
-    private createBehaviorEventHandlers(): AppStateBehaviorEventHandlers {
+    private createBehaviorEventHandlers(): SimulatorStateBehaviorEventHandlers {
         return {
             handleDiceCountChange: (count: number) => this.handleDiceCountChange(count),
             handleShowExpectedRangeChanged: (show: boolean) => this.handleShowExpectedRangeChanged(show),
@@ -778,14 +778,14 @@ export class AppStateManager {
         this.setState(newState);
     }
 
-    private getActiveSettings() : AppSettings {
+    private getActiveSettings() : SimulatorSettings {
         return {
             showExpectedRange: this._state.showExpectedRange,
             showSimpleView: this._state.showSimpleView,
         };
     }
 
-    private loadSettings() : AppSettings {
+    private loadSettings() : SimulatorSettings {
         const settingsString = window.localStorage.getItem('settings');
         const settingsObject = {
             showExpectedRange: true,
@@ -807,7 +807,7 @@ export class AppStateManager {
         return settingsObject;
     }
 
-    private saveSettings(settings: AppSettings) {
+    private saveSettings(settings: SimulatorSettings) {
         window.localStorage.setItem('settings', JSON.stringify(settings));
     }
 }

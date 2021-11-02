@@ -1,13 +1,13 @@
 import React from 'react';
 
 import * as T from '../code/Types'
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 import ClearButton from './ClearButton';
 import Token from './TokenCounter';
 
 type AttackTokensProperties = {
     tokens: T.OffenseTokens,
-    eventHandlers: AS.AppStateAttackEventHandlers,
+    eventHandlers: SSM.SimulatorStateAttackEventHandlers,
 };
 
 function AttackTokens(props: AttackTokensProperties) : JSX.Element {

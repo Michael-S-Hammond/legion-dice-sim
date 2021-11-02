@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as T from '../code/Types';
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 
 import DefenseAbilities from './DefenseAbilities';
 import DefenseTokens from './DefenseTokens';
@@ -12,7 +12,7 @@ type DefenseProps = {
     profileDialogId: string,
     showSimpleView: boolean,
     input: T.DefenseInput,
-    eventHandlers: AS.AppStateDefenseEventHandlers,
+    eventHandlers: SSM.SimulatorStateDefenseEventHandlers,
 }
 
 function Defense(props: DefenseProps) : JSX.Element {

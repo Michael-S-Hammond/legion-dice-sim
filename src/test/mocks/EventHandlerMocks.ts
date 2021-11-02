@@ -1,6 +1,6 @@
-import * as AS from '../../components/AppStateManager';
+import * as SSM from '../../components/SimulatorStateManager';
 
-export function createMockAppStateAttackEventHandlers(): AS.AppStateAttackEventHandlers {
+export function createMockSimulatorStateAttackEventHandlers(): SSM.SimulatorStateAttackEventHandlers {
     return {
         resetDiceCount: jest.fn(),
         incrementRedDice: jest.fn(),
@@ -35,7 +35,7 @@ export function createMockAppStateAttackEventHandlers(): AS.AppStateAttackEventH
     }
 }
 
-export function createMockAppStateDefenseEventHandlers(): AS.AppStateDefenseEventHandlers {
+export function createMockSimulatorStateDefenseEventHandlers(): SSM.SimulatorStateDefenseEventHandlers {
     return {
         changeDie: jest.fn(),
         resetTokenCount: jest.fn(),
@@ -67,7 +67,7 @@ export function createMockAppStateDefenseEventHandlers(): AS.AppStateDefenseEven
     }
 }
 
-export function createMockAppStateCombatEventHandlers(): AS.AppStateCombatEventHandlers {
+export function createMockSimulatorStateCombatEventHandlers(): SSM.SimulatorStateCombatEventHandlers {
     return {
         handleGuardianXChange: jest.fn(),
         handleGuardianXValueChange: jest.fn(),
@@ -75,7 +75,7 @@ export function createMockAppStateCombatEventHandlers(): AS.AppStateCombatEventH
     }
 }
 
-export function createMockAppStateBehaviorEventHandlers(): AS.AppStateBehaviorEventHandlers {
+export function createMockSimulatorStateBehaviorEventHandlers(): SSM.SimulatorStateBehaviorEventHandlers {
     return {
         handleDiceCountChange: jest.fn(),
         handleShowExpectedRangeChanged: jest.fn(),

@@ -1,3 +1,23 @@
+@mixin graph-comparison-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-position-x: 2px;
+    background-position-y: 2px;
+}
+
+.graph-comparison-button-add {
+    background-image: url('../img/clipboard-plus.svg');
+    @include graph-comparison-button();
+}
+
+.graph-comparison-button-compare {
+    background-image: url('../img/clipboard-data.svg');
+    @include graph-comparison-button();
+}
+
 .roll-button {
   display: flex;
   height: 40px;

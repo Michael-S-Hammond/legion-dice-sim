@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as T from '../code/Types';
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 
 import AttackAbilities from './AttackAbilities';
 import AttackTokens from './AttackTokens';
@@ -13,7 +13,7 @@ type AttackProps = {
     profileDialogId: string,
     showSimpleView: boolean,
     input: T.OffenseInput,
-    eventHandlers: AS.AppStateAttackEventHandlers,
+    eventHandlers: SSM.SimulatorStateAttackEventHandlers,
 }
 
 function Attack(props: AttackProps) : JSX.Element {

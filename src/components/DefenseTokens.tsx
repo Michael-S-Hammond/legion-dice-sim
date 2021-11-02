@@ -3,12 +3,12 @@ import React from 'react';
 import ClearButton from './ClearButton';
 import Token from './TokenCounter';
 import * as T from '../code/Types'
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 
 type DefenseTokensProperties = {
     showSimplifiedView: boolean,
     tokens: T.DefenseTokens,
-    eventHandlers: AS.AppStateDefenseEventHandlers,
+    eventHandlers: SSM.SimulatorStateDefenseEventHandlers,
 }
 
 function DefenseTokens(props: DefenseTokensProperties) : JSX.Element {

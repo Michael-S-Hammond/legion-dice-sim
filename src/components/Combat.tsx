@@ -1,14 +1,14 @@
 import React from 'react';
 
 import * as T from '../code/Types';
-import * as AS from './AppStateManager';
+import * as SSM from './SimulatorStateManager';
 
 import AbilityToggle from './AbilityToggle';
 import AbilityXToggle from './AbilityXToggle';
 
 type CombatProps = {
     input: T.CombatInput,
-    eventHandlers: AS.AppStateCombatEventHandlers,
+    eventHandlers: SSM.SimulatorStateCombatEventHandlers,
 };
 
 function Combat(props: CombatProps) : JSX.Element {
