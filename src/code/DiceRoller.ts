@@ -379,7 +379,7 @@ export class DiceRoller {
     private applyDodgeAndCover(input: T.AttackInput, modifiedInput: T.AttackInput, status: DRT.AttackResultStatus) {
         // cover
         const effectiveCover = EC.getEffectiveCover(modifiedInput);
-        const effectiveCoverValue = EC.getCoverModification(effectiveCover);
+        const effectiveCoverValue = EC.getCoverModification(modifiedInput, effectiveCover);
         if (effectiveCoverValue > 0) {
             status.modificationMatrix.tryConvertResultCount(T.AttackDieResult.Hit, T.AttackDieResult.Miss, effectiveCoverValue);
         }

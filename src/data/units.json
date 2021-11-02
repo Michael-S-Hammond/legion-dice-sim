@@ -134,6 +134,7 @@
             "lowProfile": true,
             "gunslinger": true,
             "sharpshooter": 1,
+            "steady": true,
             "uncannyLuck": 3
         }
     },{
@@ -1187,8 +1188,9 @@
                 "pierce": 3
             }
         }],
-        "upgrades": ["force", "force", "force"],
+        "upgrades": ["force", "force", "force", "command"],
         "keywords": {
+            "compel": true,
             "deflect": true,
             "immune": [ "pierce" ],
             "masterOfTheForce": 1,
@@ -1563,11 +1565,11 @@
         "points": 155,
         "unitType": "trooper",
         "defenseDie": "red",
-        "wounds": 6,
+        "wounds": 7,
         "courage": 3,
         "attackSurge": "blank",
         "defenseSurge": false,
-        "speed": 1,
+        "speed": 2,
         "weapons": [{
             "name": "Vader's Lightsaber",
             "minimumRange": 0,
@@ -1595,14 +1597,13 @@
                 "scatter": true
             }
         }],
-        "upgrades": ["force", "force", "training"],
+        "upgrades": ["force", "force", "training", "training"],
         "keywords": {
             "deflect": true,
             "immune": ["pierce"],
             "jediHunter": true,
             "masterOfTheForce": 1,
-            "relentless": true,
-            "spur": true
+            "relentless": true
         }
     },{
         "faction": "empire",
@@ -1805,7 +1806,7 @@
         "upgrades": ["heavyWeapon", "training", "comms", "gear", "grenades"],
         "keywords": {
             "lowProfile": true,
-            "scout": 1,
+            "scout": 3,
             "sharpshooter": 1
         }
     },{
@@ -1845,7 +1846,7 @@
         "keywords": {
             "heavyWeaponTeam": true,
             "lowProfile": true,
-            "scout": 1,
+            "scout": 3,
             "sharpshooter": 1
         }
     },{

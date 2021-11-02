@@ -937,6 +937,11 @@
         "type": "generator",
         "name": "Barrage Generator",
         "points": 3,
+        "dice": {
+            "red": 0,
+            "black": 0,
+            "white": 2
+        },
         "weaponKeywords": {
             "suppressive": true
         }
@@ -944,6 +949,11 @@
         "type": "generator",
         "name": "Overcharged Generator",
         "points": 3,
+        "dice": {
+            "red": 0,
+            "black": 1,
+            "white": 0
+        },
         "weaponKeywords": {
             "impact": 1
         }
@@ -1564,7 +1574,6 @@
                 "white": 0
             },
             "keywords": {
-                "critical": 1,
                 "immune": ["deflect"],
                 "lethal": 1
             }
@@ -2727,6 +2736,13 @@
         }]
     },{
         "type": "personnel",
+        "name": "Snowtrooper",
+        "points": 8,
+        "restrictions": [{
+            "unit": "Snowtroopers"
+        }]
+    },{
+        "type": "personnel",
         "name": "Stormtrooper",
         "points": 8,
         "restrictions": [{
@@ -2862,7 +2878,8 @@
             "type": "groundVehicle"
         }],
         "keywords": {
-            "arsenal": 2
+            "arsenal": 2,
+            "fieldCommander": true
         }
     },{
         "type": "pilot",
@@ -3017,7 +3034,10 @@
         "restrictions": [{
             "faction": "rebel",
             "type": "repulsorVehicle"
-        }]
+        }],
+        "keywords": {
+            "fieldCommander": true
+        }
     },{
         "type": "training",
         "name": "Defensive Stance",

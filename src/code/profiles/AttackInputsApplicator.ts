@@ -244,6 +244,9 @@ function applyUpgrade(tracking: Tracking, upgrade: UC.Upgrade) : void {
         case UP.UnitUpgrade.generator:
             if(tracking.fixedPosition && tracking.fixedPosition.length > 0) {
                 const generator = upgrade as UC.GeneratorUpgrade;
+                tracking.offense.redDice += generator.dice.red;
+                tracking.offense.blackDice += generator.dice.black;
+                tracking.offense.whiteDice += generator.dice.white;
                 applyWeaponKeywords(generator.weaponKeywords, tracking.miniCount, tracking);
             }
             break;

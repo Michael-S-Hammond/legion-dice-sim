@@ -104,11 +104,20 @@
                 {
                     "properties": {
                         "type": { "const": "generator" },
+                        "dice": {
+                            "type": "object",
+                            "properties": {
+                                "red": { "type": "number", "minimum": 0, "maximum": 10 },
+                                "black": { "type": "number", "minimum": 0, "maximum": 10 },
+                                "white": { "type": "number", "minimum": 0, "maximum": 10 }
+                            },
+                            "required": ["red", "black", "white"]
+                        },
                         "weaponKeywords": { "$ref": "weaponkeywords#/definitions/keywords" }
                     }
                 }
             ],
-            "required": ["type", "weaponKeywords"]
+            "required": ["type", "dice", "weaponKeywords"]
         },
         "grenadesUpgrade": {
             "allOf": [
