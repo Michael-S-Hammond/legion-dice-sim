@@ -29,7 +29,7 @@ Runs the unit tests.
 
 Runs the unit tests and updates any changed snapshots.
 
-### `npm run test-watch`
+### `npm run testWatch`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

@@ -30,7 +30,7 @@ function DefenseAbilities(props: DefenseAbilitiesProps) : JSX.Element {
                 onActiveChanged={props.eventHandlers.handleArmorXChange}
                 value={props.inputs.armorX.value}
                 onValueChanged={props.eventHandlers.handleArmorXValueChange}
-                maxValue={2}
+                maxValue={3}
                 ></AbilityXToggle>
             <AbilityToggle
                 id='blockToggle'
