@@ -6,12 +6,12 @@ exports[`Header matches the snapshot 1`] = `
 >
   <a
     className="navbar-brand"
-    href="https://www.legionacademy.net/"
-    title="The Legion Academy"
+    href="https://www.facebook.com/legionFNF"
+    title="Friday Night Fights"
   >
     <img
-      alt="The Legion Academy Podcast"
-      className="la-logo d-inline-block my-auto mx-2"
+      alt="Friday Night Fights"
+      className="fnf-logo d-inline-block my-auto mx-2"
     />
   </a>
   <a
